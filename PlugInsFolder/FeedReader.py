@@ -45,7 +45,7 @@ class FeedReader(PlugIn):
 
                     print "parsing: "+tk
 
-                    try:
+                    if True: #try:
                         xml = urllib.urlopen(feed.information)
                         handler = PodcastHandler()
                         parser = sax.make_parser()
@@ -69,9 +69,9 @@ class FeedReader(PlugIn):
                             else:
                                 pass
 
-                    except:
-                        xml = ""
-                        print "[URLLIB ERROR]"
+                    #except:
+                    #    xml = ""
+                    #    print "[URLLIB ERROR]"
 
 
             time.sleep(60*60) #every hour or so
