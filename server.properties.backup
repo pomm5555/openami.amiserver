@@ -46,7 +46,7 @@ ScriptPath=/Users/markus/fast/tunes.sh
 ####################################################################################
 
 [avrBridge]
-lib=/PlugInsSupport/libavrBridgeC.dylib
+lib=/PlugInsSupport/libavrBridgeC.so
 
 
 

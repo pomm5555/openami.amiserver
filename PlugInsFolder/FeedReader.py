@@ -38,10 +38,6 @@ class FeedReader(PlugIn):
     def process(self):
         time.sleep(5)
         while True:
-            #print "parsing: "+url
-            #print "COME ON!!!!! "+self.getAddress() ## should not echo NONE or something
-            #print "COME ON!!!!! "+self.root().__str__() ## should not echo NONE or something
-
 
             for tk, feed in self.content.items():
 
@@ -100,13 +96,8 @@ class FeedReader(PlugIn):
     def display(self, string=""):
         return self.toHtml()
             
-    # returns the plugin as a tree
-    def getTree(self):
-        return self.content
-
     def use(self, test=""):
         return self.toHtml()
-        #return "+"+self.content.information
 
     # just a little helper function
     def getText(self, var):

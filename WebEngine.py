@@ -8,11 +8,8 @@ class WebEngine(Thread):
     def __init__(self, root):
         Thread.__init__(self)
 	self.root = root
-	#self.daemon = True
+	self.daemon = False
 	self.start()
-	#while 1:
-	#    print "running Webengine"
-	#    time.sleep(5)
 
     def run(self):
         cherrypy.config.update({'server.socket_host': '0.0.0.0',
