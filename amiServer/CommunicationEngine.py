@@ -4,7 +4,6 @@
 __author__="markus"
 __date__ ="$Aug 19, 2009 6:26:15 PM$"
 
-from IPython.twshell import exists
 import xmpp
 import sys
 from Packets.Packet import Packet
