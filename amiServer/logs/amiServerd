@@ -1227,9 +1227,1025 @@ Communicationengine is online, or should be... #TODO
 unknown command
  cannot answer my self with an invalid address
 ---message end----------------------------------------------
+<<<<<<< local
+starting event engine...
+loading all plugins...
+*** loading: Finder.py
+from PlugInsFolder.Finder import Finder
+system = Finder("Finder", "server.properties")
+self.root.addChild('plugin', "Finder", system.getTree())
+*** loading: Growl.py
+from PlugInsFolder.Growl import Growl
+system = Growl("Growl", "server.properties")
+self.root.addChild('plugin', "Growl", system.getTree())
+*** loading: iTunes.py
+from PlugInsFolder.iTunes import iTunes
+system = iTunes("iTunes", "server.properties")
+self.root.addChild('plugin', "iTunes", system.getTree())
+*** loading: Madplay.py
+from PlugInsFolder.Madplay import Madplay
+system = Madplay("Madplay", "server.properties")
+self.root.addChild('plugin', "Madplay", system.getTree())
+loaded all plugins sucessfully
+starting xmpp client...
+servant@jabber.org
+fernmelder@jabber.org
+ka010@jabber.org
+Communicationengine is online, or should be... #TODO
+<presence xmlns="jabber:client" to="servant@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="4" />
+<presence xmlns="jabber:client" to="servant@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x></presence>
+<presence xmlns="jabber:client" to="servant@jabber.org/amiAntenna" from="ka010@jabber.org/blahhtpc"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.7" /></presence>
+=======
+>>>>>>> other
 ---message--------------------------------------------------
+<<<<<<< local
+ Sender: servant@jabber.org/amiAntenna
+ Content: get
+=======
  Sender: fernmelder@jabber.org/Antenna
  Content: lsit
+>>>>>>> other
+unknown command
+<<<<<<< local
+ cannot answer my self with an invalid address
+=======
+>>>>>>> other
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: list
+ parsing as list command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+<<<<<<< local
+ Content: /Madplay/Play
+ parsing as address command: servant@jabber.org/Madplay/Play
+ with data: ><
+http://www.munich-radio.de:8000
+ None
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: /Madplay/Stop
+ parsing as address command: servant@jabber.org/Madplay/Stop
+ with data: ><
+ None
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+=======
+>>>>>>> other
+ Content: list
+ parsing as list command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+<<<<<<< local
+ Content: *play/play http://www.fireworkspros.com/KA/Mp3/Reggae/Bob%20Marley/Bob%20Marley%20&%20The%20Wailers%20-%20Get%20Up%20Stand%20Up.mp3
+ parsing as search command
+'play/play' - 'http://www.fireworkspros.com/KA/Mp3/Reggae/Bob%20Marley/Bob%20Marley%20&%20The%20Wailers%20-%20Get%20Up%20Stand%20Up.mp3'
+http://www.fireworkspros.com/KA/Mp3/Reggae/Bob%20Marley/Bob%20Marley%20&%20The%20Wailers%20-%20Get%20Up%20Stand%20Up.mp3
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: /Madplay/Stop
+ parsing as address command: servant@jabber.org/Madplay/Stop
+=======
+ Content: /kill
+ parsing as address command: servant@jabber.org/kill
+>>>>>>> other
+ with data: ><
+<<<<<<< local
+ None
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="servant@jabber.org/amiAntenna" from="servant@jabber.org/Antenna">
+<priority>0</priority>
+<c node="http://www.apple.com/ichat/caps" ext="audio mvideo rdclient maudio avcap avavail rdserver ice auxvideo recauth" xmlns="http://jabber.org/protocol/caps" ver="619" />
+<x xmlns="vcard-temp:x:update" />
+</presence>
+<presence xmlns="jabber:client" to="servant@jabber.org/amiAntenna" from="servant@jabber.org/Antenna">
+<priority>0</priority>
+<c node="http://www.apple.com/ichat/caps" ext="audio mvideo rdclient maudio avcap avavail rdserver ice auxvideo recauth" xmlns="http://jabber.org/protocol/caps" ver="619" />
+<x xmlns="vcard-temp:x:update">
+<photo>f71f59a7933944c1624db76ada4cbfcfca6403c2</photo>
+</x>
+</presence>
+<presence xmlns="jabber:client" to="servant@jabber.org/amiAntenna" from="servant@jabber.org/Antenna" type="unavailable" />
+<presence xmlns="jabber:client" to="servant@jabber.org/amiAntenna" from="ami.client@jabber.org" type="subscribe" />
+<presence xmlns="jabber:client" to="servant@jabber.org/amiAntenna" from="ami.client@jabber.org" type="subscribed" />
+<presence xmlns="jabber:client" to="servant@jabber.org/amiAntenna" from="ami.client@jabber.org/Antenna">
+<priority>0</priority>
+<c node="http://www.apple.com/ichat/caps" ext="audio mvideo rdclient maudio avcap avavail rdserver ice auxvideo recauth" xmlns="http://jabber.org/protocol/caps" ver="619" />
+<x xmlns="vcard-temp:x:update">
+<photo>f71f59a7933944c1624db76ada4cbfcfca6403c2</photo>
+</x>
+</presence>
+<presence xmlns="jabber:client" to="servant@jabber.org/amiAntenna" from="ami.client@jabber.org/Antenna" type="unavailable" />
+starting event engine...
+loading all plugins...
+*** loading: Finder.py
+from PlugInsFolder.Finder import Finder
+system = Finder("Finder", "server.properties")
+self.root.addChild('plugin', "Finder", system.getTree())
+*** loading: Growl.py
+from PlugInsFolder.Growl import Growl
+system = Growl("Growl", "server.properties")
+self.root.addChild('plugin', "Growl", system.getTree())
+*** loading: iTunes.py
+from PlugInsFolder.iTunes import iTunes
+system = iTunes("iTunes", "server.properties")
+self.root.addChild('plugin', "iTunes", system.getTree())
+*** loading: Madplay.py
+from PlugInsFolder.Madplay import Madplay
+system = Madplay("Madplay", "server.properties")
+self.root.addChild('plugin', "Madplay", system.getTree())
+loaded all plugins sucessfully
+starting xmpp client...
+servant@jabber.org
+ami.client@jabber.org
+fernmelder@jabber.org
+Communicationengine is online, or should be... #TODO
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="4" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x></presence>
+---message--------------------------------------------------
+ Sender: ami.client@jabber.org/amiAntenna
+ Content: get
+unknown command
+ cannot answer my self with an invalid address
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: hehe
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: hi horst
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: ok
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: you should have another icon
+unknown command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="4" />
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content: get
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: /list
+ parsing as address command: ami.client@jabber.org/list
+ with data: ><
+[ERROR] Token list is not a child of <type 'instance'>
+=======
+[ERROR] Token kill is not a child of <type 'instance'>
+>>>>>>> other
+[ERROR]  'NoneType' object has no attribute 'use'
+
+<<<<<<< local
+amiServerd process is running with PID: 9130
+=======
+amiServerd process is running with PID: 23360
+>>>>>>> other
+
+<<<<<<< local
+removing /root/projects/hg/ami_ce-tmp/amiServer/run/amiServerd.pid
+=======
+removing /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/run/amiServerd.pid
+>>>>>>> other
+
+PID file not found. Process may not be running.
+
+<<<<<<< local
+starting event engine...
+loading all plugins...
+*** loading: Finder.py
+from PlugInsFolder.Finder import Finder
+system = Finder("Finder", "server.properties")
+self.root.addChild('plugin', "Finder", system.getTree())
+*** loading: Growl.py
+from PlugInsFolder.Growl import Growl
+system = Growl("Growl", "server.properties")
+self.root.addChild('plugin', "Growl", system.getTree())
+*** loading: iTunes.py
+from PlugInsFolder.iTunes import iTunes
+system = iTunes("iTunes", "server.properties")
+self.root.addChild('plugin', "iTunes", system.getTree())
+*** loading: Madplay.py
+from PlugInsFolder.Madplay import Madplay
+system = Madplay("Madplay", "server.properties")
+self.root.addChild('plugin', "Madplay", system.getTree())
+loaded all plugins sucessfully
+starting xmpp client...
+servant@jabber.org
+ami.client@jabber.org
+fernmelder@jabber.org
+Communicationengine is online, or should be... #TODO
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="4" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="4" />
+---message--------------------------------------------------
+ Sender: ami.client@jabber.org/amiAntenna
+ Content: get
+unknown command
+ cannot answer my self with an invalid address
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: help
+ parsing as help command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content:  unknown command
+unknown command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" type="unavailable" />
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: list
+ parsing as list command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="4" />
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content: get
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: *y/play
+ parsing as search command
+'y/play' - ''
+http://www.munich-radio.de:8000
+---message end----------------------------------------------
+starting event engine...
+loading all plugins...
+*** loading: Finder.py
+from PlugInsFolder.Finder import Finder
+system = Finder("Finder", "server.properties")
+self.root.addChild('plugin', "Finder", system.getTree())
+*** loading: Growl.py
+from PlugInsFolder.Growl import Growl
+system = Growl("Growl", "server.properties")
+self.root.addChild('plugin', "Growl", system.getTree())
+*** loading: iTunes.py
+from PlugInsFolder.iTunes import iTunes
+system = iTunes("iTunes", "server.properties")
+self.root.addChild('plugin', "iTunes", system.getTree())
+*** loading: Madplay.py
+from PlugInsFolder.Madplay import Madplay
+system = Madplay("Madplay", "server.properties")
+self.root.addChild('plugin', "Madplay", system.getTree())
+loaded all plugins sucessfully
+starting xmpp client...
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="4" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x></presence>
+servant@jabber.org
+ami.client@jabber.org
+fernmelder@jabber.org
+Communicationengine is online, or should be... #TODO
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/18585122391251641886566078"><priority>1</priority></presence>
+---message--------------------------------------------------
+ Sender: ami.client@jabber.org/amiAntenna
+ Content: get
+unknown command
+ cannot answer my self with an invalid address
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: sdfsdf
+unknown command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/18585122391251641886566078" type="unavailable" />
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: re
+unknown command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="4" />
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content: get
 unknown command
 ---message end----------------------------------------------
 ---message--------------------------------------------------
@@ -1237,22 +2253,536 @@ unknown command
  Content: list
  parsing as list command
 ---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/mobile"> <priority>1</priority>  </presence>
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/mobile
+ Content: *stop
+ parsing as search command
+'stop' - ''
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/mobile
+ Content: *y/stop
+ parsing as search command
+'y/stop' - ''
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/mobile
+ Content: *y/pl
+ parsing as search command
+'y/pl' - ''
+http://www.munich-radio.de:8000
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/mobile
+ Content: List
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/mobile
+ Content: list
+ parsing as list command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/mobile
+ Content: show
+ parsing as show command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/mobile" type="unavailable" />
 ---message--------------------------------------------------
  Sender: fernmelder@jabber.org/Antenna
  Content: list
  parsing as list command
 ---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" type="unavailable" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="4" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" type="unavailable" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="4" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" type="unavailable" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="4" />
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content: get
+unknown command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" type="unavailable" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="4" />
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content: get
+unknown command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" type="unavailable" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="4" />
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content: get
+unknown command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" type="unavailable" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="4" />
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content: get
+unknown command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna" type="unavailable" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x></presence>
+starting event engine...
+loading all plugins...
+*** loading: Finder.py
+from PlugInsFolder.Finder import Finder
+system = Finder("Finder", "server.properties")
+self.root.addChild('plugin', "Finder", system.getTree())
+*** loading: Growl.py
+from PlugInsFolder.Growl import Growl
+system = Growl("Growl", "server.properties")
+self.root.addChild('plugin', "Growl", system.getTree())
+*** loading: iTunes.py
+from PlugInsFolder.iTunes import iTunes
+system = iTunes("iTunes", "server.properties")
+self.root.addChild('plugin', "iTunes", system.getTree())
+*** loading: Madplay.py
+from PlugInsFolder.Madplay import Madplay
+system = Madplay("Madplay", "server.properties")
+self.root.addChild('plugin', "Madplay", system.getTree())
+loaded all plugins sucessfully
+starting xmpp client...
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content: get
+unknown command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="4" />
+servant@jabber.org
+ami.client@jabber.org
+fernmelder@jabber.org
+Communicationengine is online, or should be... #TODO
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="4" />
+---message--------------------------------------------------
+ Sender: ami.client@jabber.org/amiAntenna
+ Content: get
+unknown command
+ cannot answer my self with an invalid address
+---message end----------------------------------------------
 ---message--------------------------------------------------
  Sender: fernmelder@jabber.org/Antenna
- Content: /kill
- parsing as address command: servant@jabber.org/kill
+ Content: *y/play
+ parsing as search command
+'y/play' - ''
+http://www.munich-radio.de:8000
+---message end----------------------------------------------
+starting event engine...
+loading all plugins...
+*** loading: Finder.py
+from PlugInsFolder.Finder import Finder
+system = Finder("Finder", "server.properties")
+self.root.addChild('plugin', "Finder", system.getTree())
+*** loading: Growl.py
+from PlugInsFolder.Growl import Growl
+system = Growl("Growl", "server.properties")
+self.root.addChild('plugin', "Growl", system.getTree())
+*** loading: iTunes.py
+from PlugInsFolder.iTunes import iTunes
+system = iTunes("iTunes", "server.properties")
+self.root.addChild('plugin', "iTunes", system.getTree())
+*** loading: Madplay.py
+from PlugInsFolder.Madplay import Madplay
+system = Madplay("Madplay", "server.properties")
+self.root.addChild('plugin', "Madplay", system.getTree())
+loaded all plugins sucessfully
+starting xmpp client...
+not connected
+=======
+>>>>>>> other
+starting event engine...
+loading all plugins...
+*** loading: PlugInsFolder.Finder.py
+*** loading: PlugInsFolder.Growl.py
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder.empty
+*** loading: PlugInsFolder.empty.Growl.py
+*** loading: PlugInsFolder.iTunes.py
+*** loading: PlugInsFolder.Madplay.py
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder.killmefolder
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder/killmefolder.funfactoryfolder
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder/killmefolder/funfactoryfolder.fififolder
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder/killmefolder.moreFolder
+*** loading: PlugInsFolder.killmefolder.moreFolder.Finder.py
+*** loading: PlugInsFolder.killmefolder.moreFolder.Madplay.py
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder/killmefolder/moreFolder.folderfolder
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder/killmefolder/moreFolder/folderfolder.foldertest
+*** loading: PlugInsFolder.killmefolder.moreFolder.folderfolder.foldertest.iTunes.py
+*** loading: PlugInsFolder.killmefolder.moreFolder.folderfolder.iTunes.py
+*** loading: PlugInsFolder.killmefolder.moreFolder.iTunes.py
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder/killmefolder/moreFolder.unfolder
+loaded all plugins sucessfully
+* root(this is the root node)
+-* ami.client@jabber.org(this is the tree instance ami.client@jabber.org)
+--* Growl(this is a growl plugin)
+---* Growl(send growl notification)
+--* iTunes(This is a iTunes Plugins)
+---* Play(Play iTunes)
+---* Pause(Pause iTunes)
+---* Mute(Mute iTunes)
+---* Unmute(Unmute iTunes)
+---* VolUp(VolUp iTunes)
+---* VolDown(VolDown iTunes)
+---* Next(Next iTunes Track)
+---* Stop(Stop iTunes)
+---* Prev(Prev iTunes Track)
+--* Finder(This is a Finder Plugins)
+---* OpenUrl(open url)
+---* Mute(mute system)
+---* Unmute(unmute system)
+---* Beep(Beep)
+---* Say(say something)
+---* Sleep(sleep system)
+---* Shutdown(shutdown system)
+---* Restart(restart system)
+--* Madplay(This is a Madplay Plugin)
+---* Play(Play Madplay)
+---* Stop(Stop Madplay)
+--* empty(this is the tree representation of a folder)
+---* Growl(this is a growl plugin)
+----* Growl(send growl notification)
+--* killmefolder(this is the tree representation of a folder)
+---* moreFolder(this is the tree representation of a folder)
+----* iTunes(This is a iTunes Plugins)
+-----* Play(Play iTunes)
+-----* Pause(Pause iTunes)
+-----* Mute(Mute iTunes)
+-----* Unmute(Unmute iTunes)
+-----* VolUp(VolUp iTunes)
+-----* VolDown(VolDown iTunes)
+-----* Next(Next iTunes Track)
+-----* Stop(Stop iTunes)
+-----* Prev(Prev iTunes Track)
+----* Madplay(This is a Madplay Plugin)
+-----* Play(Play Madplay)
+-----* Stop(Stop Madplay)
+----* folderfolder(this is the tree representation of a folder)
+-----* iTunes(This is a iTunes Plugins)
+------* Play(Play iTunes)
+------* Pause(Pause iTunes)
+------* Mute(Mute iTunes)
+------* Unmute(Unmute iTunes)
+------* VolUp(VolUp iTunes)
+------* VolDown(VolDown iTunes)
+------* Next(Next iTunes Track)
+------* Stop(Stop iTunes)
+------* Prev(Prev iTunes Track)
+-----* foldertest(this is the tree representation of a folder)
+------* iTunes(This is a iTunes Plugins)
+-------* Play(Play iTunes)
+-------* Pause(Pause iTunes)
+-------* Mute(Mute iTunes)
+-------* Unmute(Unmute iTunes)
+-------* VolUp(VolUp iTunes)
+-------* VolDown(VolDown iTunes)
+-------* Next(Next iTunes Track)
+-------* Stop(Stop iTunes)
+-------* Prev(Prev iTunes Track)
+----* unfolder(this is the tree representation of a folder)
+----* Finder(This is a Finder Plugins)
+-----* OpenUrl(open url)
+-----* Mute(mute system)
+-----* Unmute(unmute system)
+-----* Beep(Beep)
+-----* Say(say something)
+-----* Sleep(sleep system)
+-----* Shutdown(shutdown system)
+-----* Restart(restart system)
+---* funfactoryfolder(this is the tree representation of a folder)
+----* fififolder(this is the tree representation of a folder)
+
+starting xmpp client...
+servant@jabber.org
+ami.client@jabber.org
+fernmelder@jabber.org
+Joining groupchat: ami@conference.jabber.org/ami.client
+Communicationengine is online, or should be... #TODO
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="7"><x xmlns="jabber:x:delay" stamp="20090206T05:13:25" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x><x xmlns="jabber:x:delay" stamp="20090206T05:13:25" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="8"><x xmlns="jabber:x:delay" stamp="20090206T05:13:26" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami@conference.jabber.org/servant" id="9"><x xmlns="http://jabber.org/protocol/muc#user"><item affiliation="none" role="participant" /></x><x xmlns="jabber:x:delay" stamp="20090206T05:13:26" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami@conference.jabber.org/Samstag"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="http://jabber.org/protocol/muc#user"><item affiliation="owner" role="moderator" /></x><x xmlns="jabber:x:delay" stamp="20090206T05:13:26" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami@conference.jabber.org/ami.client" id="8"><x xmlns="http://jabber.org/protocol/muc#user"><item affiliation="none" role="participant" /></x><x xmlns="jabber:x:delay" stamp="20090206T05:13:26" /></presence>
+---message--------------------------------------------------
+ Sender: ami@conference.jabber.org/Samstag
+ Content: /Finder/Say markus, you are a genius
+ parsing as address command: ami.client@jabber.org/Finder/Say
+ with data: >markus, you are a genius<
+ None
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: ami@conference.jabber.org/Samstag
+ Content: /Finder/Say markus, you are a genius
+ parsing as address command: ami.client@jabber.org/Finder/Say
+ with data: >markus, you are a genius<
+ None
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: ami@conference.jabber.org/Samstag
+ Content: get
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: ami@conference.jabber.org/Samstag
+ Content: list
+ parsing as list command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: ami@conference.jabber.org/Samstag
+ Content: /Finder/Say finally, ive got bots talking to me
+ parsing as address command: ami.client@jabber.org/Finder/Say
+ with data: >finally, ive got bots talking to me<
+ None
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: ami@conference.jabber.org/Samstag
+ Content: /Finder/Say markus, you are a genius
+ parsing as address command: ami.client@jabber.org/Finder/Say
+ with data: >markus, you are a genius<
+ None
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: ami@conference.jabber.org/Samstag
+ Content: /iTunes
+ parsing as address command: ami.client@jabber.org/iTunes
  with data: ><
-[ERROR] Token kill is not a child of <type 'instance'>
-[ERROR]  'NoneType' object has no attribute 'use'
+[ERROR] use() takes exactly 2 arguments (1 given)
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: ami@conference.jabber.org/Samstag
+ Content: /iTunes
+ parsing as address command: ami.client@jabber.org/iTunes
+ with data: ><
+[ERROR] use() takes exactly 2 arguments (1 given)
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: None
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: /iTunes
+ parsing as address command: ami.client@jabber.org/iTunes
+ with data: ><
+[ERROR] use() takes exactly 2 arguments (1 given)
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: None
+unknown command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" type="unavailable" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami@conference.jabber.org/servant" type="unavailable"><x xmlns="http://jabber.org/protocol/muc#user"><item affiliation="none" role="none" /></x></presence>
+---message--------------------------------------------------
+ Sender: servant@jabber.org/amiAntenna
+ Content: Hello Master!
+I'm on, and waiting for your orders.
+Enter 'help' to explore me.
+unknown command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="servant@jabber.org/amiAntenna" id="8"><x xmlns="jabber:x:delay" stamp="20090206T05:18:17" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami@conference.jabber.org/servant" id="9"><x xmlns="http://jabber.org/protocol/muc#user"><item affiliation="none" role="participant" /></x><x xmlns="jabber:x:delay" stamp="20090206T05:18:17" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/mobile"> <priority>1</priority>  <x xmlns="jabber:x:delay" stamp="20090206T05:32:09" /></presence>
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/mobile
+ Content: List
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/mobile
+ Content: list
+ parsing as list command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/mobile
+ Content: /Madplay/Play
+ parsing as address command: ami.client@jabber.org/Madplay/Play
+ with data: ><
+http://www.munich-radio.de:8000
+ None
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/mobile
+ Content: /Madplay/Stop
+ parsing as address command: ami.client@jabber.org/Madplay/Stop
+ with data: ><
+ None
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/mobile" type="unavailable" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna" type="unavailable" />
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami@conference.jabber.org/Samstag" type="unavailable"><x xmlns="http://jabber.org/protocol/muc#user"><item affiliation="owner" role="none" /></x></presence>
+starting event engine...
+loading all plugins...
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder.System
+*** loading: PlugInsFolder.System.Finder.py
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder.Notification
+*** loading: PlugInsFolder.Notification.Growl.py
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder.Audio
+*** loading: PlugInsFolder.Audio.Madplay.py
+*** loading: PlugInsFolder.Audio.iTunes.py
+loaded all plugins sucessfully
+* root(this is the root node)
+-* ami.client@jabber.org(this is the tree instance ami.client@jabber.org)
+--* Notification(this is the tree representation of a folder)
+---* Growl(this is a growl plugin)
+----* Growl(send growl notification)
+--* Audio(this is the tree representation of a folder)
+---* iTunes(This is a iTunes Plugins)
+----* Play(Play iTunes)
+----* Pause(Pause iTunes)
+----* Mute(Mute iTunes)
+----* Unmute(Unmute iTunes)
+----* VolUp(VolUp iTunes)
+----* VolDown(VolDown iTunes)
+----* Next(Next iTunes Track)
+----* Stop(Stop iTunes)
+----* Prev(Prev iTunes Track)
+---* Madplay(This is a Madplay Plugin)
+----* Play(Play Madplay)
+----* Stop(Stop Madplay)
+--* System(this is the tree representation of a folder)
+---* Finder(This is a Finder Plugins)
+----* OpenUrl(open url)
+----* Mute(mute system)
+----* Unmute(unmute system)
+----* Beep(Beep)
+----* Say(say something)
+----* Sleep(sleep system)
+----* Shutdown(shutdown system)
+----* Restart(restart system)
 
-amiServerd process is running with PID: 23360
+starting xmpp client...
+servant@jabber.org
+ami.client@jabber.org
+fernmelder@jabber.org
+Joining groupchat: ami@conference.jabber.org.bricked/ami.client
+Communicationengine is online, or should be... #TODO
+---message--------------------------------------------------
+ Sender: ami.client@jabber.org/amiAntenna
+ Content: Hello Master!
+I'm on, and waiting for your orders.
+Enter 'help' to explore me.
+unknown command
+ cannot answer my self with an invalid address
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="7"><x xmlns="jabber:x:delay" stamp="20090206T16:08:39" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/work"><show>away</show><c node="http://pidgin.im/caps" ext="moodn nickn tunen bob avatar" xmlns="http://jabber.org/protocol/caps" ver="2.5.5" /><x xmlns="jabber:x:delay" stamp="20090206T16:08:39" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><show>away</show><status>Away</status><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x><x xmlns="jabber:x:delay" stamp="20090206T16:08:39" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami@conference.jabber.org.bricked/ami.client" id="8" type="error"><error code="404" type="cancel"><remote-server-not-found xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /></error></presence>
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/work
+ Content: None
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/work
+ Content: help
+ parsing as help command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/work
+ Content: None
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/work
+ Content: help
+ parsing as help command
+---message end----------------------------------------------
+starting event engine...
+loading all plugins...
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder.System
+*** loading: PlugInsFolder.System.Finder.py
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder.Notification
+*** loading: PlugInsFolder.Notification.Growl.py
++++ loding folder: /root/projects/hg/ami_ce-tmp/amiServer/PlugInsFolder.Audio
+*** loading: PlugInsFolder.Audio.Madplay.py
+*** loading: PlugInsFolder.Audio.iTunes.py
+loaded all plugins sucessfully
+* root(this is the root node)
+-* ami.client@jabber.org(this is the tree instance ami.client@jabber.org)
+--* Notification(this is the tree representation of a folder)
+---* Growl(this is a growl plugin)
+----* Growl(send growl notification)
+--* Audio(this is the tree representation of a folder)
+---* iTunes(This is a iTunes Plugins)
+----* Play(Play iTunes)
+----* Pause(Pause iTunes)
+----* Mute(Mute iTunes)
+----* Unmute(Unmute iTunes)
+----* VolUp(VolUp iTunes)
+----* VolDown(VolDown iTunes)
+----* Next(Next iTunes Track)
+----* Stop(Stop iTunes)
+----* Prev(Prev iTunes Track)
+---* Madplay(This is a Madplay Plugin)
+----* Play(Play Madplay)
+----* Stop(Stop Madplay)
+--* System(this is the tree representation of a folder)
+---* Finder(This is a Finder Plugins)
+----* OpenUrl(open url)
+----* Mute(mute system)
+----* Unmute(unmute system)
+----* Beep(Beep)
+----* Say(say something)
+----* Sleep(sleep system)
+----* Shutdown(shutdown system)
+----* Restart(restart system)
 
-removing /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/run/amiServerd.pid
-
-PID file not found. Process may not be running.
-
+starting xmpp client...
+servant@jabber.org
+ami.client@jabber.org
+fernmelder@jabber.org
+Joining groupchat: ami@conference.jabber.org.bricked/ami.client
+Communicationengine is online, or should be... #TODO
+---message--------------------------------------------------
+ Sender: ami.client@jabber.org/amiAntenna
+ Content: Hello Master!
+I'm on, and waiting for your orders.
+Enter 'help' to explore me.
+unknown command
+ cannot answer my self with an invalid address
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="7"><x xmlns="jabber:x:delay" stamp="20090206T23:20:19" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x><x xmlns="jabber:x:delay" stamp="20090206T23:20:20" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami@conference.jabber.org.bricked/ami.client" id="8" type="error"><error code="404" type="cancel"><remote-server-not-found xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /></error></presence>
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: None
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: *y/play
+ parsing as search command
+'y/play' - ''
+http://www.munich-radio.de:8000
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: None
+unknown command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><show>away</show><status>Away</status><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x><x xmlns="jabber:x:delay" stamp="20090206T23:25:44" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x><x xmlns="jabber:x:delay" stamp="20090206T23:27:17" /></presence>
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content:  *y/stop
+unknown command
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><show>away</show><status>Away</status><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x><x xmlns="jabber:x:delay" stamp="20090206T23:36:07" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="10"><x xmlns="jabber:x:delay" stamp="20090206T23:37:01" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x><x xmlns="jabber:x:delay" stamp="20090206T23:44:56" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><show>away</show><status>Away</status><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x><x xmlns="jabber:x:delay" stamp="20090206T23:49:56" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="11"><x xmlns="jabber:x:delay" stamp="20090206T23:53:42" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="12"><x xmlns="jabber:x:delay" stamp="20090207T00:10:22" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="13"><x xmlns="jabber:x:delay" stamp="20090207T00:27:03" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="14"><x xmlns="jabber:x:delay" stamp="20090207T00:43:44" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="15"><x xmlns="jabber:x:delay" stamp="20090207T01:00:25" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="16"><x xmlns="jabber:x:delay" stamp="20090207T01:17:07" /></presence>
