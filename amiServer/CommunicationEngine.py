@@ -1,5 +1,5 @@
 import xmpp
-import sys
+import sys, time
 from Packets.Packet import Packet
 from amiConfig import Config
 from Address import Address
@@ -10,8 +10,12 @@ class CommunicationEngine:
 
         self.root = root
 
+	# last time ping was sent, initialisation
+	self.last_time = 0
+	self.keepalive = 1000
+
         self.jid=xmpp.protocol.JID(Config.jid)
-        self.client = xmpp.Client(self.jid.getDomain(), debug=[])
+        self.client = xmpp.Client(self.jid.getDomain())
 
         # connect client
         if self.client.connect((Config.host, Config.port)) == "":
@@ -46,7 +50,19 @@ class CommunicationEngine:
         # go to eventLoop
         self.goOn(self.client)
 
-
+    def pingJabber(self):
+        try:
+	    now = int(time.strftime('%s', time.localtime()))
+	    if self.last_time == 0:
+	        self.last_time = now
+	    delta = now - self.last_time
+	    if delta>self.keepalive:
+	    	#self.client.send(' ')
+		self.client.sendPresence(self.jid)
+		self.last_time = now
+	except Exception,e:
+	    print "[ERROR] could not send ping"
+	    print e
 
     def messageHandler(self, conn, msg):
         print "---message--------------------------------------------------"
@@ -186,6 +202,7 @@ Use following XML to sent a Packet:
     def stepOn(self, conn):
         try:
             conn.Process(1)
+	    self.pingJabber()
         except KeyboardInterrupt:
             return 0
         return 1
