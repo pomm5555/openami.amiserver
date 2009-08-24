@@ -54,7 +54,8 @@ class Finder(PlugIn):
         os.system("osascript -e 'tell application \"Finder\" to shut down'" )
 
     def say(self, string="Hello, my name is HAL2000."):
-        os.system("osascript -e 'tell application \"Finder\" to say \""+string+"\" using \"Vicki\"'" )
+        print string.strings["text"]
+        os.system("osascript -e 'tell application \"Finder\" to say \""+string.strings["text"]+"\" using \"Vicki\"'" )
 
     def beep(self):
         os.system("osascript -e \"beep\"" )

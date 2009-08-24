@@ -18,6 +18,12 @@ if __name__ == "__main__":
     print p2.to
     #print p2.strings[0]
 
+    for k,v in p2.strings.items():
+        print "k#"+k
+        print "v#"+v
+        
 
-    for k,v in p.strings.items():
-        print k+"="+v
+
+    p3 = Packet.createPacketFromXml('<?xml version="1.0" ?><packet from="fernmelder@jabber.org" to="/Finder/Say"></packet>')
+    
+    print p3.strings

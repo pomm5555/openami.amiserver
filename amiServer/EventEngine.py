@@ -14,10 +14,6 @@ import os, ConfigParser
 
 configFile = 'server.properties'
 
-def main():
-    e = EventEngine()
-
-
 class EventEngine:
 
     def __init__(self):
