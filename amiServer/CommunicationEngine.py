@@ -16,12 +16,12 @@ class CommunicationEngine:
         self.client = xmpp.Client(self.jid.getDomain(), debug=[])
 
         # connect client
-        if self.client.connect() == "":
+        if self.client.connect(('192.168.2.13',5222)) == "":
             print "not connected"
             sys.exit(0)
 
         # authenticate client
-        if self.client.auth(self.jid.getNode(), pwd) == None:
+        if self.client.auth('ami.blahhtpc', pwd) == None:
             print "authentication failed"
             sys.exit(0)
 
