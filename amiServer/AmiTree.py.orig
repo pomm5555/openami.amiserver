@@ -6,18 +6,18 @@ __date__ ="$Aug 16, 2009 3:56:03 PM$"
 
 class Container:
 
-    def __init__(self,type, token, information="empty"):
+    def __init__(self, type, token, information="empty"):
         self.content = {}
+        self.type = type
         self.information = information
         self.token = token
-        self.type = type
 
     def __str__(self):
         return self.information
 
-    def addChild(self,type, token, container):
+    def addChild(self, type, token, container):
         self.content[token] = container
-        self.content[token].type = type
+        self.content[token].type = type;
 
     def getChild(self, token):
         try:

@@ -11,25 +11,25 @@ class Finder(PlugIn):
     def __init__(self, token, configFile):
 
         #plugin itself
-        self.content = Container(token, "This is a Finder Plugins")
+        self.content = Container("plugin", token, "This is a Finder Plugins")
 
         # set add container
 
-        self.content.addContainer("OpenUrl", "open url", self.openUrl)
+        self.content.addContainer("cmd","OpenUrl", "open url", self.openUrl)
 
-        self.content.addContainer("Unmute", "unmute system", self.unmute)
+        self.content.addContainer("cmd", "Unmute", "unmute system", self.unmute)
 
-        self.content.addContainer("Mute", "mute system", self.mute)
+        self.content.addContainer("cmd", "Mute", "mute system", self.mute)
 
-        self.content.addContainer("Restart", "restart system", self.restart)
+        self.content.addContainer("cmd", "Restart", "restart system", self.restart)
 
-        self.content.addContainer("Sleep", "sleep system", self.sleep)
+        self.content.addContainer("cmd", "Sleep", "sleep system", self.sleep)
 
-        self.content.addContainer("Shutdown", "shutdown system", self.shutdown)
+        self.content.addContainer("cmd", "Shutdown", "shutdown system", self.shutdown)
 
-        self.content.addContainer("Say", "say something", self.say)
+        self.content.addContainer("cmd", "Say", "say something", self.say)
 
-        self.content.addContainer("Beep", "Beep", self.beep)
+        self.content.addContainer("cmd", "Beep", "Beep", self.beep)
 
 
     def getTree(self):
