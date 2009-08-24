@@ -3,8 +3,6 @@ import sys
 import xmpp
 import signal
 import time
-from Ami_tree import Container
-from Plugins import ITunes
 
 #jid=xmpp.protocol.JID("servant@jabber.org")
 #cl=xmpp.Client(jid.getDomain())
@@ -47,13 +45,14 @@ def send(msg, sender):
 
 
 def main():
+    print "start"
     global recipient
-    global root
-    root = Container("192.168.1.1", "Tree Root")
+    #global root
+    #root = Container("192.168.1.1", "Tree Root")
     # create library object
-    t = ITunes("ITunes")
+    #t = ITunes("ITunes")
     # Add ITunes Plugin to tree
-    root.addChild("ITunes", t.getTree())
+    #root.addChild("ITunes", t.getTree())
 
     jid="servant@jabber.org"
     pwd="servantjabbers"
@@ -62,15 +61,21 @@ def main():
 
     global cl
     cl = xmpp.Client(jid.getDomain(), debug=[])
+    
+    print "cl defiend, trying to connect"
 
     if cl.connect() == "":
         print "not connected"
         sys.exit(0)
+    
+    print "connected"
 
     if cl.auth(jid.getNode(),pwd) == None:
         print "authentication failed"
         sys.exit(0)
     cl.RegisterHandler('message', messageCB)
+
+    print "authenticated"
 
     cl.sendInitPresence()
 

@@ -33,7 +33,7 @@ class Packet:
         
         dom.appendChild(packet)
 
-        return dom.toprettyxml()
+        return dom.toxml()
 
 
     def addString(self, name, string):
@@ -53,8 +53,11 @@ class Packet:
 
         for elem in dom.childNodes:
             if elem.nodeType == elem.ELEMENT_NODE:
+                key = elem.attributes["name"].value
                 content = elem.firstChild.data
+                print key,
+                print "->",
                 print content
-                p.addString(elem.attributes["name"], content)
+                p.addString(key, content)
 
         return p

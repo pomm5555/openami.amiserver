@@ -53,8 +53,23 @@ class Finder(PlugIn):
     def shutdown(self):
         os.system("osascript -e 'tell application \"Finder\" to shut down'" )
 
+    """
+    Packet to test say:
+    <?xml version="1.0" ?>
+    <packet from="fernmelder@jabber.org" to="/Finder/Say">
+        <string name="text">
+            Hello master, my name is hal2000
+        </string>
+    </packet>
+    """
+
     def say(self, string="Hello, my name is HAL2000."):
-        os.system("osascript -e 'tell application \"Finder\" to say \""+string+"\" using \"Vicki\"'" )
+        try:
+            text = string.strings["text"]
+            print text
+        except:
+            text = string
+        os.system("osascript -e 'tell application \"Finder\" to say \""+text+"\" using \"Vicki\"'" )
 
     def beep(self):
         os.system("osascript -e \"beep\"" )

@@ -5,7 +5,6 @@ __author__ = "markus"
 __date__ = "$Aug 13, 2009 11:02:27 PM$"
 
 
-from AmiTree import Container
 from CommunicationEngine import CommunicationEngine
 from PlugIns import PlugIns
 import os, ConfigParser
@@ -14,17 +13,13 @@ import os, ConfigParser
 
 configFile = 'server.properties'
 
-def main():
-    e = EventEngine()
-
-
 class EventEngine:
 
     def __init__(self):
 
         self.readConfig()
         self.root = self.loadPlugins()
-        com = CommunicationEngine(self.root, self.jid, self.pwd)
+        com = CommunicationEngine(self.root, self.jid, self.pwd, self.host, self.port)
         print "end"
 
     def readConfig(self):
@@ -35,6 +30,9 @@ class EventEngine:
         # parsing jabber section
         self.jid = config.get('jabber', 'jid')
         self.pwd = config.get('jabber', 'pwd')
+        self.host = config.get('jabber', 'host')
+        self.port = config.get('jabber', 'port')
+
 
         # parsing system section
         self.token = config.get('server', 'token')

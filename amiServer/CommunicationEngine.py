@@ -6,22 +6,26 @@ __date__ ="$Aug 19, 2009 6:26:15 PM$"
 
 import xmpp
 import sys
+from Packets.Packet import Packet
 
 class CommunicationEngine:
 
-    def __init__(self, root, jid, pwd):
+    def __init__(self, root, jid, pwd, host, port):
 
         self.root = root
         self.jid=xmpp.protocol.JID(jid)
+        self.host = host
         self.client = xmpp.Client(self.jid.getDomain(), debug=[])
 
         # connect client
-        if self.client.connect(('192.168.2.13',5222)) == "":
+        if self.client.connect((host, port)) == "":
             print "not connected"
             sys.exit(0)
 
         # authenticate client
-        if self.client.auth('ami.blahhtpc', pwd) == None:
+        
+        
+        if self.client.auth(self.jid.getNode(),pwd) == None:
             print "authentication failed"
             sys.exit(0)
 
@@ -44,12 +48,6 @@ class CommunicationEngine:
         sender = str(msg.getFrom())
         print "Sender: " + sender +" Content: " + content
 
-        # prints parts of the address, here must happen the message deserialisation! TODO
-        # flag packets comming from messages received while unpresent
-        #print content[0:1]
-        #print content[1:]
-
-
         print "*"
 
         if content.__eq__("get"):
@@ -69,7 +67,7 @@ class CommunicationEngine:
             #except:
             #    self.send("*"+content+" is not a valid address.", sender)
 
-        elif content.split("\n")[0].__eq__("<?xml version=\"1.0\" ?>"):
+        elif content[0:5].__eq__("<?xml"):
             self.packetHandler(content, sender)
 
 
@@ -96,10 +94,19 @@ class CommunicationEngine:
         while self.stepOn(conn):
             pass
 
-    def send(self, msg, sender):
-        self.client.send(xmpp.protocol.Message(sender,msg))
+    def send(self, msg, receiver):
+        self.client.send(xmpp.protocol.Message(receiver, msg))
 
 
-    def contentHandler(self, message, sender):
-        print message
+    def packetHandler(self, message, sender):
+        p = Packet.createPacketFromXml(message)
+        self.send(p.fr, sender)
 
+        #try
+        print ">"+p.to.strip("/")+"<"
+        print p.strings
+        result = self.root.getByAddress(p.to.strip("/")).use(p)
+        self.send(result, sender)
+        print result
+        #except:
+        #self.send("*"+content+" is not a valid address.", sender)

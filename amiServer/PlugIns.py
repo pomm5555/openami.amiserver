@@ -32,7 +32,7 @@ class PlugIns:
                 exec("self.root.addChild('plugin', \""+elem[:-3]+"\", system.getTree())")
             if os.path.isdir("./"+pluginsFolder+"/"+elem):
                 print "path: "+"./"+pluginsFolder+"/"+elem
-                self.root.addContainer(elem,"test")
+                self.root.addContainer(elem, "test")
 
         # LOAD ITUNES PLUGIN MANUALLY
 
