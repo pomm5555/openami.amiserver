@@ -1,0 +1,42 @@
+import socket
+import sys
+import commands
+import os
+from subprocess import call,Popen,PIPE
+
+# create socker
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+host = ''
+port = int(sys.argv[1])
+
+# bind port
+s.bind((host, port))
+
+#accept client 
+while 1:
+	s.listen(1)
+	conn, addr = s.accept()
+	print 'client addr: ', addr
+
+	data = conn.recv(1000000)
+	data =  data
+	
+	print 'client :' ,addr, 'sent', data
+	if data == 'stream_on':
+		pid = os.fork()
+		if pid == 0:
+			conn.close()
+			p1 = Popen(['python ami_ee_client blahdesk 555 stream_on'])
+			p1 = Popen(['python ami_ee_client blahhtpc 555 stream_on'])
+			sys.exit(0)			
+	if data == 'stream_off':
+		conn.close()
+		p1 = Popen(['python ami_ee_client blahdesk 555 stream_off'])
+		p1 = Popen(['python ami_ee_client blahhtpc 555 stream_off'])
+		
+		
+	else:	
+		conn.close()
+
+
