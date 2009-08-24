@@ -6,10 +6,8 @@ class Packet:
 
 
     def __init__(self, fr, to):
-
         self.fr = fr
         self.to = to
-
         self.strings = {}
 
     def __str__(self):
@@ -35,7 +33,7 @@ class Packet:
         
         dom.appendChild(packet)
 
-        return dom.toprettyxml(indent="  ")
+        return dom.toprettyxml()
 
 
     def addString(self, name, string):
@@ -44,23 +42,19 @@ class Packet:
 
     @staticmethod
     def createPacketFromXml(string):
-        dom = parseString(string) #.documentElement
+        dom = parseString(string).documentElement
 
         #print packets from adderess
-        fr =  dom.firstChild.attributes["from"].value
+        fr =  dom.attributes["from"].value
         #print packets to address
-        to =  dom.firstChild.attributes["to"].value
+        to =  dom.attributes["to"].value
 
         p = Packet(fr, to)
 
-        # get all string data
-        #print "---"+dom.firstChild.toxml()
-        for elem in dom.firstChild.childNodes:
-            print "1>"+str(dir(elem))
-            print "2>"+str(type(elem))
-            #stringContent = elem.firstChild.data
-            #print type(stringContent)
-            #print stringContent
-            #p.addString(elem.attributes["name"], elem.firstChild.data)
+        for elem in dom.childNodes:
+            if elem.nodeType == elem.ELEMENT_NODE:
+                content = elem.firstChild.data
+                print content
+                p.addString(elem.attributes["name"], content)
 
         return p
