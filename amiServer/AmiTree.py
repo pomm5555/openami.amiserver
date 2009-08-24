@@ -6,16 +6,18 @@ __date__ ="$Aug 16, 2009 3:56:03 PM$"
 
 class Container:
 
-    def __init__(self, token, information="empty"):
+    def __init__(self,type, token, information="empty"):
         self.content = {}
         self.information = information
         self.token = token
+        self.type = type
 
     def __str__(self):
         return self.information
 
-    def addChild(self, token, container):
+    def addChild(self,type, token, container):
         self.content[token] = container
+        self.content[token].type = type
 
     def getChild(self, token):
         try:
@@ -57,9 +59,9 @@ class Container:
         result=""
         for k, v in self.content.items():
             result+=v.toXml()
-        return "<container token=\""+self.token+"\" information=\""+self.information+"\">"+result+"</container>"
+        return "<container type=\""+self.type+"\" token=\""+self.token+"\" information=\""+self.information+"\">"+result+"</container>"
 
     # add container without creating it first, token, information and optionally a method that is triggered.
-    def addContainer(self, token, information="empty", use=None):
-        self.addChild(token, Container(token, information))
+    def addContainer(self, tt, token, information="empty", use=None):
+        self.addChild(tt, token, Container(tt, token, information))
         self.getChild(token).setUse(use)
