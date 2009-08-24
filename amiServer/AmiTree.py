@@ -6,7 +6,7 @@ __date__ ="$Aug 16, 2009 3:56:03 PM$"
 
 class Container:
 
-    def __init__(self,type, token, information="empty"):
+    def __init__(self, type, token, information="empty"):
         self.content = {}
         self.information = information
         self.token = token
