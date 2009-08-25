@@ -15,7 +15,7 @@ import time
 
 
 
-def messageCB(conn,msg):
+def messageHandler(conn,msg):
     content = str(msg.getBody())
     sender = str(msg.getFrom())
     print "Sender: " + sender
