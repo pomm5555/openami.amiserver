@@ -30,10 +30,10 @@ class CommunicationEngine:
             sys.exit(0)
 
         # register message handler
-        self.client.RegisterHandler('message', self.messageCB)
+        self.client.RegisterHandler('message', self.messageHandler)
 
         # set presencehandler and presence
-        self.client.RegisterHandler('presence', self.presenceCB)
+        self.client.RegisterHandler('presence', self.presenceHandler)
         self.client.sendInitPresence()
 
         # register disconnect handler
@@ -50,13 +50,13 @@ class CommunicationEngine:
 
 
 
-    def messageCB(self, conn, msg):
-        print str(dir(msg))
-        print str(msg.getFrom()).split("/")[0]
+    def messageHandler(self, conn, msg):
+        print unicode(dir(msg))
+        print unicode(msg.getFrom()).split("/")[0]
         print self.jid
-        content = str(msg.getBody())
-        sender = str(msg.getFrom())
-        print "Sender: " + sender +" Content: " + content
+        content = unicode(msg.getBody())
+        sender = unicode(msg.getFrom())
+        print "Sender: " + sender + " Content: " + content
 
         print "*"
 
@@ -73,12 +73,12 @@ class CommunicationEngine:
             self.send("enter\nhelp to print this message\nxml to print xml representation\nget to print message overview", sender)
 
         elif content[0:1].__eq__("/"):
-            try:
-                result = self.root.getByAddress(content[1:]).use()
-                self.send(result, sender)
-                print result
-            except:
-                self.send("[ERROR] "+content+" is not a valid address.", sender)
+            #try:
+            result = self.root.getByAddress(content[1:]).use()
+            self.send(result, sender)
+            print result
+            #except:
+            #    self.send("[ERROR] "+content+" is not a valid address.", sender)
 
         elif content[0:5].__eq__("<?xml"):
             self.packetHandler(content, sender)
@@ -91,7 +91,7 @@ class CommunicationEngine:
                 self.send("0", sender)
 
 
-    def presenceCB(self, conn,msg):
+    def presenceHandler(self, conn,msg):
 
         #self.processRoster()
 
@@ -120,6 +120,9 @@ class CommunicationEngine:
 
     def packetHandler(self, message, sender):
         p = Packet.createPacketFromXml(message)
+
+        print p.strings
+
         self.send(p.fr, sender)
 
         #try
@@ -149,9 +152,6 @@ class CommunicationEngine:
             self.roster = self.client.getRoster()
         else:
             pass
-
-
-
             
         for elem in self.roster.getItems():
             if not self.rosterTree.has_key(elem):

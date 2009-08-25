@@ -54,7 +54,7 @@ class Packet:
         for elem in dom.childNodes:
             if elem.nodeType == elem.ELEMENT_NODE:
                 key = elem.attributes["name"].value
-                content = elem.firstChild.data
+                content = elem.firstChild.data.strip(" \n")
                 print key,
                 print "->",
                 print content

@@ -36,6 +36,8 @@ class Finder(PlugIn):
         return self.content
 
     def openUrl(self, url="http://www.tuaw.com"):
+        url = self.getText(url)
+        print url
         os.system("osascript -e 'tell application \"Finder\" to open location \""+url+"\"'" )
 
     def unmute(self):
@@ -64,12 +66,16 @@ class Finder(PlugIn):
     """
 
     def say(self, string="Hello, my name is HAL2000."):
-        try:
-            text = string.strings["text"]
-            print text
-        except:
-            text = string
-        os.system("osascript -e 'tell application \"Finder\" to say \""+text+"\" using \"Vicki\"'" )
+        string = self.getText(string)
+        os.system("osascript -e 'tell application \"Finder\" to say \""+string+"\" using \"Vicki\"'" )
 
     def beep(self):
         os.system("osascript -e \"beep\"" )
+
+
+    def getText(self, var):
+        try:
+            var = var.strings["text"]
+            return test
+        except:
+            return var
