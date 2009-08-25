@@ -4,17 +4,19 @@
 __author__="markus"
 __date__ ="$Aug 19, 2009 6:26:15 PM$"
 
+from IPython.twshell import exists
 import xmpp
 import sys
 from Packets.Packet import Packet
 
 class CommunicationEngine:
 
-    def __init__(self, root, jid, pwd, host, port):
+    def __init__(self, root, jid, pwd, host, port, ressource):
 
         self.root = root
         self.jid=xmpp.protocol.JID(jid)
         self.host = host
+        self.port = port
         self.client = xmpp.Client(self.jid.getDomain(), debug=[])
 
         # connect client
@@ -23,9 +25,7 @@ class CommunicationEngine:
             sys.exit(0)
 
         # authenticate client
-        
-        
-        if self.client.auth(self.jid.getNode(),pwd) == None:
+        if self.client.auth(self.jid.getNode(), pwd, ressource) == None:
             print "authentication failed"
             sys.exit(0)
 
@@ -36,6 +36,13 @@ class CommunicationEngine:
         self.client.RegisterHandler('presence', self.presenceCB)
         self.client.sendInitPresence()
 
+        # register disconnect handler
+        self.client.RegisterDisconnectHandler(self.disconnectHandler)
+
+
+        #init roster
+        #self.processRoster()
+        
         print "Communicationengine is online, or should be... #TODO" #TODO
 
         # go to eventLoop
@@ -44,11 +51,17 @@ class CommunicationEngine:
 
 
     def messageCB(self, conn, msg):
+        print str(dir(msg))
+        print str(msg.getFrom()).split("/")[0]
+        print self.jid
         content = str(msg.getBody())
         sender = str(msg.getFrom())
         print "Sender: " + sender +" Content: " + content
 
         print "*"
+
+
+
 
         if content.__eq__("get"):
             self.send(self.root.returnTree(0), sender)
@@ -60,22 +73,29 @@ class CommunicationEngine:
             self.send("enter\nhelp to print this message\nxml to print xml representation\nget to print message overview", sender)
 
         elif content[0:1].__eq__("/"):
-            #try:
-            result = self.root.getByAddress(content[1:]).use()
-            self.send(result, sender)
-            print result
-            #except:
-            #    self.send("*"+content+" is not a valid address.", sender)
+            try:
+                result = self.root.getByAddress(content[1:]).use()
+                self.send(result, sender)
+                print result
+            except:
+                self.send("[ERROR] "+content+" is not a valid address.", sender)
 
         elif content[0:5].__eq__("<?xml"):
             self.packetHandler(content, sender)
 
 
         else:
-            self.send("0", sender)
+            if self.jid.__eq__(str(msg.getFrom()).split("/")[0]):
+                print "cannot answer my self with an invalid address"
+            else:
+                self.send("0", sender)
 
 
     def presenceCB(self, conn,msg):
+
+        #self.processRoster()
+
+
         print str(msg)
         prs_type=msg.getType()
         who=msg.getFrom()
@@ -110,3 +130,31 @@ class CommunicationEngine:
         print result
         #except:
         #self.send("*"+content+" is not a valid address.", sender)
+
+    def disconnectHandler(self):
+        #
+        # ACTS A LITTLE LOONEY
+        #
+        print ">>>>DISCONNECT<<<<"
+        if self.client.connect((self.host, self.port)) == "":
+            print "not connected"
+            sys.exit(0)
+
+    def processRoster(self):
+
+        self.rosterTree = {}
+
+        try: x
+        except NameError:
+            self.roster = self.client.getRoster()
+        else:
+            pass
+
+
+
+            
+        for elem in self.roster.getItems():
+            if not self.rosterTree.has_key(elem):
+                self.rosterTree[elem]=elem
+                self.send("get", elem)
+                print elem

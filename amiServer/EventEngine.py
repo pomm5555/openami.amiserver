@@ -19,7 +19,7 @@ class EventEngine:
 
         self.readConfig()
         self.root = self.loadPlugins()
-        com = CommunicationEngine(self.root, self.jid, self.pwd, self.host, self.port)
+        com = CommunicationEngine(self.root, self.jid, self.pwd, self.host, self.port, self.ressource)
         print "end"
 
     def readConfig(self):
@@ -32,6 +32,7 @@ class EventEngine:
         self.pwd = config.get('jabber', 'pwd')
         self.host = config.get('jabber', 'host')
         self.port = config.get('jabber', 'port')
+        self.ressource = config.get('jabber', 'ressource')
 
 
         # parsing system section
