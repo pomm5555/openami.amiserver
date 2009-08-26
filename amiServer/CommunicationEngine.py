@@ -41,7 +41,7 @@ class CommunicationEngine:
 
 
         #init roster
-        #self.processRoster()
+        self.processRoster()
         
         print "Communicationengine is online, or should be... #TODO" #TODO
 
@@ -59,8 +59,6 @@ class CommunicationEngine:
         print "Sender: " + sender + " Content: " + content
 
         print "*"
-
-
 
 
         if content.__eq__("get"):
@@ -136,7 +134,7 @@ class CommunicationEngine:
 
     def disconnectHandler(self):
         #
-        # ACTS A LITTLE LOONEY
+        #  ACTS A LITTLE LOONEY
         #
         print ">>>>DISCONNECT<<<<"
         if self.client.connect((self.host, self.port)) == "":
@@ -147,11 +145,9 @@ class CommunicationEngine:
 
         self.rosterTree = {}
 
-        try: x
-        except NameError:
-            self.roster = self.client.getRoster()
-        else:
-            pass
+
+        self.roster = self.client.getRoster()
+
             
         for elem in self.roster.getItems():
             if not self.rosterTree.has_key(elem):

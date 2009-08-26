@@ -1,6 +1,8 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 
+from threading import Thread
+
 __author__="markus"
 __date__ ="$Aug 16, 2009 3:56:03 PM$"
 
@@ -65,3 +67,18 @@ class Container:
     def addContainer(self, tt, token, information="empty", use=None):
         self.addChild(tt, token, Container(tt, token, information))
         self.getChild(token).setUse(use)
+
+
+
+class ThreadContainer(Container, Thread):
+    def __init__(self, type, token, information="empty"):
+        Container.__init__(self, type, token, information)
+        Thread.__init__(self, None)
+
+
+    def setDo(self, method):
+        self.run = method
+
+    def run(self):
+        pass
+        
