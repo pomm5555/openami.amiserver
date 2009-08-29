@@ -50,7 +50,7 @@ class Container:
     def returnTree(self, i):
         ret = ""
         for elem in range(0,i):
-                ret += " "
+                ret += "-"
         ret += "* "+self.token+"("+str(self)+")\n"
         i+=1
         for k, v in self.content.items():
@@ -64,8 +64,8 @@ class Container:
         return "<container type=\""+self.type+"\" token=\""+self.token+"\" information=\""+self.information+"\">"+result+"</container>"
 
     # add container without creating it first, token, information and optionally a method that is triggered.
-    def addContainer(self, tt, token, information="empty", use=None):
-        self.addChild(tt, token, Container(tt, token, information))
+    def addContainer(self, type, token, information="empty", use=None):
+        self.addChild(type, token, Container(type, token, information))
         self.getChild(token).setUse(use)
 
     def getAddressList(self):

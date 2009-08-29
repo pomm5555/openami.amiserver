@@ -1,34 +1,52 @@
 from CommunicationEngine import CommunicationEngine
 from PlugIns import PlugIns
 from amiConfig import Config
-import os, ConfigParser
+from AmiTree import Container
 
 
-
-
-configFile = 'server.properties'
 
 class EventEngine:
 
+    configFile = 'server.properties'
+    root = Container("root", "root", "this is the root node")
+
     def __init__(self):
 
-        self.root = self.loadPlugins()
-        self.root.addressIndex = self.root.getAddressList()
-        com = CommunicationEngine(self.root)
+        #Container.__init__(self, type, token, information="empty"):
+        #Container.addContainer(self, type, token, information="empty", use=None):
+        EventEngine.root.addContainer("instance", Config.jid, "this is the tree instance "+Config.jid)
+        EventEngine.root.addContainer("instance", Config.jid, "this is the tree instance "+Config.jid)
+
+        # assign me node to Eventengine.root.me
+        EventEngine.root.me = EventEngine.root.getChild(Config.jid)
+
+        # generate all plugins
+        p = PlugIns(Config.plugInsFolder, EventEngine.configFile).getTree()
+        #print p.content
+
+
+        # load plugin tree into me-node
+        EventEngine.root.me.content.update(p.content)
+
+
+        # assign address index cache to root.addressIndex
+        EventEngine.root.me.addressIndex = EventEngine.root.me.getAddressList()
+
+        com = CommunicationEngine(EventEngine.root)
         print "end"
 
     def loadPlugins(self):
 
         # - Load system plugin
 
-        p = PlugIns(Config.token, Config.information, Config.plugInsFolder, configFile)
-        root = p.getTree()
+        p = PlugIns(Config.plugInsFolder, configFile)
+        plugins = p.getTree()
 
-        print root.printTree(0)
+        print plugins.printTree(0)
         print "---------------------"
-        print root.getAddressList()
+        print plugins.getAddressList()
         print "----------------------"
 
 
         print "Plugins loaded sucessfully."
-        return root
+        return plugins

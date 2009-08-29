@@ -8,13 +8,13 @@ import os
 
 class PlugIns:
 
-    def __init__(self, token, information, pluginsFolder, configFile):
+    def __init__(self, pluginsFolder, configFile):
 
         self.pluginsFolder = pluginsFolder
 
 
         # create root container
-        self.root = Container("root", token, information)
+        self.root = Container("tmp", "tmptoken", "tmpinformation")
 
         #print os.path.walk("./"+pluginsFolder, None, "None")
 
