@@ -2,7 +2,7 @@ import re
 from amiConfig import Config
 
 def main():
-    a = Address("/iTunes/Play fdlkgsjh fdlksgjhldkfjgh sldfkg h")
+    a = Address("/test")
     print a.tokens
     print a.string
     print a

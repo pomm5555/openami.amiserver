@@ -66,7 +66,8 @@ class Container:
     # add container without creating it first, token, information and optionally a method that is triggered.
     def addContainer(self, type, token, information="empty", use=None):
         self.addChild(type, token, Container(type, token, information))
-        self.getChild(token).setUse(use)
+        if not use==None:
+            self.getChild(token).setUse(use)
 
     def getAddressList(self):
         result = []

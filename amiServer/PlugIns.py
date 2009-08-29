@@ -22,17 +22,17 @@ class PlugIns:
         pluginFiles =  os.listdir("./"+pluginsFolder)
         i=0
         for elem in pluginFiles:
+            # add plugin files
             if elem[-3:].__eq__(".py") and not (elem[:1].__eq__("_")):
                 print "loading: "+ elem
-                #print("from "+pluginsFolder+"."+elem[:-3]+" import "+elem[:-3])
                 exec("from "+pluginsFolder+"."+elem[:-3]+" import "+elem[:-3])
-                #print("system = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
                 exec("system = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
-                #print("self.root.addChild('plugin', \""+elem[:-3]+"\", system.getTree())")
                 exec("self.root.addChild('plugin', \""+elem[:-3]+"\", system.getTree())")
+
+            # add folders as plugin
             if os.path.isdir("./"+pluginsFolder+"/"+elem):
                 print "path: "+"./"+pluginsFolder+"/"+elem
-                self.root.addContainer(elem, "test")
+                self.root.addContainer("folder", elem, "this is the tree representation of a folder")
 
         # LOAD ITUNES PLUGIN MANUALLY
 
