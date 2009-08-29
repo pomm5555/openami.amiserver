@@ -23,7 +23,7 @@ class Madplay(PlugIn):
     def play(self, text="http://www.munich-radio.de:8000"):
         text = self.getText(text) 
         print text
-        os.system('curl "http://www.munich-radio.de:8000" | madplay - &' )
+        os.system('curl "'+text+'" | madplay - &' )
 
     def stop(self, string=""):
     	os.system('killall madplay')
