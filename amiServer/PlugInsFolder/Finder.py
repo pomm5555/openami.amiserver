@@ -40,19 +40,19 @@ class Finder(PlugIn):
         print url
         os.system("osascript -e 'tell application \"Finder\" to open location \""+url+"\"'" )
 
-    def unmute(self):
+    def unmute(self, string=""):
         os.system("osascript -e 'set volume output muted false'" )
 
-    def mute(self):
+    def mute(self, string=""):
         os.system("osascript -e 'set volume output muted true'" )
 
-    def restart(self):
+    def restart(self, string=""):
         os.system("osascript -e 'tell application \"Finder\" to restart'" )
 
-    def sleep(self):
+    def sleep(self, string=""):
         os.system("osascript -e 'tell application \"Finder\" to sleep'" )
 
-    def shutdown(self):
+    def shutdown(self, string=""):
         os.system("osascript -e 'tell application \"Finder\" to shut down'" )
 
     """
@@ -69,7 +69,7 @@ class Finder(PlugIn):
         string = self.getText(string)
         os.system("osascript -e 'tell application \"Finder\" to say \""+string+"\" using \"Vicki\"'" )
 
-    def beep(self):
+    def beep(self, string=""):
         os.system("osascript -e \"beep\"" )
 
 

@@ -55,31 +55,31 @@ class iTunes(PlugIn):
     def getTree(self):
         return self.content
 
-    def unmute(self):
+    def unmute(self, string=""):
         os.system(self.iTunesScript+" unmute")
 
-    def mute(self):
+    def mute(self, string=""):
         os.system(self.iTunesScript+" mute")
 
-    def play(self):
+    def play(self, string=""):
         os.system(self.iTunesScript+" play")
 
-    def pause(self):
+    def pause(self, string=""):
         os.system(self.iTunesScript+" pause")
 
-    def next(self):
+    def next(self, string=""):
         os.system(self.iTunesScript+" next")
 
-    def prev(self):
+    def prev(self, string=""):
         os.system(self.iTunesScript+" prev")
 
-    def vol_up(self):
+    def vol_up(self, string=""):
         os.system(self.iTunesScript+" vol up")
 
-    def vol_down(self):
+    def vol_down(self, string=""):
         os.system(self.iTunesScript+" vol down")
 
-    def stop(self):
+    def stop(self, string=""):
         os.system(self.iTunesScript+" stop")
 
     def parseConfig(self):

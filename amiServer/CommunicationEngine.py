@@ -101,7 +101,7 @@ Use following XML to sent a Packet:
         elif addr.isAddress():
             print " parsing as address command: "+addr.__str__()
             #try:
-            result = self.root.getByAddress(addr.__str__()).use()
+            result = self.root.getByAddress(addr.__str__()).use(addr.string)
             self.send(result, sender)
             print " "+str(result)
             #except:
@@ -119,9 +119,11 @@ Use following XML to sent a Packet:
 
             # if there is only one address resulting, execute it
             if result.__len__() == 1:
-                print " executing: "+result[0]
+                answer = " executing: "+result[0]
+                tmp = str(self.root.getByAddress(result[0]).use())
+                if not tmp == None:
+                    answer+="\n"+str(tmp)
                 self.send("executing: "+result[0], sender)
-                answer = self.root.getByAddress(result[0]).use() #TODO should return answer to sender...
 
             # otherwise return result to sender
             else:

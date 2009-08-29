@@ -33,7 +33,7 @@ class Container:
             c = c.getChild(elem)
         return c
 
-    def use(self):
+    def use(self, unspecified):
         return self.__str__()
 
     def setUse(self, use):
