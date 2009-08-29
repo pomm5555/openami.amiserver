@@ -1,7 +1,6 @@
 from CommunicationEngine import CommunicationEngine
 from PlugIns import PlugIns
 from amiConfig import Config
-import os, ConfigParser
 from AmiTree import Container
 
 
@@ -13,9 +12,6 @@ class EventEngine:
 
     def __init__(self):
 
-        #Container.__init__(self, type, token, information="empty"):
-        #Container.addContainer(self, type, token, information="empty", use=None):
-        EventEngine.root.addContainer("instance", Config.jid, "this is the tree instance "+Config.jid)
         EventEngine.root.addContainer("instance", Config.jid, "this is the tree instance "+Config.jid)
 
         # assign me node to Eventengine.root.me
