@@ -7,24 +7,23 @@ __date__ ="$Aug 19, 2009 6:26:15 PM$"
 import xmpp
 import sys
 from Packets.Packet import Packet
+from amiConfig import Config
 
 class CommunicationEngine:
 
-    def __init__(self, root, jid, pwd, host, port, ressource):
+    def __init__(self, root):
 
         self.root = root
-        self.jid=xmpp.protocol.JID(jid)
-        self.host = host
-        self.port = port
+        self.jid=xmpp.protocol.JID(Config.jid)
         self.client = xmpp.Client(self.jid.getDomain(), debug=[])
 
         # connect client
-        if self.client.connect((host, port)) == "":
+        if self.client.connect((Config.host, Config.port)) == "":
             print "not connected"
             sys.exit(0)
 
         # authenticate client
-        if self.client.auth(self.jid.getNode(), pwd, ressource) == None:
+        if self.client.auth(self.jid.getNode(), Config.pwd, Config.ressource) == None:
             print "authentication failed"
             sys.exit(0)
 
@@ -50,8 +49,8 @@ class CommunicationEngine:
 
 
     def messageHandler(self, conn, msg):
-        print unicode(dir(msg))
-        print unicode(msg.getFrom()).split("/")[0]
+        #print unicode(dir(msg))
+        #print unicode(msg.getFrom()).split("/")[0]
         print self.jid
         content = unicode(msg.getBody())
         sender = unicode(msg.getFrom())
@@ -67,13 +66,28 @@ class CommunicationEngine:
             self.send(self.root.toXml(), sender)
 
         elif content.__eq__("list"):
-            #result = ""
-            #for elem self.root.getAddressList():
-            #    result += elem+"\n"
-            self.send(self.root.getAddressList().__str__(), sender)
+            result = ""
+            for elem in self.root.addressIndex:
+                result += elem+"\n"
+            self.send(result, sender)
 
         elif content.__eq__("help"):
-            self.send("enter\nhelp to print this message\nxml to print xml representation\nget to print message overview", sender)
+            help = '''
+enter:
+help to print this message
+xml to print xml representation
+show to print message overview
+list to print all available addresses
+
+Use following XML to sent a Packet:
+<?xml version="1.0" ?>
+<packet from="fernmelder@jabber.org" to="/Finder/Say">
+  <string name="text">
+    Hello master, my name is hal2000
+  </string>
+</packet>
+            '''
+            self.send(help, sender)
 
         elif content[0:1].__eq__("/"):
             #try:
