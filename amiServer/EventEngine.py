@@ -53,7 +53,10 @@ class EventEngine:
         root = p.getTree()
 
         print root.printTree(0)
-        
+        print "---------------------"
+        print root.getAddressList()
+        print "----------------------"
+
 
         print "Plugins loaded sucessfully."
         return root
