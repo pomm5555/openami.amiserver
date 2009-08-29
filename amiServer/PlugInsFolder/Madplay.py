@@ -25,7 +25,7 @@ class Madplay(PlugIn):
         print text
         os.system('curl "http://www.munich-radio.de:8000" | madplay - &' )
 
-    def stop(self):
+    def stop(self, string=""):
     	os.system('killall madplay')
 
     # returns the plugin as a tree
