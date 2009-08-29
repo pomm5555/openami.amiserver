@@ -13,10 +13,14 @@ def test(text = "hallo"):
 
 # you can make a child for Threadcontainer and overwrite the run method
 class testContainer(ThreadContainer):
+    def __init__(self, type, token, information="empty"):
+        ThreadContainer.__init__(self, type, token, information)
+        self.sleeptime = 1
+
     def run(self):
         while 1:
             print self.information
-            time.sleep(3)
+            time.sleep(self.sleeptime)
 
 if __name__ == "__main__":
 
@@ -39,6 +43,8 @@ if __name__ == "__main__":
     t2 = testContainer("thread", "polymorph", "this is a polymorph shidt whatever")
     # start thread node
     t2.start()
+    # modifie sleeptime
+    t2.sleeptime = 3
     # add testContainer instance to root container
     root.addChild("thread", "polymorph", t2)
 

@@ -14,7 +14,7 @@ class PlugIns:
 
 
         # create root container
-        self.root = Container(token, information)
+        self.root = Container("root", token, information)
 
         #print os.path.walk("./"+pluginsFolder, None, "None")
 
@@ -24,11 +24,11 @@ class PlugIns:
         for elem in pluginFiles:
             if elem[-3:].__eq__(".py") and not (elem[:1].__eq__("_")):
                 print "loading: "+ elem
-                print("from "+pluginsFolder+"."+elem[:-3]+" import "+elem[:-3])
+                #print("from "+pluginsFolder+"."+elem[:-3]+" import "+elem[:-3])
                 exec("from "+pluginsFolder+"."+elem[:-3]+" import "+elem[:-3])
-                print("system = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
+                #print("system = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
                 exec("system = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
-                print("self.root.addChild('plugin', \""+elem[:-3]+"\", system.getTree())")
+                #print("self.root.addChild('plugin', \""+elem[:-3]+"\", system.getTree())")
                 exec("self.root.addChild('plugin', \""+elem[:-3]+"\", system.getTree())")
             if os.path.isdir("./"+pluginsFolder+"/"+elem):
                 print "path: "+"./"+pluginsFolder+"/"+elem

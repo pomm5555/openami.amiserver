@@ -60,11 +60,17 @@ class CommunicationEngine:
         print "*"
 
 
-        if content.__eq__("get"):
+        if content.__eq__("show"):
             self.send(self.root.returnTree(0), sender)
 
         elif content.__eq__("xml"):
             self.send(self.root.toXml(), sender)
+
+        elif content.__eq__("list"):
+            #result = ""
+            #for elem self.root.getAddressList():
+            #    result += elem+"\n"
+            self.send(self.root.getAddressList().__str__(), sender)
 
         elif content.__eq__("help"):
             self.send("enter\nhelp to print this message\nxml to print xml representation\nget to print message overview", sender)

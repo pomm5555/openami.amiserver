@@ -68,6 +68,23 @@ class Container:
         self.addChild(tt, token, Container(tt, token, information))
         self.getChild(token).setUse(use)
 
+    def getAddressList(self):
+        result = []
+        for k,v in self.content.items():
+            result += v.getAddressList()
+
+        # if result list is empty, its a leaf
+        if not result:
+            result.append(self.token)
+            return result
+
+        # it is not a leaf...
+        tmp = []
+        for elem in result:
+            tmp.append(self.token+"/"+elem)
+
+        return tmp
+
 
 
 class ThreadContainer(Container, Thread):
