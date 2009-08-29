@@ -1,5 +1,6 @@
 from xml.dom.minidom import *
 from Packets.Packet import Packet
+import amiConfig
 
 # http://wiki.python.org/moin/MiniDom
 
@@ -27,3 +28,7 @@ if __name__ == "__main__":
     p3 = Packet.createPacketFromXml('<?xml version="1.0" ?><packet from="fernmelder@jabber.org" to="/Finder/Say"></packet>')
     
     print p3.strings
+
+    print "hallo"
+
+    print amiConfig.Config.port
