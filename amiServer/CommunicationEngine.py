@@ -1,19 +1,15 @@
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-
-__author__="markus"
-__date__ ="$Aug 19, 2009 6:26:15 PM$"
-
 import xmpp
 import sys
 from Packets.Packet import Packet
 from amiConfig import Config
+from Address import Address
 
 class CommunicationEngine:
 
     def __init__(self, root):
 
         self.root = root
+
         self.jid=xmpp.protocol.JID(Config.jid)
         self.client = xmpp.Client(self.jid.getDomain(), debug=[])
 
@@ -49,35 +45,48 @@ class CommunicationEngine:
 
 
     def messageHandler(self, conn, msg):
+        print "---message--------------------------------------------------"
         #print unicode(dir(msg))
         #print unicode(msg.getFrom()).split("/")[0]
-        print self.jid
+        #print " "+self.jid
+
+        # extractint content from message
         content = unicode(msg.getBody())
         sender = unicode(msg.getFrom())
-        print "Sender: " + sender + " Content: " + content
+        print " Sender: " + sender + "\n Content: " + content
 
-        print "*"
+        # try to parse ass Address
+        addr = Address(content)
+        
 
 
         if content.__eq__("show"):
+            print " parsing as show command"
             self.send(self.root.returnTree(0), sender)
 
         elif content.__eq__("xml"):
-            self.send(self.root.toXml(), sender)
+            print " parsing as xml command"
+            self.send(self.root.me.toXml(), sender)
 
         elif content.__eq__("list"):
+            print " parsing as list command"
             result = ""
-            for elem in self.root.addressIndex:
+            for elem in self.root.me.addressIndex:
                 result += elem+"\n"
             self.send(result, sender)
 
         elif content.__eq__("help"):
+            print " parsing as help command"
             help = '''
 enter:
 help to print this message
 xml to print xml representation
 show to print message overview
 list to print all available addresses
+
+search:
+enter search command with * before
+eg "*play"
 
 Use following XML to sent a Packet:
 <?xml version="1.0" ?>
@@ -89,23 +98,52 @@ Use following XML to sent a Packet:
             '''
             self.send(help, sender)
 
-        elif content[0:1].__eq__("/"):
+        elif addr.isAddress():
+            print " parsing as address command: "+addr.__str__()
             #try:
-            result = self.root.getByAddress(content[1:]).use()
+            result = self.root.getByAddress(addr.__str__()).use()
             self.send(result, sender)
-            print result
+            print " "+str(result)
             #except:
             #    self.send("[ERROR] "+content+" is not a valid address.", sender)
 
+        elif content[0:1].__eq__("*"):
+            print " parsing as search command"
+            result = []
+            answer = ""
+
+            # search in address index for searchstring and build a list with resulting addresses
+            for elem in self.root.me.addressIndex:
+                if not elem.lower().find(content[1:].lower()) == -1:
+                    result.append(elem)
+
+            # if there is only one address resulting, execute it
+            if result.__len__() == 1:
+                print " executing: "+result[0]
+                self.send("executing: "+result[0], sender)
+                answer = self.root.getByAddress(result[0]).use() #TODO should return answer to sender...
+
+            # otherwise return result to sender
+            else:
+                for elem in result:
+                    answer += elem+"\n"
+                self.send(answer, sender)
+
+
+
         elif content[0:5].__eq__("<?xml"):
+            print " parsing as packet command"
             self.packetHandler(content, sender)
 
 
         else:
+            print "unknown command"
             if self.jid.__eq__(str(msg.getFrom()).split("/")[0]):
-                print "cannot answer my self with an invalid address"
+                print " cannot answer my self with an invalid address"
             else:
-                self.send("0", sender)
+                self.send(" unknown command", sender)
+
+        print "---message end----------------------------------------------"
 
 
     def presenceHandler(self, conn,msg):
