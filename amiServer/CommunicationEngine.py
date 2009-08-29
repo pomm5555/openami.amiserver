@@ -101,6 +101,7 @@ Use following XML to sent a Packet:
         elif addr.isAddress():
             print " parsing as address command: "+addr.__str__()
             #try:
+            print self.root.getByAddress(addr.__str__()).use
             result = self.root.getByAddress(addr.__str__()).use(addr.string)
             self.send(result, sender)
             print " "+str(result)
@@ -112,15 +113,24 @@ Use following XML to sent a Packet:
             result = []
             answer = ""
 
+            # seperate search string form data string
+            searchstring = content.split(" ")[0][1:]
+            datastring = ""
+            for elem in content.split(" ")[1:]:
+                datastring += " "+elem
+            datastring = datastring[1:]
+
+            print "'"+searchstring+"' - '"+datastring+"'"
+
             # search in address index for searchstring and build a list with resulting addresses
             for elem in self.root.me.addressIndex:
-                if not elem.lower().find(content[1:].lower()) == -1:
+                if not elem.lower().find(searchstring.lower()) == -1:
                     result.append(elem)
 
             # if there is only one address resulting, execute it
             if result.__len__() == 1:
                 answer = " executing: "+result[0]
-                tmp = str(self.root.getByAddress(result[0]).use())
+                tmp = str(self.root.getByAddress(result[0]).use(datastring))
                 if not tmp == None:
                     answer+="\n"+str(tmp)
                 self.send("executing: "+result[0], sender)
