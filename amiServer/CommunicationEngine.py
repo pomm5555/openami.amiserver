@@ -26,6 +26,9 @@ class CommunicationEngine:
         # register message handler
         self.client.RegisterHandler('message', self.messageHandler)
 
+        #init roster
+        self.processRoster()
+
         # set presencehandler and presence
         self.client.RegisterHandler('presence', self.presenceHandler)
         self.client.sendInitPresence()
@@ -38,10 +41,6 @@ class CommunicationEngine:
         print "Joining groupchat: " + room
         self.client.send(xmpp.Presence(to=room))
 
-
-        #init roster
-        self.processRoster()
-        
         print "Communicationengine is online, or should be... #TODO" #TODO
 
         # go to eventLoop
@@ -177,10 +176,6 @@ Use following XML to sent a Packet:
 
 
     def presenceHandler(self, conn,msg):
-
-        #self.processRoster()
-
-
         print str(msg)
         prs_type=msg.getType()
         who=msg.getFrom()
@@ -239,5 +234,5 @@ Use following XML to sent a Packet:
         for elem in self.roster.getItems():
             if not self.rosterTree.has_key(elem):
                 self.rosterTree[elem]=elem
-                self.send("get", elem)
+                self.send("Hello Master!\nI'm on, and waiting for your orders.\nEnter 'help' to explore me.", elem)
                 print elem
