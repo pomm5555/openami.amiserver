@@ -17,39 +17,39 @@ class iTunes(PlugIn):
         self.content = Container("plugin",token, "This is a iTunes Plugins")
 
         # play functionality
-        self.content.addChild("cmd", "Play", Container("cmd", "Play", "Play iTunes"))
+        self.content.addChild(Container("cmd", "Play", "Play iTunes"))
         self.content.getChild("Play").setUse(self.play)
 
         # pause functionality
-        self.content.addChild("cmd","Pause", Container("cmd","Pause", "Pause iTunes"))
+        self.content.addChild(Container("cmd","Pause", "Pause iTunes"))
         self.content.getChild("Pause").setUse(self.pause)
 
         # next functionality
-        self.content.addChild("cmd","Next", Container("cmd","Next", "Next iTunes Track"))
+        self.content.addChild(Container("cmd","Next", "Next iTunes Track"))
         self.content.getChild("Next").setUse(self.next)
 
         # prev functionality
-        self.content.addChild("cmd","Prev", Container("cmd","Prev", "Prev iTunes Track"))
+        self.content.addChild(Container("cmd","Prev", "Prev iTunes Track"))
         self.content.getChild("Prev").setUse(self.prev)
 
         # vol up functionality
-        self.content.addChild("cmd","VolUp", Container("cmd","VolUp", "VolUp iTunes"))
+        self.content.addChild(Container("cmd","VolUp", "VolUp iTunes"))
         self.content.getChild("VolUp").setUse(self.vol_up)
 
         # vol down functionality
-        self.content.addChild("cmd","VolDown", Container("cmd","VolDown", "VolDown iTunes"))
+        self.content.addChild(Container("cmd","VolDown", "VolDown iTunes"))
         self.content.getChild("VolDown").setUse(self.vol_down)
 
         # stop functionality
-        self.content.addChild("cmd","Stop", Container("cmd","Stop", "Stop iTunes"))
+        self.content.addChild(Container("cmd","Stop", "Stop iTunes"))
         self.content.getChild("Stop").setUse(self.stop)
 
         # mute functionality
-        self.content.addChild("cmd","Mute", Container("cmd","Mute", "Mute iTunes"))
+        self.content.addChild(Container("cmd","Mute", "Mute iTunes"))
         self.content.getChild("Mute").setUse(self.mute)
 
         # unmute functionality
-        self.content.addChild("cmd","Unmute", Container("cmd","Unmute", "Unmute iTunes"))
+        self.content.addChild(Container("cmd","Unmute", "Unmute iTunes"))
         self.content.getChild("Unmute").setUse(self.unmute)
 
 

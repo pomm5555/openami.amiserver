@@ -17,9 +17,13 @@ class Container:
     def __str__(self):
         return self.information
 
-    def addChild(self,type, token, container):
-        self.content[token] = container
-        self.content[token].type = type
+    def addChild(self, container):
+        self.content[container.token] = container
+        self.content[container.token].type = container.type
+
+    def addChildList(self, containers):
+        for elem in containers:
+            self.addChild(elem)
 
     def getChild(self, token):
         try:
@@ -65,9 +69,10 @@ class Container:
 
     # add container without creating it first, token, information and optionally a method that is triggered.
     def addContainer(self, type, token, information="empty", use=None):
-        self.addChild(type, token, Container(type, token, information))
+        self.addChild(Container(type, token, information))
         if not use==None:
             self.getChild(token).setUse(use)
+
 
     def getAddressList(self):
         result = []
