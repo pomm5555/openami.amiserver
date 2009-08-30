@@ -4,6 +4,7 @@ import os
 from AmiTree import Container
 from PlugIn import PlugIn
 import ConfigParser
+from amiConfig import Config
 
 #Plugin convention: the class name must equal its filename
 class iTunes(PlugIn):
@@ -83,10 +84,6 @@ class iTunes(PlugIn):
         os.system(self.iTunesScript+" stop")
 
     def parseConfig(self):
-        config = ConfigParser.ConfigParser()
-        config.readfp(open(self.configFile))
-        # nicht vergessen, try catch block wieder einbauen
-
 
         # parsing jabber section
-        self.iTunesScript = config.get('iTunes', 'ScriptPath')
+        self.iTunesScript = Config.iTunesScript

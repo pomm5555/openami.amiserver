@@ -4,7 +4,6 @@ from amiConfig import Config
 from AmiTree import Container
 
 
-
 class EventEngine:
 
     configFile = 'server.properties'
@@ -12,14 +11,19 @@ class EventEngine:
 
     def __init__(self):
 
+        #print "initializing EventEngine..."
         EventEngine.root.addContainer("instance", Config.jid, "this is the tree instance "+Config.jid)
+
+        
 
         # assign me node to Eventengine.root.me
         EventEngine.root.me = EventEngine.root.getChild(Config.jid)
 
+        
+        #print Config.plugInsFolder
+
         # generate all plugins
         p = PlugIns(Config.plugInsFolder, EventEngine.configFile).getTree()
-        #print p.content
 
 
         # load plugin tree into me-node
@@ -29,7 +33,10 @@ class EventEngine:
         # assign address index cache to root.addressIndex
         EventEngine.root.me.addressIndex = EventEngine.root.me.getAddressList()
 
+        print "starting xmpp client..."
+
         com = CommunicationEngine(EventEngine.root)
+        
         print "end"
 
     def loadPlugins(self):
