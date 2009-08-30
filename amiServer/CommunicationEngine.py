@@ -34,6 +34,11 @@ class CommunicationEngine:
         self.client.RegisterDisconnectHandler(self.disconnectHandler)
 
 
+        room = Config.groupChat+"@"+Config.groupServer+"/"+Config.jid.split("@")[0]
+        print "Joining groupchat: " + room
+        self.client.send(xmpp.Presence(to=room))
+
+
         #init roster
         self.processRoster()
         
@@ -101,15 +106,16 @@ Use following XML to sent a Packet:
         elif addr.isAddress():
             print " parsing as address command: "+addr.__str__()
             print " with data: >"+addr.string+"<"
-            #try:
-            if addr.string.__len__() == 0:
-                result = self.root.getByAddress(addr.__str__()).use()
-            else:
-                result = self.root.getByAddress(addr.__str__()).use(addr.string)
-            self.send(result, sender)
-            print " "+str(result)
-            #except:
-            #    self.send("[ERROR] "+content+" is not a valid address.", sender)
+            try:
+                if addr.string.__len__() == 0:
+                    result = self.root.getByAddress(addr.__str__()).use()
+                else:
+                    result = self.root.getByAddress(addr.__str__()).use(addr.string)
+                self.send(result, sender)
+                print " "+str(result)
+            except Exception, e:
+                self.send("[ERROR] "+content+" is not a valid address.", sender)
+                print "[ERROR] "+str(e)
 
 
         elif content[0:1].__eq__("*"):
@@ -134,13 +140,17 @@ Use following XML to sent a Packet:
             # if there is only one address resulting, execute it
             if result.__len__() == 1:
                 answer = " executing: "+result[0]
-                if datastring.__len__() == 0:
-                    tmp = str(self.root.getByAddress(result[0]).use())
-                else:
-                    tmp = str(self.root.getByAddress(result[0]).use(datastring))
-                if not tmp == None:
-                    answer+="\n"+str(tmp)
-                self.send("executing: "+result[0], sender)
+                try:
+                    if datastring.__len__() == 0:
+                        tmp = str(self.root.getByAddress(result[0]).use())
+                    else:
+                        tmp = str(self.root.getByAddress(result[0]).use(datastring))
+
+                    if not tmp == None:
+                        answer+="\n"+str(tmp)
+                    self.send("executing: "+result[0], sender)
+                except Exception, e:
+                    print "[ERROR] "+str(e)
 
             # otherwise return result to sender
             else:
@@ -160,7 +170,8 @@ Use following XML to sent a Packet:
             if self.jid.__eq__(str(msg.getFrom()).split("/")[0]):
                 print " cannot answer my self with an invalid address"
             else:
-                self.send(" unknown command", sender)
+                # with two bots, that causes an endless loops
+                pass#self.send(" unknown command", sender)
 
         print "---message end----------------------------------------------"
 

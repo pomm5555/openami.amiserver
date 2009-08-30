@@ -1227,3 +1227,32 @@ Communicationengine is online, or should be... #TODO
 unknown command
  cannot answer my self with an invalid address
 ---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: lsit
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: list
+ parsing as list command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: list
+ parsing as list command
+---message end----------------------------------------------
+---message--------------------------------------------------
+ Sender: fernmelder@jabber.org/Antenna
+ Content: /kill
+ parsing as address command: servant@jabber.org/kill
+ with data: ><
+[ERROR] Token kill is not a child of <type 'instance'>
+[ERROR]  'NoneType' object has no attribute 'use'
+
+amiServerd process is running with PID: 23360
+
+removing /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/run/amiServerd.pid
+
+PID file not found. Process may not be running.
+

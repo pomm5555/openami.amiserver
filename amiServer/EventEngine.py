@@ -14,28 +14,23 @@ class EventEngine:
         #print "initializing EventEngine..."
         EventEngine.root.addContainer("instance", Config.jid, "this is the tree instance "+Config.jid)
 
-        
-
         # assign me node to Eventengine.root.me
         EventEngine.root.me = EventEngine.root.getChild(Config.jid)
 
-        
-        #print Config.plugInsFolder
-
         # generate all plugins
-        p = PlugIns(Config.plugInsFolder, EventEngine.configFile).getTree()
-
+        p = PlugIns(Config.plugInsFolder, EventEngine.configFile).getChildList()
 
         # load plugin tree into me-node
-        EventEngine.root.me.content.update(p.content)
-
+        EventEngine.root.me.addChildList(p)
 
         # assign address index cache to root.addressIndex
         EventEngine.root.me.addressIndex = EventEngine.root.me.getAddressList()
 
+        print EventEngine.root.returnTree(0)
+
         print "starting xmpp client..."
 
-        com = CommunicationEngine(EventEngine.root)
+        #com = CommunicationEngine(EventEngine.root)
         
         print "end"
 

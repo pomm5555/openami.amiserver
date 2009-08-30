@@ -11,35 +11,15 @@ class PlugIns:
 
     def __init__(self, pluginsFolder, configFile):
 
+        #absolute folder to plugins
+        absPluginsFolder = Config.absPath+"/"+Config.plugInsFolder
 
-        absPluginsFolder = Config.absPath+"/"+pluginsFolder
+        #creating list whrer all plugins are loaded in
+        self.content = []
 
-        # create root container
-        self.root = Container("tmp", "tmptoken", "tmpinformation")
-
-        #print os.path.walk("./"+pluginsFolder, None, "None")
-
-        # Load plugins from folder
-        pluginFiles =  os.listdir(absPluginsFolder)
-
-
+        # load all plugins into container
         print "loading all plugins..."
-
-        for elem in pluginFiles:
-            # add plugin files
-            if elem[-3:].__eq__(".py") and not (elem[:1].__eq__("_")):
-                print "*** loading: "+ elem
-                print("from "+pluginsFolder+"."+elem[:-3]+" import "+elem[:-3])
-                exec("from "+pluginsFolder+"."+elem[:-3]+" import "+elem[:-3])
-                print("system = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
-                exec("system = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
-                print("self.root.addChild('plugin', \""+elem[:-3]+"\", system.getTree())")
-                exec("self.root.addChild('plugin', \""+elem[:-3]+"\", system.getTree())")
-
-            # add folders as plugin
-            if os.path.isdir(pluginsFolder+"/"+elem):
-                print "path: "+pluginsFolder+"/"+elem
-                self.root.addContainer("folder", elem, "this is the tree representation of a folder")
+        self.content = self.loadPlugins(absPluginsFolder, pluginsFolder, configFile)
 
         print "loaded all plugins sucessfully"
 
@@ -56,4 +36,36 @@ class PlugIns:
 
     def getTree(self):
         return self.root
-    
+
+    def getChildList(self):
+        return self.content
+
+    # recursive plugin finder
+    def loadPlugins(self, PluginsPath, PackagePath, configFile):
+
+        # get all elements in folder into list
+        pluginFiles =  os.listdir(PluginsPath)
+
+        result = []
+
+        for elem in pluginFiles:
+            # add plugin files
+            if elem[-3:].__eq__(".py") and not (elem[:1].__eq__("_")):
+                print "*** loading: "+ PackagePath+ "." +elem
+                #print("from "+PackagePath+"."+elem[:-3]+" import "+elem[:-3])
+                exec("from "+PackagePath+"."+elem[:-3]+" import "+elem[:-3])
+                #print("plugin = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
+                exec("plugin = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
+                #print("result.append(plugin.getTree())")
+                exec("result.append(plugin.getTree())")
+
+            # add folders as plugin
+            if os.path.isdir(PluginsPath+"/"+elem):
+                print "+++ loding folder: "+PluginsPath+"."+elem
+                tmpcont = Container("folder", elem, "this is the tree representation of a folder")
+                tmpcont.addChildList(self.loadPlugins(PluginsPath+"/"+elem, PackagePath+"."+elem, configFile))
+                result.append(tmpcont)
+  
+        return result
+
+

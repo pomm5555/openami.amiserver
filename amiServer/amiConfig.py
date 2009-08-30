@@ -12,6 +12,8 @@ class Config():
     host = config.get('jabber', 'host')
     port = config.get('jabber', 'port')
     ressource = config.get('jabber', 'ressource')
+    groupChat = config.get('jabber', 'groupChat')
+    groupServer = config.get('jabber', 'groupServer')
 
     # parsing system section
     token = config.get('server', 'token')
@@ -23,5 +25,6 @@ class Config():
     # iTunesPlugin
     iTunesScript = config.get('iTunes', 'ScriptPath')
 
+    # get path to script
     absPath = os.path.abspath(".")
 
