@@ -30,7 +30,7 @@ class EventEngine:
 
         print "starting xmpp client..."
 
-        #com = CommunicationEngine(EventEngine.root)
+        com = CommunicationEngine(EventEngine.root)
         
         print "end"
 
