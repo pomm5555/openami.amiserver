@@ -1,4 +1,4 @@
-import ConfigParser
+import ConfigParser, os
 
 
 class Config():
@@ -22,4 +22,6 @@ class Config():
 
     # iTunesPlugin
     iTunesScript = config.get('iTunes', 'ScriptPath')
+
+    absPath = os.path.abspath(".")
 
