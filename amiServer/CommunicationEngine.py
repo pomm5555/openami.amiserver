@@ -73,13 +73,26 @@ class CommunicationEngine:
         # extractint content from message
         content = unicode(msg.getBody())
         sender = unicode(msg.getFrom())
-        print " Sender: " + sender + "\n Content: " + content
+        type = unicode(msg.getType())
+        self.chat = ""
+
+        try:
+            if type.__eq__("groupchat"):
+                print "GROUPCHAT!!!!!!"
+                self.chat = sender.split("/")[0]
+                print "chat: "+self.chat
+        except Exception, e:
+            print "[ERROR] sender: "+sender
+            print e
+
+
+
+        print "("+type+") Sender: " + sender + "\n Content: " + content
+
 
         # try to parse ass Address
         addr = Address(content)
         
-
-
         if content.__eq__("show"):
             print " parsing as show command"
             self.send(self.root.returnTree(0), sender)
@@ -123,7 +136,7 @@ Use following XML to sent a Packet:
             print " with data: >"+addr.string+"<"
             try:
                 if addr.string.__len__() == 0:
-                    result = self.root.getByAddress(addr.__str__()).use()
+                    result = self.root.getByAddress(addr.__str__()).use("")
                 else:
                     result = self.root.getByAddress(addr.__str__()).use(addr.string)
                 self.send(result, sender)
@@ -157,7 +170,7 @@ Use following XML to sent a Packet:
                 answer = " executing: "+result[0]
                 try:
                     if datastring.__len__() == 0:
-                        tmp = str(self.root.getByAddress(result[0]).use())
+                        tmp = str(self.root.getByAddress(result[0]).use(""))
                     else:
                         tmp = str(self.root.getByAddress(result[0]).use(datastring))
 
@@ -236,7 +249,7 @@ Use following XML to sent a Packet:
         #  ACTS A LITTLE LOONEY
         #
         print ">>>>DISCONNECT<<<<"
-        if self.client.connect((self.host, self.port)) == "":
+        if self.client.connect((Config.host, Config.port)) == "":
             print "not connected"
             sys.exit(0)
 
