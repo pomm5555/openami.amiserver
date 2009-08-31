@@ -12,10 +12,10 @@ class CommunicationEngine:
 
 	# last time ping was sent, initialisation
 	self.last_time = 0
-	self.keepalive = 1
+	self.keepalive = 60
 
         self.jid=xmpp.protocol.JID(Config.jid)
-        self.client = xmpp.Client(self.jid.getDomain())
+        self.client = xmpp.Client(self.jid.getDomain(), debug=[])
 
         # connect client
         if self.client.connect((Config.host, Config.port)) == "":
