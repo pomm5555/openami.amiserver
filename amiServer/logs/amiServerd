@@ -2786,3 +2786,340 @@ unknown command
 <presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="14"><x xmlns="jabber:x:delay" stamp="20090207T00:43:44" /></presence>
 <presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="15"><x xmlns="jabber:x:delay" stamp="20090207T01:00:25" /></presence>
 <presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="16"><x xmlns="jabber:x:delay" stamp="20090207T01:17:07" /></presence>
+starting event engine...
+loading all plugins...
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder.Audio
+*** loading: PlugInsFolder.Audio.iTunes.py
+*** loading: PlugInsFolder.Audio.Madplay.py
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder.empty
+*** loading: PlugInsFolder.empty.Growl.py
+*** loading: PlugInsFolder.Finder.py
+*** loading: PlugInsFolder.Growl.py
+*** loading: PlugInsFolder.iTunes.py
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder.killmefolder
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder/killmefolder.funfactoryfolder
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder/killmefolder/funfactoryfolder.fififolder
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder/killmefolder.moreFolder
+*** loading: PlugInsFolder.killmefolder.moreFolder.Finder.py
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder/killmefolder/moreFolder.folderfolder
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder/killmefolder/moreFolder/folderfolder.foldertest
+*** loading: PlugInsFolder.killmefolder.moreFolder.folderfolder.foldertest.iTunes.py
+*** loading: PlugInsFolder.killmefolder.moreFolder.folderfolder.iTunes.py
+*** loading: PlugInsFolder.killmefolder.moreFolder.iTunes.py
+*** loading: PlugInsFolder.killmefolder.moreFolder.Madplay.py
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder/killmefolder/moreFolder.unfolder
+*** loading: PlugInsFolder.Madplay.py
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder.Notification
+*** loading: PlugInsFolder.Notification.Growl.py
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder.System
+*** loading: PlugInsFolder.System.Finder.py
+loaded all plugins sucessfully
+* root(this is the root node)
+-* ami.client@jabber.org(this is the tree instance ami.client@jabber.org)
+--* Madplay(This is a Madplay Plugin)
+---* Play(Play Madplay)
+---* Stop(Stop Madplay)
+--* Growl(this is a growl plugin)
+---* Growl(send growl notification)
+--* Notification(this is the tree representation of a folder)
+---* Growl(this is a growl plugin)
+----* Growl(send growl notification)
+--* System(this is the tree representation of a folder)
+---* Finder(This is a Finder Plugins)
+----* OpenUrl(open url)
+----* Mute(mute system)
+----* Unmute(unmute system)
+----* Beep(Beep)
+----* Say(say something)
+----* Sleep(sleep system)
+----* Shutdown(shutdown system)
+----* Restart(restart system)
+--* iTunes(This is a iTunes Plugins)
+---* Play(Play iTunes)
+---* Pause(Pause iTunes)
+---* Mute(Mute iTunes)
+---* Unmute(Unmute iTunes)
+---* VolUp(VolUp iTunes)
+---* VolDown(VolDown iTunes)
+---* Next(Next iTunes Track)
+---* Stop(Stop iTunes)
+---* Prev(Prev iTunes Track)
+--* empty(this is the tree representation of a folder)
+---* Growl(this is a growl plugin)
+----* Growl(send growl notification)
+--* Finder(This is a Finder Plugins)
+---* OpenUrl(open url)
+---* Mute(mute system)
+---* Unmute(unmute system)
+---* Beep(Beep)
+---* Say(say something)
+---* Sleep(sleep system)
+---* Shutdown(shutdown system)
+---* Restart(restart system)
+--* Audio(this is the tree representation of a folder)
+---* iTunes(This is a iTunes Plugins)
+----* Play(Play iTunes)
+----* Pause(Pause iTunes)
+----* Mute(Mute iTunes)
+----* Unmute(Unmute iTunes)
+----* VolUp(VolUp iTunes)
+----* VolDown(VolDown iTunes)
+----* Next(Next iTunes Track)
+----* Stop(Stop iTunes)
+----* Prev(Prev iTunes Track)
+---* Madplay(This is a Madplay Plugin)
+----* Play(Play Madplay)
+----* Stop(Stop Madplay)
+--* killmefolder(this is the tree representation of a folder)
+---* moreFolder(this is the tree representation of a folder)
+----* iTunes(This is a iTunes Plugins)
+-----* Play(Play iTunes)
+-----* Pause(Pause iTunes)
+-----* Mute(Mute iTunes)
+-----* Unmute(Unmute iTunes)
+-----* VolUp(VolUp iTunes)
+-----* VolDown(VolDown iTunes)
+-----* Next(Next iTunes Track)
+-----* Stop(Stop iTunes)
+-----* Prev(Prev iTunes Track)
+----* Madplay(This is a Madplay Plugin)
+-----* Play(Play Madplay)
+-----* Stop(Stop Madplay)
+----* folderfolder(this is the tree representation of a folder)
+-----* iTunes(This is a iTunes Plugins)
+------* Play(Play iTunes)
+------* Pause(Pause iTunes)
+------* Mute(Mute iTunes)
+------* Unmute(Unmute iTunes)
+------* VolUp(VolUp iTunes)
+------* VolDown(VolDown iTunes)
+------* Next(Next iTunes Track)
+------* Stop(Stop iTunes)
+------* Prev(Prev iTunes Track)
+-----* foldertest(this is the tree representation of a folder)
+------* iTunes(This is a iTunes Plugins)
+-------* Play(Play iTunes)
+-------* Pause(Pause iTunes)
+-------* Mute(Mute iTunes)
+-------* Unmute(Unmute iTunes)
+-------* VolUp(VolUp iTunes)
+-------* VolDown(VolDown iTunes)
+-------* Next(Next iTunes Track)
+-------* Stop(Stop iTunes)
+-------* Prev(Prev iTunes Track)
+----* unfolder(this is the tree representation of a folder)
+----* Finder(This is a Finder Plugins)
+-----* OpenUrl(open url)
+-----* Mute(mute system)
+-----* Unmute(unmute system)
+-----* Beep(Beep)
+-----* Say(say something)
+-----* Sleep(sleep system)
+-----* Shutdown(shutdown system)
+-----* Restart(restart system)
+---* funfactoryfolder(this is the tree representation of a folder)
+----* fififolder(this is the tree representation of a folder)
+
+starting xmpp client...
+servant@jabber.org
+ami.client@jabber.org
+fernmelder@jabber.org
+Joining groupchat: ami@conference.jabber.org.bricked/ami.client
+Communicationengine is online, or should be... #TODO
+---message--------------------------------------------------
+(None) Sender: ami.client@jabber.org/amiAntenna
+ Content: Hello Master!
+I'm on, and waiting for your orders.
+Enter 'help' to explore me.
+unknown command
+ cannot answer my self with an invalid address
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="7"><x xmlns="jabber:x:delay" stamp="20090831T19:53:55" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x><x xmlns="jabber:x:delay" stamp="20090831T19:53:55" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami@conference.jabber.org.bricked/ami.client" id="8" type="error"><error code="404" type="cancel"><remote-server-not-found xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /></error></presence>
+starting event engine...
+loading all plugins...
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder.Audio
+*** loading: PlugInsFolder.Audio.iTunes.py
+*** loading: PlugInsFolder.Audio.Madplay.py
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder.empty
+*** loading: PlugInsFolder.empty.Growl.py
+*** loading: PlugInsFolder.Finder.py
+*** loading: PlugInsFolder.Growl.py
+*** loading: PlugInsFolder.iTunes.py
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder.killmefolder
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder/killmefolder.funfactoryfolder
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder/killmefolder/funfactoryfolder.fififolder
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder/killmefolder.moreFolder
+*** loading: PlugInsFolder.killmefolder.moreFolder.Finder.py
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder/killmefolder/moreFolder.folderfolder
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder/killmefolder/moreFolder/folderfolder.foldertest
+*** loading: PlugInsFolder.killmefolder.moreFolder.folderfolder.foldertest.iTunes.py
+*** loading: PlugInsFolder.killmefolder.moreFolder.folderfolder.iTunes.py
+*** loading: PlugInsFolder.killmefolder.moreFolder.iTunes.py
+*** loading: PlugInsFolder.killmefolder.moreFolder.Madplay.py
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder/killmefolder/moreFolder.unfolder
+*** loading: PlugInsFolder.Madplay.py
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder.Notification
+*** loading: PlugInsFolder.Notification.Growl.py
++++ loding folder: /Users/markus/Projekte/Software/Python/ami/ami_ce/amiServer/PlugInsFolder.System
+*** loading: PlugInsFolder.System.Finder.py
+loaded all plugins sucessfully
+* root(this is the root node)
+-* ami.client@jabber.org(this is the tree instance ami.client@jabber.org)
+--* Madplay(This is a Madplay Plugin)
+---* Play(Play Madplay)
+---* Stop(Stop Madplay)
+--* Growl(this is a growl plugin)
+---* Growl(send growl notification)
+--* Notification(this is the tree representation of a folder)
+---* Growl(this is a growl plugin)
+----* Growl(send growl notification)
+--* System(this is the tree representation of a folder)
+---* Finder(This is a Finder Plugins)
+----* OpenUrl(open url)
+----* Mute(mute system)
+----* Unmute(unmute system)
+----* Beep(Beep)
+----* Say(say something)
+----* Sleep(sleep system)
+----* Shutdown(shutdown system)
+----* Restart(restart system)
+--* iTunes(This is a iTunes Plugins)
+---* Play(Play iTunes)
+---* Pause(Pause iTunes)
+---* Mute(Mute iTunes)
+---* Unmute(Unmute iTunes)
+---* VolUp(VolUp iTunes)
+---* VolDown(VolDown iTunes)
+---* Next(Next iTunes Track)
+---* Stop(Stop iTunes)
+---* Prev(Prev iTunes Track)
+--* empty(this is the tree representation of a folder)
+---* Growl(this is a growl plugin)
+----* Growl(send growl notification)
+--* Finder(This is a Finder Plugins)
+---* OpenUrl(open url)
+---* Mute(mute system)
+---* Unmute(unmute system)
+---* Beep(Beep)
+---* Say(say something)
+---* Sleep(sleep system)
+---* Shutdown(shutdown system)
+---* Restart(restart system)
+--* Audio(this is the tree representation of a folder)
+---* iTunes(This is a iTunes Plugins)
+----* Play(Play iTunes)
+----* Pause(Pause iTunes)
+----* Mute(Mute iTunes)
+----* Unmute(Unmute iTunes)
+----* VolUp(VolUp iTunes)
+----* VolDown(VolDown iTunes)
+----* Next(Next iTunes Track)
+----* Stop(Stop iTunes)
+----* Prev(Prev iTunes Track)
+---* Madplay(This is a Madplay Plugin)
+----* Play(Play Madplay)
+----* Stop(Stop Madplay)
+--* killmefolder(this is the tree representation of a folder)
+---* moreFolder(this is the tree representation of a folder)
+----* iTunes(This is a iTunes Plugins)
+-----* Play(Play iTunes)
+-----* Pause(Pause iTunes)
+-----* Mute(Mute iTunes)
+-----* Unmute(Unmute iTunes)
+-----* VolUp(VolUp iTunes)
+-----* VolDown(VolDown iTunes)
+-----* Next(Next iTunes Track)
+-----* Stop(Stop iTunes)
+-----* Prev(Prev iTunes Track)
+----* Madplay(This is a Madplay Plugin)
+-----* Play(Play Madplay)
+-----* Stop(Stop Madplay)
+----* folderfolder(this is the tree representation of a folder)
+-----* iTunes(This is a iTunes Plugins)
+------* Play(Play iTunes)
+------* Pause(Pause iTunes)
+------* Mute(Mute iTunes)
+------* Unmute(Unmute iTunes)
+------* VolUp(VolUp iTunes)
+------* VolDown(VolDown iTunes)
+------* Next(Next iTunes Track)
+------* Stop(Stop iTunes)
+------* Prev(Prev iTunes Track)
+-----* foldertest(this is the tree representation of a folder)
+------* iTunes(This is a iTunes Plugins)
+-------* Play(Play iTunes)
+-------* Pause(Pause iTunes)
+-------* Mute(Mute iTunes)
+-------* Unmute(Unmute iTunes)
+-------* VolUp(VolUp iTunes)
+-------* VolDown(VolDown iTunes)
+-------* Next(Next iTunes Track)
+-------* Stop(Stop iTunes)
+-------* Prev(Prev iTunes Track)
+----* unfolder(this is the tree representation of a folder)
+----* Finder(This is a Finder Plugins)
+-----* OpenUrl(open url)
+-----* Mute(mute system)
+-----* Unmute(unmute system)
+-----* Beep(Beep)
+-----* Say(say something)
+-----* Sleep(sleep system)
+-----* Shutdown(shutdown system)
+-----* Restart(restart system)
+---* funfactoryfolder(this is the tree representation of a folder)
+----* fififolder(this is the tree representation of a folder)
+
+starting xmpp client...
+servant@jabber.org
+ami.client@jabber.org
+fernmelder@jabber.org
+Joining groupchat: ami@conference.jabber.org.bricked/ami.client
+Communicationengine is online, or should be... #TODO
+---message--------------------------------------------------
+(None) Sender: ami.client@jabber.org/amiAntenna
+ Content: Hello Master!
+I'm on, and waiting for your orders.
+Enter 'help' to explore me.
+unknown command
+ cannot answer my self with an invalid address
+---message end----------------------------------------------
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="7"><x xmlns="jabber:x:delay" stamp="20090831T19:54:04" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="fernmelder@jabber.org/Antenna"><priority>1</priority><c node="http://pidgin.im/caps" ext="moodn nickn tunen buzz bob avatar adiumcmd" xmlns="http://jabber.org/protocol/caps" ver="2.5.9" /><x xmlns="vcard-temp:x:update"><photo>a5c151f58fee8e179235a175a98855f418905ae2</photo></x><x xmlns="jabber:x:delay" stamp="20090831T19:54:04" /></presence>
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami@conference.jabber.org.bricked/ami.client" id="8" type="error"><error code="404" type="cancel"><remote-server-not-found xmlns="urn:ietf:params:xml:ns:xmpp-stanzas" /></error></presence>
+sent some presence
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="9" type="can i send a message here?" />
+---message--------------------------------------------------
+(chat) Sender: fernmelder@jabber.org/Antenna
+ Content: None
+unknown command
+---message end----------------------------------------------
+sent some presence
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="10" type="can i send a message here?" />
+---message--------------------------------------------------
+(chat) Sender: fernmelder@jabber.org/Antenna
+ Content: list
+ parsing as list command
+---message end----------------------------------------------
+---message--------------------------------------------------
+(chat) Sender: fernmelder@jabber.org/Antenna
+ Content: None
+unknown command
+---message end----------------------------------------------
+sent some presence
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="12" type="can i send a message here?" />
+sent some presence
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="13" type="can i send a message here?" />
+sent some presence
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="14" type="can i send a message here?" />
+sent some presence
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="15" type="can i send a message here?" />
+sent some presence
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="16" type="can i send a message here?" />
+sent some presence
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="17" type="can i send a message here?" />
+sent some presence
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="18" type="can i send a message here?" />
+sent some presence
+<presence xmlns="jabber:client" to="ami.client@jabber.org/amiAntenna" from="ami.client@jabber.org/amiAntenna" id="19" type="can i send a message here?" />
