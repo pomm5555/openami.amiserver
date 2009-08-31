@@ -12,7 +12,7 @@ class CommunicationEngine:
 
 	# last time ping was sent, initialisation
 	self.last_time = 0
-	self.keepalive = 1000
+	self.keepalive = 1
 
         self.jid=xmpp.protocol.JID(Config.jid)
         self.client = xmpp.Client(self.jid.getDomain())
@@ -58,8 +58,9 @@ class CommunicationEngine:
 	    delta = now - self.last_time
 	    if delta>self.keepalive:
 	    	#self.client.send(' ')
-		self.client.sendPresence(self.jid)
-		self.last_time = now
+		self.client.sendPresence(self.jid, "can i send a message here?")
+		print "sent some presence"
+                self.last_time = now
 	except Exception,e:
 	    print "[ERROR] could not send ping"
 	    print e
