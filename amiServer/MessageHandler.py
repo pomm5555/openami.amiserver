@@ -1,71 +1,19 @@
-import xmpp
-import sys, time
-from Packets.Packet import Packet
-from amiConfig import Config
-from Address import Address
-
-class CommunicationEngine:
-
-    def __init__(self, root):
-
-        self.root = root
-
-	# last time ping was sent, initialisation
-	self.last_time = 0
-	self.keepalive = 60
-
-        self.jid=xmpp.protocol.JID(Config.jid)
-        self.client = xmpp.Client(self.jid.getDomain(), debug=[])
-
-        # connect client
-        if self.client.connect((Config.host, Config.port)) == "":
-            print "not connected"
-            sys.exit(0)
-
-        # authenticate client
-        if self.client.auth(self.jid.getNode(), Config.pwd, Config.ressource) == None:
-            print "authentication failed"
-            sys.exit(0)
-
-        # register message handler
-        self.client.RegisterHandler('message', self.messageHandler)
-
-        #init roster
-        self.processRoster()
-
-        # set presencehandler and presence
-        self.client.RegisterHandler('presence', self.presenceHandler)
-        self.client.sendInitPresence()
-
-        # register disconnect handler
-        self.client.RegisterDisconnectHandler(self.disconnectHandler)
+## does not work yet
 
 
-        room = Config.groupChat+"@"+Config.groupServer+"/"+Config.jid.split("@")[0]
-        print "Joining groupchat: " + room
-        self.client.send(xmpp.Presence(to=room))
+class MessageHandler():
 
-        print "Communicationengine is online, or should be... #TODO" #TODO
+    def __init__(self):
+        pass
 
-        # go to eventLoop
-        self.goOn(self.client)
 
-    def pingJabber(self):
-        try:
-	    now = int(time.strftime('%s', time.localtime()))
-	    if self.last_time == 0:
-	        self.last_time = now
-	    delta = now - self.last_time
-	    if delta>self.keepalive:
-	    	#self.client.send(' ')
-		self.client.sendPresence(self.jid, "can i send a message here?")
-		print "sent some presence"
-                self.last_time = now
-	except Exception,e:
-	    print "[ERROR] could not send ping"
-	    print e
+    def __str__(self):
+        pass
 
-    def messageHandler(self, conn, msg):
+
+    def handleMessage(self, message):
+
+
         print "---message--------------------------------------------------"
         #print unicode(dir(msg))
         #print unicode(msg.getFrom()).split("/")[0]
@@ -93,7 +41,7 @@ class CommunicationEngine:
 
         # try to parse ass Address
         addr = Address(content)
-        
+
         if content.__eq__("show"):
             print " parsing as show command"
             self.send(self.root.returnTree(0), sender)
@@ -135,14 +83,14 @@ Use following XML to sent a Packet:
         elif addr.isAddress():
             print " parsing as address command: "+addr.__str__()
             print " with data: >"+addr.string+"<"
-            if True: #try:
+            try:
                 if addr.string.__len__() == 0:
-                    result = self.root.getByAddress(addr.__str__()).use()
+                    result = self.root.getByAddress(addr.__str__()).use("")
                 else:
                     result = self.root.getByAddress(addr.__str__()).use(addr.string)
                 self.send(result, sender)
                 print " "+str(result)
-            #except Exception, e:
+            except Exception, e:
                 self.send("[ERROR] "+content+" is not a valid address.", sender)
                 print "[ERROR] "+str(e)
 
@@ -171,7 +119,7 @@ Use following XML to sent a Packet:
                 answer = " executing: "+result[0]
                 try:
                     if datastring.__len__() == 0:
-                        tmp = str(self.root.getByAddress(result[0]).use())
+                        tmp = str(self.root.getByAddress(result[0]).use(""))
                     else:
                         tmp = str(self.root.getByAddress(result[0]).use(datastring))
 
@@ -190,8 +138,7 @@ Use following XML to sent a Packet:
 
 
         elif content[0:5].__eq__("<?xml"):
-            print " parsing as packet command"
-            self.packetHandler(content, sender)
+            xml(message)
 
 
         else:
@@ -200,70 +147,11 @@ Use following XML to sent a Packet:
                 print " cannot answer my self with an invalid address"
             else:
                 # with two bots, that causes an endless loops
-                pass #self.send(" unknown command", sender)
+                pass#self.send(" unknown command", sender)
 
         print "---message end----------------------------------------------"
 
 
-    def presenceHandler(self, conn,msg):
-        print str(msg)
-        prs_type=msg.getType()
-        who=msg.getFrom()
-        if prs_type == "subscribe":
-            conn.send(xmpp.Presence(to=who, typ = 'subscribed'))
-            conn.send(xmpp.Presence(to=who, typ = 'subscribe'))
-
-    def stepOn(self, conn):
-        try:
-            conn.Process(1)
-	    self.pingJabber()
-        except KeyboardInterrupt:
-            return 0
-        return 1
-
-    def goOn(self, conn):
-        while self.stepOn(conn):
-            pass
-
-    def send(self, msg, receiver):
-        self.client.send(xmpp.protocol.Message(receiver, msg))
-
-
-    def packetHandler(self, message, sender):
-        p = Packet.createPacketFromXml(message)
-
-        print p.strings
-
-        self.send(p.fr, sender)
-
-        #try
-        print ">"+p.to.strip("/")+"<"
-        print p.strings
-        result = self.root.getByAddress(p.to.strip("/")).use(p)
-        self.send(result, sender)
-        print result
-        #except:
-        #self.send("*"+content+" is not a valid address.", sender)
-
-    def disconnectHandler(self):
-        #
-        #  ACTS A LITTLE LOONEY
-        #
-        print ">>>>DISCONNECT<<<<"
-        if self.client.connect((Config.host, Config.port)) == "":
-            print "not connected"
-            sys.exit(0)
-
-    def processRoster(self):
-
-        self.rosterTree = {}
-
-
-        self.roster = self.client.getRoster()
-
-            
-        for elem in self.roster.getItems():
-            if not self.rosterTree.has_key(elem):
-                self.rosterTree[elem]=elem
-                self.send("Hello Master!\nI'm on, and waiting for your orders.\nEnter 'help' to explore me.", elem)
-                print elem
+    def xml(self, message):
+        print " parsing as packet command"
+        self.packetHandler(content, sender)
