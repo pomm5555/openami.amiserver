@@ -25,6 +25,11 @@ class Config():
     # iTunesPlugin
     iTunesScript = config.get('iTunes', 'ScriptPath')
 
+    # DefaultsPlugin
+    audioPlay = config.get('Defaults', 'AudioPlay')
+    audioStop = config.get('Defaults', 'AudioStop')
+
+
     # get path to script
     absPath = os.path.abspath(".")
 

@@ -15,7 +15,12 @@ class FeedReader(PlugIn):
         #plugin itself, is threaded uses the its process method
         self.content = ThreadContainer("plugin", token, "This hopefully will be a Threaded Feedreader Plugin")
         self.content.setDo(self.process)
-        self.content.start()
+
+        # TODO
+        # self.content.start()
+
+
+
         #self.content.setUse(self.use)
 
 
@@ -31,7 +36,7 @@ class FeedReader(PlugIn):
     def getTree(self):
         return self.content
 
-    def use(self, test):
+    def use(self, test=""):
         return "+"+self.content.information
 
     # just a little helper function
