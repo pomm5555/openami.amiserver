@@ -6,6 +6,8 @@ from Address import Address
 
 class CommunicationEngine:
 
+    roster = None
+
     def __init__(self, root):
 
         self.root = root
@@ -40,10 +42,10 @@ class CommunicationEngine:
         # register disconnect handler
         self.client.RegisterDisconnectHandler(self.disconnectHandler)
 
-
-        room = Config.groupChat+"@"+Config.groupServer+"/"+Config.jid.split("@")[0]
-        print "Joining groupchat: " + room
-        self.client.send(xmpp.Presence(to=room))
+        #GROUPCHAT
+        #room = Config.groupChat+"@"+Config.groupServer+"/"+Config.jid.split("@")[0]
+        #print "Joining groupchat: " + room
+        #self.client.send(xmpp.Presence(to=room))
 
         print "Communicationengine is online, or should be... #TODO" #TODO
 
@@ -77,14 +79,15 @@ class CommunicationEngine:
         type = unicode(msg.getType())
         self.chat = ""
 
-        try:
-            if type.__eq__("groupchat"):
-                print "GROUPCHAT!!!!!!"
-                self.chat = sender.split("/")[0]
-                print "chat: "+self.chat
-        except Exception, e:
-            print "[ERROR] sender: "+sender
-            print e
+        # GROUPCHAT
+        #try:
+        #    if type.__eq__("groupchat"):
+        #        print "GROUPCHAT!!!!!!"
+        #        self.chat = sender.split("/")[0]
+        #        print "chat: "+self.chat
+        #except Exception, e:
+        #    print "[ERROR] sender: "+sender
+        #    print e
 
 
 
@@ -93,6 +96,7 @@ class CommunicationEngine:
 
         # try to parse ass Address
         addr = Address(content)
+        print "parsed address: " + addr.__str__()
         
         if content.__eq__("show"):
             print " parsing as show command"
@@ -143,8 +147,8 @@ Use following XML to sent a Packet:
                 self.send(result, sender)
                 print " "+str(result)
             #except Exception, e:
-                self.send("[ERROR] "+content+" is not a valid address.", sender)
-                print "[ERROR] "+str(e)
+                #self.send("[ERROR] "+content+" is not a valid address.", sender)
+                #print "[ERROR] "+str(e)
 
 
         elif content[0:1].__eq__("*"):
@@ -258,9 +262,10 @@ Use following XML to sent a Packet:
 
         self.rosterTree = {}
 
-
         self.roster = self.client.getRoster()
 
+        # DIRTY!!!!
+        CommunicationEngine.roster = self.roster
             
         for elem in self.roster.getItems():
             if not self.rosterTree.has_key(elem):

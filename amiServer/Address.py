@@ -26,11 +26,15 @@ class Address:
 
             # has string
             if not addr.find(" ")==-1:
+                print "packet has string"
                 self.string = addr[addr.find(" ")+1:]
                 addr = addr[:addr.find(" ")]
+                print self.string
 
             # fill tokens
             self.tokens = addr.split("/")
+            print "address tokens: ",
+            print self.tokens
 
             # set packet valid
             self.valid = True
