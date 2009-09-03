@@ -3,21 +3,32 @@ class foo():
     def __init__(self):
         self.info = "foo"
         print "foo init"
+        children = {}
 
-def getInfo(self):
-    return self.info
+
+    def getInfo(self):
+        return self.info
+
+
+    def newFoo(self, func):
+        new = Foo()
+        new.getInfo = func
+        children.appned(new)
+
+    def __str(self):
+        print self.info
+        for elem in children:
+            print " ",
+            print elem
 
 
 class bar():
     def __init__(self):
-        self.info = "bar"
-        print "bar init"
-
 
 
 if __name__ == "__main__":
     f = foo()
-    b = bar()
+    b = foo()
 
     b.getInfo = f.getInfo
 
@@ -25,4 +36,3 @@ if __name__ == "__main__":
 
     #print b.getInfo()
     import code; code.interact(local=locals())
-    # The output is foo, f's info attribute. I expected b to read its own info attribute.
