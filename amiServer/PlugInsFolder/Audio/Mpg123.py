@@ -23,7 +23,7 @@ class Mpg123(PlugIn):
     def play(self, text="http://www.munich-radio.de:8000"):
         text = self.getText(text)
         print text
-        os.system('mpg321 "'+text+'" &' )
+        os.system('mpg123 "'+text+'" &' )
 
     def stop(self, string=""):
     	os.system('killall mpg321')
