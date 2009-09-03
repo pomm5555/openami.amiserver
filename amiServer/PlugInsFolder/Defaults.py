@@ -3,6 +3,7 @@ from AmiTree import Container
 from PlugIn import PlugIn
 from Address import Address
 from amiConfig import Config
+from EventEngine import EventEngine
 
 class Defaults(PlugIn):
 
@@ -14,20 +15,19 @@ class Defaults(PlugIn):
 
         # add container, set information to standard-path from config
         self.content.addContainer("cmd", "Play", Config.audioPlay, self.play)
-        print "**********"+self.content.getChild("Play").information
 
 
 	self.content.addContainer("cmd", "Stop", Config.audioStop, self.stop)
 
-    def play(self, text="http://www.munich-radio.de:8000"):
-        text = self.getText(text)
-        address = Address(self.information)
-    	EventEngine.root.getByAddress(address).use(string)
+    def play(self, string="http://www.munich-radio.de:8000"):
+        string = self.getText(string)
+        address = Address(Config.audioPlay)
+    	EventEngine.root.getByAddress(address.__str__()).use(string)
 
     def stop(self, string=""):
-        text = self.getText(text)
-        address = Address(self.information)
-    	EventEngine.root.getByAddress(address).use(string)
+        string = self.getText(string)
+        address = Address(Config.audioStop)
+    	EventEngine.root.getByAddress(address.__str__()).use(string)
 
     # returns the plugin as a tree
     def getTree(self):
