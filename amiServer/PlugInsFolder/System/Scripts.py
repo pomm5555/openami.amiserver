@@ -9,6 +9,8 @@ class Scripts(PlugIn):
 
 
     def __init__(self, token, configFile):
+        PlugIn.__init__(self)
+        self.architecture = "macos"
 
         #plugin itself
         self.content = Container("plugin", token, "This is a Scripts Plugins")

@@ -9,13 +9,15 @@ class Defaults(PlugIn):
 
 
     def __init__(self, token, configFile):
+        PlugIn.__init__(self)
+        self.architecture = "all"
+
 
         #plugin itself
         self.content = Container("plugin", token, "This is a Defaults Plugin")
 
         # add container, set information to standard-path from config
         self.content.addContainer("cmd", "Play", Config.audioPlay, self.play)
-
 
 	self.content.addContainer("cmd", "Stop", Config.audioStop, self.stop)
 

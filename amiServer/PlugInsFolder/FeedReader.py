@@ -11,6 +11,8 @@ class FeedReader(PlugIn):
 
 
     def __init__(self, token, configFile):
+        PlugIn.__init__(self)
+        self.architecture = "none"
 
         #plugin itself, is threaded uses the its process method
         self.content = ThreadContainer("plugin", token, "This hopefully will be a Threaded Feedreader Plugin")

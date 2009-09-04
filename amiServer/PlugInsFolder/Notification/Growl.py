@@ -11,6 +11,8 @@ class Growl(PlugIn):
 
 
     def __init__(self, token, configFile):
+        PlugIn.__init__(self)
+        self.architecture = "macos"
 
         #plugin itself
         self.content = Container("plugin", token, "this is a growl plugin")

@@ -11,6 +11,8 @@ class Madplay(PlugIn):
 
 
     def __init__(self, token, configFile):
+        PlugIn.__init__(self)
+        self.architecture = "openwrt"
 
         #plugin itself
         self.content = Container("plugin", token, "This is a Madplay Plugin")

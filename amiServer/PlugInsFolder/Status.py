@@ -7,6 +7,9 @@ class Status(PlugIn):
 
 
     def __init__(self, token, configFile):
+        PlugIn.__init__(self)
+        self.architecture = "all"
+
 
         #plugin itself
         self.content = Container("plugin", token, "This is a Status Plugin")
