@@ -21,8 +21,8 @@ class Defaults(PlugIn):
 
     def play(self, string="http://www.munich-radio.de:8000"):
         string = self.getText(string)
-        address = Address(Config.audioPlay)
-    	EventEngine.root.getByAddress(address.__str__()).use(string)
+        address = Address(Config.audioStop)
+    	EventEngine.root.getByAddress(address.__str__()).use(self, string)
 
     def stop(self, string=""):
         string = self.getText(string)

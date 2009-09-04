@@ -11,9 +11,10 @@ class MessageHandler():
         pass
 
 
-    def handleMessage(self, message):
+    def handleMessage(self, conn, msg):
 
 
+    
         print "---message--------------------------------------------------"
         #print unicode(dir(msg))
         #print unicode(msg.getFrom()).split("/")[0]
@@ -25,14 +26,15 @@ class MessageHandler():
         type = unicode(msg.getType())
         self.chat = ""
 
-        try:
-            if type.__eq__("groupchat"):
-                print "GROUPCHAT!!!!!!"
-                self.chat = sender.split("/")[0]
-                print "chat: "+self.chat
-        except Exception, e:
-            print "[ERROR] sender: "+sender
-            print e
+        # GROUPCHAT
+        #try:
+        #    if type.__eq__("groupchat"):
+        #        print "GROUPCHAT!!!!!!"
+        #        self.chat = sender.split("/")[0]
+        #        print "chat: "+self.chat
+        #except Exception, e:
+        #    print "[ERROR] sender: "+sender
+        #    print e
 
 
 
@@ -41,6 +43,7 @@ class MessageHandler():
 
         # try to parse ass Address
         addr = Address(content)
+        print "parsed address: " + addr.__str__()
 
         if content.__eq__("show"):
             print " parsing as show command"
@@ -83,16 +86,16 @@ Use following XML to sent a Packet:
         elif addr.isAddress():
             print " parsing as address command: "+addr.__str__()
             print " with data: >"+addr.string+"<"
-            try:
+            if True: #try:
                 if addr.string.__len__() == 0:
-                    result = self.root.getByAddress(addr.__str__()).use("")
+                    result = self.root.getByAddress(addr.__str__()).use()
                 else:
                     result = self.root.getByAddress(addr.__str__()).use(addr.string)
                 self.send(result, sender)
                 print " "+str(result)
-            except Exception, e:
-                self.send("[ERROR] "+content+" is not a valid address.", sender)
-                print "[ERROR] "+str(e)
+            #except Exception, e:
+                #self.send("[ERROR] "+content+" is not a valid address.", sender)
+                #print "[ERROR] "+str(e)
 
 
         elif content[0:1].__eq__("*"):
@@ -119,7 +122,7 @@ Use following XML to sent a Packet:
                 answer = " executing: "+result[0]
                 try:
                     if datastring.__len__() == 0:
-                        tmp = str(self.root.getByAddress(result[0]).use(""))
+                        tmp = str(self.root.getByAddress(result[0]).use())
                     else:
                         tmp = str(self.root.getByAddress(result[0]).use(datastring))
 
@@ -138,7 +141,8 @@ Use following XML to sent a Packet:
 
 
         elif content[0:5].__eq__("<?xml"):
-            xml(message)
+            print " parsing as packet command"
+            self.packetHandler(content, sender)
 
 
         else:
@@ -147,11 +151,6 @@ Use following XML to sent a Packet:
                 print " cannot answer my self with an invalid address"
             else:
                 # with two bots, that causes an endless loops
-                pass#self.send(" unknown command", sender)
+                pass #self.send(" unknown command", sender)
 
         print "---message end----------------------------------------------"
-
-
-    def xml(self, message):
-        print " parsing as packet command"
-        self.packetHandler(content, sender)

@@ -43,9 +43,9 @@ class CommunicationEngine:
         self.client.RegisterDisconnectHandler(self.disconnectHandler)
 
         #GROUPCHAT
-        #room = Config.groupChat+"@"+Config.groupServer+"/"+Config.jid.split("@")[0]
-        #print "Joining groupchat: " + room
-        #self.client.send(xmpp.Presence(to=room))
+        room = Config.groupChat+"@"+Config.groupServer+"/"+Config.jid.split("@")[0]
+        print "Joining groupchat: " + room
+        self.client.send(xmpp.Presence(to=room))
 
         print "Communicationengine is online, or should be... #TODO" #TODO
 
@@ -80,18 +80,16 @@ class CommunicationEngine:
         self.chat = ""
 
         # GROUPCHAT
-        #try:
-        #    if type.__eq__("groupchat"):
-        #        print "GROUPCHAT!!!!!!"
-        #        self.chat = sender.split("/")[0]
-        #        print "chat: "+self.chat
-        #except Exception, e:
-        #    print "[ERROR] sender: "+sender
-        #    print e
+        try:
+            if type.__eq__("groupchat"):
+                print "GROUPCHAT!!!!!!"
+                self.chat = sender.split("/")[0]
+                print "chat: "+self.chat
+        except Exception, e:
+            print "[ERROR] sender: "+sender
+            print e
 
-
-
-        print "("+type+") Sender: " + sender + "\n Content: " + content
+        print u"("+type+u") Sender: " + sender + u"\n Content: " + content
 
 
         # try to parse ass Address
@@ -181,7 +179,8 @@ Use following XML to sent a Packet:
 
                     if not tmp == None:
                         answer+="\n"+str(tmp)
-                    self.send("executing: "+result[0], sender)
+
+                    self.send(answer, sender)
                 except Exception, e:
                     print "[ERROR] "+str(e)
 
