@@ -7,23 +7,23 @@ import os
 from AmiTree import Container
 from PlugIn import PlugIn
 
-class Mpg123(PlugIn):
+class Nabaztag(PlugIn):
 
 
     def __init__(self, token, configFile):
 
         #plugin itself
-        self.content = Container("plugin", token, "This is a Mpg123 Plugin")
+        self.content = Container("plugin", token, "This is a Nabaztag Plugin")
 
         # set add container
-        self.content.addContainer("cmd", "Play", "Play Mpg123", self.play)
+        self.content.addContainer("cmd", "Play", "Play Stream on Nabaztag", self.play)
 
-	self.content.addContainer("cmd", "Stop", "Stop Mpg123", self.stop)
+	self.content.addContainer("cmd", "Stop", "Stop Nabaztag", self.stop)
 
     def play(self, text="http://www.munich-radio.de:8000"):
         text = self.getText(text)
         print text
-        os.system('mpg123 '+text+' &' )
+        os.system('curl http://api.nabaztag.com/vl/FR/api_stream.jsp?token=1230219014&sn=0019DB9C502A&urlList='+text)
 
     def stop(self, string=""):
     	os.system('killall mpg123')
