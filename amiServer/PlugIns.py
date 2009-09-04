@@ -52,12 +52,15 @@ class PlugIns:
             # add plugin files
             if elem[-3:].__eq__(".py") and not (elem[:1].__eq__("_")):
                 print "*** loading: "+ PackagePath+ "." +elem
-                #print("from "+PackagePath+"."+elem[:-3]+" import "+elem[:-3])
+                print("from "+PackagePath+"."+elem[:-3]+" import "+elem[:-3])
                 exec("from "+PackagePath+"."+elem[:-3]+" import "+elem[:-3])
-                #print("plugin = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
+                print("plugin = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
                 exec("plugin = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
-                #print("result.append(plugin.getTree())")
-                exec("result.append(plugin.getTree())")
+                print("result.append(plugin.getTree())")
+                print plugin.architecture
+
+                if plugin.architecture.__eq__("all") or plugin.architecture.__eq__(Config.architecture):
+                    result.append(plugin.getTree())
 
             # add folders as plugin
             if os.path.isdir(PluginsPath+"/"+elem):

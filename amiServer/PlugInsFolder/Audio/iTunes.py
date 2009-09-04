@@ -10,6 +10,9 @@ from amiConfig import Config
 class iTunes(PlugIn):
 
     def __init__(self, token, configFile):
+        PlugIn.__init__(self)
+        self.architecture = "macos"
+        
         self.configFile = configFile
         self.parseConfig()
 

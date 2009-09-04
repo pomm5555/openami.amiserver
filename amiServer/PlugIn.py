@@ -5,10 +5,14 @@ __author__="markus"
 __date__ ="$Aug 16, 2009 3:48:26 PM$"
 
 
-from AmiTree import Container
+#from AmiTree import Container
 
 
 class PlugIn:
+
+    def __init__(self):
+        self.architecture = "all"
+
     def getTree(self):
         pass
 

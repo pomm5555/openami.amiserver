@@ -18,6 +18,7 @@ class Config():
     # parsing system section
     token = config.get('server', 'token')
     information = config.get('server', 'information')
+    architecture = config.get('server', 'architecture')
 
     # parsing plugins section
     plugInsFolder = config.get('Plugins', 'PlugInsFolder')
