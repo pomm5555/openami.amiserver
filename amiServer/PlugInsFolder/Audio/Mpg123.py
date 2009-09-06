@@ -12,8 +12,7 @@ class Mpg123(PlugIn):
 
     def __init__(self, token, configFile):
         PlugIn.__init__(self)
-        self.architecture = "all"
-
+        self.architecture = "macos"
 
         #plugin itself
         self.content = Container("plugin", token, "This is a Mpg123 Plugin")
@@ -26,10 +25,10 @@ class Mpg123(PlugIn):
     def play(self, text="http://www.munich-radio.de:8000"):
         text = self.getText(text)
         print text
-        os.system('mpg123 '+text+' &' )
+        os.system('curl '+text+' | mpg321 - &' )
 
     def stop(self, string=""):
-    	os.system('killall mpg123')
+    	os.system('killall mpg321')
 
     # returns the plugin as a tree
     def getTree(self):

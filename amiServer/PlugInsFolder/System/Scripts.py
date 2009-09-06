@@ -14,6 +14,7 @@ class Scripts(PlugIn):
 
         #plugin itself
         self.content = Container("plugin", token, "This is a Scripts Plugins")
+        self.visible = False
 
         # set add container
 
