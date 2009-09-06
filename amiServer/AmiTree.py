@@ -135,7 +135,7 @@ class BuddyContainer(Container):
         self.client = client
 
     def use(self, msg=""):
-        self.client.send(xmpp.protocol.Message(self.token, self.token+"/"+self.information+msg))
+        self.client.send(xmpp.protocol.Message(self.token, self.token+"/"+self.information+" "+msg))
 
     def getByAddress(self, address):
         #print "+++++"+address
