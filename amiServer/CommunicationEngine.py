@@ -3,10 +3,13 @@ import sys, time
 from Packets.Packet import Packet
 from amiConfig import Config
 from Address import Address
+from AmiTree import *
 
 class CommunicationEngine:
 
     roster = None
+    client = None
+
 
     def __init__(self, root):
 
@@ -18,6 +21,9 @@ class CommunicationEngine:
 
         self.jid=xmpp.protocol.JID(Config.jid)
         self.client = xmpp.Client(self.jid.getDomain(), debug=[])
+
+        #define static attribute client
+        CommunicationEngine.client = self.client
 
         # connect client
         if self.client.connect((Config.host, Config.port)) == "":
@@ -130,8 +136,7 @@ Use following XML to sent a Packet:
   <string name="text">
     Hello master, my name is hal2000
   </string>
-</packet>
-            '''
+</packet>'''
             self.send(help, sender)
 
         elif addr.isAddress():
@@ -145,8 +150,11 @@ Use following XML to sent a Packet:
                 self.send(result, sender)
                 print " "+str(result)
             #except Exception, e:
-                #self.send("[ERROR] "+content+" is not a valid address.", sender)
-                #print "[ERROR] "+str(e)
+            #    self.send("[ERROR] "+content+" is not a valid address.", sender)
+            #    print "[ERROR] "+str(e)
+
+        elif content[0:1].__eq__("#"):
+            print "parsing as comment"
 
 
         elif content[0:1].__eq__("*"):
@@ -228,6 +236,7 @@ Use following XML to sent a Packet:
         while self.stepOn(conn):
             pass
 
+    #deprecated
     def send(self, msg, receiver):
         self.client.send(xmpp.protocol.Message(receiver, msg))
 
@@ -267,7 +276,10 @@ Use following XML to sent a Packet:
         CommunicationEngine.roster = self.roster
             
         for elem in self.roster.getItems():
-            if not self.rosterTree.has_key(elem):
+            if not self.rosterTree.has_key(elem) and not elem.__eq__(Config.jid):
                 self.rosterTree[elem]=elem
-                self.send("Hello Master!\nI'm on, and waiting for your orders.\nEnter 'help' to explore me.", elem)
+                self.send("#type help to explore me.", elem)
+                self.root.addChild(BuddyContainer("buddy", str(elem), "Buddy, maybe over the sea...", self.client))
+
                 print elem
+

@@ -16,6 +16,9 @@ class Madplay(PlugIn):
 
         #plugin itself
         self.content = Container("plugin", token, "This is a Madplay Plugin")
+
+        #Plugin visibility, can be accessed, but is not listed
+        self.visible = False
         
         # set add container
         self.content.addContainer("cmd", "Play", "Play Madplay", self.play)

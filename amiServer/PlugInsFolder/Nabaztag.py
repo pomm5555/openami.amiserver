@@ -13,9 +13,13 @@ class Nabaztag(PlugIn):
     def __init__(self, token, configFile):
         PlugIn.__init__(self)
         self.architecture = "all"
+        
 
         #plugin itself
         self.content = Container("plugin", token, "This is a Nabaztag Plugin")
+
+        # hide Plugin from showing up in xml, search, show...
+        self.content.visible = False
 
         # set add container
         self.content.addContainer("cmd", "Play", "Play Stream on Nabaztag", self.play)
