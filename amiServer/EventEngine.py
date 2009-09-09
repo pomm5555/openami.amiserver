@@ -26,7 +26,7 @@ class EventEngine:
         # assign address index cache to root.addressIndex
         EventEngine.root.me.addressIndex = EventEngine.root.me.getAddressList()
 
-        print EventEngine.root.returnTree(0)
+        #print EventEngine.root.returnTree(0)
 
         print "starting xmpp client..."
 

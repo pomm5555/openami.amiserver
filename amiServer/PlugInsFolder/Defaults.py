@@ -21,6 +21,8 @@ class Defaults(PlugIn):
 
 	self.content.addContainer("cmd", "Stop", Config.audioStop, self.stop)
 
+        self.content.addContainer("cmd", "SetVol", Config.setVol, self.setVol)
+
     def play(self, string="http://www.munich-radio.de:8000"):
         string = self.getText(string)
         address = Address(Config.audioPlay)
@@ -29,6 +31,11 @@ class Defaults(PlugIn):
     def stop(self, string=""):
         string = self.getText(string)
         address = Address(Config.audioStop)
+    	EventEngine.root.getByAddress(address.__str__()).use(string)
+
+    def setVol(self, string=""):
+        string = self.getText(string)
+        address = Address(Config.setVol)
     	EventEngine.root.getByAddress(address.__str__()).use(string)
 
     # returns the plugin as a tree

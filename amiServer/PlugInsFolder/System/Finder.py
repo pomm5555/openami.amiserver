@@ -23,6 +23,8 @@ class Finder(PlugIn):
 
         self.content.addContainer("cmd", "Mute", "mute system", self.mute)
 
+        self.content.addContainer("cmd", "SetVol", "set Volume", self.setVol)
+
         self.content.addContainer("cmd", "Restart", "restart system", self.restart)
 
         self.content.addContainer("cmd", "Sleep", "sleep system", self.sleep)
@@ -56,6 +58,13 @@ class Finder(PlugIn):
 
     def shutdown(self, string=""):
         os.system("osascript -e 'tell application \"Finder\" to shut down'" )
+
+    def setVol(self, vol=0):
+        vol = self.getText(vol)
+        intVol = int(vol)
+        intVol = intVol/100.*7.
+        vol = str(intVol)
+        os.system("osascript -e 'set volume "+str(vol)+"'")
 
     """
     Packet to test say:
