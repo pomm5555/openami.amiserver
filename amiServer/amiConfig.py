@@ -33,7 +33,7 @@ class Config():
     audioPlay = config.get('Defaults', 'AudioPlay')
     audioStop = config.get('Defaults', 'AudioStop')
     setVol = config.get('Defaults', 'SetVol')
-
+    Notification = config.get('Defaults', 'Notification')
 
     # get path to script
     absPath = os.path.abspath(".")

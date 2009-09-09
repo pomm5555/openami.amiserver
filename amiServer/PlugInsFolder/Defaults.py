@@ -23,6 +23,8 @@ class Defaults(PlugIn):
 
         self.content.addContainer("cmd", "SetVol", Config.setVol, self.setVol)
 
+        self.content.addContainer("cmd", "Notification", Config.setVol, self.notify)
+
     def play(self, string="http://www.munich-radio.de:8000"):
         string = self.getText(string)
         address = Address(Config.audioPlay)
@@ -36,6 +38,11 @@ class Defaults(PlugIn):
     def setVol(self, string=""):
         string = self.getText(string)
         address = Address(Config.setVol)
+    	EventEngine.root.getByAddress(address.__str__()).use(string)
+
+    def notify(self, string=""):
+        string = self.getText(string)
+        address = Address(Config.Notification)
     	EventEngine.root.getByAddress(address.__str__()).use(string)
 
     # returns the plugin as a tree
