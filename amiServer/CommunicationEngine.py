@@ -217,7 +217,7 @@ Use following XML to sent a Packet:
 
 
     def presenceHandler(self, conn,msg):
-        print str(msg)
+        #print str(msg)
         prs_type=msg.getType()
         who=msg.getFrom()
         if prs_type == "subscribe":

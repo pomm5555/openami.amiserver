@@ -34,10 +34,10 @@ class Container:
             print "[ERROR] Token "+token+" is not a child of "+str(type(self))
 
     def getByAddress(self, address):
-        print self,
-        print ": ",
-        print dir(self)
-        print type(self)
+        #print self
+        #print ": ",
+        #print dir(self)
+        #print type(self)
         number = address.find("/")
         if not number == -1:
             token = address[:number]
@@ -56,7 +56,7 @@ class Container:
         self.use = use
 
     def printTree(self, i):
-        print self.visible
+        #print self.visible
         for elem in range(0,i):
                 print "  ",
         print "* "+self.token+"("+str(self)+")"
@@ -98,7 +98,7 @@ class Container:
 
     def getAddressList(self):
         result = []
-        print self.visible
+        #print self.visible
         for k,v in self.content.items():
             if v.visible:
                 result += v.getAddressList()

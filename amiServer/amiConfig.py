@@ -23,12 +23,16 @@ class Config():
     # parsing plugins section
     plugInsFolder = config.get('Plugins', 'PlugInsFolder')
 
+    #avrLib
+    avrLib = config.get('avrBridge', 'lib')
+
     # iTunesPlugin
     iTunesScript = config.get('iTunes', 'ScriptPath')
 
     # DefaultsPlugin
     audioPlay = config.get('Defaults', 'AudioPlay')
     audioStop = config.get('Defaults', 'AudioStop')
+    setVol = config.get('Defaults', 'SetVol')
 
 
     # get path to script
