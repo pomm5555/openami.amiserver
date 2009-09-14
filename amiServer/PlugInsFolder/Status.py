@@ -18,6 +18,8 @@ class Status(PlugIn):
         self.content.addContainer("cmd", "Buddies", "Show Buddies", self.getBuddies)
 
 
+        self.content.addContainer("cmd", "Root", "Show Root Node", self.getRoot)
+
     def getBuddies(self, text=""):
         string = ""
 
@@ -26,7 +28,12 @@ class Status(PlugIn):
 
         return string
 
+    def getRoot(self, text=""):
+        string = ""
 
+        res = self.root().__str__()
+
+        return res
 
     # returns the plugin as a tree
     def getTree(self):
