@@ -3,6 +3,7 @@
 
 from threading import Thread
 import xmpp
+from Address import Address
 
 __author__="markus"
 __date__ ="$Aug 16, 2009 3:56:03 PM$"
@@ -15,6 +16,7 @@ class Container:
         self.token = token
         self.type = type
         self.visible = True
+        self.parent = None
 
     def __str__(self):
         return self.information
@@ -22,6 +24,7 @@ class Container:
     def addChild(self, container):
         self.content[container.token] = container
         self.content[container.token].type = container.type
+        self.content[container.token].parent = self
 
     def addChildList(self, containers):
         for elem in containers:
@@ -38,11 +41,15 @@ class Container:
         #print ": ",
         #print dir(self)
         #print type(self)
+
+        #complete address
+        #address = Address(address).__str__()
+
         number = address.find("/")
         if not number == -1:
             token = address[:number]
             restAddress = address[number+1:]
-            print token+"---"+restAddress+"--"
+            #print token+"---"+restAddress+"--"
             
             return self.getChild(token).getByAddress(restAddress)
         else:
@@ -114,6 +121,20 @@ class Container:
             tmp.append(self.token+"/"+elem)
 
         return tmp
+
+    def root(self):
+        c = self
+        while not c.parent == none:
+            c = c.parent
+        print c.information
+        print "****** yei"
+        return c
+    
+    # This function should enable any treenode to send messages in an easy way! TODO
+    #
+    #def send(self, address):
+    #    address = Address(Config.Notification)
+    # 	EventEngine.root.getByAddress(address.__str__()).use(address.string)
 
 
 

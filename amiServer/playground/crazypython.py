@@ -26,13 +26,13 @@ class bar():
     def __init__(self):
 
 
-if __name__ == "__main__":
-    f = foo()
-    b = foo()
+        if __name__ == "__main__":
+            f = foo()
+            b = foo()
 
-    b.getInfo = f.getInfo
+            b.getInfo = f.getInfo
 
-    print f.getInfo
+            print f.getInfo
 
-    #print b.getInfo()
-    import code; code.interact(local=locals())
+            #print b.getInfo()
+            import code; code.interact(local=locals())

@@ -56,7 +56,7 @@ class callmonitorContainer(ThreadContainer):
             EventEngine.root.getByAddress(address.__str__()).use('Outgoing call from: %s to: %s via: %s' % (d[4], d[5], d[6]))
         elif d[1] == 'DISCONNECT':
             print 'Call ended!'
-            EventEngine.root.getByAddress(address.__str__()).use('Call ended!')
+            #EventEngine.root.getByAddress(address.__str__()).use('Call ended!')
 
     def __init__(self, type, token, information="empty"):
         ThreadContainer.__init__(self, type, token, information="empty")
