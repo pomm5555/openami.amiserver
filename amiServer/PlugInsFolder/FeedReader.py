@@ -1,7 +1,7 @@
 import xml.sax as sax
 from AmiTree import *
 from PlugIn import PlugIn
-import urllib, time
+import urllib, time, random
 from EventEngine import EventEngine
 from Address import Address
 from amiConfig import Config
@@ -24,6 +24,9 @@ class FeedReader(PlugIn):
             t = touple.split(">")
             self.content.addChild(Container("plugin", t[0], t[1]))
 
+        self.content.addContainer("cmd", "Random", "/FeedReader/MondayJazz", self.playRandom)
+
+
         self.content.start()
 
 
@@ -39,32 +42,49 @@ class FeedReader(PlugIn):
 
 
             for tk, feed in self.content.items():
-                print "parsing: "+tk
 
-                xml = urllib.urlopen(feed.information)
-                handler = PodcastHandler()
-                parser = sax.make_parser()
-                parser.setContentHandler(handler)
-                parser.parse(xml)
+                if not tk.__eq__("Random"):
 
-                #get Podcast Container
-                podcastContainer = EventEngine.root.getByAddress(feed.getAddress())
+                    print "parsing: "+tk
 
-                for k, v in handler.links.items():
+                    xml = urllib.urlopen(feed.information)
+                    handler = PodcastHandler()
+                    parser = sax.make_parser()
+                    parser.setContentHandler(handler)
+                    parser.parse(xml)
 
-                    if not podcastContainer.content.has_key(k.replace(" ", "_")):
-                        print k,v
+                    #get Podcast Container
+                    podcastContainer = EventEngine.root.getByAddress(feed.getAddress())
 
-                        podcastContainer.addChild(FeedLeafContainer("cmd", k, v))
-                        # address = Address("/FeedReader/"+str(i))
-                        # print "#####" + EventEngine.root.getByAddress("/FeedReader").token
-                    else:
-                        pass
+                    for k, v in handler.links.items():
+
+                        if not podcastContainer.content.has_key(k.replace(" ", "_")):
+                            print k,v
+
+                            podcastContainer.addChild(FeedLeafContainer("cmd", k, v))
+                            # address = Address("/FeedReader/"+str(i))
+                            # print "#####" + EventEngine.root.getByAddress("/FeedReader").token
+                        else:
+                            pass
 
             time.sleep(60*60) #every hour or so
 
 
 
+    def playRandom(self, string=""):
+        address = Address(self.information)
+        data = EventEngine.root.getByAddress(address.__str__()).content.items()
+        print data
+        elem = None
+
+        if data != []:
+            index = random.randint(0, len(data) - 1)
+            elem = data[index]
+
+        if elem:
+            print elem
+            elem[1].use()
+            
     # returns the plugin as a tree
     def getTree(self):
         return self.content
