@@ -99,7 +99,7 @@ class Container:
             result=""
             for k, v in self.content.items():
                 result+=v.toXml()
-            return "<container type=\""+self.type+"\" token=\""+self.token+"\" information=\""+self.information+"\">"+result+"</container>"
+            return "<container token=\""+self.token+"\">"+result+"</container>"
         else:
             return ""
 
