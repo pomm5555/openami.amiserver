@@ -27,8 +27,8 @@ class Openwrt(PlugIn):
 
     def setVol(self, vol="0"):
         vol = self.getText(vol)
-        print "new amixer volume:"+vol
-        os.system("amixer sset Speaker "+vol+"%" )
+        print "new amixer volume:"+str(vol)
+        os.system("amixer sset Speaker "+str(vol)+"%" )
 
     def kernelInfo(self, string=""):
         result = ""
