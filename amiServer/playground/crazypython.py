@@ -1,38 +1,32 @@
 
-class foo():
+class container():
     def __init__(self):
-        self.info = "foo"
-        print "foo init"
-        children = {}
+        #print "foo init"
+        self.info = "undefiend info attribute"
 
-
-    def getInfo(self):
-        return self.info
-
-
-    def newFoo(self, func):
-        new = Foo()
-        new.getInfo = func
-        children.appned(new)
-
-    def __str(self):
+    def use(self):
         print self.info
-        for elem in children:
-            print " ",
-            print elem
 
 
-class bar():
+class tree():
     def __init__(self):
 
+        # create container instance
+        b = container()
 
-        if __name__ == "__main__":
-            f = foo()
-            b = foo()
+        # change b's info attribute
+        b.info = "b's info attribute"
 
-            b.getInfo = f.getInfo
+        # bound method test is set as use of b and in this case unbound, i think
+        b.use = self.test
 
-            print f.getInfo
+        # should read b's info attribute and print it
+        print b.use()
 
-            #print b.getInfo()
-            import code; code.interact(local=locals())
+    # bound method test
+    def test(self):
+        return "test: "+self.info
+
+
+if __name__ == "__main__":
+    b = tree()

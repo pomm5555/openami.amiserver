@@ -34,9 +34,6 @@ class PlugIns:
         #root.addContainer("test", "test information")
 
 
-    def getTree(self):
-        return self.root
-
     def getChildList(self):
         return self.content
 

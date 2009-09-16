@@ -2,7 +2,7 @@
 # and open the template in the editor.
 
 from threading import Thread
-import xmpp
+import xmpp, types
 from Address import Address
 
 __author__="markus"
@@ -10,24 +10,26 @@ __date__ ="$Aug 16, 2009 3:56:03 PM$"
 
 class Container:
 
-    def __init__(self, type, token, information="empty"):
+    def __init__(self, type, token, information="empty", use=None):
         self.content = {}
         self.information = information
-        self.token = token
+        self.token = token.replace(" ", "_")
         self.type = type
         self.visible = True
         self.parent = None
+        if use:
+            self.setUse(use)
 
     def __str__(self):
         return self.information
 
     def addChild(self, container):
+        container.type = container.type
+        container.parent = self
         self.content[container.token] = container
-        self.content[container.token].type = container.type
-        self.content[container.token].parent = self
 
-    def addChildList(self, containers):
-        for elem in containers:
+    def addChildList(self, container):
+        for elem in container:
             self.addChild(elem)
 
     def getChild(self, token):
@@ -35,6 +37,9 @@ class Container:
             return self.content[token]
         except:
             print "[ERROR] Token "+token+" is not a child of "+str(type(self))
+
+    def getParent(self):
+        return self.parent
 
     def getByAddress(self, address):
         #print self
@@ -59,8 +64,10 @@ class Container:
     def use(self, unspecified=""):
         return self.information
 
+
     def setUse(self, use):
-        self.use = use
+        #self.use = use
+        self.use = types.MethodType(use.im_func, self, self.__class__)
 
     def printTree(self, i):
         #print self.visible
@@ -99,7 +106,7 @@ class Container:
     # add container without creating it first, token, information and optionally a method that is triggered.
     def addContainer(self, type, token, information="empty", use=None):
         self.addChild(Container(type, token, information))
-        if not use==None:
+        if use:
             self.getChild(token).setUse(use)
 
 
@@ -116,19 +123,40 @@ class Container:
             return result
 
         # it is not a leaf...
-        tmp = []
+        addressList = []
         for elem in result:
-            tmp.append(self.token+"/"+elem)
+            addressList.append(self.token+"/"+elem)
 
-        return tmp
+        return addressList
+
 
     def root(self):
-        c = self
-        while not c.parent == none:
-            c = c.parent
-        print c.information
-        print "****** yei"
-        return c
+        if self.parent:
+            return self.parent.root()
+        else:
+            return self
+
+    def getAddress(self):
+        address = self.RgetAddress()
+        return address[address.find("/")+1:]
+    
+    def RgetAddress(self):
+        if self.parent:
+            #print "this is NOT root...-->"+self.token
+            return  self.parent.RgetAddress()+"/"+self.token
+        else:
+            #print "this is root...-->"+self.token
+            return self.token
+
+    # TODO Dirty!!! gehoert hier nicht her!!!
+    def getText(self, var):
+        try:
+            var = var.strings["text"]
+            return test
+        except:
+            return var
+
+
     
     # This function should enable any treenode to send messages in an easy way! TODO
     #
@@ -138,14 +166,16 @@ class Container:
 
 
 
-class ThreadContainer(Container, Thread):
+class ThreadContainer(Thread, Container):
     def __init__(self, type, token, information="empty"):
-        Container.__init__(self, type, token, information)
         Thread.__init__(self, None)
+        Container.__init__(self, type, token, information)
 
 
     def setDo(self, method):
-        self.run = method
+        #self.run = method
+        self.run = types.MethodType(method.im_func, self, self.__class__)
+
 
     def run(self):
         pass
