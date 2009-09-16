@@ -4,6 +4,7 @@ from PlugIn import PlugIn
 import urllib, time
 from EventEngine import EventEngine
 from Address import Address
+from amiConfig import Config
 
 
 class FeedReader(PlugIn):
@@ -14,36 +15,53 @@ class FeedReader(PlugIn):
         self.architecture = "all"
 
         #plugin itself, is threaded uses the its process method
-        self.content = ThreadContainer("plugin", token, "This hopefully will be a Threaded Feedreader Plugin")
+        self.content = ThreadContainer("plugin", token, "This hopefully will be a Threaded Feedreader Plugin") #ThreadContainer
         self.content.setDo(self.process)
 
+        # this line should be read from config file
+        podcasts = Config.podcasts.split(",")
+        for touple in podcasts:
+            t = touple.split(">")
+            self.content.addChild(Container("plugin", t[0], t[1]))
+
         self.content.start()
+
 
         #self.content.setUse(self.use)
 
 
-    def process(self, url="http://www.mondayjazz.com/mj.xml"):
+    def process(self):
+        time.sleep(5)
         while True:
-            print "parsing: "+url
-            xml = urllib.urlopen(url)
-            handler = PodcastHandler()
-            parser = sax.make_parser()
-            parser.setContentHandler(handler)
-            parser.parse(xml)
+            #print "parsing: "+url
+            #print "COME ON!!!!! "+self.getAddress() ## should not echo NONE or something
+            #print "COME ON!!!!! "+self.root().__str__() ## should not echo NONE or something
 
-            address = Address("/FeedReader") # TODO should already know its address
-            feedreader = EventEngine.root.getByAddress(address.__str__())
 
-            for k, v in handler.links.items():
-                
-                if not feedreader.content.has_key(k):
-                    print k,v
+            for tk, feed in self.content.items():
+                print "parsing: "+tk
 
-                    feedreader.addChild(FeedLeafContainer("cmd", k, v))
-                    # address = Address("/FeedReader/"+str(i))
-                    # print "#####" + EventEngine.root.getByAddress("/FeedReader").token
+                xml = urllib.urlopen(feed.information)
+                handler = PodcastHandler()
+                parser = sax.make_parser()
+                parser.setContentHandler(handler)
+                parser.parse(xml)
 
-            time.sleep(60*60) #every hours or so
+                #get Podcast Container
+                podcastContainer = EventEngine.root.getByAddress(feed.getAddress())
+
+                for k, v in handler.links.items():
+
+                    if not podcastContainer.content.has_key(k.replace(" ", "_")):
+                        print k,v
+
+                        podcastContainer.addChild(FeedLeafContainer("cmd", k, v))
+                        # address = Address("/FeedReader/"+str(i))
+                        # print "#####" + EventEngine.root.getByAddress("/FeedReader").token
+                    else:
+                        pass
+
+            time.sleep(60*60) #every hour or so
 
 
 
@@ -78,7 +96,8 @@ class PodcastHandler(sax.handler.ContentHandler):
 
     def startElement(self, name, attrs):
         self.tag=name;
-
+        if not name.strip().__eq__("") and self.tag.__eq__("enclosure"):
+            self.links[self.lastTitle]=attrs["url"]
 
     def endElement(self,name):
         pass
@@ -88,8 +107,8 @@ class PodcastHandler(sax.handler.ContentHandler):
         if not data.strip().__eq__("") and self.tag.__eq__("title"):
             self.lastTitle = data
 
-        if not data.strip().__eq__("") and self.tag.__eq__("guid"):
-            self.links[self.lastTitle]=data
+        #if not data.strip().__eq__("") and self.tag.__eq__("enclosure"):
+        #    self.links[self.lastTitle]=data
 
     def load(self, data):
         handler = PodcastHandler()
@@ -97,8 +116,3 @@ class PodcastHandler(sax.handler.ContentHandler):
         parser.setContentHandler(handler)
         parser.parse(data)
         return self.links
-
-
-
-
-

@@ -24,7 +24,7 @@ class EventEngine:
         EventEngine.root.me.addChildList(p)
 
         # assign address index cache to root.addressIndex
-        EventEngine.root.me.addressIndex = EventEngine.root.me.getAddressList()
+        self.updateAddressCache()
 
         #print EventEngine.root.returnTree(0)
 
@@ -49,3 +49,7 @@ class EventEngine:
 
         print "Plugins loaded sucessfully."
         return plugins
+
+
+    def updateAddressCache(self):
+        EventEngine.root.me.addressIndex = EventEngine.root.me.getAddressList()

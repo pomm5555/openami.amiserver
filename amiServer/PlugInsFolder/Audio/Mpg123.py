@@ -18,13 +18,14 @@ class Mpg123(PlugIn):
         self.content = Container("plugin", token, "This is a Mpg123 Plugin")
 
         # set add container
-        self.content.addContainer("cmd", "Play", "Play Mpg123", self.play)
+        self.content.addChild(Container("cmd", "Play", "Play Mpg123", self.play)) #addContainer("cmd", "Play", "Play Mpg123", self.play)
 
 	self.content.addContainer("cmd", "Stop", "Stop Mpg123", self.stop)
 
     def play(self, text="http://www.munich-radio.de:8000"):
         text = self.getText(text)
         print text
+        print self.getAddress()
         os.system('curl '+text+' | mpg321 - &' )
 
     def stop(self, string=""):

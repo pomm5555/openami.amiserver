@@ -35,6 +35,9 @@ class Config():
     setVol = config.get('Defaults', 'SetVol')
     Notification = config.get('Defaults', 'Notification')
 
+    # Feed Reader
+    podcasts = config.get('FeedReader', 'Podcasts')
+
     # get path to script
     absPath = os.path.abspath(".")
 
