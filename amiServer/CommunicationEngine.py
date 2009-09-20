@@ -227,7 +227,9 @@ Use following XML to sent a Packet:
     def stepOn(self, conn):
         try:
             conn.Process(1)
-	    self.pingJabber()
+	    if not conn.isConnected():
+                print "reconnecting..."
+                conn.reconnectAndReauth()
         except KeyboardInterrupt:
             return 0
         return 1
