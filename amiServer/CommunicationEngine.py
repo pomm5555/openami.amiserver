@@ -228,6 +228,7 @@ Use following XML to sent a Packet:
         try:
             conn.Process(1)
 	    if not conn.isConnected():
+                print ">>>>DISCONNECT in stepOn<<<<"
                 print "reconnecting..."
                 conn.reconnectAndReauth()
         except KeyboardInterrupt:
@@ -263,10 +264,10 @@ Use following XML to sent a Packet:
         #
         #  ACTS A LITTLE LOONEY
         #
-        print ">>>>DISCONNECT<<<<"
-        if self.client.connect((Config.host, Config.port)) == "":
-            print "not connected"
-            sys.exit(0)
+        print ">>>>DISCONNECT HANDLER<<<<"
+        if not conn.isConnected():
+            print "reconnecting..."
+            conn.reconnectAndReauth()
 
     def processRoster(self):
 
