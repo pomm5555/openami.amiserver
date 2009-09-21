@@ -3,3 +3,4 @@ syntax: glob
 *.properties
 ^logs/
 ^PlugInsFolder/
+^run/
