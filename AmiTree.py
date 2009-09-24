@@ -2,7 +2,7 @@
 # and open the template in the editor.
 
 from threading import Thread
-import xmpp, types
+import xmpp, types, cherrypy
 from Address import Address
 
 __author__="markus"
@@ -23,6 +23,11 @@ class Container:
     def __str__(self):
         return self.information
 
+    def index(self):
+        return self.information
+
+    index.exposed = True
+
     def addChild(self, container):
         container.type = container.type
         container.parent = self
@@ -36,7 +41,7 @@ class Container:
         try:
             return self.content[token]
         except:
-            print "[ERROR] Token "+token+" is not a child of "+str(type(self))
+            print "[ERROR] Token "+token+" is not a child of "+self.__str__()
 
     def getParent(self):
         return self.parent
@@ -103,6 +108,15 @@ class Container:
         else:
             return ""
 
+    def toHtml(self):
+        if self.visible:
+            result=""
+            for k, v in self.content.items():
+                result+=v.toHtml()
+            return "<ul><li><a href=\""+self.getAddress()+"\">"+self.token+"</a></li><li>"+result+"</li></ul>"
+        else:
+            return ""
+    
     # add container without creating it first, token, information and optionally a method that is triggered.
     def addContainer(self, type, token, information="empty", use=None):
         self.addChild(Container(type, token, information))

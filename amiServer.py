@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from EventEngine import EventEngine
 from supay import Daemon
 import time, sys, os

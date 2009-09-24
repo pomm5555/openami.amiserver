@@ -221,16 +221,17 @@ Use following XML to sent a Packet:
         prs_type=msg.getType()
         who=msg.getFrom()
         if prs_type == "subscribe":
-            conn.send(xmpp.Presence(to=who, typ = 'subscribed'))
-            conn.send(xmpp.Presence(to=who, typ = 'subscribe'))
+            self.client.send(xmpp.Presence(to=who, typ = 'subscribed'))
+            self.client.send(xmpp.Presence(to=who, typ = 'subscribe'))
 
     def stepOn(self, conn):
         try:
-            conn.Process(1)
-	    if not conn.isConnected():
+            self.client.Process(1)
+	    if not self.client.isConnected():
                 print ">>>>DISCONNECT in stepOn<<<<"
                 print "reconnecting..."
-                conn.reconnectAndReauth()
+                self.pingJabber()
+                self.client.reconnectAndReauth()
         except KeyboardInterrupt:
             return 0
         return 1
@@ -239,7 +240,7 @@ Use following XML to sent a Packet:
         while self.stepOn(conn):
             pass
 
-    #deprecated
+    #deprecated, you can send now directly via plugin tree
     def send(self, msg, receiver):
         self.client.send(xmpp.protocol.Message(receiver, msg))
 
@@ -265,9 +266,9 @@ Use following XML to sent a Packet:
         #  ACTS A LITTLE LOONEY
         #
         print ">>>>DISCONNECT HANDLER<<<<"
-        if not conn.isConnected():
+        if not self.client.isConnected():
             print "reconnecting..."
-            conn.reconnectAndReauth()
+            self.client.reconnectAndReauth()
 
     def processRoster(self):
 

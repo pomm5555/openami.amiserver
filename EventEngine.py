@@ -2,7 +2,7 @@ from CommunicationEngine import CommunicationEngine
 from PlugIns import PlugIns
 from amiConfig import Config
 from AmiTree import Container
-
+from WebEngine import WebEngine
 
 class EventEngine:
 
@@ -10,6 +10,8 @@ class EventEngine:
     root = Container("root", "root", "this is the root node")
 
     def __init__(self):
+
+        webserver = WebEngine(EventEngine.root)
 
         #print "initializing EventEngine..."
         EventEngine.root.addContainer("instance", Config.jid, "this is the tree instance "+Config.jid)
@@ -53,3 +55,5 @@ class EventEngine:
 
     def updateAddressCache(self):
         EventEngine.root.me.addressIndex = EventEngine.root.me.getAddressList()
+
+
