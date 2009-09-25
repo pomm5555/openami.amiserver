@@ -1,7 +1,7 @@
 import ConfigParser, os
 
 
-class Config():
+class Config:
 
     config = ConfigParser.ConfigParser()
     config.readfp(open("server.properties"))
