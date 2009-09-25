@@ -113,7 +113,10 @@ class Container:
             result=""
             for k, v in self.content.items():
                 result+=v.toHtml()
-            return "<ul><li><a href=\""+self.getAddress()+"\">"+self.token+"</a></li><li>"+result+"</li></ul>"
+            
+	    #if result.__eq__(""):
+	    #    return "<li><a href=\""+self.getAddress()+"\">"+self.token+"</a>"+result+"</li>"
+	    return "<ul><li><a href=\""+self.getAddress()+"\">"+self.token+"</a></li>"+result+"</ul>"
         else:
             return ""
     

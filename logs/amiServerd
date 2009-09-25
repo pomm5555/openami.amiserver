@@ -1398,3 +1398,1285 @@ Incoming call from: 07751800701 to: 07751304177
 Incoming call from: 07751800701 to: 07751304177
 parsing: MondayJazz
 Call ended!
+starting event engine...
+loading all plugins...
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Audio
+*** loading: PlugInsFolder.Audio.Madplay.py
+*** loading: PlugInsFolder.Defaults.py
+*** loading: PlugInsFolder.FeedReader.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Notification
+*** loading: PlugInsFolder.Notification.Prowly.py
+*** loading: PlugInsFolder.SoftKeys.py
+devcounter 1:devlist 6728680:devlist 0:*** loading: PlugInsFolder.Status.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.System
+*** loading: PlugInsFolder.System.FritzMonitor.py
+*** loading: PlugInsFolder.System.Openwrt.py
+loaded all plugins sucessfully
+starting xmpp client...
+parsing: MondayJazz
+servant@jabber.org
+seltmann@messi.mi.hdm-stuttgart.de
+sabber@jabber.org
+fernmelder@jabber.org
+abspielgeraet@jabber.org
+Joining groupchat: ami@conference.jabber.org/ami.client
+Communicationengine is online, or should be... #TODO
+---message--------------------------------------------------
+(None) Sender: servant@jabber.org/LivingRoom
+ Content: #type help to explore me.
+parsed address: 
+parsing as comment
+---message end----------------------------------------------
+---message--------------------------------------------------
+(None) Sender: servant@jabber.org/LivingRoom
+ Content: #type help to explore me.
+parsed address: 
+parsing as comment
+---message end----------------------------------------------
+MJ060 Redio Sandwich mixed by Jared Turinsky / Red Room Beats http://www.mondayjazz.com/mixes/mj060_redio_sandwich_by_jared_turinsky_-_red_room_beats.mp3
+MJ076 Specific Components mixed by Lapti http://mondayjazz.com/mixes/mj076_specific_components_by_lapti.mp3
+MJ016 Pearls mixed by Pure P http://www.mondayjazz.com/mixes/mj016_pearls_by_pure_p.mp3
+MJ102 Excuse I'm Not a Dj by Ichiro_ http://mondayjazz.com/mixes/mj102_excuse_im_not_a_dj_by_ichiro_.mp3
+MJ050 The Jazztape mixed by Justas Fresh http://www.mondayjazz.com/mixes/mj050_the_jazztape_by_justas_fresh.mp3
+MJ066 Possibilities mixed by Teebs http://mondayjazz.com/mixes/mj066_possibilities_by_teebs.mp3
+MJ012 Circulations mixed by Dai-San http://www.mondayjazz.com/mixes/mj012_circulations_by_dai_san.mp3
+MJ003 Etnosound mixed by Sleeper http://www.mondayjazz.com/mixes/mj003_Etnosound_by_Sleeper.mp3
+MJ023 Society for the Musical Education mixed by Quazar http://www.mondayjazz.com/mixes/mj023_society_for_the_musical_education_by_quazar.mp3
+MJ074 60 Minutes With Chief mixed by Chief http://mondayjazz.com/mixes/mj074_60_minutes_with_chief_by_chief.mp3
+MJ038 Vote For Jazz mixed by Hollenstein http://www.mondayjazz.com/mixes/mj038_vote_for_jazz_by_hollenstein.mp3
+MJ033 The Back Handed Party mixed by Joe Beats http://www.mondayjazz.com/mixes/mj033_the_back_handed_party_by_joe_beats.mp3
+MJ011 Morning Routine mixed by Astralas http://www.mondayjazz.com/mixes/mj011_morning_routine_by_astralas.mp3
+MJ072 Headlights mixed by Blunted Monkz http://mondayjazz.com/mixes/mj072_headlights_by_blunted_monkz.mp3
+MJ091 Pour Le Plaisir by Souleance http://mondayjazz.com/mixes/mj091_pour_le_plaisir_by_souleance.mp3
+MJ079 Audiopatchwork mixed by Food For Ya Soul http://mondayjazz.com/mixes/mj079_audiopatchwork_by_food_for_ya_soul.mp3
+MJ078 Box Of Chocolates mixed by 00Genesis http://mondayjazz.com/mixes/mj078_box_of_chocolates_by_00genesis.mp3
+MJ044 Praqtice Makes Perfeq mixed by Architeq http://www.mondayjazz.com/mixes/mj044_praqtice_makes_perfeq_by_architeq.mp3
+MJ093 Space Oddities by Robot Koch http://mondayjazz.com/mixes/mj093_space_oddities_by_robot_koch.mp3
+MJ085 Afternoon Delights mixed by Marcin Cichy http://mondayjazz.com/mixes/mj085_afternoon_delights_by_marcin_cichy.mp3
+MJ008 I Versus Myself mixed by Pranza http://www.mondayjazz.com/mixes/mj008_i_versus_myself_by_pranza.mp3
+MJ048 One Of These Stormy Mondays mixed by Mnemotrauma http://www.mondayjazz.com/mixes/mj048_one_of_these_stormy_mondays_by_mnemotrauma.mp3
+MJ041 From Jazz to Spaz mixed by Dorian Concept http://www.mondayjazz.com/mixes/mj041_from_jazz_to_spaz_by_dorian_concept.mp3
+MJ015 Monday Mish Mosh mixed by Jo_Ill http://www.mondayjazz.com/mixes/mj015_monday_mish_mosh_by_jo_ill.mp3
+MJ037 Mind Reflections mixed by Portformat http://www.mondayjazz.com/mixes/mj037_mind_reflections_by_portformat.mp3
+MJ082 Holding It Down mixed by Bene http://mondayjazz.com/mixes/mj082_holding_it_down_by_bene.mp3
+MJ099 Now Just Listen by Dj Blueprint http://mondayjazz.com/mixes/mj099_now_just_listen_by_dj_blueprint.mp3
+MJ088 I Go By Handsome Twenty-four Year Old by dza http://mondayjazz.com/mixes/mj088_i_go_by_handsome_twenty-four_year-old_by_dza.mp3
+MJ031 Temple Of Tones mixed by Indiana Tones http://www.mondayjazz.com/mixes/mj031_temple_of_tones_by_indiana_tones.mp3
+MJ043 Magic Mayer mixed by Front 2 Blaq http://www.mondayjazz.com/mixes/mj043_magic_mayer_by_front_2_blaq.mp3
+MJ052 Magic Ritual mixed by Tobrock http://www.mondayjazz.com/mixes/mj052_magic_ritual_by_tobrock.mp3
+MJ028 Wacky World mixed by 00Genesis http://www.mondayjazz.com/mixes/mj028_wacky_world_by_00genesis.mp3
+MJ001 Other Worlds mixed by 1.1 and Moxo Tengu http://www.mondayjazz.com/mixes/mj001_OtherWorlds_by_1.1_and_Moxo_Tengu.mp3
+MJ022 Wake Up mixed by Tobias Kirmayer http://www.mondayjazz.com/mixes/mj022_wake_up_by_tobias_kirmayer.mp3
+MJ018 Birds Custard mixed by DJ Moneyshot http://www.mondayjazz.com/mixes/mj018_birds_custard_by_dj_moneyshot.mp3
+MJ040 From Monday Till Monday mixed by Viper and Alex D http://www.mondayjazz.com/mixes/mj040_from_monday_till_monday_by_viper_and_alex_d.mp3
+MJ098 Heavymentaldecay by C1GART And The Fatlips http://mondayjazz.com/mixes/mj098_heavymentaldecay_by_c1gart_and_the_fatlips.mp3
+MJ070 Submerged Above Sound mixed by Ponce de Beyond http://mondayjazz.com/mixes/mj070_submerged_above_sound_by_ponce_de_beyond.mp3
+MJ063 Love Is Everything mixed by Mr. Hone http://mondayjazz.com/mixes/mj063_love_is_anything_by_mr_hone.mp3
+MJ089 Santo Domingo Beats by Cohoba http://mondayjazz.com/mixes/mj089_santo_domingo_beats_by_cohoba.mp3
+MJ073 Monday Marauders mixed by Sifu http://mondayjazz.com/mixes/mj073_monday_marauders_by_sifu.mp3
+MJ069 Phases Of The Day mixed by Ryan Alexander http://mondayjazz.com/mixes/mj069_phases_of_a_day_by_ryan_alexander.mp3
+MJ062 Acid Jazz n Blunts mixed by Namo http://www.mondayjazz.com/mixes/mj062_acid_jazz_n_blunts_by_namo.mp3
+MJ007 7 Inch Selection mixed by Deneez http://www.mondayjazz.com/mixes/mj007_7_inch%20_selection_by_deneez.mp3
+MJ081 Jazzercise! Vol. 2 mixed by Dj Nerstylist http://www.mondayjazz.com/mixes/mj081_jazzercise!_vol_2_by_dj_nerstylist.mp3
+MJ013 Dedication to Interplanetary Stewardness mixed by O.Boogie http://www.mondayjazz.com/mixes/mj013_dedication%20_to_the_interplanetary_stewardess_by_oboogie.mp3
+MJ009 One 4orty mixed by Jon Kennedy http://www.mondayjazz.com/mixes/mj009_one_4orty_by_jon_kennedy.mp3
+MJ101 July by Dj Paul Pre http://www.mondayjazz.com/mixes/mj101_july_by_paul_pre.mp3
+MJ034 The Cancelled Formula mixed by Neil Something http://www.mondayjazz.com/mixes/mj034_the_cancelled_formula_by_neil_something.mp3
+MJ056 Static Noise mixed by Hubert Daviz http://www.mondayjazz.com/mixes/mj056_static_noise_by_hubert_daviz.mp3
+MJ002 One Shot in the Morning mixed by Genys http://www.mondayjazz.com/mixes/mj002_one_shot_in_the_morning_by_genys.mp3
+MJ045 The Time Tunnel mixed by Cinnaman http://www.mondayjazz.com/mixes/mj045_the_time_tunnel_by_cinnaman.mp3
+MJ083 MIA In The MIA mixed by Manuvers http://mondayjazz.com/mixes/mj083_mia_in_the_mia_by_manuvers.mp3
+MJ086 Mondayjazz Live! 04-04-2009 by Fulgeance http://mondayjazz.com/mixes/mj086_fulgeance_live_04042009.mp3
+MJ064 Music To Blink To mixed by Sunete Sub.Sol http://mondayjazz.com/mixes/mj064_music_to_blink_to_by_sunete_sub.sol.mp3
+MJ057 The Return mixed by 00Genesis http://www.mondayjazz.com/mixes/mj057_the_return_by_00genesis.mp3
+MJ087 Jazzing The Old Way by Paul Murphy http://mondayjazz.com/mixes/mj087_jazzing_the_old_way_by_paul_murphy.mp3
+MJ029 Hiver Normand mixed by Fulgeance http://www.mondayjazz.com/mixes/mj029_hiver_normand_by_fulgeance.mp3
+MJ010 45rpm Shmunk, Shmoul, Shmack mixed by Zhilvinas Noruishis http://www.mondayjazz.com/mixes/mj010_45rpm_sss_by_zhilvinas_noruishis.mp3
+MJ071 Various Artists mixed by fEux http://mondayjazz.com/mixes/mj071_various_artists_by_feux.mp3
+MJ021 New Life mixed by Jay Scarlett http://www.mondayjazz.com/mixes/mj021_new_life_by_jay_scarlett.mp3
+MJ067 Trippy Jazz Travel From Nowhere To Somewhere mixed by L'eau du Robinet http://mondayjazz.com/mixes/mj067_trippy_jazz_travel_from_nowhere_to_somewhere_by_leau_du_robinet.mp3
+MJ051 Are You Hung Up? mixed by A La Fu http://www.mondayjazz.com/mixes/mj051_are_you_hung_up_by_a_la_fu.mp3
+MJ024 Ostrabrama Live Session http://www.mondayjazz.com/mixes/mj024_ostrabrama_live_session.mp3
+MJ061 Floatation Device mixed by The Smokering http://www.mondayjazz.com/mixes/mj061_floatation_device_by_the_smokering.mp3
+MJ020 Above the Storm mixed by DJ Alda http://www.mondayjazz.com/mixes/mj020_above_the_storm_by_alda.mp3
+MJ095 A Mix Called Mondayjazz Mix by A Cat Called Fritz http://mondayjazz.com/mixes/mj095_a_tape_called_mondayjazz_mix_by_a_cat_called_fritz.mp3
+MJ092 Early Reflections by odd /even http://mondayjazz.com/mixes/mj092_early_reflections_by_oddeven.mp3
+MJ090 Beat Combos by Harrison Blakoldman http://mondayjazz.com/mixes/mj090_beat_combos_by_hbo.mp3
+MJ055 Enemy Earth Relics mixed by Recor http://www.mondayjazz.com/mixes/mj055_enemy_earth_relics_by_recor.mp3
+MJ094 Adventures On The Sun by Re:Source http://mondayjazz.com/mixes/mj094_adventures_on_the_sun_by_re_source.mp3
+MJ006 Summer Picks and Dips mixed by Zhil http://www.mondayjazz.com/mixes/mj006_summer_picks_n_dips_by_zhil.mp3
+MJ026 Kenbun mixed by Pablo Valentino http://www.mondayjazz.com/mixes/mj026_kenbun_by_pablo_valentino.mp3
+MJ014 Erikai mixed by Walkman http://www.mondayjazz.com/mixes/mj014_erikai_by_walkman.mp3
+MJ036 Weihnachtstape'07 mixed by Conikt http://www.mondayjazz.com/mixes/mj036_weihnachtstape_by_conikt.mp3
+MJ032 Yellow Snow mixed by Comfort Fit http://www.mondayjazz.com/mixes/mj032_yellow_snow_by_comfort_fit.mp3
+MJ004 Mondays Are Rewound Sundays mixed by UMC http://www.mondayjazz.com/mixes/mj004_mondays_are_rewound_sundays_by_umc.mp3
+MJ075 Belgium Beer And Poptarts mixed by Sinister Sound Team http://mondayjazz.com/mixes/mj075_belgium_beer_and_poptarts_by_sinister_sound_team.mp3
+MJ058 Retrospective Life mixed by Lo http://www.mondayjazz.com/mixes/mj058_retrospective_life_by_lo.mp3
+MJ027 Mixtape for Myself mixed by Hunee http://www.mondayjazz.com/mixes/mj027_mixtape_for_myself_by_hunee.mp3
+MJ047 Soulbasta Jazz Session 1 mixed by Latin Lover http://www.mondayjazz.com/mixes/mj047_soulbasta_jazz_session1_by_latin_lover.mp3
+MJ005 Yesterday is Todays Tomorrow mixed by Jef Metal http://www.mondayjazz.com/mixes/mj005_yesterday_is_todays_tomorrow_by_jeff_metal.mp3
+MJ096 Your Headz In The Cloudz by DaRon http://mondayjazz.com/mixes/mj096_your_headz_in_the_cloudz_by_daron.mp3
+MJ035 Ruff Shootings mixed by Lokid and Powell http://mondayjazz.com/mixes/mj035_ruff_shootings_by_lokid_and_powell.mp3
+MJ080 Far Out In Space mixed by Dj Synflood http://mondayjazz.com/mixes/mj080_far_out_in_space_by_dj_synflood.mp3
+MJ049 Left Field mixed by Fightex http://www.mondayjazz.com/mixes/mj049_left_field_by_fightex.mp3
+MJ053 Autumn Solace mixed by Cleptoclectics http://www.mondayjazz.com/mixes/mj053_autumn_solace_by_cleptoclectics.mp3
+MJ059 Driving Lessons mixed by Swede:art http://www.mondayjazz.com/mixes/mj059_driving_lessons_by_swedeart.mp3
+MJ084 Afterwords mixed by OL and Miracle Libido http://www.mondayjazz.com/mixes/mj084_afterwords_by_ol_and_miracle_libido.mp3
+MJ054 Neck Therapy mixed by Josip Klobuchar http://www.mondayjazz.com/mixes/mj054_neck_therapy_by_josip_klobuchar.mp3
+MJ042 Monday Sermon mixed by Dday One http://www.mondayjazz.com/mixes/mj042_monday_sermon_by_dday_one.mp3
+MJ017 On Monday I Want to Die mixed by Paul Nevermind http://www.mondayjazz.com/mixes/mj017_on_monday_i_want_to_die_by_paul_nevermind.mp3
+MJ025 Rollercoaster mixed by Hazel http://www.mondayjazz.com/mixes/mj025_rollercoaster_by_hazel.mp3
+MJ046 Colours mixed by Called Understandable Souls http://www.mondayjazz.com/mixes/mj046_colour_by_called_understandable_souls.mp3
+MJ065 Do You Know Tthe Tenjin St mixed by Olive Oil Still Human Being mixed by Soloal One http://mondayjazz.com/mixes/mj065_do_you_know_the_tenjin_st_by_olive_oil_-_still_human_being_by_soloal-one.mp3
+MJ097 Hela Hena by Dj Lovespook http://mondayjazz.com/mixes/mj097_hela_hena_by_dj_lovespook.mp3
+MJ039 Blackjack Beats mixed by Gamblin Matic and Stevo Casino http://www.mondayjazz.com/mixes/mj039_blackjack_beats_by_gamblin_matic_and_stevo_casino.mp3
+MJ068 Monday Consequence mixed by U-point http://mondayjazz.com/mixes/mj068_monday_consequence_by_u-point.mp3
+MJ030 The Escape of the Mingus mixed by Chewy B http://www.mondayjazz.com/mixes/mj030_the_escape_of_mingus_by_chewy_b.mp3
+MJ077 Other Sides Of The Cozmos mixed by See Visions http://mondayjazz.com/mixes/mj077_other_sides_of_the_cozmos_by_see_visions.mp3
+MJ019 Spiral Motion mixed by Skape http://www.mondayjazz.com/mixes/mj019_spiral_motion_by_skape.mp3
+[ERROR] Token classic.css is not a child of this is the root node
+[ERROR] Token classic.css is not a child of this is the root node
+[ERROR] Token classic.css is not a child of this is the root node
+http://mondayjazz.com/mixes/mj091_pour_le_plaisir_by_souleance.mp3
+http://mondayjazz.com/mixes/mj079_audiopatchwork_by_food_for_ya_soul.mp3
+[ERROR] Token classic.css is not a child of this is the root node
+starting event engine...
+loading all plugins...
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Audio
+*** loading: PlugInsFolder.Audio.Madplay.py
+*** loading: PlugInsFolder.Defaults.py
+*** loading: PlugInsFolder.FeedReader.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Notification
+*** loading: PlugInsFolder.Notification.Prowly.py
+*** loading: PlugInsFolder.SoftKeys.py
+devcounter 1:devlist 6274088:devlist 0:*** loading: PlugInsFolder.Status.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.System
+*** loading: PlugInsFolder.System.FritzMonitor.py
+*** loading: PlugInsFolder.System.Openwrt.py
+loaded all plugins sucessfully
+starting xmpp client...
+[ERROR] Token classic.css is not a child of this is the root node
+[ERROR] Token classic.css is not a child of this is the root node
+parsing: MondayJazz
+[ERROR] Token classic.css is not a child of this is the root node
+servant@jabber.org
+seltmann@messi.mi.hdm-stuttgart.de
+sabber@jabber.org
+fernmelder@jabber.org
+abspielgeraet@jabber.org
+Joining groupchat: ami@conference.jabber.org/ami.client
+Communicationengine is online, or should be... #TODO
+MJ060 Redio Sandwich mixed by Jared Turinsky / Red Room Beats http://www.mondayjazz.com/mixes/mj060_redio_sandwich_by_jared_turinsky_-_red_room_beats.mp3
+MJ076 Specific Components mixed by Lapti http://mondayjazz.com/mixes/mj076_specific_components_by_lapti.mp3
+MJ016 Pearls mixed by Pure P http://www.mondayjazz.com/mixes/mj016_pearls_by_pure_p.mp3
+MJ102 Excuse I'm Not a Dj by Ichiro_ http://mondayjazz.com/mixes/mj102_excuse_im_not_a_dj_by_ichiro_.mp3
+MJ050 The Jazztape mixed by Justas Fresh http://www.mondayjazz.com/mixes/mj050_the_jazztape_by_justas_fresh.mp3
+MJ066 Possibilities mixed by Teebs http://mondayjazz.com/mixes/mj066_possibilities_by_teebs.mp3
+MJ012 Circulations mixed by Dai-San http://www.mondayjazz.com/mixes/mj012_circulations_by_dai_san.mp3
+MJ003 Etnosound mixed by Sleeper http://www.mondayjazz.com/mixes/mj003_Etnosound_by_Sleeper.mp3
+MJ023 Society for the Musical Education mixed by Quazar http://www.mondayjazz.com/mixes/mj023_society_for_the_musical_education_by_quazar.mp3
+MJ074 60 Minutes With Chief mixed by Chief http://mondayjazz.com/mixes/mj074_60_minutes_with_chief_by_chief.mp3
+MJ038 Vote For Jazz mixed by Hollenstein http://www.mondayjazz.com/mixes/mj038_vote_for_jazz_by_hollenstein.mp3
+MJ033 The Back Handed Party mixed by Joe Beats http://www.mondayjazz.com/mixes/mj033_the_back_handed_party_by_joe_beats.mp3
+MJ011 Morning Routine mixed by Astralas http://www.mondayjazz.com/mixes/mj011_morning_routine_by_astralas.mp3
+MJ072 Headlights mixed by Blunted Monkz http://mondayjazz.com/mixes/mj072_headlights_by_blunted_monkz.mp3
+MJ091 Pour Le Plaisir by Souleance http://mondayjazz.com/mixes/mj091_pour_le_plaisir_by_souleance.mp3
+MJ079 Audiopatchwork mixed by Food For Ya Soul http://mondayjazz.com/mixes/mj079_audiopatchwork_by_food_for_ya_soul.mp3
+MJ078 Box Of Chocolates mixed by 00Genesis http://mondayjazz.com/mixes/mj078_box_of_chocolates_by_00genesis.mp3
+MJ044 Praqtice Makes Perfeq mixed by Architeq http://www.mondayjazz.com/mixes/mj044_praqtice_makes_perfeq_by_architeq.mp3
+MJ093 Space Oddities by Robot Koch http://mondayjazz.com/mixes/mj093_space_oddities_by_robot_koch.mp3
+MJ085 Afternoon Delights mixed by Marcin Cichy http://mondayjazz.com/mixes/mj085_afternoon_delights_by_marcin_cichy.mp3
+MJ008 I Versus Myself mixed by Pranza http://www.mondayjazz.com/mixes/mj008_i_versus_myself_by_pranza.mp3
+MJ048 One Of These Stormy Mondays mixed by Mnemotrauma http://www.mondayjazz.com/mixes/mj048_one_of_these_stormy_mondays_by_mnemotrauma.mp3
+MJ041 From Jazz to Spaz mixed by Dorian Concept http://www.mondayjazz.com/mixes/mj041_from_jazz_to_spaz_by_dorian_concept.mp3
+MJ015 Monday Mish Mosh mixed by Jo_Ill http://www.mondayjazz.com/mixes/mj015_monday_mish_mosh_by_jo_ill.mp3
+MJ037 Mind Reflections mixed by Portformat http://www.mondayjazz.com/mixes/mj037_mind_reflections_by_portformat.mp3
+MJ082 Holding It Down mixed by Bene http://mondayjazz.com/mixes/mj082_holding_it_down_by_bene.mp3
+MJ099 Now Just Listen by Dj Blueprint http://mondayjazz.com/mixes/mj099_now_just_listen_by_dj_blueprint.mp3
+MJ088 I Go By Handsome Twenty-four Year Old by dza http://mondayjazz.com/mixes/mj088_i_go_by_handsome_twenty-four_year-old_by_dza.mp3
+MJ031 Temple Of Tones mixed by Indiana Tones http://www.mondayjazz.com/mixes/mj031_temple_of_tones_by_indiana_tones.mp3
+MJ043 Magic Mayer mixed by Front 2 Blaq http://www.mondayjazz.com/mixes/mj043_magic_mayer_by_front_2_blaq.mp3
+MJ052 Magic Ritual mixed by Tobrock http://www.mondayjazz.com/mixes/mj052_magic_ritual_by_tobrock.mp3
+MJ028 Wacky World mixed by 00Genesis http://www.mondayjazz.com/mixes/mj028_wacky_world_by_00genesis.mp3
+MJ001 Other Worlds mixed by 1.1 and Moxo Tengu http://www.mondayjazz.com/mixes/mj001_OtherWorlds_by_1.1_and_Moxo_Tengu.mp3
+MJ022 Wake Up mixed by Tobias Kirmayer http://www.mondayjazz.com/mixes/mj022_wake_up_by_tobias_kirmayer.mp3
+MJ018 Birds Custard mixed by DJ Moneyshot http://www.mondayjazz.com/mixes/mj018_birds_custard_by_dj_moneyshot.mp3
+MJ040 From Monday Till Monday mixed by Viper and Alex D http://www.mondayjazz.com/mixes/mj040_from_monday_till_monday_by_viper_and_alex_d.mp3
+MJ098 Heavymentaldecay by C1GART And The Fatlips http://mondayjazz.com/mixes/mj098_heavymentaldecay_by_c1gart_and_the_fatlips.mp3
+MJ070 Submerged Above Sound mixed by Ponce de Beyond http://mondayjazz.com/mixes/mj070_submerged_above_sound_by_ponce_de_beyond.mp3
+MJ063 Love Is Everything mixed by Mr. Hone http://mondayjazz.com/mixes/mj063_love_is_anything_by_mr_hone.mp3
+MJ089 Santo Domingo Beats by Cohoba http://mondayjazz.com/mixes/mj089_santo_domingo_beats_by_cohoba.mp3
+MJ073 Monday Marauders mixed by Sifu http://mondayjazz.com/mixes/mj073_monday_marauders_by_sifu.mp3
+MJ069 Phases Of The Day mixed by Ryan Alexander http://mondayjazz.com/mixes/mj069_phases_of_a_day_by_ryan_alexander.mp3
+MJ062 Acid Jazz n Blunts mixed by Namo http://www.mondayjazz.com/mixes/mj062_acid_jazz_n_blunts_by_namo.mp3
+MJ007 7 Inch Selection mixed by Deneez http://www.mondayjazz.com/mixes/mj007_7_inch%20_selection_by_deneez.mp3
+MJ081 Jazzercise! Vol. 2 mixed by Dj Nerstylist http://www.mondayjazz.com/mixes/mj081_jazzercise!_vol_2_by_dj_nerstylist.mp3
+MJ013 Dedication to Interplanetary Stewardness mixed by O.Boogie http://www.mondayjazz.com/mixes/mj013_dedication%20_to_the_interplanetary_stewardess_by_oboogie.mp3
+MJ009 One 4orty mixed by Jon Kennedy http://www.mondayjazz.com/mixes/mj009_one_4orty_by_jon_kennedy.mp3
+MJ101 July by Dj Paul Pre http://www.mondayjazz.com/mixes/mj101_july_by_paul_pre.mp3
+MJ034 The Cancelled Formula mixed by Neil Something http://www.mondayjazz.com/mixes/mj034_the_cancelled_formula_by_neil_something.mp3
+MJ056 Static Noise mixed by Hubert Daviz http://www.mondayjazz.com/mixes/mj056_static_noise_by_hubert_daviz.mp3
+MJ002 One Shot in the Morning mixed by Genys http://www.mondayjazz.com/mixes/mj002_one_shot_in_the_morning_by_genys.mp3
+MJ045 The Time Tunnel mixed by Cinnaman http://www.mondayjazz.com/mixes/mj045_the_time_tunnel_by_cinnaman.mp3
+MJ083 MIA In The MIA mixed by Manuvers http://mondayjazz.com/mixes/mj083_mia_in_the_mia_by_manuvers.mp3
+MJ086 Mondayjazz Live! 04-04-2009 by Fulgeance http://mondayjazz.com/mixes/mj086_fulgeance_live_04042009.mp3
+MJ064 Music To Blink To mixed by Sunete Sub.Sol http://mondayjazz.com/mixes/mj064_music_to_blink_to_by_sunete_sub.sol.mp3
+MJ057 The Return mixed by 00Genesis http://www.mondayjazz.com/mixes/mj057_the_return_by_00genesis.mp3
+MJ087 Jazzing The Old Way by Paul Murphy http://mondayjazz.com/mixes/mj087_jazzing_the_old_way_by_paul_murphy.mp3
+MJ029 Hiver Normand mixed by Fulgeance http://www.mondayjazz.com/mixes/mj029_hiver_normand_by_fulgeance.mp3
+MJ010 45rpm Shmunk, Shmoul, Shmack mixed by Zhilvinas Noruishis http://www.mondayjazz.com/mixes/mj010_45rpm_sss_by_zhilvinas_noruishis.mp3
+MJ071 Various Artists mixed by fEux http://mondayjazz.com/mixes/mj071_various_artists_by_feux.mp3
+MJ021 New Life mixed by Jay Scarlett http://www.mondayjazz.com/mixes/mj021_new_life_by_jay_scarlett.mp3
+MJ067 Trippy Jazz Travel From Nowhere To Somewhere mixed by L'eau du Robinet http://mondayjazz.com/mixes/mj067_trippy_jazz_travel_from_nowhere_to_somewhere_by_leau_du_robinet.mp3
+MJ051 Are You Hung Up? mixed by A La Fu http://www.mondayjazz.com/mixes/mj051_are_you_hung_up_by_a_la_fu.mp3
+MJ024 Ostrabrama Live Session http://www.mondayjazz.com/mixes/mj024_ostrabrama_live_session.mp3
+MJ061 Floatation Device mixed by The Smokering http://www.mondayjazz.com/mixes/mj061_floatation_device_by_the_smokering.mp3
+MJ020 Above the Storm mixed by DJ Alda http://www.mondayjazz.com/mixes/mj020_above_the_storm_by_alda.mp3
+MJ095 A Mix Called Mondayjazz Mix by A Cat Called Fritz http://mondayjazz.com/mixes/mj095_a_tape_called_mondayjazz_mix_by_a_cat_called_fritz.mp3
+MJ092 Early Reflections by odd /even http://mondayjazz.com/mixes/mj092_early_reflections_by_oddeven.mp3
+MJ090 Beat Combos by Harrison Blakoldman http://mondayjazz.com/mixes/mj090_beat_combos_by_hbo.mp3
+MJ055 Enemy Earth Relics mixed by Recor http://www.mondayjazz.com/mixes/mj055_enemy_earth_relics_by_recor.mp3
+MJ094 Adventures On The Sun by Re:Source http://mondayjazz.com/mixes/mj094_adventures_on_the_sun_by_re_source.mp3
+MJ006 Summer Picks and Dips mixed by Zhil http://www.mondayjazz.com/mixes/mj006_summer_picks_n_dips_by_zhil.mp3
+MJ026 Kenbun mixed by Pablo Valentino http://www.mondayjazz.com/mixes/mj026_kenbun_by_pablo_valentino.mp3
+MJ014 Erikai mixed by Walkman http://www.mondayjazz.com/mixes/mj014_erikai_by_walkman.mp3
+MJ036 Weihnachtstape'07 mixed by Conikt http://www.mondayjazz.com/mixes/mj036_weihnachtstape_by_conikt.mp3
+MJ032 Yellow Snow mixed by Comfort Fit http://www.mondayjazz.com/mixes/mj032_yellow_snow_by_comfort_fit.mp3
+MJ004 Mondays Are Rewound Sundays mixed by UMC http://www.mondayjazz.com/mixes/mj004_mondays_are_rewound_sundays_by_umc.mp3
+MJ075 Belgium Beer And Poptarts mixed by Sinister Sound Team http://mondayjazz.com/mixes/mj075_belgium_beer_and_poptarts_by_sinister_sound_team.mp3
+MJ058 Retrospective Life mixed by Lo http://www.mondayjazz.com/mixes/mj058_retrospective_life_by_lo.mp3
+MJ027 Mixtape for Myself mixed by Hunee http://www.mondayjazz.com/mixes/mj027_mixtape_for_myself_by_hunee.mp3
+MJ047 Soulbasta Jazz Session 1 mixed by Latin Lover http://www.mondayjazz.com/mixes/mj047_soulbasta_jazz_session1_by_latin_lover.mp3
+MJ005 Yesterday is Todays Tomorrow mixed by Jef Metal http://www.mondayjazz.com/mixes/mj005_yesterday_is_todays_tomorrow_by_jeff_metal.mp3
+MJ096 Your Headz In The Cloudz by DaRon http://mondayjazz.com/mixes/mj096_your_headz_in_the_cloudz_by_daron.mp3
+MJ035 Ruff Shootings mixed by Lokid and Powell http://mondayjazz.com/mixes/mj035_ruff_shootings_by_lokid_and_powell.mp3
+MJ080 Far Out In Space mixed by Dj Synflood http://mondayjazz.com/mixes/mj080_far_out_in_space_by_dj_synflood.mp3
+MJ049 Left Field mixed by Fightex http://www.mondayjazz.com/mixes/mj049_left_field_by_fightex.mp3
+MJ053 Autumn Solace mixed by Cleptoclectics http://www.mondayjazz.com/mixes/mj053_autumn_solace_by_cleptoclectics.mp3
+MJ059 Driving Lessons mixed by Swede:art http://www.mondayjazz.com/mixes/mj059_driving_lessons_by_swedeart.mp3
+MJ084 Afterwords mixed by OL and Miracle Libido http://www.mondayjazz.com/mixes/mj084_afterwords_by_ol_and_miracle_libido.mp3
+MJ054 Neck Therapy mixed by Josip Klobuchar http://www.mondayjazz.com/mixes/mj054_neck_therapy_by_josip_klobuchar.mp3
+MJ042 Monday Sermon mixed by Dday One http://www.mondayjazz.com/mixes/mj042_monday_sermon_by_dday_one.mp3
+MJ017 On Monday I Want to Die mixed by Paul Nevermind http://www.mondayjazz.com/mixes/mj017_on_monday_i_want_to_die_by_paul_nevermind.mp3
+MJ025 Rollercoaster mixed by Hazel http://www.mondayjazz.com/mixes/mj025_rollercoaster_by_hazel.mp3
+MJ046 Colours mixed by Called Understandable Souls http://www.mondayjazz.com/mixes/mj046_colour_by_called_understandable_souls.mp3
+MJ065 Do You Know Tthe Tenjin St mixed by Olive Oil Still Human Being mixed by Soloal One http://mondayjazz.com/mixes/mj065_do_you_know_the_tenjin_st_by_olive_oil_-_still_human_being_by_soloal-one.mp3
+MJ097 Hela Hena by Dj Lovespook http://mondayjazz.com/mixes/mj097_hela_hena_by_dj_lovespook.mp3
+MJ039 Blackjack Beats mixed by Gamblin Matic and Stevo Casino http://www.mondayjazz.com/mixes/mj039_blackjack_beats_by_gamblin_matic_and_stevo_casino.mp3
+MJ068 Monday Consequence mixed by U-point http://mondayjazz.com/mixes/mj068_monday_consequence_by_u-point.mp3
+MJ030 The Escape of the Mingus mixed by Chewy B http://www.mondayjazz.com/mixes/mj030_the_escape_of_mingus_by_chewy_b.mp3
+MJ077 Other Sides Of The Cozmos mixed by See Visions http://mondayjazz.com/mixes/mj077_other_sides_of_the_cozmos_by_see_visions.mp3
+MJ019 Spiral Motion mixed by Skape http://www.mondayjazz.com/mixes/mj019_spiral_motion_by_skape.mp3
+starting event engine...
+loading all plugins...
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Audio
+*** loading: PlugInsFolder.Audio.Madplay.py
+*** loading: PlugInsFolder.Defaults.py
+*** loading: PlugInsFolder.FeedReader.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Notification
+*** loading: PlugInsFolder.Notification.Prowly.py
+*** loading: PlugInsFolder.SoftKeys.py
+devcounter 1:devlist 6903024:devlist 0:*** loading: PlugInsFolder.Status.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.System
+*** loading: PlugInsFolder.System.FritzMonitor.py
+*** loading: PlugInsFolder.System.Openwrt.py
+loaded all plugins sucessfully
+starting xmpp client...
+parsing: MondayJazz
+[ERROR] Token classic.css is not a child of this is the root node
+servant@jabber.org
+seltmann@messi.mi.hdm-stuttgart.de
+sabber@jabber.org
+fernmelder@jabber.org
+abspielgeraet@jabber.org
+Joining groupchat: ami@conference.jabber.org/ami.client
+Communicationengine is online, or should be... #TODO
+[ERROR] Token classic.css is not a child of this is the root node
+MJ060 Redio Sandwich mixed by Jared Turinsky / Red Room Beats http://www.mondayjazz.com/mixes/mj060_redio_sandwich_by_jared_turinsky_-_red_room_beats.mp3
+MJ076 Specific Components mixed by Lapti http://mondayjazz.com/mixes/mj076_specific_components_by_lapti.mp3
+MJ016 Pearls mixed by Pure P http://www.mondayjazz.com/mixes/mj016_pearls_by_pure_p.mp3
+MJ102 Excuse I'm Not a Dj by Ichiro_ http://mondayjazz.com/mixes/mj102_excuse_im_not_a_dj_by_ichiro_.mp3
+MJ050 The Jazztape mixed by Justas Fresh http://www.mondayjazz.com/mixes/mj050_the_jazztape_by_justas_fresh.mp3
+MJ066 Possibilities mixed by Teebs http://mondayjazz.com/mixes/mj066_possibilities_by_teebs.mp3
+MJ012 Circulations mixed by Dai-San http://www.mondayjazz.com/mixes/mj012_circulations_by_dai_san.mp3
+MJ003 Etnosound mixed by Sleeper http://www.mondayjazz.com/mixes/mj003_Etnosound_by_Sleeper.mp3
+MJ023 Society for the Musical Education mixed by Quazar http://www.mondayjazz.com/mixes/mj023_society_for_the_musical_education_by_quazar.mp3
+MJ074 60 Minutes With Chief mixed by Chief http://mondayjazz.com/mixes/mj074_60_minutes_with_chief_by_chief.mp3
+MJ038 Vote For Jazz mixed by Hollenstein http://www.mondayjazz.com/mixes/mj038_vote_for_jazz_by_hollenstein.mp3
+MJ033 The Back Handed Party mixed by Joe Beats http://www.mondayjazz.com/mixes/mj033_the_back_handed_party_by_joe_beats.mp3
+MJ011 Morning Routine mixed by Astralas http://www.mondayjazz.com/mixes/mj011_morning_routine_by_astralas.mp3
+MJ072 Headlights mixed by Blunted Monkz http://mondayjazz.com/mixes/mj072_headlights_by_blunted_monkz.mp3
+MJ091 Pour Le Plaisir by Souleance http://mondayjazz.com/mixes/mj091_pour_le_plaisir_by_souleance.mp3
+MJ079 Audiopatchwork mixed by Food For Ya Soul http://mondayjazz.com/mixes/mj079_audiopatchwork_by_food_for_ya_soul.mp3
+MJ078 Box Of Chocolates mixed by 00Genesis http://mondayjazz.com/mixes/mj078_box_of_chocolates_by_00genesis.mp3
+MJ044 Praqtice Makes Perfeq mixed by Architeq http://www.mondayjazz.com/mixes/mj044_praqtice_makes_perfeq_by_architeq.mp3
+MJ093 Space Oddities by Robot Koch http://mondayjazz.com/mixes/mj093_space_oddities_by_robot_koch.mp3
+MJ085 Afternoon Delights mixed by Marcin Cichy http://mondayjazz.com/mixes/mj085_afternoon_delights_by_marcin_cichy.mp3
+MJ008 I Versus Myself mixed by Pranza http://www.mondayjazz.com/mixes/mj008_i_versus_myself_by_pranza.mp3
+MJ048 One Of These Stormy Mondays mixed by Mnemotrauma http://www.mondayjazz.com/mixes/mj048_one_of_these_stormy_mondays_by_mnemotrauma.mp3
+MJ041 From Jazz to Spaz mixed by Dorian Concept http://www.mondayjazz.com/mixes/mj041_from_jazz_to_spaz_by_dorian_concept.mp3
+MJ015 Monday Mish Mosh mixed by Jo_Ill http://www.mondayjazz.com/mixes/mj015_monday_mish_mosh_by_jo_ill.mp3
+MJ037 Mind Reflections mixed by Portformat http://www.mondayjazz.com/mixes/mj037_mind_reflections_by_portformat.mp3
+MJ082 Holding It Down mixed by Bene http://mondayjazz.com/mixes/mj082_holding_it_down_by_bene.mp3
+MJ099 Now Just Listen by Dj Blueprint http://mondayjazz.com/mixes/mj099_now_just_listen_by_dj_blueprint.mp3
+MJ088 I Go By Handsome Twenty-four Year Old by dza http://mondayjazz.com/mixes/mj088_i_go_by_handsome_twenty-four_year-old_by_dza.mp3
+MJ031 Temple Of Tones mixed by Indiana Tones http://www.mondayjazz.com/mixes/mj031_temple_of_tones_by_indiana_tones.mp3
+MJ043 Magic Mayer mixed by Front 2 Blaq http://www.mondayjazz.com/mixes/mj043_magic_mayer_by_front_2_blaq.mp3
+MJ052 Magic Ritual mixed by Tobrock http://www.mondayjazz.com/mixes/mj052_magic_ritual_by_tobrock.mp3
+MJ028 Wacky World mixed by 00Genesis http://www.mondayjazz.com/mixes/mj028_wacky_world_by_00genesis.mp3
+MJ001 Other Worlds mixed by 1.1 and Moxo Tengu http://www.mondayjazz.com/mixes/mj001_OtherWorlds_by_1.1_and_Moxo_Tengu.mp3
+MJ022 Wake Up mixed by Tobias Kirmayer http://www.mondayjazz.com/mixes/mj022_wake_up_by_tobias_kirmayer.mp3
+MJ018 Birds Custard mixed by DJ Moneyshot http://www.mondayjazz.com/mixes/mj018_birds_custard_by_dj_moneyshot.mp3
+MJ040 From Monday Till Monday mixed by Viper and Alex D http://www.mondayjazz.com/mixes/mj040_from_monday_till_monday_by_viper_and_alex_d.mp3
+MJ098 Heavymentaldecay by C1GART And The Fatlips http://mondayjazz.com/mixes/mj098_heavymentaldecay_by_c1gart_and_the_fatlips.mp3
+MJ070 Submerged Above Sound mixed by Ponce de Beyond http://mondayjazz.com/mixes/mj070_submerged_above_sound_by_ponce_de_beyond.mp3
+MJ063 Love Is Everything mixed by Mr. Hone http://mondayjazz.com/mixes/mj063_love_is_anything_by_mr_hone.mp3
+MJ089 Santo Domingo Beats by Cohoba http://mondayjazz.com/mixes/mj089_santo_domingo_beats_by_cohoba.mp3
+MJ073 Monday Marauders mixed by Sifu http://mondayjazz.com/mixes/mj073_monday_marauders_by_sifu.mp3
+MJ069 Phases Of The Day mixed by Ryan Alexander http://mondayjazz.com/mixes/mj069_phases_of_a_day_by_ryan_alexander.mp3
+MJ062 Acid Jazz n Blunts mixed by Namo http://www.mondayjazz.com/mixes/mj062_acid_jazz_n_blunts_by_namo.mp3
+MJ007 7 Inch Selection mixed by Deneez http://www.mondayjazz.com/mixes/mj007_7_inch%20_selection_by_deneez.mp3
+MJ081 Jazzercise! Vol. 2 mixed by Dj Nerstylist http://www.mondayjazz.com/mixes/mj081_jazzercise!_vol_2_by_dj_nerstylist.mp3
+MJ013 Dedication to Interplanetary Stewardness mixed by O.Boogie http://www.mondayjazz.com/mixes/mj013_dedication%20_to_the_interplanetary_stewardess_by_oboogie.mp3
+MJ009 One 4orty mixed by Jon Kennedy http://www.mondayjazz.com/mixes/mj009_one_4orty_by_jon_kennedy.mp3
+MJ101 July by Dj Paul Pre http://www.mondayjazz.com/mixes/mj101_july_by_paul_pre.mp3
+MJ034 The Cancelled Formula mixed by Neil Something http://www.mondayjazz.com/mixes/mj034_the_cancelled_formula_by_neil_something.mp3
+MJ056 Static Noise mixed by Hubert Daviz http://www.mondayjazz.com/mixes/mj056_static_noise_by_hubert_daviz.mp3
+MJ002 One Shot in the Morning mixed by Genys http://www.mondayjazz.com/mixes/mj002_one_shot_in_the_morning_by_genys.mp3
+MJ045 The Time Tunnel mixed by Cinnaman http://www.mondayjazz.com/mixes/mj045_the_time_tunnel_by_cinnaman.mp3
+MJ083 MIA In The MIA mixed by Manuvers http://mondayjazz.com/mixes/mj083_mia_in_the_mia_by_manuvers.mp3
+MJ086 Mondayjazz Live! 04-04-2009 by Fulgeance http://mondayjazz.com/mixes/mj086_fulgeance_live_04042009.mp3
+MJ064 Music To Blink To mixed by Sunete Sub.Sol http://mondayjazz.com/mixes/mj064_music_to_blink_to_by_sunete_sub.sol.mp3
+MJ057 The Return mixed by 00Genesis http://www.mondayjazz.com/mixes/mj057_the_return_by_00genesis.mp3
+MJ087 Jazzing The Old Way by Paul Murphy http://mondayjazz.com/mixes/mj087_jazzing_the_old_way_by_paul_murphy.mp3
+MJ029 Hiver Normand mixed by Fulgeance http://www.mondayjazz.com/mixes/mj029_hiver_normand_by_fulgeance.mp3
+MJ010 45rpm Shmunk, Shmoul, Shmack mixed by Zhilvinas Noruishis http://www.mondayjazz.com/mixes/mj010_45rpm_sss_by_zhilvinas_noruishis.mp3
+MJ071 Various Artists mixed by fEux http://mondayjazz.com/mixes/mj071_various_artists_by_feux.mp3
+MJ021 New Life mixed by Jay Scarlett http://www.mondayjazz.com/mixes/mj021_new_life_by_jay_scarlett.mp3
+MJ067 Trippy Jazz Travel From Nowhere To Somewhere mixed by L'eau du Robinet http://mondayjazz.com/mixes/mj067_trippy_jazz_travel_from_nowhere_to_somewhere_by_leau_du_robinet.mp3
+MJ051 Are You Hung Up? mixed by A La Fu http://www.mondayjazz.com/mixes/mj051_are_you_hung_up_by_a_la_fu.mp3
+MJ024 Ostrabrama Live Session http://www.mondayjazz.com/mixes/mj024_ostrabrama_live_session.mp3
+MJ061 Floatation Device mixed by The Smokering http://www.mondayjazz.com/mixes/mj061_floatation_device_by_the_smokering.mp3
+MJ020 Above the Storm mixed by DJ Alda http://www.mondayjazz.com/mixes/mj020_above_the_storm_by_alda.mp3
+MJ095 A Mix Called Mondayjazz Mix by A Cat Called Fritz http://mondayjazz.com/mixes/mj095_a_tape_called_mondayjazz_mix_by_a_cat_called_fritz.mp3
+MJ092 Early Reflections by odd /even http://mondayjazz.com/mixes/mj092_early_reflections_by_oddeven.mp3
+MJ090 Beat Combos by Harrison Blakoldman http://mondayjazz.com/mixes/mj090_beat_combos_by_hbo.mp3
+MJ055 Enemy Earth Relics mixed by Recor http://www.mondayjazz.com/mixes/mj055_enemy_earth_relics_by_recor.mp3
+MJ094 Adventures On The Sun by Re:Source http://mondayjazz.com/mixes/mj094_adventures_on_the_sun_by_re_source.mp3
+MJ006 Summer Picks and Dips mixed by Zhil http://www.mondayjazz.com/mixes/mj006_summer_picks_n_dips_by_zhil.mp3
+MJ026 Kenbun mixed by Pablo Valentino http://www.mondayjazz.com/mixes/mj026_kenbun_by_pablo_valentino.mp3
+MJ014 Erikai mixed by Walkman http://www.mondayjazz.com/mixes/mj014_erikai_by_walkman.mp3
+MJ036 Weihnachtstape'07 mixed by Conikt http://www.mondayjazz.com/mixes/mj036_weihnachtstape_by_conikt.mp3
+MJ032 Yellow Snow mixed by Comfort Fit http://www.mondayjazz.com/mixes/mj032_yellow_snow_by_comfort_fit.mp3
+MJ004 Mondays Are Rewound Sundays mixed by UMC http://www.mondayjazz.com/mixes/mj004_mondays_are_rewound_sundays_by_umc.mp3
+MJ075 Belgium Beer And Poptarts mixed by Sinister Sound Team http://mondayjazz.com/mixes/mj075_belgium_beer_and_poptarts_by_sinister_sound_team.mp3
+MJ058 Retrospective Life mixed by Lo http://www.mondayjazz.com/mixes/mj058_retrospective_life_by_lo.mp3
+MJ027 Mixtape for Myself mixed by Hunee http://www.mondayjazz.com/mixes/mj027_mixtape_for_myself_by_hunee.mp3
+MJ047 Soulbasta Jazz Session 1 mixed by Latin Lover http://www.mondayjazz.com/mixes/mj047_soulbasta_jazz_session1_by_latin_lover.mp3
+MJ005 Yesterday is Todays Tomorrow mixed by Jef Metal http://www.mondayjazz.com/mixes/mj005_yesterday_is_todays_tomorrow_by_jeff_metal.mp3
+MJ096 Your Headz In The Cloudz by DaRon http://mondayjazz.com/mixes/mj096_your_headz_in_the_cloudz_by_daron.mp3
+MJ035 Ruff Shootings mixed by Lokid and Powell http://mondayjazz.com/mixes/mj035_ruff_shootings_by_lokid_and_powell.mp3
+MJ080 Far Out In Space mixed by Dj Synflood http://mondayjazz.com/mixes/mj080_far_out_in_space_by_dj_synflood.mp3
+MJ049 Left Field mixed by Fightex http://www.mondayjazz.com/mixes/mj049_left_field_by_fightex.mp3
+MJ053 Autumn Solace mixed by Cleptoclectics http://www.mondayjazz.com/mixes/mj053_autumn_solace_by_cleptoclectics.mp3
+MJ059 Driving Lessons mixed by Swede:art http://www.mondayjazz.com/mixes/mj059_driving_lessons_by_swedeart.mp3
+MJ084 Afterwords mixed by OL and Miracle Libido http://www.mondayjazz.com/mixes/mj084_afterwords_by_ol_and_miracle_libido.mp3
+MJ054 Neck Therapy mixed by Josip Klobuchar http://www.mondayjazz.com/mixes/mj054_neck_therapy_by_josip_klobuchar.mp3
+MJ042 Monday Sermon mixed by Dday One http://www.mondayjazz.com/mixes/mj042_monday_sermon_by_dday_one.mp3
+MJ017 On Monday I Want to Die mixed by Paul Nevermind http://www.mondayjazz.com/mixes/mj017_on_monday_i_want_to_die_by_paul_nevermind.mp3
+MJ025 Rollercoaster mixed by Hazel http://www.mondayjazz.com/mixes/mj025_rollercoaster_by_hazel.mp3
+MJ046 Colours mixed by Called Understandable Souls http://www.mondayjazz.com/mixes/mj046_colour_by_called_understandable_souls.mp3
+MJ065 Do You Know Tthe Tenjin St mixed by Olive Oil Still Human Being mixed by Soloal One http://mondayjazz.com/mixes/mj065_do_you_know_the_tenjin_st_by_olive_oil_-_still_human_being_by_soloal-one.mp3
+MJ097 Hela Hena by Dj Lovespook http://mondayjazz.com/mixes/mj097_hela_hena_by_dj_lovespook.mp3
+MJ039 Blackjack Beats mixed by Gamblin Matic and Stevo Casino http://www.mondayjazz.com/mixes/mj039_blackjack_beats_by_gamblin_matic_and_stevo_casino.mp3
+MJ068 Monday Consequence mixed by U-point http://mondayjazz.com/mixes/mj068_monday_consequence_by_u-point.mp3
+MJ030 The Escape of the Mingus mixed by Chewy B http://www.mondayjazz.com/mixes/mj030_the_escape_of_mingus_by_chewy_b.mp3
+MJ077 Other Sides Of The Cozmos mixed by See Visions http://mondayjazz.com/mixes/mj077_other_sides_of_the_cozmos_by_see_visions.mp3
+MJ019 Spiral Motion mixed by Skape http://www.mondayjazz.com/mixes/mj019_spiral_motion_by_skape.mp3
+[ERROR] Token classic.css is not a child of this is the root node
+[(u'MJ081_Jazzercise!_Vol._2_mixed_by_Dj_Nerstylist', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66fd0>), (u'MJ065_Do_You_Know_Tthe_Tenjin_St_mixed_by_Olive_Oil_Still_Human_Being_mixed_by_Soloal_One', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba737d8>), (u'MJ097_Hela_Hena_by_Dj_Lovespook', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73800>), (u'MJ022_Wake_Up_mixed_by_Tobias_Kirmayer', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66e18>), (u'MJ025_Rollercoaster_mixed_by_Hazel', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73788>), (u'MJ033_The_Back_Handed_Party_mixed_by_Joe_Beats', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66850>), (u'MJ039_Blackjack_Beats_mixed_by_Gamblin_Matic_and_Stevo_Casino', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73828>), (u'MJ071_Various_Artists_mixed_by_fEux', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73260>), (u'MJ057_The_Return_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba731c0>), (u'MJ043_Magic_Mayer_mixed_by_Front_2_Blaq', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66878>), (u'MJ069_Phases_Of_The_Day_mixed_by_Ryan_Alexander', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66f58>), (u'MJ007_7_Inch_Selection_mixed_by_Deneez', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66fa8>), (u'MJ099_Now_Just_Listen_by_Dj_Blueprint', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66df0>), (u'MJ060_Redio_Sandwich_mixed_by_Jared_Turinsky_/_Red_Room_Beats', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5cd00>), (u'MJ001_Other_Worlds_mixed_by_1.1_and_Moxo_Tengu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66be8>), (u'MJ035_Ruff_Shootings_mixed_by_Lokid_and_Powell', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73620>), (u'MJ070_Submerged_Above_Sound_mixed_by_Ponce_de_Beyond', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66eb8>), (u'MJ078_Box_Of_Chocolates_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66af8>), (u'MJ045_The_Time_Tunnel_mixed_by_Cinnaman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73120>), (u'MJ083_MIA_In_The_MIA_mixed_by_Manuvers', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73148>), (u'MJ020_Above_the_Storm_mixed_by_DJ_Alda', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73350>), (u'MJ029_Hiver_Normand_mixed_by_Fulgeance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73210>), (u'MJ058_Retrospective_Life_mixed_by_Lo', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73558>), (u'MJ011_Morning_Routine_mixed_by_Astralas', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66da0>), (u'MJ073_Monday_Marauders_mixed_by_Sifu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66f30>), (u'MJ086_Mondayjazz_Live!_04-04-2009_by_Fulgeance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73170>), (u'MJ064_Music_To_Blink_To_mixed_by_Sunete_Sub.Sol', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73198>), (u'MJ061_Floatation_Device_mixed_by_The_Smokering', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73328>), (u'MJ068_Monday_Consequence_mixed_by_U-point', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73850>), (u'MJ093_Space_Oddities_by_Robot_Koch', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66c88>), (u'MJ034_The_Cancelled_Formula_mixed_by_Neil_Something', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba730a8>), (u'MJ052_Magic_Ritual_mixed_by_Tobrock', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba665d0>), (u'MJ098_Heavymentaldecay_by_C1GART_And_The_Fatlips', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66e90>), (u'MJ004_Mondays_Are_Rewound_Sundays_mixed_by_UMC', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73508>), (u'MJ005_Yesterday_is_Todays_Tomorrow_mixed_by_Jef_Metal', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba735d0>), (u'MJ008_I_Versus_Myself_mixed_by_Pranza', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66670>), (u'MJ063_Love_Is_Everything_mixed_by_Mr._Hone', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66ee0>), (u'MJ040_From_Monday_Till_Monday_mixed_by_Viper_and_Alex_D', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66e68>), (u'MJ054_Neck_Therapy_mixed_by_Josip_Klobuchar', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73710>), (u'MJ072_Headlights_mixed_by_Blunted_Monkz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66aa8>), (u'MJ021_New_Life_mixed_by_Jay_Scarlett', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73288>), (u'MJ012_Circulations_mixed_by_Dai-San', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66620>), (u'MJ028_Wacky_World_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66760>), (u'MJ090_Beat_Combos_by_Harrison_Blakoldman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba733c8>), (u'MJ094_Adventures_On_The_Sun_by_Re:Source', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73418>), (u'MJ026_Kenbun_mixed_by_Pablo_Valentino', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73468>), (u'MJ088_I_Go_By_Handsome_Twenty-four_Year_Old_by_dza', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66b98>), (u'MJ024_Ostrabrama_Live_Session', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73300>), (u'MJ051_Are_You_Hung_Up?_mixed_by_A_La_Fu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba732d8>), (u'MJ013_Dedication_to_Interplanetary_Stewardness_mixed_by_O.Boogie', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73030>), (u'MJ062_Acid_Jazz_n_Blunts_mixed_by_Namo', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66f80>), (u'MJ038_Vote_For_Jazz_mixed_by_Hollenstein', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66cd8>), (u'MJ030_The_Escape_of_the_Mingus_mixed_by_Chewy_B', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73878>), (u'MJ080_Far_Out_In_Space_mixed_by_Dj_Synflood', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73648>), (u"MJ067_Trippy_Jazz_Travel_From_Nowhere_To_Somewhere_mixed_by_L'eau_du_Robinet", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba732b0>), (u'MJ053_Autumn_Solace_mixed_by_Cleptoclectics', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73698>), (u'MJ044_Praqtice_Makes_Perfeq_mixed_by_Architeq', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66c60>), (u'MJ092_Early_Reflections_by_odd_/even', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba733a0>), (u'MJ075_Belgium_Beer_And_Poptarts_mixed_by_Sinister_Sound_Team', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73530>), (u'MJ032_Yellow_Snow_mixed_by_Comfort_Fit', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba734e0>), (u'MJ050_The_Jazztape_mixed_by_Justas_Fresh', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66530>), (u'MJ031_Temple_Of_Tones_mixed_by_Indiana_Tones', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66b20>), (u'MJ016_Pearls_mixed_by_Pure_P', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba665f8>), (u'MJ059_Driving_Lessons_mixed_by_Swede:art', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba736c0>), (u'MJ101_July_by_Dj_Paul_Pre', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73080>), (u'MJ096_Your_Headz_In_The_Cloudz_by_DaRon', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba735f8>), (u'MJ041_From_Jazz_to_Spaz_mixed_by_Dorian_Concept', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66698>), (u'MJ066_Possibilities_mixed_by_Teebs', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66b70>), (u"MJ102_Excuse_I'm_Not_a_Dj_by_Ichiro_", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba665a8>), (u'MJ009_One_4orty_mixed_by_Jon_Kennedy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73058>), (u'MJ010_45rpm_Shmunk,_Shmoul,_Shmack_mixed_by_Zhilvinas_Noruishis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73238>), (u'MJ006_Summer_Picks_and_Dips_mixed_by_Zhil', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73440>), (u'MJ015_Monday_Mish_Mosh_mixed_by_Jo_Ill', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66710>), (u'MJ055_Enemy_Earth_Relics_mixed_by_Recor', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba733f0>), (u'MJ048_One_Of_These_Stormy_Mondays_mixed_by_Mnemotrauma', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66738>), (u'MJ089_Santo_Domingo_Beats_by_Cohoba', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66f08>), (u'MJ037_Mind_Reflections_mixed_by_Portformat', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba667b0>), (u'MJ014_Erikai_mixed_by_Walkman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73490>), (u'MJ095_A_Mix_Called_Mondayjazz_Mix_by_A_Cat_Called_Fritz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73378>), (u'MJ019_Spiral_Motion_mixed_by_Skape', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba738c8>), (u'MJ076_Specific_Components_mixed_by_Lapti', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66788>), (u'MJ049_Left_Field_mixed_by_Fightex', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73670>), (u'MJ047_Soulbasta_Jazz_Session_1_mixed_by_Latin_Lover', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba735a8>), (u'MJ017_On_Monday_I_Want_to_Die_mixed_by_Paul_Nevermind', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73760>), (u'MJ079_Audiopatchwork_mixed_by_Food_For_Ya_Soul', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba666e8>), (u'MJ023_Society_for_the_Musical_Education_mixed_by_Quazar', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66580>), (u'MJ018_Birds_Custard_mixed_by_DJ_Moneyshot', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66e40>), (u'MJ056_Static_Noise_mixed_by_Hubert_Daviz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba730d0>), (u'MJ046_Colours_mixed_by_Called_Understandable_Souls', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba737b0>), (u'MJ082_Holding_It_Down_mixed_by_Bene', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66d00>), (u'MJ042_Monday_Sermon_mixed_by_Dday_One', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73738>), (u'MJ087_Jazzing_The_Old_Way_by_Paul_Murphy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba731e8>), (u'MJ002_One_Shot_in_the_Morning_mixed_by_Genys', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba730f8>), (u'MJ091_Pour_Le_Plaisir_by_Souleance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66c38>), (u"MJ036_Weihnachtstape'07_mixed_by_Conikt", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba734b8>), (u'MJ027_Mixtape_for_Myself_mixed_by_Hunee', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73580>), (u'MJ077_Other_Sides_Of_The_Cozmos_mixed_by_See_Visions', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba738a0>), (u'MJ003_Etnosound_mixed_by_Sleeper', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66558>), (u'MJ084_Afterwords_mixed_by_OL_and_Miracle_Libido', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba736e8>), (u'MJ074_60_Minutes_With_Chief_mixed_by_Chief', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66800>), (u'MJ085_Afternoon_Delights_mixed_by_Marcin_Cichy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba66cb0>)]
+(u'MJ053_Autumn_Solace_mixed_by_Cleptoclectics', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba73698>)
+http://www.mondayjazz.com/mixes/mj053_autumn_solace_by_cleptoclectics.mp3
+[ERROR] Token classic.css is not a child of this is the root node
+[ERROR] Token classic.css is not a child of this is the root node
+starting event engine...
+loading all plugins...
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Audio
+*** loading: PlugInsFolder.Audio.Madplay.py
+*** loading: PlugInsFolder.Defaults.py
+*** loading: PlugInsFolder.FeedReader.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Notification
+*** loading: PlugInsFolder.Notification.Prowly.py
+*** loading: PlugInsFolder.SoftKeys.py
+devcounter 1:devlist 6771184:devlist 0:*** loading: PlugInsFolder.Status.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.System
+*** loading: PlugInsFolder.System.FritzMonitor.py
+*** loading: PlugInsFolder.System.Openwrt.py
+loaded all plugins sucessfully
+starting xmpp client...
+parsing: MondayJazz
+servant@jabber.org
+seltmann@messi.mi.hdm-stuttgart.de
+sabber@jabber.org
+fernmelder@jabber.org
+abspielgeraet@jabber.org
+Joining groupchat: ami@conference.jabber.org/ami.client
+Communicationengine is online, or should be... #TODO
+MJ060 Redio Sandwich mixed by Jared Turinsky / Red Room Beats http://www.mondayjazz.com/mixes/mj060_redio_sandwich_by_jared_turinsky_-_red_room_beats.mp3
+MJ076 Specific Components mixed by Lapti http://mondayjazz.com/mixes/mj076_specific_components_by_lapti.mp3
+MJ016 Pearls mixed by Pure P http://www.mondayjazz.com/mixes/mj016_pearls_by_pure_p.mp3
+MJ102 Excuse I'm Not a Dj by Ichiro_ http://mondayjazz.com/mixes/mj102_excuse_im_not_a_dj_by_ichiro_.mp3
+MJ050 The Jazztape mixed by Justas Fresh http://www.mondayjazz.com/mixes/mj050_the_jazztape_by_justas_fresh.mp3
+MJ066 Possibilities mixed by Teebs http://mondayjazz.com/mixes/mj066_possibilities_by_teebs.mp3
+MJ012 Circulations mixed by Dai-San http://www.mondayjazz.com/mixes/mj012_circulations_by_dai_san.mp3
+MJ003 Etnosound mixed by Sleeper http://www.mondayjazz.com/mixes/mj003_Etnosound_by_Sleeper.mp3
+MJ023 Society for the Musical Education mixed by Quazar http://www.mondayjazz.com/mixes/mj023_society_for_the_musical_education_by_quazar.mp3
+MJ074 60 Minutes With Chief mixed by Chief http://mondayjazz.com/mixes/mj074_60_minutes_with_chief_by_chief.mp3
+MJ038 Vote For Jazz mixed by Hollenstein http://www.mondayjazz.com/mixes/mj038_vote_for_jazz_by_hollenstein.mp3
+MJ033 The Back Handed Party mixed by Joe Beats http://www.mondayjazz.com/mixes/mj033_the_back_handed_party_by_joe_beats.mp3
+MJ011 Morning Routine mixed by Astralas http://www.mondayjazz.com/mixes/mj011_morning_routine_by_astralas.mp3
+MJ072 Headlights mixed by Blunted Monkz http://mondayjazz.com/mixes/mj072_headlights_by_blunted_monkz.mp3
+MJ091 Pour Le Plaisir by Souleance http://mondayjazz.com/mixes/mj091_pour_le_plaisir_by_souleance.mp3
+MJ079 Audiopatchwork mixed by Food For Ya Soul http://mondayjazz.com/mixes/mj079_audiopatchwork_by_food_for_ya_soul.mp3
+MJ078 Box Of Chocolates mixed by 00Genesis http://mondayjazz.com/mixes/mj078_box_of_chocolates_by_00genesis.mp3
+MJ044 Praqtice Makes Perfeq mixed by Architeq http://www.mondayjazz.com/mixes/mj044_praqtice_makes_perfeq_by_architeq.mp3
+MJ093 Space Oddities by Robot Koch http://mondayjazz.com/mixes/mj093_space_oddities_by_robot_koch.mp3
+MJ085 Afternoon Delights mixed by Marcin Cichy http://mondayjazz.com/mixes/mj085_afternoon_delights_by_marcin_cichy.mp3
+MJ008 I Versus Myself mixed by Pranza http://www.mondayjazz.com/mixes/mj008_i_versus_myself_by_pranza.mp3
+MJ048 One Of These Stormy Mondays mixed by Mnemotrauma http://www.mondayjazz.com/mixes/mj048_one_of_these_stormy_mondays_by_mnemotrauma.mp3
+MJ041 From Jazz to Spaz mixed by Dorian Concept http://www.mondayjazz.com/mixes/mj041_from_jazz_to_spaz_by_dorian_concept.mp3
+MJ015 Monday Mish Mosh mixed by Jo_Ill http://www.mondayjazz.com/mixes/mj015_monday_mish_mosh_by_jo_ill.mp3
+MJ037 Mind Reflections mixed by Portformat http://www.mondayjazz.com/mixes/mj037_mind_reflections_by_portformat.mp3
+MJ082 Holding It Down mixed by Bene http://mondayjazz.com/mixes/mj082_holding_it_down_by_bene.mp3
+MJ099 Now Just Listen by Dj Blueprint http://mondayjazz.com/mixes/mj099_now_just_listen_by_dj_blueprint.mp3
+MJ088 I Go By Handsome Twenty-four Year Old by dza http://mondayjazz.com/mixes/mj088_i_go_by_handsome_twenty-four_year-old_by_dza.mp3
+MJ031 Temple Of Tones mixed by Indiana Tones http://www.mondayjazz.com/mixes/mj031_temple_of_tones_by_indiana_tones.mp3
+MJ043 Magic Mayer mixed by Front 2 Blaq http://www.mondayjazz.com/mixes/mj043_magic_mayer_by_front_2_blaq.mp3
+MJ052 Magic Ritual mixed by Tobrock http://www.mondayjazz.com/mixes/mj052_magic_ritual_by_tobrock.mp3
+MJ028 Wacky World mixed by 00Genesis http://www.mondayjazz.com/mixes/mj028_wacky_world_by_00genesis.mp3
+MJ001 Other Worlds mixed by 1.1 and Moxo Tengu http://www.mondayjazz.com/mixes/mj001_OtherWorlds_by_1.1_and_Moxo_Tengu.mp3
+MJ022 Wake Up mixed by Tobias Kirmayer http://www.mondayjazz.com/mixes/mj022_wake_up_by_tobias_kirmayer.mp3
+MJ018 Birds Custard mixed by DJ Moneyshot http://www.mondayjazz.com/mixes/mj018_birds_custard_by_dj_moneyshot.mp3
+MJ040 From Monday Till Monday mixed by Viper and Alex D http://www.mondayjazz.com/mixes/mj040_from_monday_till_monday_by_viper_and_alex_d.mp3
+MJ098 Heavymentaldecay by C1GART And The Fatlips http://mondayjazz.com/mixes/mj098_heavymentaldecay_by_c1gart_and_the_fatlips.mp3
+MJ070 Submerged Above Sound mixed by Ponce de Beyond http://mondayjazz.com/mixes/mj070_submerged_above_sound_by_ponce_de_beyond.mp3
+MJ063 Love Is Everything mixed by Mr. Hone http://mondayjazz.com/mixes/mj063_love_is_anything_by_mr_hone.mp3
+MJ089 Santo Domingo Beats by Cohoba http://mondayjazz.com/mixes/mj089_santo_domingo_beats_by_cohoba.mp3
+MJ073 Monday Marauders mixed by Sifu http://mondayjazz.com/mixes/mj073_monday_marauders_by_sifu.mp3
+MJ069 Phases Of The Day mixed by Ryan Alexander http://mondayjazz.com/mixes/mj069_phases_of_a_day_by_ryan_alexander.mp3
+MJ062 Acid Jazz n Blunts mixed by Namo http://www.mondayjazz.com/mixes/mj062_acid_jazz_n_blunts_by_namo.mp3
+MJ007 7 Inch Selection mixed by Deneez http://www.mondayjazz.com/mixes/mj007_7_inch%20_selection_by_deneez.mp3
+MJ081 Jazzercise! Vol. 2 mixed by Dj Nerstylist http://www.mondayjazz.com/mixes/mj081_jazzercise!_vol_2_by_dj_nerstylist.mp3
+MJ013 Dedication to Interplanetary Stewardness mixed by O.Boogie http://www.mondayjazz.com/mixes/mj013_dedication%20_to_the_interplanetary_stewardess_by_oboogie.mp3
+MJ009 One 4orty mixed by Jon Kennedy http://www.mondayjazz.com/mixes/mj009_one_4orty_by_jon_kennedy.mp3
+MJ101 July by Dj Paul Pre http://www.mondayjazz.com/mixes/mj101_july_by_paul_pre.mp3
+MJ034 The Cancelled Formula mixed by Neil Something http://www.mondayjazz.com/mixes/mj034_the_cancelled_formula_by_neil_something.mp3
+MJ056 Static Noise mixed by Hubert Daviz http://www.mondayjazz.com/mixes/mj056_static_noise_by_hubert_daviz.mp3
+MJ002 One Shot in the Morning mixed by Genys http://www.mondayjazz.com/mixes/mj002_one_shot_in_the_morning_by_genys.mp3
+MJ045 The Time Tunnel mixed by Cinnaman http://www.mondayjazz.com/mixes/mj045_the_time_tunnel_by_cinnaman.mp3
+MJ083 MIA In The MIA mixed by Manuvers http://mondayjazz.com/mixes/mj083_mia_in_the_mia_by_manuvers.mp3
+MJ086 Mondayjazz Live! 04-04-2009 by Fulgeance http://mondayjazz.com/mixes/mj086_fulgeance_live_04042009.mp3
+MJ064 Music To Blink To mixed by Sunete Sub.Sol http://mondayjazz.com/mixes/mj064_music_to_blink_to_by_sunete_sub.sol.mp3
+MJ057 The Return mixed by 00Genesis http://www.mondayjazz.com/mixes/mj057_the_return_by_00genesis.mp3
+MJ087 Jazzing The Old Way by Paul Murphy http://mondayjazz.com/mixes/mj087_jazzing_the_old_way_by_paul_murphy.mp3
+MJ029 Hiver Normand mixed by Fulgeance http://www.mondayjazz.com/mixes/mj029_hiver_normand_by_fulgeance.mp3
+MJ010 45rpm Shmunk, Shmoul, Shmack mixed by Zhilvinas Noruishis http://www.mondayjazz.com/mixes/mj010_45rpm_sss_by_zhilvinas_noruishis.mp3
+MJ071 Various Artists mixed by fEux http://mondayjazz.com/mixes/mj071_various_artists_by_feux.mp3
+MJ021 New Life mixed by Jay Scarlett http://www.mondayjazz.com/mixes/mj021_new_life_by_jay_scarlett.mp3
+MJ067 Trippy Jazz Travel From Nowhere To Somewhere mixed by L'eau du Robinet http://mondayjazz.com/mixes/mj067_trippy_jazz_travel_from_nowhere_to_somewhere_by_leau_du_robinet.mp3
+MJ051 Are You Hung Up? mixed by A La Fu http://www.mondayjazz.com/mixes/mj051_are_you_hung_up_by_a_la_fu.mp3
+MJ024 Ostrabrama Live Session http://www.mondayjazz.com/mixes/mj024_ostrabrama_live_session.mp3
+MJ061 Floatation Device mixed by The Smokering http://www.mondayjazz.com/mixes/mj061_floatation_device_by_the_smokering.mp3
+MJ020 Above the Storm mixed by DJ Alda http://www.mondayjazz.com/mixes/mj020_above_the_storm_by_alda.mp3
+MJ095 A Mix Called Mondayjazz Mix by A Cat Called Fritz http://mondayjazz.com/mixes/mj095_a_tape_called_mondayjazz_mix_by_a_cat_called_fritz.mp3
+MJ092 Early Reflections by odd /even http://mondayjazz.com/mixes/mj092_early_reflections_by_oddeven.mp3
+MJ090 Beat Combos by Harrison Blakoldman http://mondayjazz.com/mixes/mj090_beat_combos_by_hbo.mp3
+MJ055 Enemy Earth Relics mixed by Recor http://www.mondayjazz.com/mixes/mj055_enemy_earth_relics_by_recor.mp3
+MJ094 Adventures On The Sun by Re:Source http://mondayjazz.com/mixes/mj094_adventures_on_the_sun_by_re_source.mp3
+MJ006 Summer Picks and Dips mixed by Zhil http://www.mondayjazz.com/mixes/mj006_summer_picks_n_dips_by_zhil.mp3
+MJ026 Kenbun mixed by Pablo Valentino http://www.mondayjazz.com/mixes/mj026_kenbun_by_pablo_valentino.mp3
+MJ014 Erikai mixed by Walkman http://www.mondayjazz.com/mixes/mj014_erikai_by_walkman.mp3
+MJ036 Weihnachtstape'07 mixed by Conikt http://www.mondayjazz.com/mixes/mj036_weihnachtstape_by_conikt.mp3
+MJ032 Yellow Snow mixed by Comfort Fit http://www.mondayjazz.com/mixes/mj032_yellow_snow_by_comfort_fit.mp3
+MJ004 Mondays Are Rewound Sundays mixed by UMC http://www.mondayjazz.com/mixes/mj004_mondays_are_rewound_sundays_by_umc.mp3
+MJ075 Belgium Beer And Poptarts mixed by Sinister Sound Team http://mondayjazz.com/mixes/mj075_belgium_beer_and_poptarts_by_sinister_sound_team.mp3
+MJ058 Retrospective Life mixed by Lo http://www.mondayjazz.com/mixes/mj058_retrospective_life_by_lo.mp3
+MJ027 Mixtape for Myself mixed by Hunee http://www.mondayjazz.com/mixes/mj027_mixtape_for_myself_by_hunee.mp3
+MJ047 Soulbasta Jazz Session 1 mixed by Latin Lover http://www.mondayjazz.com/mixes/mj047_soulbasta_jazz_session1_by_latin_lover.mp3
+MJ005 Yesterday is Todays Tomorrow mixed by Jef Metal http://www.mondayjazz.com/mixes/mj005_yesterday_is_todays_tomorrow_by_jeff_metal.mp3
+MJ096 Your Headz In The Cloudz by DaRon http://mondayjazz.com/mixes/mj096_your_headz_in_the_cloudz_by_daron.mp3
+MJ035 Ruff Shootings mixed by Lokid and Powell http://mondayjazz.com/mixes/mj035_ruff_shootings_by_lokid_and_powell.mp3
+MJ080 Far Out In Space mixed by Dj Synflood http://mondayjazz.com/mixes/mj080_far_out_in_space_by_dj_synflood.mp3
+MJ049 Left Field mixed by Fightex http://www.mondayjazz.com/mixes/mj049_left_field_by_fightex.mp3
+MJ053 Autumn Solace mixed by Cleptoclectics http://www.mondayjazz.com/mixes/mj053_autumn_solace_by_cleptoclectics.mp3
+MJ059 Driving Lessons mixed by Swede:art http://www.mondayjazz.com/mixes/mj059_driving_lessons_by_swedeart.mp3
+MJ084 Afterwords mixed by OL and Miracle Libido http://www.mondayjazz.com/mixes/mj084_afterwords_by_ol_and_miracle_libido.mp3
+MJ054 Neck Therapy mixed by Josip Klobuchar http://www.mondayjazz.com/mixes/mj054_neck_therapy_by_josip_klobuchar.mp3
+MJ042 Monday Sermon mixed by Dday One http://www.mondayjazz.com/mixes/mj042_monday_sermon_by_dday_one.mp3
+MJ017 On Monday I Want to Die mixed by Paul Nevermind http://www.mondayjazz.com/mixes/mj017_on_monday_i_want_to_die_by_paul_nevermind.mp3
+MJ025 Rollercoaster mixed by Hazel http://www.mondayjazz.com/mixes/mj025_rollercoaster_by_hazel.mp3
+MJ046 Colours mixed by Called Understandable Souls http://www.mondayjazz.com/mixes/mj046_colour_by_called_understandable_souls.mp3
+MJ065 Do You Know Tthe Tenjin St mixed by Olive Oil Still Human Being mixed by Soloal One http://mondayjazz.com/mixes/mj065_do_you_know_the_tenjin_st_by_olive_oil_-_still_human_being_by_soloal-one.mp3
+MJ097 Hela Hena by Dj Lovespook http://mondayjazz.com/mixes/mj097_hela_hena_by_dj_lovespook.mp3
+MJ039 Blackjack Beats mixed by Gamblin Matic and Stevo Casino http://www.mondayjazz.com/mixes/mj039_blackjack_beats_by_gamblin_matic_and_stevo_casino.mp3
+MJ068 Monday Consequence mixed by U-point http://mondayjazz.com/mixes/mj068_monday_consequence_by_u-point.mp3
+MJ030 The Escape of the Mingus mixed by Chewy B http://www.mondayjazz.com/mixes/mj030_the_escape_of_mingus_by_chewy_b.mp3
+MJ077 Other Sides Of The Cozmos mixed by See Visions http://mondayjazz.com/mixes/mj077_other_sides_of_the_cozmos_by_see_visions.mp3
+MJ019 Spiral Motion mixed by Skape http://www.mondayjazz.com/mixes/mj019_spiral_motion_by_skape.mp3
+[ERROR] Token classic.css is not a child of this is the root node
+[ERROR] Token classic.css is not a child of this is the root node
+starting event engine...
+loading all plugins...
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Audio
+*** loading: PlugInsFolder.Audio.Madplay.py
+*** loading: PlugInsFolder.FeedReader.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Notification
+*** loading: PlugInsFolder.Notification.Prowly.py
+*** loading: PlugInsFolder.SoftKeys.py
+devcounter 1:devlist 6728592:devlist 0:*** loading: PlugInsFolder.Status.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.System
+*** loading: PlugInsFolder.System.FritzMonitor.py
+*** loading: PlugInsFolder.System.Openwrt.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.z
+loaded all plugins sucessfully
+starting xmpp client...
+parsing: MondayJazz
+servant@jabber.org
+seltmann@messi.mi.hdm-stuttgart.de
+sabber@jabber.org
+fernmelder@jabber.org
+abspielgeraet@jabber.org
+Joining groupchat: ami@conference.jabber.org/ami.client
+Communicationengine is online, or should be... #TODO
+MJ060 Redio Sandwich mixed by Jared Turinsky / Red Room Beats http://www.mondayjazz.com/mixes/mj060_redio_sandwich_by_jared_turinsky_-_red_room_beats.mp3
+MJ076 Specific Components mixed by Lapti http://mondayjazz.com/mixes/mj076_specific_components_by_lapti.mp3
+MJ016 Pearls mixed by Pure P http://www.mondayjazz.com/mixes/mj016_pearls_by_pure_p.mp3
+MJ102 Excuse I'm Not a Dj by Ichiro_ http://mondayjazz.com/mixes/mj102_excuse_im_not_a_dj_by_ichiro_.mp3
+MJ050 The Jazztape mixed by Justas Fresh http://www.mondayjazz.com/mixes/mj050_the_jazztape_by_justas_fresh.mp3
+MJ066 Possibilities mixed by Teebs http://mondayjazz.com/mixes/mj066_possibilities_by_teebs.mp3
+MJ012 Circulations mixed by Dai-San http://www.mondayjazz.com/mixes/mj012_circulations_by_dai_san.mp3
+MJ003 Etnosound mixed by Sleeper http://www.mondayjazz.com/mixes/mj003_Etnosound_by_Sleeper.mp3
+MJ023 Society for the Musical Education mixed by Quazar http://www.mondayjazz.com/mixes/mj023_society_for_the_musical_education_by_quazar.mp3
+MJ074 60 Minutes With Chief mixed by Chief http://mondayjazz.com/mixes/mj074_60_minutes_with_chief_by_chief.mp3
+MJ038 Vote For Jazz mixed by Hollenstein http://www.mondayjazz.com/mixes/mj038_vote_for_jazz_by_hollenstein.mp3
+MJ033 The Back Handed Party mixed by Joe Beats http://www.mondayjazz.com/mixes/mj033_the_back_handed_party_by_joe_beats.mp3
+MJ011 Morning Routine mixed by Astralas http://www.mondayjazz.com/mixes/mj011_morning_routine_by_astralas.mp3
+MJ072 Headlights mixed by Blunted Monkz http://mondayjazz.com/mixes/mj072_headlights_by_blunted_monkz.mp3
+MJ091 Pour Le Plaisir by Souleance http://mondayjazz.com/mixes/mj091_pour_le_plaisir_by_souleance.mp3
+MJ079 Audiopatchwork mixed by Food For Ya Soul http://mondayjazz.com/mixes/mj079_audiopatchwork_by_food_for_ya_soul.mp3
+MJ078 Box Of Chocolates mixed by 00Genesis http://mondayjazz.com/mixes/mj078_box_of_chocolates_by_00genesis.mp3
+MJ044 Praqtice Makes Perfeq mixed by Architeq http://www.mondayjazz.com/mixes/mj044_praqtice_makes_perfeq_by_architeq.mp3
+MJ093 Space Oddities by Robot Koch http://mondayjazz.com/mixes/mj093_space_oddities_by_robot_koch.mp3
+MJ085 Afternoon Delights mixed by Marcin Cichy http://mondayjazz.com/mixes/mj085_afternoon_delights_by_marcin_cichy.mp3
+MJ008 I Versus Myself mixed by Pranza http://www.mondayjazz.com/mixes/mj008_i_versus_myself_by_pranza.mp3
+MJ048 One Of These Stormy Mondays mixed by Mnemotrauma http://www.mondayjazz.com/mixes/mj048_one_of_these_stormy_mondays_by_mnemotrauma.mp3
+MJ041 From Jazz to Spaz mixed by Dorian Concept http://www.mondayjazz.com/mixes/mj041_from_jazz_to_spaz_by_dorian_concept.mp3
+MJ015 Monday Mish Mosh mixed by Jo_Ill http://www.mondayjazz.com/mixes/mj015_monday_mish_mosh_by_jo_ill.mp3
+MJ037 Mind Reflections mixed by Portformat http://www.mondayjazz.com/mixes/mj037_mind_reflections_by_portformat.mp3
+MJ082 Holding It Down mixed by Bene http://mondayjazz.com/mixes/mj082_holding_it_down_by_bene.mp3
+MJ099 Now Just Listen by Dj Blueprint http://mondayjazz.com/mixes/mj099_now_just_listen_by_dj_blueprint.mp3
+MJ088 I Go By Handsome Twenty-four Year Old by dza http://mondayjazz.com/mixes/mj088_i_go_by_handsome_twenty-four_year-old_by_dza.mp3
+MJ031 Temple Of Tones mixed by Indiana Tones http://www.mondayjazz.com/mixes/mj031_temple_of_tones_by_indiana_tones.mp3
+MJ043 Magic Mayer mixed by Front 2 Blaq http://www.mondayjazz.com/mixes/mj043_magic_mayer_by_front_2_blaq.mp3
+MJ052 Magic Ritual mixed by Tobrock http://www.mondayjazz.com/mixes/mj052_magic_ritual_by_tobrock.mp3
+MJ028 Wacky World mixed by 00Genesis http://www.mondayjazz.com/mixes/mj028_wacky_world_by_00genesis.mp3
+MJ001 Other Worlds mixed by 1.1 and Moxo Tengu http://www.mondayjazz.com/mixes/mj001_OtherWorlds_by_1.1_and_Moxo_Tengu.mp3
+MJ022 Wake Up mixed by Tobias Kirmayer http://www.mondayjazz.com/mixes/mj022_wake_up_by_tobias_kirmayer.mp3
+MJ018 Birds Custard mixed by DJ Moneyshot http://www.mondayjazz.com/mixes/mj018_birds_custard_by_dj_moneyshot.mp3
+MJ040 From Monday Till Monday mixed by Viper and Alex D http://www.mondayjazz.com/mixes/mj040_from_monday_till_monday_by_viper_and_alex_d.mp3
+MJ098 Heavymentaldecay by C1GART And The Fatlips http://mondayjazz.com/mixes/mj098_heavymentaldecay_by_c1gart_and_the_fatlips.mp3
+MJ070 Submerged Above Sound mixed by Ponce de Beyond http://mondayjazz.com/mixes/mj070_submerged_above_sound_by_ponce_de_beyond.mp3
+MJ063 Love Is Everything mixed by Mr. Hone http://mondayjazz.com/mixes/mj063_love_is_anything_by_mr_hone.mp3
+MJ089 Santo Domingo Beats by Cohoba http://mondayjazz.com/mixes/mj089_santo_domingo_beats_by_cohoba.mp3
+MJ073 Monday Marauders mixed by Sifu http://mondayjazz.com/mixes/mj073_monday_marauders_by_sifu.mp3
+MJ069 Phases Of The Day mixed by Ryan Alexander http://mondayjazz.com/mixes/mj069_phases_of_a_day_by_ryan_alexander.mp3
+MJ062 Acid Jazz n Blunts mixed by Namo http://www.mondayjazz.com/mixes/mj062_acid_jazz_n_blunts_by_namo.mp3
+MJ007 7 Inch Selection mixed by Deneez http://www.mondayjazz.com/mixes/mj007_7_inch%20_selection_by_deneez.mp3
+MJ081 Jazzercise! Vol. 2 mixed by Dj Nerstylist http://www.mondayjazz.com/mixes/mj081_jazzercise!_vol_2_by_dj_nerstylist.mp3
+MJ013 Dedication to Interplanetary Stewardness mixed by O.Boogie http://www.mondayjazz.com/mixes/mj013_dedication%20_to_the_interplanetary_stewardess_by_oboogie.mp3
+MJ009 One 4orty mixed by Jon Kennedy http://www.mondayjazz.com/mixes/mj009_one_4orty_by_jon_kennedy.mp3
+MJ101 July by Dj Paul Pre http://www.mondayjazz.com/mixes/mj101_july_by_paul_pre.mp3
+MJ034 The Cancelled Formula mixed by Neil Something http://www.mondayjazz.com/mixes/mj034_the_cancelled_formula_by_neil_something.mp3
+MJ056 Static Noise mixed by Hubert Daviz http://www.mondayjazz.com/mixes/mj056_static_noise_by_hubert_daviz.mp3
+MJ002 One Shot in the Morning mixed by Genys http://www.mondayjazz.com/mixes/mj002_one_shot_in_the_morning_by_genys.mp3
+MJ045 The Time Tunnel mixed by Cinnaman http://www.mondayjazz.com/mixes/mj045_the_time_tunnel_by_cinnaman.mp3
+MJ083 MIA In The MIA mixed by Manuvers http://mondayjazz.com/mixes/mj083_mia_in_the_mia_by_manuvers.mp3
+MJ086 Mondayjazz Live! 04-04-2009 by Fulgeance http://mondayjazz.com/mixes/mj086_fulgeance_live_04042009.mp3
+MJ064 Music To Blink To mixed by Sunete Sub.Sol http://mondayjazz.com/mixes/mj064_music_to_blink_to_by_sunete_sub.sol.mp3
+MJ057 The Return mixed by 00Genesis http://www.mondayjazz.com/mixes/mj057_the_return_by_00genesis.mp3
+MJ087 Jazzing The Old Way by Paul Murphy http://mondayjazz.com/mixes/mj087_jazzing_the_old_way_by_paul_murphy.mp3
+MJ029 Hiver Normand mixed by Fulgeance http://www.mondayjazz.com/mixes/mj029_hiver_normand_by_fulgeance.mp3
+MJ010 45rpm Shmunk, Shmoul, Shmack mixed by Zhilvinas Noruishis http://www.mondayjazz.com/mixes/mj010_45rpm_sss_by_zhilvinas_noruishis.mp3
+MJ071 Various Artists mixed by fEux http://mondayjazz.com/mixes/mj071_various_artists_by_feux.mp3
+MJ021 New Life mixed by Jay Scarlett http://www.mondayjazz.com/mixes/mj021_new_life_by_jay_scarlett.mp3
+MJ067 Trippy Jazz Travel From Nowhere To Somewhere mixed by L'eau du Robinet http://mondayjazz.com/mixes/mj067_trippy_jazz_travel_from_nowhere_to_somewhere_by_leau_du_robinet.mp3
+MJ051 Are You Hung Up? mixed by A La Fu http://www.mondayjazz.com/mixes/mj051_are_you_hung_up_by_a_la_fu.mp3
+MJ024 Ostrabrama Live Session http://www.mondayjazz.com/mixes/mj024_ostrabrama_live_session.mp3
+MJ061 Floatation Device mixed by The Smokering http://www.mondayjazz.com/mixes/mj061_floatation_device_by_the_smokering.mp3
+MJ020 Above the Storm mixed by DJ Alda http://www.mondayjazz.com/mixes/mj020_above_the_storm_by_alda.mp3
+MJ095 A Mix Called Mondayjazz Mix by A Cat Called Fritz http://mondayjazz.com/mixes/mj095_a_tape_called_mondayjazz_mix_by_a_cat_called_fritz.mp3
+MJ092 Early Reflections by odd /even http://mondayjazz.com/mixes/mj092_early_reflections_by_oddeven.mp3
+MJ090 Beat Combos by Harrison Blakoldman http://mondayjazz.com/mixes/mj090_beat_combos_by_hbo.mp3
+MJ055 Enemy Earth Relics mixed by Recor http://www.mondayjazz.com/mixes/mj055_enemy_earth_relics_by_recor.mp3
+MJ094 Adventures On The Sun by Re:Source http://mondayjazz.com/mixes/mj094_adventures_on_the_sun_by_re_source.mp3
+MJ006 Summer Picks and Dips mixed by Zhil http://www.mondayjazz.com/mixes/mj006_summer_picks_n_dips_by_zhil.mp3
+MJ026 Kenbun mixed by Pablo Valentino http://www.mondayjazz.com/mixes/mj026_kenbun_by_pablo_valentino.mp3
+MJ014 Erikai mixed by Walkman http://www.mondayjazz.com/mixes/mj014_erikai_by_walkman.mp3
+MJ036 Weihnachtstape'07 mixed by Conikt http://www.mondayjazz.com/mixes/mj036_weihnachtstape_by_conikt.mp3
+MJ032 Yellow Snow mixed by Comfort Fit http://www.mondayjazz.com/mixes/mj032_yellow_snow_by_comfort_fit.mp3
+MJ004 Mondays Are Rewound Sundays mixed by UMC http://www.mondayjazz.com/mixes/mj004_mondays_are_rewound_sundays_by_umc.mp3
+MJ075 Belgium Beer And Poptarts mixed by Sinister Sound Team http://mondayjazz.com/mixes/mj075_belgium_beer_and_poptarts_by_sinister_sound_team.mp3
+MJ058 Retrospective Life mixed by Lo http://www.mondayjazz.com/mixes/mj058_retrospective_life_by_lo.mp3
+MJ027 Mixtape for Myself mixed by Hunee http://www.mondayjazz.com/mixes/mj027_mixtape_for_myself_by_hunee.mp3
+MJ047 Soulbasta Jazz Session 1 mixed by Latin Lover http://www.mondayjazz.com/mixes/mj047_soulbasta_jazz_session1_by_latin_lover.mp3
+MJ005 Yesterday is Todays Tomorrow mixed by Jef Metal http://www.mondayjazz.com/mixes/mj005_yesterday_is_todays_tomorrow_by_jeff_metal.mp3
+MJ096 Your Headz In The Cloudz by DaRon http://mondayjazz.com/mixes/mj096_your_headz_in_the_cloudz_by_daron.mp3
+MJ035 Ruff Shootings mixed by Lokid and Powell http://mondayjazz.com/mixes/mj035_ruff_shootings_by_lokid_and_powell.mp3
+MJ080 Far Out In Space mixed by Dj Synflood http://mondayjazz.com/mixes/mj080_far_out_in_space_by_dj_synflood.mp3
+MJ049 Left Field mixed by Fightex http://www.mondayjazz.com/mixes/mj049_left_field_by_fightex.mp3
+MJ053 Autumn Solace mixed by Cleptoclectics http://www.mondayjazz.com/mixes/mj053_autumn_solace_by_cleptoclectics.mp3
+MJ059 Driving Lessons mixed by Swede:art http://www.mondayjazz.com/mixes/mj059_driving_lessons_by_swedeart.mp3
+MJ084 Afterwords mixed by OL and Miracle Libido http://www.mondayjazz.com/mixes/mj084_afterwords_by_ol_and_miracle_libido.mp3
+MJ054 Neck Therapy mixed by Josip Klobuchar http://www.mondayjazz.com/mixes/mj054_neck_therapy_by_josip_klobuchar.mp3
+MJ042 Monday Sermon mixed by Dday One http://www.mondayjazz.com/mixes/mj042_monday_sermon_by_dday_one.mp3
+MJ017 On Monday I Want to Die mixed by Paul Nevermind http://www.mondayjazz.com/mixes/mj017_on_monday_i_want_to_die_by_paul_nevermind.mp3
+MJ025 Rollercoaster mixed by Hazel http://www.mondayjazz.com/mixes/mj025_rollercoaster_by_hazel.mp3
+MJ046 Colours mixed by Called Understandable Souls http://www.mondayjazz.com/mixes/mj046_colour_by_called_understandable_souls.mp3
+MJ065 Do You Know Tthe Tenjin St mixed by Olive Oil Still Human Being mixed by Soloal One http://mondayjazz.com/mixes/mj065_do_you_know_the_tenjin_st_by_olive_oil_-_still_human_being_by_soloal-one.mp3
+MJ097 Hela Hena by Dj Lovespook http://mondayjazz.com/mixes/mj097_hela_hena_by_dj_lovespook.mp3
+MJ039 Blackjack Beats mixed by Gamblin Matic and Stevo Casino http://www.mondayjazz.com/mixes/mj039_blackjack_beats_by_gamblin_matic_and_stevo_casino.mp3
+MJ068 Monday Consequence mixed by U-point http://mondayjazz.com/mixes/mj068_monday_consequence_by_u-point.mp3
+MJ030 The Escape of the Mingus mixed by Chewy B http://www.mondayjazz.com/mixes/mj030_the_escape_of_mingus_by_chewy_b.mp3
+MJ077 Other Sides Of The Cozmos mixed by See Visions http://mondayjazz.com/mixes/mj077_other_sides_of_the_cozmos_by_see_visions.mp3
+MJ019 Spiral Motion mixed by Skape http://www.mondayjazz.com/mixes/mj019_spiral_motion_by_skape.mp3
+[ERROR] Token classic.css is not a child of this is the root node
+
+parsing: MondayJazz
+parsing: MondayJazz
+parsing: MondayJazz
+parsing: MondayJazz
+parsing: MondayJazz
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+>>>>DISCONNECT HANDLER<<<<
+reconnecting...
+[ERROR] Token classic.css is not a child of this is the root node
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+[(u'MJ081_Jazzercise!_Vol._2_mixed_by_Dj_Nerstylist', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07710>), (u'MJ065_Do_You_Know_Tthe_Tenjin_St_mixed_by_Olive_Oil_Still_Human_Being_mixed_by_Soloal_One', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07ee0>), (u'MJ097_Hela_Hena_by_Dj_Lovespook', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07f08>), (u'MJ022_Wake_Up_mixed_by_Tobias_Kirmayer', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07558>), (u'MJ025_Rollercoaster_mixed_by_Hazel', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07e90>), (u'MJ033_The_Back_Handed_Party_mixed_by_Joe_Beats', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba071e8>), (u'MJ039_Blackjack_Beats_mixed_by_Gamblin_Matic_and_Stevo_Casino', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07f30>), (u'MJ071_Various_Artists_mixed_by_fEux', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07968>), (u'MJ057_The_Return_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba078c8>), (u'MJ043_Magic_Mayer_mixed_by_Front_2_Blaq', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba074b8>), (u'MJ069_Phases_Of_The_Day_mixed_by_Ryan_Alexander', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07698>), (u'MJ007_7_Inch_Selection_mixed_by_Deneez', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba076e8>), (u'MJ099_Now_Just_Listen_by_Dj_Blueprint', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07440>), (u'MJ060_Redio_Sandwich_mixed_by_Jared_Turinsky_/_Red_Room_Beats', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2b9ffb20>), (u'MJ001_Other_Worlds_mixed_by_1.1_and_Moxo_Tengu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07530>), (u'MJ035_Ruff_Shootings_mixed_by_Lokid_and_Powell', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07d28>), (u'MJ070_Submerged_Above_Sound_mixed_by_Ponce_de_Beyond', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba075f8>), (u'MJ078_Box_Of_Chocolates_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba072b0>), (u'MJ045_The_Time_Tunnel_mixed_by_Cinnaman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07828>), (u'MJ083_MIA_In_The_MIA_mixed_by_Manuvers', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07850>), (u'MJ020_Above_the_Storm_mixed_by_DJ_Alda', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07a58>), (u'MJ029_Hiver_Normand_mixed_by_Fulgeance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07918>), (u'MJ058_Retrospective_Life_mixed_by_Lo', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07c60>), (u'MJ011_Morning_Routine_mixed_by_Astralas', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07210>), (u'MJ073_Monday_Marauders_mixed_by_Sifu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07670>), (u'MJ086_Mondayjazz_Live!_04-04-2009_by_Fulgeance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07878>), (u'MJ064_Music_To_Blink_To_mixed_by_Sunete_Sub.Sol', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba078a0>), (u'MJ061_Floatation_Device_mixed_by_The_Smokering', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07a30>), (u'MJ068_Monday_Consequence_mixed_by_U-point', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07f58>), (u'MJ093_Space_Oddities_by_Robot_Koch', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07300>), (u'MJ034_The_Cancelled_Formula_mixed_by_Neil_Something', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba077b0>), (u'MJ052_Magic_Ritual_mixed_by_Tobrock', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba074e0>), (u'MJ098_Heavymentaldecay_by_C1GART_And_The_Fatlips', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba075d0>), (u'MJ004_Mondays_Are_Rewound_Sundays_mixed_by_UMC', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07c10>), (u'MJ005_Yesterday_is_Todays_Tomorrow_mixed_by_Jef_Metal', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07cd8>), (u'MJ008_I_Versus_Myself_mixed_by_Pranza', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07350>), (u'MJ063_Love_Is_Everything_mixed_by_Mr._Hone', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07620>), (u'MJ040_From_Monday_Till_Monday_mixed_by_Viper_and_Alex_D', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba075a8>), (u'MJ054_Neck_Therapy_mixed_by_Josip_Klobuchar', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07e18>), (u'MJ072_Headlights_mixed_by_Blunted_Monkz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07238>), (u'MJ021_New_Life_mixed_by_Jay_Scarlett', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07990>), (u'MJ012_Circulations_mixed_by_Dai-San', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07120>), (u'MJ028_Wacky_World_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07508>), (u'MJ090_Beat_Combos_by_Harrison_Blakoldman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07ad0>), (u'MJ094_Adventures_On_The_Sun_by_Re:Source', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07b20>), (u'MJ026_Kenbun_mixed_by_Pablo_Valentino', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07b70>), (u'MJ088_I_Go_By_Handsome_Twenty-four_Year_Old_by_dza', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07468>), (u'MJ024_Ostrabrama_Live_Session', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07a08>), (u'MJ051_Are_You_Hung_Up?_mixed_by_A_La_Fu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba079e0>), (u'MJ013_Dedication_to_Interplanetary_Stewardness_mixed_by_O.Boogie', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07738>), (u'MJ062_Acid_Jazz_n_Blunts_mixed_by_Namo', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba076c0>), (u'MJ038_Vote_For_Jazz_mixed_by_Hollenstein', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba071c0>), (u'MJ030_The_Escape_of_the_Mingus_mixed_by_Chewy_B', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07f80>), (u'MJ080_Far_Out_In_Space_mixed_by_Dj_Synflood', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07d50>), (u"MJ067_Trippy_Jazz_Travel_From_Nowhere_To_Somewhere_mixed_by_L'eau_du_Robinet", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba079b8>), (u'MJ053_Autumn_Solace_mixed_by_Cleptoclectics', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07da0>), (u'MJ044_Praqtice_Makes_Perfeq_mixed_by_Architeq', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba072d8>), (u'MJ092_Early_Reflections_by_odd_/even', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07aa8>), (u'MJ075_Belgium_Beer_And_Poptarts_mixed_by_Sinister_Sound_Team', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07c38>), (u'MJ032_Yellow_Snow_mixed_by_Comfort_Fit', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07be8>), (u'MJ050_The_Jazztape_mixed_by_Justas_Fresh', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba070a8>), (u'MJ031_Temple_Of_Tones_mixed_by_Indiana_Tones', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07490>), (u'MJ016_Pearls_mixed_by_Pure_P', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07058>), (u'MJ059_Driving_Lessons_mixed_by_Swede:art', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07dc8>), (u'MJ101_July_by_Dj_Paul_Pre', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07788>), (u'MJ096_Your_Headz_In_The_Cloudz_by_DaRon', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07d00>), (u'MJ041_From_Jazz_to_Spaz_mixed_by_Dorian_Concept', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba073a0>), (u'MJ066_Possibilities_mixed_by_Teebs', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba070f8>), (u"MJ102_Excuse_I'm_Not_a_Dj_by_Ichiro_", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba070d0>), (u'MJ009_One_4orty_mixed_by_Jon_Kennedy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07760>), (u'MJ010_45rpm_Shmunk,_Shmoul,_Shmack_mixed_by_Zhilvinas_Noruishis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07940>), (u'MJ006_Summer_Picks_and_Dips_mixed_by_Zhil', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07b48>), (u'MJ015_Monday_Mish_Mosh_mixed_by_Jo_Ill', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba073c8>), (u'MJ055_Enemy_Earth_Relics_mixed_by_Recor', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07af8>), (u'MJ048_One_Of_These_Stormy_Mondays_mixed_by_Mnemotrauma', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07378>), (u'MJ089_Santo_Domingo_Beats_by_Cohoba', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07648>), (u'MJ037_Mind_Reflections_mixed_by_Portformat', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba073f0>), (u'MJ014_Erikai_mixed_by_Walkman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07b98>), (u'MJ095_A_Mix_Called_Mondayjazz_Mix_by_A_Cat_Called_Fritz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07a80>), (u'MJ019_Spiral_Motion_mixed_by_Skape', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07fd0>), (u'MJ076_Specific_Components_mixed_by_Lapti', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07080>), (u'MJ049_Left_Field_mixed_by_Fightex', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07d78>), (u'MJ047_Soulbasta_Jazz_Session_1_mixed_by_Latin_Lover', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07cb0>), (u'MJ017_On_Monday_I_Want_to_Die_mixed_by_Paul_Nevermind', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07e68>), (u'MJ079_Audiopatchwork_mixed_by_Food_For_Ya_Soul', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07288>), (u'MJ023_Society_for_the_Musical_Education_mixed_by_Quazar', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07170>), (u'MJ018_Birds_Custard_mixed_by_DJ_Moneyshot', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07580>), (u'MJ056_Static_Noise_mixed_by_Hubert_Daviz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba077d8>), (u'MJ046_Colours_mixed_by_Called_Understandable_Souls', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07eb8>), (u'MJ082_Holding_It_Down_mixed_by_Bene', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07418>), (u'MJ042_Monday_Sermon_mixed_by_Dday_One', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07e40>), (u'MJ087_Jazzing_The_Old_Way_by_Paul_Murphy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba078f0>), (u'MJ002_One_Shot_in_the_Morning_mixed_by_Genys', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07800>), (u'MJ091_Pour_Le_Plaisir_by_Souleance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07260>), (u"MJ036_Weihnachtstape'07_mixed_by_Conikt", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07bc0>), (u'MJ027_Mixtape_for_Myself_mixed_by_Hunee', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07c88>), (u'MJ077_Other_Sides_Of_The_Cozmos_mixed_by_See_Visions', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07fa8>), (u'MJ003_Etnosound_mixed_by_Sleeper', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07148>), (u'MJ084_Afterwords_mixed_by_OL_and_Miracle_Libido', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07df0>), (u'MJ074_60_Minutes_With_Chief_mixed_by_Chief', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07198>), (u'MJ085_Afternoon_Delights_mixed_by_Marcin_Cichy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07328>)]
+(u'MJ055_Enemy_Earth_Relics_mixed_by_Recor', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07af8>)
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+[(u'MJ081_Jazzercise!_Vol._2_mixed_by_Dj_Nerstylist', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07710>), (u'MJ065_Do_You_Know_Tthe_Tenjin_St_mixed_by_Olive_Oil_Still_Human_Being_mixed_by_Soloal_One', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07ee0>), (u'MJ097_Hela_Hena_by_Dj_Lovespook', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07f08>), (u'MJ022_Wake_Up_mixed_by_Tobias_Kirmayer', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07558>), (u'MJ025_Rollercoaster_mixed_by_Hazel', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07e90>), (u'MJ033_The_Back_Handed_Party_mixed_by_Joe_Beats', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba071e8>), (u'MJ039_Blackjack_Beats_mixed_by_Gamblin_Matic_and_Stevo_Casino', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07f30>), (u'MJ071_Various_Artists_mixed_by_fEux', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07968>), (u'MJ057_The_Return_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba078c8>), (u'MJ043_Magic_Mayer_mixed_by_Front_2_Blaq', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba074b8>), (u'MJ069_Phases_Of_The_Day_mixed_by_Ryan_Alexander', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07698>), (u'MJ007_7_Inch_Selection_mixed_by_Deneez', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba076e8>), (u'MJ099_Now_Just_Listen_by_Dj_Blueprint', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07440>), (u'MJ060_Redio_Sandwich_mixed_by_Jared_Turinsky_/_Red_Room_Beats', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2b9ffb20>), (u'MJ001_Other_Worlds_mixed_by_1.1_and_Moxo_Tengu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07530>), (u'MJ035_Ruff_Shootings_mixed_by_Lokid_and_Powell', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07d28>), (u'MJ070_Submerged_Above_Sound_mixed_by_Ponce_de_Beyond', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba075f8>), (u'MJ078_Box_Of_Chocolates_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba072b0>), (u'MJ045_The_Time_Tunnel_mixed_by_Cinnaman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07828>), (u'MJ083_MIA_In_The_MIA_mixed_by_Manuvers', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07850>), (u'MJ020_Above_the_Storm_mixed_by_DJ_Alda', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07a58>), (u'MJ029_Hiver_Normand_mixed_by_Fulgeance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07918>), (u'MJ058_Retrospective_Life_mixed_by_Lo', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07c60>), (u'MJ011_Morning_Routine_mixed_by_Astralas', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07210>), (u'MJ073_Monday_Marauders_mixed_by_Sifu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07670>), (u'MJ086_Mondayjazz_Live!_04-04-2009_by_Fulgeance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07878>), (u'MJ064_Music_To_Blink_To_mixed_by_Sunete_Sub.Sol', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba078a0>), (u'MJ061_Floatation_Device_mixed_by_The_Smokering', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07a30>), (u'MJ068_Monday_Consequence_mixed_by_U-point', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07f58>), (u'MJ093_Space_Oddities_by_Robot_Koch', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07300>), (u'MJ034_The_Cancelled_Formula_mixed_by_Neil_Something', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba077b0>), (u'MJ052_Magic_Ritual_mixed_by_Tobrock', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba074e0>), (u'MJ098_Heavymentaldecay_by_C1GART_And_The_Fatlips', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba075d0>), (u'MJ004_Mondays_Are_Rewound_Sundays_mixed_by_UMC', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07c10>), (u'MJ005_Yesterday_is_Todays_Tomorrow_mixed_by_Jef_Metal', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07cd8>), (u'MJ008_I_Versus_Myself_mixed_by_Pranza', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07350>), (u'MJ063_Love_Is_Everything_mixed_by_Mr._Hone', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07620>), (u'MJ040_From_Monday_Till_Monday_mixed_by_Viper_and_Alex_D', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba075a8>), (u'MJ054_Neck_Therapy_mixed_by_Josip_Klobuchar', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07e18>), (u'MJ072_Headlights_mixed_by_Blunted_Monkz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07238>), (u'MJ021_New_Life_mixed_by_Jay_Scarlett', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07990>), (u'MJ012_Circulations_mixed_by_Dai-San', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07120>), (u'MJ028_Wacky_World_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07508>), (u'MJ090_Beat_Combos_by_Harrison_Blakoldman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07ad0>), (u'MJ094_Adventures_On_The_Sun_by_Re:Source', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07b20>), (u'MJ026_Kenbun_mixed_by_Pablo_Valentino', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07b70>), (u'MJ088_I_Go_By_Handsome_Twenty-four_Year_Old_by_dza', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07468>), (u'MJ024_Ostrabrama_Live_Session', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07a08>), (u'MJ051_Are_You_Hung_Up?_mixed_by_A_La_Fu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba079e0>), (u'MJ013_Dedication_to_Interplanetary_Stewardness_mixed_by_O.Boogie', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07738>), (u'MJ062_Acid_Jazz_n_Blunts_mixed_by_Namo', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba076c0>), (u'MJ038_Vote_For_Jazz_mixed_by_Hollenstein', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba071c0>), (u'MJ030_The_Escape_of_the_Mingus_mixed_by_Chewy_B', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07f80>), (u'MJ080_Far_Out_In_Space_mixed_by_Dj_Synflood', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07d50>), (u"MJ067_Trippy_Jazz_Travel_From_Nowhere_To_Somewhere_mixed_by_L'eau_du_Robinet", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba079b8>), (u'MJ053_Autumn_Solace_mixed_by_Cleptoclectics', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07da0>), (u'MJ044_Praqtice_Makes_Perfeq_mixed_by_Architeq', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba072d8>), (u'MJ092_Early_Reflections_by_odd_/even', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07aa8>), (u'MJ075_Belgium_Beer_And_Poptarts_mixed_by_Sinister_Sound_Team', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07c38>), (u'MJ032_Yellow_Snow_mixed_by_Comfort_Fit', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07be8>), (u'MJ050_The_Jazztape_mixed_by_Justas_Fresh', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba070a8>), (u'MJ031_Temple_Of_Tones_mixed_by_Indiana_Tones', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07490>), (u'MJ016_Pearls_mixed_by_Pure_P', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07058>), (u'MJ059_Driving_Lessons_mixed_by_Swede:art', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07dc8>), (u'MJ101_July_by_Dj_Paul_Pre', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07788>), (u'MJ096_Your_Headz_In_The_Cloudz_by_DaRon', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07d00>), (u'MJ041_From_Jazz_to_Spaz_mixed_by_Dorian_Concept', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba073a0>), (u'MJ066_Possibilities_mixed_by_Teebs', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba070f8>), (u"MJ102_Excuse_I'm_Not_a_Dj_by_Ichiro_", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba070d0>), (u'MJ009_One_4orty_mixed_by_Jon_Kennedy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07760>), (u'MJ010_45rpm_Shmunk,_Shmoul,_Shmack_mixed_by_Zhilvinas_Noruishis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07940>), (u'MJ006_Summer_Picks_and_Dips_mixed_by_Zhil', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07b48>), (u'MJ015_Monday_Mish_Mosh_mixed_by_Jo_Ill', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba073c8>), (u'MJ055_Enemy_Earth_Relics_mixed_by_Recor', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07af8>), (u'MJ048_One_Of_These_Stormy_Mondays_mixed_by_Mnemotrauma', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07378>), (u'MJ089_Santo_Domingo_Beats_by_Cohoba', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07648>), (u'MJ037_Mind_Reflections_mixed_by_Portformat', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba073f0>), (u'MJ014_Erikai_mixed_by_Walkman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07b98>), (u'MJ095_A_Mix_Called_Mondayjazz_Mix_by_A_Cat_Called_Fritz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07a80>), (u'MJ019_Spiral_Motion_mixed_by_Skape', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07fd0>), (u'MJ076_Specific_Components_mixed_by_Lapti', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07080>), (u'MJ049_Left_Field_mixed_by_Fightex', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07d78>), (u'MJ047_Soulbasta_Jazz_Session_1_mixed_by_Latin_Lover', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07cb0>), (u'MJ017_On_Monday_I_Want_to_Die_mixed_by_Paul_Nevermind', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07e68>), (u'MJ079_Audiopatchwork_mixed_by_Food_For_Ya_Soul', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07288>), (u'MJ023_Society_for_the_Musical_Education_mixed_by_Quazar', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07170>), (u'MJ018_Birds_Custard_mixed_by_DJ_Moneyshot', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07580>), (u'MJ056_Static_Noise_mixed_by_Hubert_Daviz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba077d8>), (u'MJ046_Colours_mixed_by_Called_Understandable_Souls', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07eb8>), (u'MJ082_Holding_It_Down_mixed_by_Bene', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07418>), (u'MJ042_Monday_Sermon_mixed_by_Dday_One', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07e40>), (u'MJ087_Jazzing_The_Old_Way_by_Paul_Murphy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba078f0>), (u'MJ002_One_Shot_in_the_Morning_mixed_by_Genys', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07800>), (u'MJ091_Pour_Le_Plaisir_by_Souleance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07260>), (u"MJ036_Weihnachtstape'07_mixed_by_Conikt", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07bc0>), (u'MJ027_Mixtape_for_Myself_mixed_by_Hunee', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07c88>), (u'MJ077_Other_Sides_Of_The_Cozmos_mixed_by_See_Visions', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07fa8>), (u'MJ003_Etnosound_mixed_by_Sleeper', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07148>), (u'MJ084_Afterwords_mixed_by_OL_and_Miracle_Libido', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07df0>), (u'MJ074_60_Minutes_With_Chief_mixed_by_Chief', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07198>), (u'MJ085_Afternoon_Delights_mixed_by_Marcin_Cichy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07328>)]
+(u'MJ096_Your_Headz_In_The_Cloudz_by_DaRon', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba07d00>)
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+starting event engine...
+loading all plugins...
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Audio
+*** loading: PlugInsFolder.Audio.Madplay.py
+*** loading: PlugInsFolder.FeedReader.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Notification
+*** loading: PlugInsFolder.Notification.Prowly.py
+*** loading: PlugInsFolder.SoftKeys.py
+devcounter 1:devlist 6742784:devlist 0:*** loading: PlugInsFolder.Status.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.System
+*** loading: PlugInsFolder.System.FritzMonitor.py
+*** loading: PlugInsFolder.System.Openwrt.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.z
+loaded all plugins sucessfully
+starting xmpp client...
+parsing: MondayJazz
+servant@jabber.org
+seltmann@messi.mi.hdm-stuttgart.de
+sabber@jabber.org
+fernmelder@jabber.org
+abspielgeraet@jabber.org
+Joining groupchat: ami@conference.jabber.org/ami.client
+Communicationengine is online, or should be... #TODO
+MJ060 Redio Sandwich mixed by Jared Turinsky / Red Room Beats http://www.mondayjazz.com/mixes/mj060_redio_sandwich_by_jared_turinsky_-_red_room_beats.mp3
+MJ076 Specific Components mixed by Lapti http://mondayjazz.com/mixes/mj076_specific_components_by_lapti.mp3
+MJ016 Pearls mixed by Pure P http://www.mondayjazz.com/mixes/mj016_pearls_by_pure_p.mp3
+MJ102 Excuse I'm Not a Dj by Ichiro_ http://mondayjazz.com/mixes/mj102_excuse_im_not_a_dj_by_ichiro_.mp3
+MJ050 The Jazztape mixed by Justas Fresh http://www.mondayjazz.com/mixes/mj050_the_jazztape_by_justas_fresh.mp3
+MJ066 Possibilities mixed by Teebs http://mondayjazz.com/mixes/mj066_possibilities_by_teebs.mp3
+MJ012 Circulations mixed by Dai-San http://www.mondayjazz.com/mixes/mj012_circulations_by_dai_san.mp3
+MJ003 Etnosound mixed by Sleeper http://www.mondayjazz.com/mixes/mj003_Etnosound_by_Sleeper.mp3
+MJ023 Society for the Musical Education mixed by Quazar http://www.mondayjazz.com/mixes/mj023_society_for_the_musical_education_by_quazar.mp3
+MJ074 60 Minutes With Chief mixed by Chief http://mondayjazz.com/mixes/mj074_60_minutes_with_chief_by_chief.mp3
+MJ038 Vote For Jazz mixed by Hollenstein http://www.mondayjazz.com/mixes/mj038_vote_for_jazz_by_hollenstein.mp3
+MJ033 The Back Handed Party mixed by Joe Beats http://www.mondayjazz.com/mixes/mj033_the_back_handed_party_by_joe_beats.mp3
+MJ011 Morning Routine mixed by Astralas http://www.mondayjazz.com/mixes/mj011_morning_routine_by_astralas.mp3
+MJ072 Headlights mixed by Blunted Monkz http://mondayjazz.com/mixes/mj072_headlights_by_blunted_monkz.mp3
+MJ091 Pour Le Plaisir by Souleance http://mondayjazz.com/mixes/mj091_pour_le_plaisir_by_souleance.mp3
+MJ079 Audiopatchwork mixed by Food For Ya Soul http://mondayjazz.com/mixes/mj079_audiopatchwork_by_food_for_ya_soul.mp3
+MJ078 Box Of Chocolates mixed by 00Genesis http://mondayjazz.com/mixes/mj078_box_of_chocolates_by_00genesis.mp3
+MJ044 Praqtice Makes Perfeq mixed by Architeq http://www.mondayjazz.com/mixes/mj044_praqtice_makes_perfeq_by_architeq.mp3
+MJ093 Space Oddities by Robot Koch http://mondayjazz.com/mixes/mj093_space_oddities_by_robot_koch.mp3
+MJ085 Afternoon Delights mixed by Marcin Cichy http://mondayjazz.com/mixes/mj085_afternoon_delights_by_marcin_cichy.mp3
+MJ008 I Versus Myself mixed by Pranza http://www.mondayjazz.com/mixes/mj008_i_versus_myself_by_pranza.mp3
+MJ048 One Of These Stormy Mondays mixed by Mnemotrauma http://www.mondayjazz.com/mixes/mj048_one_of_these_stormy_mondays_by_mnemotrauma.mp3
+MJ041 From Jazz to Spaz mixed by Dorian Concept http://www.mondayjazz.com/mixes/mj041_from_jazz_to_spaz_by_dorian_concept.mp3
+MJ015 Monday Mish Mosh mixed by Jo_Ill http://www.mondayjazz.com/mixes/mj015_monday_mish_mosh_by_jo_ill.mp3
+MJ037 Mind Reflections mixed by Portformat http://www.mondayjazz.com/mixes/mj037_mind_reflections_by_portformat.mp3
+MJ082 Holding It Down mixed by Bene http://mondayjazz.com/mixes/mj082_holding_it_down_by_bene.mp3
+MJ099 Now Just Listen by Dj Blueprint http://mondayjazz.com/mixes/mj099_now_just_listen_by_dj_blueprint.mp3
+MJ088 I Go By Handsome Twenty-four Year Old by dza http://mondayjazz.com/mixes/mj088_i_go_by_handsome_twenty-four_year-old_by_dza.mp3
+MJ031 Temple Of Tones mixed by Indiana Tones http://www.mondayjazz.com/mixes/mj031_temple_of_tones_by_indiana_tones.mp3
+MJ043 Magic Mayer mixed by Front 2 Blaq http://www.mondayjazz.com/mixes/mj043_magic_mayer_by_front_2_blaq.mp3
+MJ052 Magic Ritual mixed by Tobrock http://www.mondayjazz.com/mixes/mj052_magic_ritual_by_tobrock.mp3
+MJ028 Wacky World mixed by 00Genesis http://www.mondayjazz.com/mixes/mj028_wacky_world_by_00genesis.mp3
+MJ001 Other Worlds mixed by 1.1 and Moxo Tengu http://www.mondayjazz.com/mixes/mj001_OtherWorlds_by_1.1_and_Moxo_Tengu.mp3
+MJ022 Wake Up mixed by Tobias Kirmayer http://www.mondayjazz.com/mixes/mj022_wake_up_by_tobias_kirmayer.mp3
+MJ018 Birds Custard mixed by DJ Moneyshot http://www.mondayjazz.com/mixes/mj018_birds_custard_by_dj_moneyshot.mp3
+MJ040 From Monday Till Monday mixed by Viper and Alex D http://www.mondayjazz.com/mixes/mj040_from_monday_till_monday_by_viper_and_alex_d.mp3
+MJ098 Heavymentaldecay by C1GART And The Fatlips http://mondayjazz.com/mixes/mj098_heavymentaldecay_by_c1gart_and_the_fatlips.mp3
+MJ070 Submerged Above Sound mixed by Ponce de Beyond http://mondayjazz.com/mixes/mj070_submerged_above_sound_by_ponce_de_beyond.mp3
+MJ063 Love Is Everything mixed by Mr. Hone http://mondayjazz.com/mixes/mj063_love_is_anything_by_mr_hone.mp3
+MJ089 Santo Domingo Beats by Cohoba http://mondayjazz.com/mixes/mj089_santo_domingo_beats_by_cohoba.mp3
+MJ073 Monday Marauders mixed by Sifu http://mondayjazz.com/mixes/mj073_monday_marauders_by_sifu.mp3
+MJ069 Phases Of The Day mixed by Ryan Alexander http://mondayjazz.com/mixes/mj069_phases_of_a_day_by_ryan_alexander.mp3
+MJ062 Acid Jazz n Blunts mixed by Namo http://www.mondayjazz.com/mixes/mj062_acid_jazz_n_blunts_by_namo.mp3
+MJ007 7 Inch Selection mixed by Deneez http://www.mondayjazz.com/mixes/mj007_7_inch%20_selection_by_deneez.mp3
+MJ081 Jazzercise! Vol. 2 mixed by Dj Nerstylist http://www.mondayjazz.com/mixes/mj081_jazzercise!_vol_2_by_dj_nerstylist.mp3
+MJ013 Dedication to Interplanetary Stewardness mixed by O.Boogie http://www.mondayjazz.com/mixes/mj013_dedication%20_to_the_interplanetary_stewardess_by_oboogie.mp3
+MJ009 One 4orty mixed by Jon Kennedy http://www.mondayjazz.com/mixes/mj009_one_4orty_by_jon_kennedy.mp3
+MJ101 July by Dj Paul Pre http://www.mondayjazz.com/mixes/mj101_july_by_paul_pre.mp3
+MJ034 The Cancelled Formula mixed by Neil Something http://www.mondayjazz.com/mixes/mj034_the_cancelled_formula_by_neil_something.mp3
+MJ056 Static Noise mixed by Hubert Daviz http://www.mondayjazz.com/mixes/mj056_static_noise_by_hubert_daviz.mp3
+MJ002 One Shot in the Morning mixed by Genys http://www.mondayjazz.com/mixes/mj002_one_shot_in_the_morning_by_genys.mp3
+MJ045 The Time Tunnel mixed by Cinnaman http://www.mondayjazz.com/mixes/mj045_the_time_tunnel_by_cinnaman.mp3
+MJ083 MIA In The MIA mixed by Manuvers http://mondayjazz.com/mixes/mj083_mia_in_the_mia_by_manuvers.mp3
+MJ086 Mondayjazz Live! 04-04-2009 by Fulgeance http://mondayjazz.com/mixes/mj086_fulgeance_live_04042009.mp3
+MJ064 Music To Blink To mixed by Sunete Sub.Sol http://mondayjazz.com/mixes/mj064_music_to_blink_to_by_sunete_sub.sol.mp3
+MJ057 The Return mixed by 00Genesis http://www.mondayjazz.com/mixes/mj057_the_return_by_00genesis.mp3
+MJ087 Jazzing The Old Way by Paul Murphy http://mondayjazz.com/mixes/mj087_jazzing_the_old_way_by_paul_murphy.mp3
+MJ029 Hiver Normand mixed by Fulgeance http://www.mondayjazz.com/mixes/mj029_hiver_normand_by_fulgeance.mp3
+MJ010 45rpm Shmunk, Shmoul, Shmack mixed by Zhilvinas Noruishis http://www.mondayjazz.com/mixes/mj010_45rpm_sss_by_zhilvinas_noruishis.mp3
+MJ071 Various Artists mixed by fEux http://mondayjazz.com/mixes/mj071_various_artists_by_feux.mp3
+MJ021 New Life mixed by Jay Scarlett http://www.mondayjazz.com/mixes/mj021_new_life_by_jay_scarlett.mp3
+MJ067 Trippy Jazz Travel From Nowhere To Somewhere mixed by L'eau du Robinet http://mondayjazz.com/mixes/mj067_trippy_jazz_travel_from_nowhere_to_somewhere_by_leau_du_robinet.mp3
+MJ051 Are You Hung Up? mixed by A La Fu http://www.mondayjazz.com/mixes/mj051_are_you_hung_up_by_a_la_fu.mp3
+MJ024 Ostrabrama Live Session http://www.mondayjazz.com/mixes/mj024_ostrabrama_live_session.mp3
+MJ061 Floatation Device mixed by The Smokering http://www.mondayjazz.com/mixes/mj061_floatation_device_by_the_smokering.mp3
+MJ020 Above the Storm mixed by DJ Alda http://www.mondayjazz.com/mixes/mj020_above_the_storm_by_alda.mp3
+MJ095 A Mix Called Mondayjazz Mix by A Cat Called Fritz http://mondayjazz.com/mixes/mj095_a_tape_called_mondayjazz_mix_by_a_cat_called_fritz.mp3
+MJ092 Early Reflections by odd /even http://mondayjazz.com/mixes/mj092_early_reflections_by_oddeven.mp3
+MJ090 Beat Combos by Harrison Blakoldman http://mondayjazz.com/mixes/mj090_beat_combos_by_hbo.mp3
+MJ055 Enemy Earth Relics mixed by Recor http://www.mondayjazz.com/mixes/mj055_enemy_earth_relics_by_recor.mp3
+MJ094 Adventures On The Sun by Re:Source http://mondayjazz.com/mixes/mj094_adventures_on_the_sun_by_re_source.mp3
+MJ006 Summer Picks and Dips mixed by Zhil http://www.mondayjazz.com/mixes/mj006_summer_picks_n_dips_by_zhil.mp3
+MJ026 Kenbun mixed by Pablo Valentino http://www.mondayjazz.com/mixes/mj026_kenbun_by_pablo_valentino.mp3
+MJ014 Erikai mixed by Walkman http://www.mondayjazz.com/mixes/mj014_erikai_by_walkman.mp3
+MJ036 Weihnachtstape'07 mixed by Conikt http://www.mondayjazz.com/mixes/mj036_weihnachtstape_by_conikt.mp3
+MJ032 Yellow Snow mixed by Comfort Fit http://www.mondayjazz.com/mixes/mj032_yellow_snow_by_comfort_fit.mp3
+MJ004 Mondays Are Rewound Sundays mixed by UMC http://www.mondayjazz.com/mixes/mj004_mondays_are_rewound_sundays_by_umc.mp3
+MJ075 Belgium Beer And Poptarts mixed by Sinister Sound Team http://mondayjazz.com/mixes/mj075_belgium_beer_and_poptarts_by_sinister_sound_team.mp3
+MJ058 Retrospective Life mixed by Lo http://www.mondayjazz.com/mixes/mj058_retrospective_life_by_lo.mp3
+MJ027 Mixtape for Myself mixed by Hunee http://www.mondayjazz.com/mixes/mj027_mixtape_for_myself_by_hunee.mp3
+MJ047 Soulbasta Jazz Session 1 mixed by Latin Lover http://www.mondayjazz.com/mixes/mj047_soulbasta_jazz_session1_by_latin_lover.mp3
+MJ005 Yesterday is Todays Tomorrow mixed by Jef Metal http://www.mondayjazz.com/mixes/mj005_yesterday_is_todays_tomorrow_by_jeff_metal.mp3
+MJ096 Your Headz In The Cloudz by DaRon http://mondayjazz.com/mixes/mj096_your_headz_in_the_cloudz_by_daron.mp3
+MJ035 Ruff Shootings mixed by Lokid and Powell http://mondayjazz.com/mixes/mj035_ruff_shootings_by_lokid_and_powell.mp3
+MJ080 Far Out In Space mixed by Dj Synflood http://mondayjazz.com/mixes/mj080_far_out_in_space_by_dj_synflood.mp3
+MJ049 Left Field mixed by Fightex http://www.mondayjazz.com/mixes/mj049_left_field_by_fightex.mp3
+MJ053 Autumn Solace mixed by Cleptoclectics http://www.mondayjazz.com/mixes/mj053_autumn_solace_by_cleptoclectics.mp3
+MJ059 Driving Lessons mixed by Swede:art http://www.mondayjazz.com/mixes/mj059_driving_lessons_by_swedeart.mp3
+MJ084 Afterwords mixed by OL and Miracle Libido http://www.mondayjazz.com/mixes/mj084_afterwords_by_ol_and_miracle_libido.mp3
+MJ054 Neck Therapy mixed by Josip Klobuchar http://www.mondayjazz.com/mixes/mj054_neck_therapy_by_josip_klobuchar.mp3
+MJ042 Monday Sermon mixed by Dday One http://www.mondayjazz.com/mixes/mj042_monday_sermon_by_dday_one.mp3
+MJ017 On Monday I Want to Die mixed by Paul Nevermind http://www.mondayjazz.com/mixes/mj017_on_monday_i_want_to_die_by_paul_nevermind.mp3
+MJ025 Rollercoaster mixed by Hazel http://www.mondayjazz.com/mixes/mj025_rollercoaster_by_hazel.mp3
+MJ046 Colours mixed by Called Understandable Souls http://www.mondayjazz.com/mixes/mj046_colour_by_called_understandable_souls.mp3
+MJ065 Do You Know Tthe Tenjin St mixed by Olive Oil Still Human Being mixed by Soloal One http://mondayjazz.com/mixes/mj065_do_you_know_the_tenjin_st_by_olive_oil_-_still_human_being_by_soloal-one.mp3
+MJ097 Hela Hena by Dj Lovespook http://mondayjazz.com/mixes/mj097_hela_hena_by_dj_lovespook.mp3
+MJ039 Blackjack Beats mixed by Gamblin Matic and Stevo Casino http://www.mondayjazz.com/mixes/mj039_blackjack_beats_by_gamblin_matic_and_stevo_casino.mp3
+MJ068 Monday Consequence mixed by U-point http://mondayjazz.com/mixes/mj068_monday_consequence_by_u-point.mp3
+MJ030 The Escape of the Mingus mixed by Chewy B http://www.mondayjazz.com/mixes/mj030_the_escape_of_mingus_by_chewy_b.mp3
+MJ077 Other Sides Of The Cozmos mixed by See Visions http://mondayjazz.com/mixes/mj077_other_sides_of_the_cozmos_by_see_visions.mp3
+MJ019 Spiral Motion mixed by Skape http://www.mondayjazz.com/mixes/mj019_spiral_motion_by_skape.mp3
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+starting event engine...
+loading all plugins...
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Audio
+*** loading: PlugInsFolder.Audio.Madplay.py
+*** loading: PlugInsFolder.FeedReader.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Notification
+*** loading: PlugInsFolder.Notification.Prowly.py
+*** loading: PlugInsFolder.SoftKeys.py
+devcounter 1:devlist 6842944:devlist 0:*** loading: PlugInsFolder.Status.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.System
+*** loading: PlugInsFolder.System.FritzMonitor.py
+*** loading: PlugInsFolder.System.Openwrt.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.z
+loaded all plugins sucessfully
+starting xmpp client...
+parsing: MondayJazz
+servant@jabber.org
+seltmann@messi.mi.hdm-stuttgart.de
+sabber@jabber.org
+fernmelder@jabber.org
+abspielgeraet@jabber.org
+Joining groupchat: ami@conference.jabber.org/ami.client
+Communicationengine is online, or should be... #TODO
+MJ060 Redio Sandwich mixed by Jared Turinsky / Red Room Beats http://www.mondayjazz.com/mixes/mj060_redio_sandwich_by_jared_turinsky_-_red_room_beats.mp3
+MJ076 Specific Components mixed by Lapti http://mondayjazz.com/mixes/mj076_specific_components_by_lapti.mp3
+MJ016 Pearls mixed by Pure P http://www.mondayjazz.com/mixes/mj016_pearls_by_pure_p.mp3
+MJ102 Excuse I'm Not a Dj by Ichiro_ http://mondayjazz.com/mixes/mj102_excuse_im_not_a_dj_by_ichiro_.mp3
+MJ050 The Jazztape mixed by Justas Fresh http://www.mondayjazz.com/mixes/mj050_the_jazztape_by_justas_fresh.mp3
+MJ066 Possibilities mixed by Teebs http://mondayjazz.com/mixes/mj066_possibilities_by_teebs.mp3
+MJ012 Circulations mixed by Dai-San http://www.mondayjazz.com/mixes/mj012_circulations_by_dai_san.mp3
+MJ003 Etnosound mixed by Sleeper http://www.mondayjazz.com/mixes/mj003_Etnosound_by_Sleeper.mp3
+MJ023 Society for the Musical Education mixed by Quazar http://www.mondayjazz.com/mixes/mj023_society_for_the_musical_education_by_quazar.mp3
+MJ074 60 Minutes With Chief mixed by Chief http://mondayjazz.com/mixes/mj074_60_minutes_with_chief_by_chief.mp3
+MJ038 Vote For Jazz mixed by Hollenstein http://www.mondayjazz.com/mixes/mj038_vote_for_jazz_by_hollenstein.mp3
+MJ033 The Back Handed Party mixed by Joe Beats http://www.mondayjazz.com/mixes/mj033_the_back_handed_party_by_joe_beats.mp3
+MJ011 Morning Routine mixed by Astralas http://www.mondayjazz.com/mixes/mj011_morning_routine_by_astralas.mp3
+MJ072 Headlights mixed by Blunted Monkz http://mondayjazz.com/mixes/mj072_headlights_by_blunted_monkz.mp3
+MJ091 Pour Le Plaisir by Souleance http://mondayjazz.com/mixes/mj091_pour_le_plaisir_by_souleance.mp3
+MJ079 Audiopatchwork mixed by Food For Ya Soul http://mondayjazz.com/mixes/mj079_audiopatchwork_by_food_for_ya_soul.mp3
+MJ078 Box Of Chocolates mixed by 00Genesis http://mondayjazz.com/mixes/mj078_box_of_chocolates_by_00genesis.mp3
+MJ044 Praqtice Makes Perfeq mixed by Architeq http://www.mondayjazz.com/mixes/mj044_praqtice_makes_perfeq_by_architeq.mp3
+MJ093 Space Oddities by Robot Koch http://mondayjazz.com/mixes/mj093_space_oddities_by_robot_koch.mp3
+MJ085 Afternoon Delights mixed by Marcin Cichy http://mondayjazz.com/mixes/mj085_afternoon_delights_by_marcin_cichy.mp3
+MJ008 I Versus Myself mixed by Pranza http://www.mondayjazz.com/mixes/mj008_i_versus_myself_by_pranza.mp3
+MJ048 One Of These Stormy Mondays mixed by Mnemotrauma http://www.mondayjazz.com/mixes/mj048_one_of_these_stormy_mondays_by_mnemotrauma.mp3
+MJ041 From Jazz to Spaz mixed by Dorian Concept http://www.mondayjazz.com/mixes/mj041_from_jazz_to_spaz_by_dorian_concept.mp3
+MJ015 Monday Mish Mosh mixed by Jo_Ill http://www.mondayjazz.com/mixes/mj015_monday_mish_mosh_by_jo_ill.mp3
+MJ037 Mind Reflections mixed by Portformat http://www.mondayjazz.com/mixes/mj037_mind_reflections_by_portformat.mp3
+MJ082 Holding It Down mixed by Bene http://mondayjazz.com/mixes/mj082_holding_it_down_by_bene.mp3
+MJ099 Now Just Listen by Dj Blueprint http://mondayjazz.com/mixes/mj099_now_just_listen_by_dj_blueprint.mp3
+MJ088 I Go By Handsome Twenty-four Year Old by dza http://mondayjazz.com/mixes/mj088_i_go_by_handsome_twenty-four_year-old_by_dza.mp3
+MJ031 Temple Of Tones mixed by Indiana Tones http://www.mondayjazz.com/mixes/mj031_temple_of_tones_by_indiana_tones.mp3
+MJ043 Magic Mayer mixed by Front 2 Blaq http://www.mondayjazz.com/mixes/mj043_magic_mayer_by_front_2_blaq.mp3
+MJ052 Magic Ritual mixed by Tobrock http://www.mondayjazz.com/mixes/mj052_magic_ritual_by_tobrock.mp3
+MJ028 Wacky World mixed by 00Genesis http://www.mondayjazz.com/mixes/mj028_wacky_world_by_00genesis.mp3
+MJ001 Other Worlds mixed by 1.1 and Moxo Tengu http://www.mondayjazz.com/mixes/mj001_OtherWorlds_by_1.1_and_Moxo_Tengu.mp3
+MJ022 Wake Up mixed by Tobias Kirmayer http://www.mondayjazz.com/mixes/mj022_wake_up_by_tobias_kirmayer.mp3
+MJ018 Birds Custard mixed by DJ Moneyshot http://www.mondayjazz.com/mixes/mj018_birds_custard_by_dj_moneyshot.mp3
+MJ040 From Monday Till Monday mixed by Viper and Alex D http://www.mondayjazz.com/mixes/mj040_from_monday_till_monday_by_viper_and_alex_d.mp3
+MJ098 Heavymentaldecay by C1GART And The Fatlips http://mondayjazz.com/mixes/mj098_heavymentaldecay_by_c1gart_and_the_fatlips.mp3
+MJ070 Submerged Above Sound mixed by Ponce de Beyond http://mondayjazz.com/mixes/mj070_submerged_above_sound_by_ponce_de_beyond.mp3
+MJ063 Love Is Everything mixed by Mr. Hone http://mondayjazz.com/mixes/mj063_love_is_anything_by_mr_hone.mp3
+MJ089 Santo Domingo Beats by Cohoba http://mondayjazz.com/mixes/mj089_santo_domingo_beats_by_cohoba.mp3
+MJ073 Monday Marauders mixed by Sifu http://mondayjazz.com/mixes/mj073_monday_marauders_by_sifu.mp3
+MJ069 Phases Of The Day mixed by Ryan Alexander http://mondayjazz.com/mixes/mj069_phases_of_a_day_by_ryan_alexander.mp3
+MJ062 Acid Jazz n Blunts mixed by Namo http://www.mondayjazz.com/mixes/mj062_acid_jazz_n_blunts_by_namo.mp3
+MJ007 7 Inch Selection mixed by Deneez http://www.mondayjazz.com/mixes/mj007_7_inch%20_selection_by_deneez.mp3
+MJ081 Jazzercise! Vol. 2 mixed by Dj Nerstylist http://www.mondayjazz.com/mixes/mj081_jazzercise!_vol_2_by_dj_nerstylist.mp3
+MJ013 Dedication to Interplanetary Stewardness mixed by O.Boogie http://www.mondayjazz.com/mixes/mj013_dedication%20_to_the_interplanetary_stewardess_by_oboogie.mp3
+MJ009 One 4orty mixed by Jon Kennedy http://www.mondayjazz.com/mixes/mj009_one_4orty_by_jon_kennedy.mp3
+MJ101 July by Dj Paul Pre http://www.mondayjazz.com/mixes/mj101_july_by_paul_pre.mp3
+MJ034 The Cancelled Formula mixed by Neil Something http://www.mondayjazz.com/mixes/mj034_the_cancelled_formula_by_neil_something.mp3
+MJ056 Static Noise mixed by Hubert Daviz http://www.mondayjazz.com/mixes/mj056_static_noise_by_hubert_daviz.mp3
+MJ002 One Shot in the Morning mixed by Genys http://www.mondayjazz.com/mixes/mj002_one_shot_in_the_morning_by_genys.mp3
+MJ045 The Time Tunnel mixed by Cinnaman http://www.mondayjazz.com/mixes/mj045_the_time_tunnel_by_cinnaman.mp3
+MJ083 MIA In The MIA mixed by Manuvers http://mondayjazz.com/mixes/mj083_mia_in_the_mia_by_manuvers.mp3
+MJ086 Mondayjazz Live! 04-04-2009 by Fulgeance http://mondayjazz.com/mixes/mj086_fulgeance_live_04042009.mp3
+MJ064 Music To Blink To mixed by Sunete Sub.Sol http://mondayjazz.com/mixes/mj064_music_to_blink_to_by_sunete_sub.sol.mp3
+MJ057 The Return mixed by 00Genesis http://www.mondayjazz.com/mixes/mj057_the_return_by_00genesis.mp3
+MJ087 Jazzing The Old Way by Paul Murphy http://mondayjazz.com/mixes/mj087_jazzing_the_old_way_by_paul_murphy.mp3
+MJ029 Hiver Normand mixed by Fulgeance http://www.mondayjazz.com/mixes/mj029_hiver_normand_by_fulgeance.mp3
+MJ010 45rpm Shmunk, Shmoul, Shmack mixed by Zhilvinas Noruishis http://www.mondayjazz.com/mixes/mj010_45rpm_sss_by_zhilvinas_noruishis.mp3
+MJ071 Various Artists mixed by fEux http://mondayjazz.com/mixes/mj071_various_artists_by_feux.mp3
+MJ021 New Life mixed by Jay Scarlett http://www.mondayjazz.com/mixes/mj021_new_life_by_jay_scarlett.mp3
+MJ067 Trippy Jazz Travel From Nowhere To Somewhere mixed by L'eau du Robinet http://mondayjazz.com/mixes/mj067_trippy_jazz_travel_from_nowhere_to_somewhere_by_leau_du_robinet.mp3
+MJ051 Are You Hung Up? mixed by A La Fu http://www.mondayjazz.com/mixes/mj051_are_you_hung_up_by_a_la_fu.mp3
+MJ024 Ostrabrama Live Session http://www.mondayjazz.com/mixes/mj024_ostrabrama_live_session.mp3
+MJ061 Floatation Device mixed by The Smokering http://www.mondayjazz.com/mixes/mj061_floatation_device_by_the_smokering.mp3
+MJ020 Above the Storm mixed by DJ Alda http://www.mondayjazz.com/mixes/mj020_above_the_storm_by_alda.mp3
+MJ095 A Mix Called Mondayjazz Mix by A Cat Called Fritz http://mondayjazz.com/mixes/mj095_a_tape_called_mondayjazz_mix_by_a_cat_called_fritz.mp3
+MJ092 Early Reflections by odd /even http://mondayjazz.com/mixes/mj092_early_reflections_by_oddeven.mp3
+MJ090 Beat Combos by Harrison Blakoldman http://mondayjazz.com/mixes/mj090_beat_combos_by_hbo.mp3
+MJ055 Enemy Earth Relics mixed by Recor http://www.mondayjazz.com/mixes/mj055_enemy_earth_relics_by_recor.mp3
+MJ094 Adventures On The Sun by Re:Source http://mondayjazz.com/mixes/mj094_adventures_on_the_sun_by_re_source.mp3
+MJ006 Summer Picks and Dips mixed by Zhil http://www.mondayjazz.com/mixes/mj006_summer_picks_n_dips_by_zhil.mp3
+MJ026 Kenbun mixed by Pablo Valentino http://www.mondayjazz.com/mixes/mj026_kenbun_by_pablo_valentino.mp3
+MJ014 Erikai mixed by Walkman http://www.mondayjazz.com/mixes/mj014_erikai_by_walkman.mp3
+MJ036 Weihnachtstape'07 mixed by Conikt http://www.mondayjazz.com/mixes/mj036_weihnachtstape_by_conikt.mp3
+MJ032 Yellow Snow mixed by Comfort Fit http://www.mondayjazz.com/mixes/mj032_yellow_snow_by_comfort_fit.mp3
+MJ004 Mondays Are Rewound Sundays mixed by UMC http://www.mondayjazz.com/mixes/mj004_mondays_are_rewound_sundays_by_umc.mp3
+MJ075 Belgium Beer And Poptarts mixed by Sinister Sound Team http://mondayjazz.com/mixes/mj075_belgium_beer_and_poptarts_by_sinister_sound_team.mp3
+MJ058 Retrospective Life mixed by Lo http://www.mondayjazz.com/mixes/mj058_retrospective_life_by_lo.mp3
+MJ027 Mixtape for Myself mixed by Hunee http://www.mondayjazz.com/mixes/mj027_mixtape_for_myself_by_hunee.mp3
+MJ047 Soulbasta Jazz Session 1 mixed by Latin Lover http://www.mondayjazz.com/mixes/mj047_soulbasta_jazz_session1_by_latin_lover.mp3
+MJ005 Yesterday is Todays Tomorrow mixed by Jef Metal http://www.mondayjazz.com/mixes/mj005_yesterday_is_todays_tomorrow_by_jeff_metal.mp3
+MJ096 Your Headz In The Cloudz by DaRon http://mondayjazz.com/mixes/mj096_your_headz_in_the_cloudz_by_daron.mp3
+MJ035 Ruff Shootings mixed by Lokid and Powell http://mondayjazz.com/mixes/mj035_ruff_shootings_by_lokid_and_powell.mp3
+MJ080 Far Out In Space mixed by Dj Synflood http://mondayjazz.com/mixes/mj080_far_out_in_space_by_dj_synflood.mp3
+MJ049 Left Field mixed by Fightex http://www.mondayjazz.com/mixes/mj049_left_field_by_fightex.mp3
+MJ053 Autumn Solace mixed by Cleptoclectics http://www.mondayjazz.com/mixes/mj053_autumn_solace_by_cleptoclectics.mp3
+MJ059 Driving Lessons mixed by Swede:art http://www.mondayjazz.com/mixes/mj059_driving_lessons_by_swedeart.mp3
+MJ084 Afterwords mixed by OL and Miracle Libido http://www.mondayjazz.com/mixes/mj084_afterwords_by_ol_and_miracle_libido.mp3
+MJ054 Neck Therapy mixed by Josip Klobuchar http://www.mondayjazz.com/mixes/mj054_neck_therapy_by_josip_klobuchar.mp3
+MJ042 Monday Sermon mixed by Dday One http://www.mondayjazz.com/mixes/mj042_monday_sermon_by_dday_one.mp3
+MJ017 On Monday I Want to Die mixed by Paul Nevermind http://www.mondayjazz.com/mixes/mj017_on_monday_i_want_to_die_by_paul_nevermind.mp3
+MJ025 Rollercoaster mixed by Hazel http://www.mondayjazz.com/mixes/mj025_rollercoaster_by_hazel.mp3
+MJ046 Colours mixed by Called Understandable Souls http://www.mondayjazz.com/mixes/mj046_colour_by_called_understandable_souls.mp3
+MJ065 Do You Know Tthe Tenjin St mixed by Olive Oil Still Human Being mixed by Soloal One http://mondayjazz.com/mixes/mj065_do_you_know_the_tenjin_st_by_olive_oil_-_still_human_being_by_soloal-one.mp3
+MJ097 Hela Hena by Dj Lovespook http://mondayjazz.com/mixes/mj097_hela_hena_by_dj_lovespook.mp3
+MJ039 Blackjack Beats mixed by Gamblin Matic and Stevo Casino http://www.mondayjazz.com/mixes/mj039_blackjack_beats_by_gamblin_matic_and_stevo_casino.mp3
+MJ068 Monday Consequence mixed by U-point http://mondayjazz.com/mixes/mj068_monday_consequence_by_u-point.mp3
+MJ030 The Escape of the Mingus mixed by Chewy B http://www.mondayjazz.com/mixes/mj030_the_escape_of_mingus_by_chewy_b.mp3
+MJ077 Other Sides Of The Cozmos mixed by See Visions http://mondayjazz.com/mixes/mj077_other_sides_of_the_cozmos_by_see_visions.mp3
+MJ019 Spiral Motion mixed by Skape http://www.mondayjazz.com/mixes/mj019_spiral_motion_by_skape.mp3
+[ERROR] Token classic.css is not a child of this is the root node
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+[ERROR] Token classic.css is not a child of this is the root node
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+---message--------------------------------------------------
+(chat) Sender: fernmelder@jabber.org/Antenna
+ Content: None
+parsed address: 
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+(chat) Sender: fernmelder@jabber.org/Antenna
+ Content: list
+parsed address: 
+ parsing as list command
+---message end----------------------------------------------
+---message--------------------------------------------------
+(chat) Sender: fernmelder@jabber.org/Antenna
+ Content: None
+parsed address: 
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+(chat) Sender: fernmelder@jabber.org/Antenna
+ Content: xml
+parsed address: 
+ parsing as xml command
+---message end----------------------------------------------
+---message--------------------------------------------------
+(chat) Sender: fernmelder@jabber.org/Antenna
+ Content: *MJ077
+parsed address: 
+ parsing as search command
+'MJ077' - ''
+---message end----------------------------------------------
+---message--------------------------------------------------
+(chat) Sender: fernmelder@jabber.org/Antenna
+ Content: *random
+parsed address: 
+ parsing as search command
+'random' - ''
+[(u'MJ081_Jazzercise!_Vol._2_mixed_by_Dj_Nerstylist', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08af8>), (u'MJ065_Do_You_Know_Tthe_Tenjin_St_mixed_by_Olive_Oil_Still_Human_Being_mixed_by_Soloal_One', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58300>), (u'MJ097_Hela_Hena_by_Dj_Lovespook', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58328>), (u'MJ022_Wake_Up_mixed_by_Tobias_Kirmayer', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08940>), (u'MJ025_Rollercoaster_mixed_by_Hazel', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba582b0>), (u'MJ033_The_Back_Handed_Party_mixed_by_Joe_Beats', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba085d0>), (u'MJ039_Blackjack_Beats_mixed_by_Gamblin_Matic_and_Stevo_Casino', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58350>), (u'MJ071_Various_Artists_mixed_by_fEux', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08d50>), (u'MJ057_The_Return_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08cb0>), (u'MJ043_Magic_Mayer_mixed_by_Front_2_Blaq', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba088a0>), (u'MJ069_Phases_Of_The_Day_mixed_by_Ryan_Alexander', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08a80>), (u'MJ007_7_Inch_Selection_mixed_by_Deneez', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08ad0>), (u'MJ099_Now_Just_Listen_by_Dj_Blueprint', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08828>), (u'MJ060_Redio_Sandwich_mixed_by_Jared_Turinsky_/_Red_Room_Beats', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2b9fe9b8>), (u'MJ001_Other_Worlds_mixed_by_1.1_and_Moxo_Tengu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08918>), (u'MJ035_Ruff_Shootings_mixed_by_Lokid_and_Powell', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58148>), (u'MJ070_Submerged_Above_Sound_mixed_by_Ponce_de_Beyond', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba089e0>), (u'MJ078_Box_Of_Chocolates_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08698>), (u'MJ045_The_Time_Tunnel_mixed_by_Cinnaman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08c10>), (u'MJ083_MIA_In_The_MIA_mixed_by_Manuvers', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08c38>), (u'MJ020_Above_the_Storm_mixed_by_DJ_Alda', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08e40>), (u'MJ029_Hiver_Normand_mixed_by_Fulgeance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08d00>), (u'MJ058_Retrospective_Life_mixed_by_Lo', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58080>), (u'MJ011_Morning_Routine_mixed_by_Astralas', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba085f8>), (u'MJ073_Monday_Marauders_mixed_by_Sifu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08a58>), (u'MJ086_Mondayjazz_Live!_04-04-2009_by_Fulgeance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08c60>), (u'MJ064_Music_To_Blink_To_mixed_by_Sunete_Sub.Sol', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08c88>), (u'MJ061_Floatation_Device_mixed_by_The_Smokering', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08e18>), (u'MJ068_Monday_Consequence_mixed_by_U-point', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58378>), (u'MJ093_Space_Oddities_by_Robot_Koch', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba086e8>), (u'MJ034_The_Cancelled_Formula_mixed_by_Neil_Something', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08b98>), (u'MJ052_Magic_Ritual_mixed_by_Tobrock', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba088c8>), (u'MJ098_Heavymentaldecay_by_C1GART_And_The_Fatlips', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba089b8>), (u'MJ004_Mondays_Are_Rewound_Sundays_mixed_by_UMC', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58030>), (u'MJ005_Yesterday_is_Todays_Tomorrow_mixed_by_Jef_Metal', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba580f8>), (u'MJ008_I_Versus_Myself_mixed_by_Pranza', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08738>), (u'MJ063_Love_Is_Everything_mixed_by_Mr._Hone', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08a08>), (u'MJ040_From_Monday_Till_Monday_mixed_by_Viper_and_Alex_D', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08990>), (u'MJ054_Neck_Therapy_mixed_by_Josip_Klobuchar', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58238>), (u'MJ072_Headlights_mixed_by_Blunted_Monkz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08620>), (u'MJ021_New_Life_mixed_by_Jay_Scarlett', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08d78>), (u'MJ012_Circulations_mixed_by_Dai-San', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08508>), (u'MJ028_Wacky_World_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba088f0>), (u'MJ090_Beat_Combos_by_Harrison_Blakoldman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08eb8>), (u'MJ094_Adventures_On_The_Sun_by_Re:Source', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08f08>), (u'MJ026_Kenbun_mixed_by_Pablo_Valentino', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08f58>), (u'MJ088_I_Go_By_Handsome_Twenty-four_Year_Old_by_dza', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08850>), (u'MJ024_Ostrabrama_Live_Session', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08df0>), (u'MJ051_Are_You_Hung_Up?_mixed_by_A_La_Fu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08dc8>), (u'MJ013_Dedication_to_Interplanetary_Stewardness_mixed_by_O.Boogie', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08b20>), (u'MJ062_Acid_Jazz_n_Blunts_mixed_by_Namo', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08aa8>), (u'MJ038_Vote_For_Jazz_mixed_by_Hollenstein', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba085a8>), (u'MJ030_The_Escape_of_the_Mingus_mixed_by_Chewy_B', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba583a0>), (u'MJ080_Far_Out_In_Space_mixed_by_Dj_Synflood', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58170>), (u"MJ067_Trippy_Jazz_Travel_From_Nowhere_To_Somewhere_mixed_by_L'eau_du_Robinet", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08da0>), (u'MJ053_Autumn_Solace_mixed_by_Cleptoclectics', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba581c0>), (u'MJ044_Praqtice_Makes_Perfeq_mixed_by_Architeq', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba086c0>), (u'MJ092_Early_Reflections_by_odd_/even', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08e90>), (u'MJ075_Belgium_Beer_And_Poptarts_mixed_by_Sinister_Sound_Team', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58058>), (u'MJ032_Yellow_Snow_mixed_by_Comfort_Fit', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08fd0>), (u'MJ050_The_Jazztape_mixed_by_Justas_Fresh', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08490>), (u'MJ031_Temple_Of_Tones_mixed_by_Indiana_Tones', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08878>), (u'MJ016_Pearls_mixed_by_Pure_P', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08440>), (u'MJ059_Driving_Lessons_mixed_by_Swede:art', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba581e8>), (u'MJ101_July_by_Dj_Paul_Pre', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08b70>), (u'MJ096_Your_Headz_In_The_Cloudz_by_DaRon', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58120>), (u'MJ041_From_Jazz_to_Spaz_mixed_by_Dorian_Concept', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08788>), (u'MJ066_Possibilities_mixed_by_Teebs', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba084e0>), (u"MJ102_Excuse_I'm_Not_a_Dj_by_Ichiro_", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba084b8>), (u'MJ009_One_4orty_mixed_by_Jon_Kennedy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08b48>), (u'MJ010_45rpm_Shmunk,_Shmoul,_Shmack_mixed_by_Zhilvinas_Noruishis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08d28>), (u'MJ006_Summer_Picks_and_Dips_mixed_by_Zhil', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08f30>), (u'MJ015_Monday_Mish_Mosh_mixed_by_Jo_Ill', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba087b0>), (u'MJ055_Enemy_Earth_Relics_mixed_by_Recor', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08ee0>), (u'MJ048_One_Of_These_Stormy_Mondays_mixed_by_Mnemotrauma', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08760>), (u'MJ089_Santo_Domingo_Beats_by_Cohoba', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08a30>), (u'MJ037_Mind_Reflections_mixed_by_Portformat', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba087d8>), (u'MJ014_Erikai_mixed_by_Walkman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08f80>), (u'MJ095_A_Mix_Called_Mondayjazz_Mix_by_A_Cat_Called_Fritz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08e68>), (u'MJ019_Spiral_Motion_mixed_by_Skape', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba583f0>), (u'MJ076_Specific_Components_mixed_by_Lapti', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba083f0>), (u'MJ049_Left_Field_mixed_by_Fightex', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58198>), (u'MJ047_Soulbasta_Jazz_Session_1_mixed_by_Latin_Lover', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba580d0>), (u'MJ017_On_Monday_I_Want_to_Die_mixed_by_Paul_Nevermind', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58288>), (u'MJ079_Audiopatchwork_mixed_by_Food_For_Ya_Soul', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08670>), (u'MJ023_Society_for_the_Musical_Education_mixed_by_Quazar', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08558>), (u'MJ018_Birds_Custard_mixed_by_DJ_Moneyshot', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08968>), (u'MJ056_Static_Noise_mixed_by_Hubert_Daviz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08bc0>), (u'MJ046_Colours_mixed_by_Called_Understandable_Souls', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba582d8>), (u'MJ082_Holding_It_Down_mixed_by_Bene', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08800>), (u'MJ042_Monday_Sermon_mixed_by_Dday_One', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58260>), (u'MJ087_Jazzing_The_Old_Way_by_Paul_Murphy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08cd8>), (u'MJ002_One_Shot_in_the_Morning_mixed_by_Genys', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08be8>), (u'MJ091_Pour_Le_Plaisir_by_Souleance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08648>), (u"MJ036_Weihnachtstape'07_mixed_by_Conikt", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08fa8>), (u'MJ027_Mixtape_for_Myself_mixed_by_Hunee', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba580a8>), (u'MJ077_Other_Sides_Of_The_Cozmos_mixed_by_See_Visions', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba583c8>), (u'MJ003_Etnosound_mixed_by_Sleeper', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08530>), (u'MJ084_Afterwords_mixed_by_OL_and_Miracle_Libido', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba58210>), (u'MJ074_60_Minutes_With_Chief_mixed_by_Chief', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08580>), (u'MJ085_Afternoon_Delights_mixed_by_Marcin_Cichy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba08710>)]
+(u'MJ059_Driving_Lessons_mixed_by_Swede:art', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba581e8>)
+[ERROR] Token Defaults is not a child of this is the tree instance ami.client@jabber.org
+[ERROR] 'NoneType' object has no attribute 'getByAddress'
+---message end----------------------------------------------
+starting event engine...
+loading all plugins...
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Audio
+*** loading: PlugInsFolder.Audio.Madplay.py
+*** loading: PlugInsFolder.FeedReader.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Notification
+*** loading: PlugInsFolder.Notification.Prowly.py
+*** loading: PlugInsFolder.SoftKeys.py
+devcounter 1:devlist 6936112:devlist 0:*** loading: PlugInsFolder.Status.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.System
+*** loading: PlugInsFolder.System.FritzMonitor.py
+*** loading: PlugInsFolder.System.Openwrt.py
+*** loading: PlugInsFolder.Defaults.py
+loaded all plugins sucessfully
+starting xmpp client...
+parsing: MondayJazz
+servant@jabber.org
+seltmann@messi.mi.hdm-stuttgart.de
+sabber@jabber.org
+fernmelder@jabber.org
+abspielgeraet@jabber.org
+Joining groupchat: ami@conference.jabber.org/ami.client
+Communicationengine is online, or should be... #TODO
+---message--------------------------------------------------
+(chat) Sender: seltmann@messi.mi.hdm-stuttgart.de/@HdM
+ Content: list
+parsed address: 
+ parsing as list command
+---message end----------------------------------------------
+MJ060 Redio Sandwich mixed by Jared Turinsky / Red Room Beats http://www.mondayjazz.com/mixes/mj060_redio_sandwich_by_jared_turinsky_-_red_room_beats.mp3
+MJ076 Specific Components mixed by Lapti http://mondayjazz.com/mixes/mj076_specific_components_by_lapti.mp3
+MJ016 Pearls mixed by Pure P http://www.mondayjazz.com/mixes/mj016_pearls_by_pure_p.mp3
+MJ102 Excuse I'm Not a Dj by Ichiro_ http://mondayjazz.com/mixes/mj102_excuse_im_not_a_dj_by_ichiro_.mp3
+MJ050 The Jazztape mixed by Justas Fresh http://www.mondayjazz.com/mixes/mj050_the_jazztape_by_justas_fresh.mp3
+MJ066 Possibilities mixed by Teebs http://mondayjazz.com/mixes/mj066_possibilities_by_teebs.mp3
+MJ012 Circulations mixed by Dai-San http://www.mondayjazz.com/mixes/mj012_circulations_by_dai_san.mp3
+MJ003 Etnosound mixed by Sleeper http://www.mondayjazz.com/mixes/mj003_Etnosound_by_Sleeper.mp3
+MJ023 Society for the Musical Education mixed by Quazar http://www.mondayjazz.com/mixes/mj023_society_for_the_musical_education_by_quazar.mp3
+MJ074 60 Minutes With Chief mixed by Chief http://mondayjazz.com/mixes/mj074_60_minutes_with_chief_by_chief.mp3
+MJ038 Vote For Jazz mixed by Hollenstein http://www.mondayjazz.com/mixes/mj038_vote_for_jazz_by_hollenstein.mp3
+MJ033 The Back Handed Party mixed by Joe Beats http://www.mondayjazz.com/mixes/mj033_the_back_handed_party_by_joe_beats.mp3
+MJ011 Morning Routine mixed by Astralas http://www.mondayjazz.com/mixes/mj011_morning_routine_by_astralas.mp3
+MJ072 Headlights mixed by Blunted Monkz http://mondayjazz.com/mixes/mj072_headlights_by_blunted_monkz.mp3
+MJ091 Pour Le Plaisir by Souleance http://mondayjazz.com/mixes/mj091_pour_le_plaisir_by_souleance.mp3
+MJ079 Audiopatchwork mixed by Food For Ya Soul http://mondayjazz.com/mixes/mj079_audiopatchwork_by_food_for_ya_soul.mp3
+MJ078 Box Of Chocolates mixed by 00Genesis http://mondayjazz.com/mixes/mj078_box_of_chocolates_by_00genesis.mp3
+MJ044 Praqtice Makes Perfeq mixed by Architeq http://www.mondayjazz.com/mixes/mj044_praqtice_makes_perfeq_by_architeq.mp3
+MJ093 Space Oddities by Robot Koch http://mondayjazz.com/mixes/mj093_space_oddities_by_robot_koch.mp3
+MJ085 Afternoon Delights mixed by Marcin Cichy http://mondayjazz.com/mixes/mj085_afternoon_delights_by_marcin_cichy.mp3
+MJ008 I Versus Myself mixed by Pranza http://www.mondayjazz.com/mixes/mj008_i_versus_myself_by_pranza.mp3
+MJ048 One Of These Stormy Mondays mixed by Mnemotrauma http://www.mondayjazz.com/mixes/mj048_one_of_these_stormy_mondays_by_mnemotrauma.mp3
+MJ041 From Jazz to Spaz mixed by Dorian Concept http://www.mondayjazz.com/mixes/mj041_from_jazz_to_spaz_by_dorian_concept.mp3
+MJ015 Monday Mish Mosh mixed by Jo_Ill http://www.mondayjazz.com/mixes/mj015_monday_mish_mosh_by_jo_ill.mp3
+MJ037 Mind Reflections mixed by Portformat http://www.mondayjazz.com/mixes/mj037_mind_reflections_by_portformat.mp3
+MJ082 Holding It Down mixed by Bene http://mondayjazz.com/mixes/mj082_holding_it_down_by_bene.mp3
+MJ099 Now Just Listen by Dj Blueprint http://mondayjazz.com/mixes/mj099_now_just_listen_by_dj_blueprint.mp3
+MJ088 I Go By Handsome Twenty-four Year Old by dza http://mondayjazz.com/mixes/mj088_i_go_by_handsome_twenty-four_year-old_by_dza.mp3
+MJ031 Temple Of Tones mixed by Indiana Tones http://www.mondayjazz.com/mixes/mj031_temple_of_tones_by_indiana_tones.mp3
+MJ043 Magic Mayer mixed by Front 2 Blaq http://www.mondayjazz.com/mixes/mj043_magic_mayer_by_front_2_blaq.mp3
+MJ052 Magic Ritual mixed by Tobrock http://www.mondayjazz.com/mixes/mj052_magic_ritual_by_tobrock.mp3
+MJ028 Wacky World mixed by 00Genesis http://www.mondayjazz.com/mixes/mj028_wacky_world_by_00genesis.mp3
+MJ001 Other Worlds mixed by 1.1 and Moxo Tengu http://www.mondayjazz.com/mixes/mj001_OtherWorlds_by_1.1_and_Moxo_Tengu.mp3
+MJ022 Wake Up mixed by Tobias Kirmayer http://www.mondayjazz.com/mixes/mj022_wake_up_by_tobias_kirmayer.mp3
+MJ018 Birds Custard mixed by DJ Moneyshot http://www.mondayjazz.com/mixes/mj018_birds_custard_by_dj_moneyshot.mp3
+MJ040 From Monday Till Monday mixed by Viper and Alex D http://www.mondayjazz.com/mixes/mj040_from_monday_till_monday_by_viper_and_alex_d.mp3
+MJ098 Heavymentaldecay by C1GART And The Fatlips http://mondayjazz.com/mixes/mj098_heavymentaldecay_by_c1gart_and_the_fatlips.mp3
+MJ070 Submerged Above Sound mixed by Ponce de Beyond http://mondayjazz.com/mixes/mj070_submerged_above_sound_by_ponce_de_beyond.mp3
+MJ063 Love Is Everything mixed by Mr. Hone http://mondayjazz.com/mixes/mj063_love_is_anything_by_mr_hone.mp3
+MJ089 Santo Domingo Beats by Cohoba http://mondayjazz.com/mixes/mj089_santo_domingo_beats_by_cohoba.mp3
+MJ073 Monday Marauders mixed by Sifu http://mondayjazz.com/mixes/mj073_monday_marauders_by_sifu.mp3
+MJ069 Phases Of The Day mixed by Ryan Alexander http://mondayjazz.com/mixes/mj069_phases_of_a_day_by_ryan_alexander.mp3
+MJ062 Acid Jazz n Blunts mixed by Namo http://www.mondayjazz.com/mixes/mj062_acid_jazz_n_blunts_by_namo.mp3
+MJ007 7 Inch Selection mixed by Deneez http://www.mondayjazz.com/mixes/mj007_7_inch%20_selection_by_deneez.mp3
+MJ081 Jazzercise! Vol. 2 mixed by Dj Nerstylist http://www.mondayjazz.com/mixes/mj081_jazzercise!_vol_2_by_dj_nerstylist.mp3
+MJ013 Dedication to Interplanetary Stewardness mixed by O.Boogie http://www.mondayjazz.com/mixes/mj013_dedication%20_to_the_interplanetary_stewardess_by_oboogie.mp3
+MJ009 One 4orty mixed by Jon Kennedy http://www.mondayjazz.com/mixes/mj009_one_4orty_by_jon_kennedy.mp3
+MJ101 July by Dj Paul Pre http://www.mondayjazz.com/mixes/mj101_july_by_paul_pre.mp3
+MJ034 The Cancelled Formula mixed by Neil Something http://www.mondayjazz.com/mixes/mj034_the_cancelled_formula_by_neil_something.mp3
+MJ056 Static Noise mixed by Hubert Daviz http://www.mondayjazz.com/mixes/mj056_static_noise_by_hubert_daviz.mp3
+MJ002 One Shot in the Morning mixed by Genys http://www.mondayjazz.com/mixes/mj002_one_shot_in_the_morning_by_genys.mp3
+MJ045 The Time Tunnel mixed by Cinnaman http://www.mondayjazz.com/mixes/mj045_the_time_tunnel_by_cinnaman.mp3
+MJ083 MIA In The MIA mixed by Manuvers http://mondayjazz.com/mixes/mj083_mia_in_the_mia_by_manuvers.mp3
+MJ086 Mondayjazz Live! 04-04-2009 by Fulgeance http://mondayjazz.com/mixes/mj086_fulgeance_live_04042009.mp3
+MJ064 Music To Blink To mixed by Sunete Sub.Sol http://mondayjazz.com/mixes/mj064_music_to_blink_to_by_sunete_sub.sol.mp3
+MJ057 The Return mixed by 00Genesis http://www.mondayjazz.com/mixes/mj057_the_return_by_00genesis.mp3
+MJ087 Jazzing The Old Way by Paul Murphy http://mondayjazz.com/mixes/mj087_jazzing_the_old_way_by_paul_murphy.mp3
+MJ029 Hiver Normand mixed by Fulgeance http://www.mondayjazz.com/mixes/mj029_hiver_normand_by_fulgeance.mp3
+MJ010 45rpm Shmunk, Shmoul, Shmack mixed by Zhilvinas Noruishis http://www.mondayjazz.com/mixes/mj010_45rpm_sss_by_zhilvinas_noruishis.mp3
+MJ071 Various Artists mixed by fEux http://mondayjazz.com/mixes/mj071_various_artists_by_feux.mp3
+MJ021 New Life mixed by Jay Scarlett http://www.mondayjazz.com/mixes/mj021_new_life_by_jay_scarlett.mp3
+MJ067 Trippy Jazz Travel From Nowhere To Somewhere mixed by L'eau du Robinet http://mondayjazz.com/mixes/mj067_trippy_jazz_travel_from_nowhere_to_somewhere_by_leau_du_robinet.mp3
+MJ051 Are You Hung Up? mixed by A La Fu http://www.mondayjazz.com/mixes/mj051_are_you_hung_up_by_a_la_fu.mp3
+MJ024 Ostrabrama Live Session http://www.mondayjazz.com/mixes/mj024_ostrabrama_live_session.mp3
+MJ061 Floatation Device mixed by The Smokering http://www.mondayjazz.com/mixes/mj061_floatation_device_by_the_smokering.mp3
+MJ020 Above the Storm mixed by DJ Alda http://www.mondayjazz.com/mixes/mj020_above_the_storm_by_alda.mp3
+MJ095 A Mix Called Mondayjazz Mix by A Cat Called Fritz http://mondayjazz.com/mixes/mj095_a_tape_called_mondayjazz_mix_by_a_cat_called_fritz.mp3
+MJ092 Early Reflections by odd /even http://mondayjazz.com/mixes/mj092_early_reflections_by_oddeven.mp3
+MJ090 Beat Combos by Harrison Blakoldman http://mondayjazz.com/mixes/mj090_beat_combos_by_hbo.mp3
+MJ055 Enemy Earth Relics mixed by Recor http://www.mondayjazz.com/mixes/mj055_enemy_earth_relics_by_recor.mp3
+MJ094 Adventures On The Sun by Re:Source http://mondayjazz.com/mixes/mj094_adventures_on_the_sun_by_re_source.mp3
+MJ006 Summer Picks and Dips mixed by Zhil http://www.mondayjazz.com/mixes/mj006_summer_picks_n_dips_by_zhil.mp3
+MJ026 Kenbun mixed by Pablo Valentino http://www.mondayjazz.com/mixes/mj026_kenbun_by_pablo_valentino.mp3
+MJ014 Erikai mixed by Walkman http://www.mondayjazz.com/mixes/mj014_erikai_by_walkman.mp3
+MJ036 Weihnachtstape'07 mixed by Conikt http://www.mondayjazz.com/mixes/mj036_weihnachtstape_by_conikt.mp3
+MJ032 Yellow Snow mixed by Comfort Fit http://www.mondayjazz.com/mixes/mj032_yellow_snow_by_comfort_fit.mp3
+MJ004 Mondays Are Rewound Sundays mixed by UMC http://www.mondayjazz.com/mixes/mj004_mondays_are_rewound_sundays_by_umc.mp3
+MJ075 Belgium Beer And Poptarts mixed by Sinister Sound Team http://mondayjazz.com/mixes/mj075_belgium_beer_and_poptarts_by_sinister_sound_team.mp3
+MJ058 Retrospective Life mixed by Lo http://www.mondayjazz.com/mixes/mj058_retrospective_life_by_lo.mp3
+MJ027 Mixtape for Myself mixed by Hunee http://www.mondayjazz.com/mixes/mj027_mixtape_for_myself_by_hunee.mp3
+MJ047 Soulbasta Jazz Session 1 mixed by Latin Lover http://www.mondayjazz.com/mixes/mj047_soulbasta_jazz_session1_by_latin_lover.mp3
+MJ005 Yesterday is Todays Tomorrow mixed by Jef Metal http://www.mondayjazz.com/mixes/mj005_yesterday_is_todays_tomorrow_by_jeff_metal.mp3
+MJ096 Your Headz In The Cloudz by DaRon http://mondayjazz.com/mixes/mj096_your_headz_in_the_cloudz_by_daron.mp3
+MJ035 Ruff Shootings mixed by Lokid and Powell http://mondayjazz.com/mixes/mj035_ruff_shootings_by_lokid_and_powell.mp3
+MJ080 Far Out In Space mixed by Dj Synflood http://mondayjazz.com/mixes/mj080_far_out_in_space_by_dj_synflood.mp3
+MJ049 Left Field mixed by Fightex http://www.mondayjazz.com/mixes/mj049_left_field_by_fightex.mp3
+MJ053 Autumn Solace mixed by Cleptoclectics http://www.mondayjazz.com/mixes/mj053_autumn_solace_by_cleptoclectics.mp3
+MJ059 Driving Lessons mixed by Swede:art http://www.mondayjazz.com/mixes/mj059_driving_lessons_by_swedeart.mp3
+MJ084 Afterwords mixed by OL and Miracle Libido http://www.mondayjazz.com/mixes/mj084_afterwords_by_ol_and_miracle_libido.mp3
+MJ054 Neck Therapy mixed by Josip Klobuchar http://www.mondayjazz.com/mixes/mj054_neck_therapy_by_josip_klobuchar.mp3
+MJ042 Monday Sermon mixed by Dday One http://www.mondayjazz.com/mixes/mj042_monday_sermon_by_dday_one.mp3
+MJ017 On Monday I Want to Die mixed by Paul Nevermind http://www.mondayjazz.com/mixes/mj017_on_monday_i_want_to_die_by_paul_nevermind.mp3
+MJ025 Rollercoaster mixed by Hazel http://www.mondayjazz.com/mixes/mj025_rollercoaster_by_hazel.mp3
+MJ046 Colours mixed by Called Understandable Souls http://www.mondayjazz.com/mixes/mj046_colour_by_called_understandable_souls.mp3
+MJ065 Do You Know Tthe Tenjin St mixed by Olive Oil Still Human Being mixed by Soloal One http://mondayjazz.com/mixes/mj065_do_you_know_the_tenjin_st_by_olive_oil_-_still_human_being_by_soloal-one.mp3
+MJ097 Hela Hena by Dj Lovespook http://mondayjazz.com/mixes/mj097_hela_hena_by_dj_lovespook.mp3
+MJ039 Blackjack Beats mixed by Gamblin Matic and Stevo Casino http://www.mondayjazz.com/mixes/mj039_blackjack_beats_by_gamblin_matic_and_stevo_casino.mp3
+MJ068 Monday Consequence mixed by U-point http://mondayjazz.com/mixes/mj068_monday_consequence_by_u-point.mp3
+MJ030 The Escape of the Mingus mixed by Chewy B http://www.mondayjazz.com/mixes/mj030_the_escape_of_mingus_by_chewy_b.mp3
+MJ077 Other Sides Of The Cozmos mixed by See Visions http://mondayjazz.com/mixes/mj077_other_sides_of_the_cozmos_by_see_visions.mp3
+MJ019 Spiral Motion mixed by Skape http://www.mondayjazz.com/mixes/mj019_spiral_motion_by_skape.mp3
+---message--------------------------------------------------
+(None) Sender: servant@jabber.org/LivingRoom
+ Content: #type help to explore me.
+parsed address: 
+parsing as comment
+---message end----------------------------------------------
+http://www.mondayjazz.com/mixes/mj009_one_4orty_by_jon_kennedy.mp3
+http://mondayjazz.com/mixes/mj076_specific_components_by_lapti.mp3
+http://www.mondayjazz.com/mixes/mj040_from_monday_till_monday_by_viper_and_alex_d.mp3
+---message--------------------------------------------------
+(chat) Sender: seltmann@messi.mi.hdm-stuttgart.de/728dac9a
+ Content: None
+parsed address: 
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+[ERROR]  'ascii' codec can't encode character u'\xf6' in position 69: ordinal not in range(128)
+
+amiServerd process is running with PID: 3514
+
+removing /root/hg/amiServer/run/amiServerd.pid
+
+PID file not found. Process may not be running.
+
+starting event engine...
+loading all plugins...
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Audio
+*** loading: PlugInsFolder.Audio.Madplay.py
+*** loading: PlugInsFolder.FeedReader.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.Notification
+*** loading: PlugInsFolder.Notification.Prowly.py
+*** loading: PlugInsFolder.SoftKeys.py
+devcounter 1:devlist 6948464:devlist 0:*** loading: PlugInsFolder.Status.py
++++ loding folder: /root/hg/amiServer/PlugInsFolder.System
+*** loading: PlugInsFolder.System.FritzMonitor.py
+*** loading: PlugInsFolder.System.Openwrt.py
+*** loading: PlugInsFolder.Defaults.py
+loaded all plugins sucessfully
+starting xmpp client...
+parsing: MondayJazz
+servant@jabber.org
+seltmann@messi.mi.hdm-stuttgart.de
+sabber@jabber.org
+fernmelder@jabber.org
+abspielgeraet@jabber.org
+Joining groupchat: ami@conference.jabber.org/ami.client
+Communicationengine is online, or should be... #TODO
+MJ060 Redio Sandwich mixed by Jared Turinsky / Red Room Beats http://www.mondayjazz.com/mixes/mj060_redio_sandwich_by_jared_turinsky_-_red_room_beats.mp3
+MJ076 Specific Components mixed by Lapti http://mondayjazz.com/mixes/mj076_specific_components_by_lapti.mp3
+MJ016 Pearls mixed by Pure P http://www.mondayjazz.com/mixes/mj016_pearls_by_pure_p.mp3
+MJ102 Excuse I'm Not a Dj by Ichiro_ http://mondayjazz.com/mixes/mj102_excuse_im_not_a_dj_by_ichiro_.mp3
+MJ050 The Jazztape mixed by Justas Fresh http://www.mondayjazz.com/mixes/mj050_the_jazztape_by_justas_fresh.mp3
+MJ066 Possibilities mixed by Teebs http://mondayjazz.com/mixes/mj066_possibilities_by_teebs.mp3
+MJ012 Circulations mixed by Dai-San http://www.mondayjazz.com/mixes/mj012_circulations_by_dai_san.mp3
+MJ003 Etnosound mixed by Sleeper http://www.mondayjazz.com/mixes/mj003_Etnosound_by_Sleeper.mp3
+MJ023 Society for the Musical Education mixed by Quazar http://www.mondayjazz.com/mixes/mj023_society_for_the_musical_education_by_quazar.mp3
+MJ074 60 Minutes With Chief mixed by Chief http://mondayjazz.com/mixes/mj074_60_minutes_with_chief_by_chief.mp3
+MJ038 Vote For Jazz mixed by Hollenstein http://www.mondayjazz.com/mixes/mj038_vote_for_jazz_by_hollenstein.mp3
+MJ033 The Back Handed Party mixed by Joe Beats http://www.mondayjazz.com/mixes/mj033_the_back_handed_party_by_joe_beats.mp3
+MJ011 Morning Routine mixed by Astralas http://www.mondayjazz.com/mixes/mj011_morning_routine_by_astralas.mp3
+MJ072 Headlights mixed by Blunted Monkz http://mondayjazz.com/mixes/mj072_headlights_by_blunted_monkz.mp3
+MJ091 Pour Le Plaisir by Souleance http://mondayjazz.com/mixes/mj091_pour_le_plaisir_by_souleance.mp3
+MJ079 Audiopatchwork mixed by Food For Ya Soul http://mondayjazz.com/mixes/mj079_audiopatchwork_by_food_for_ya_soul.mp3
+MJ078 Box Of Chocolates mixed by 00Genesis http://mondayjazz.com/mixes/mj078_box_of_chocolates_by_00genesis.mp3
+MJ044 Praqtice Makes Perfeq mixed by Architeq http://www.mondayjazz.com/mixes/mj044_praqtice_makes_perfeq_by_architeq.mp3
+MJ093 Space Oddities by Robot Koch http://mondayjazz.com/mixes/mj093_space_oddities_by_robot_koch.mp3
+MJ085 Afternoon Delights mixed by Marcin Cichy http://mondayjazz.com/mixes/mj085_afternoon_delights_by_marcin_cichy.mp3
+MJ008 I Versus Myself mixed by Pranza http://www.mondayjazz.com/mixes/mj008_i_versus_myself_by_pranza.mp3
+MJ048 One Of These Stormy Mondays mixed by Mnemotrauma http://www.mondayjazz.com/mixes/mj048_one_of_these_stormy_mondays_by_mnemotrauma.mp3
+MJ041 From Jazz to Spaz mixed by Dorian Concept http://www.mondayjazz.com/mixes/mj041_from_jazz_to_spaz_by_dorian_concept.mp3
+MJ015 Monday Mish Mosh mixed by Jo_Ill http://www.mondayjazz.com/mixes/mj015_monday_mish_mosh_by_jo_ill.mp3
+MJ037 Mind Reflections mixed by Portformat http://www.mondayjazz.com/mixes/mj037_mind_reflections_by_portformat.mp3
+MJ082 Holding It Down mixed by Bene http://mondayjazz.com/mixes/mj082_holding_it_down_by_bene.mp3
+MJ099 Now Just Listen by Dj Blueprint http://mondayjazz.com/mixes/mj099_now_just_listen_by_dj_blueprint.mp3
+MJ088 I Go By Handsome Twenty-four Year Old by dza http://mondayjazz.com/mixes/mj088_i_go_by_handsome_twenty-four_year-old_by_dza.mp3
+MJ031 Temple Of Tones mixed by Indiana Tones http://www.mondayjazz.com/mixes/mj031_temple_of_tones_by_indiana_tones.mp3
+MJ043 Magic Mayer mixed by Front 2 Blaq http://www.mondayjazz.com/mixes/mj043_magic_mayer_by_front_2_blaq.mp3
+MJ052 Magic Ritual mixed by Tobrock http://www.mondayjazz.com/mixes/mj052_magic_ritual_by_tobrock.mp3
+MJ028 Wacky World mixed by 00Genesis http://www.mondayjazz.com/mixes/mj028_wacky_world_by_00genesis.mp3
+MJ001 Other Worlds mixed by 1.1 and Moxo Tengu http://www.mondayjazz.com/mixes/mj001_OtherWorlds_by_1.1_and_Moxo_Tengu.mp3
+MJ022 Wake Up mixed by Tobias Kirmayer http://www.mondayjazz.com/mixes/mj022_wake_up_by_tobias_kirmayer.mp3
+MJ018 Birds Custard mixed by DJ Moneyshot http://www.mondayjazz.com/mixes/mj018_birds_custard_by_dj_moneyshot.mp3
+MJ040 From Monday Till Monday mixed by Viper and Alex D http://www.mondayjazz.com/mixes/mj040_from_monday_till_monday_by_viper_and_alex_d.mp3
+MJ098 Heavymentaldecay by C1GART And The Fatlips http://mondayjazz.com/mixes/mj098_heavymentaldecay_by_c1gart_and_the_fatlips.mp3
+MJ070 Submerged Above Sound mixed by Ponce de Beyond http://mondayjazz.com/mixes/mj070_submerged_above_sound_by_ponce_de_beyond.mp3
+MJ063 Love Is Everything mixed by Mr. Hone http://mondayjazz.com/mixes/mj063_love_is_anything_by_mr_hone.mp3
+MJ089 Santo Domingo Beats by Cohoba http://mondayjazz.com/mixes/mj089_santo_domingo_beats_by_cohoba.mp3
+MJ073 Monday Marauders mixed by Sifu http://mondayjazz.com/mixes/mj073_monday_marauders_by_sifu.mp3
+MJ069 Phases Of The Day mixed by Ryan Alexander http://mondayjazz.com/mixes/mj069_phases_of_a_day_by_ryan_alexander.mp3
+MJ062 Acid Jazz n Blunts mixed by Namo http://www.mondayjazz.com/mixes/mj062_acid_jazz_n_blunts_by_namo.mp3
+MJ007 7 Inch Selection mixed by Deneez http://www.mondayjazz.com/mixes/mj007_7_inch%20_selection_by_deneez.mp3
+MJ081 Jazzercise! Vol. 2 mixed by Dj Nerstylist http://www.mondayjazz.com/mixes/mj081_jazzercise!_vol_2_by_dj_nerstylist.mp3
+MJ013 Dedication to Interplanetary Stewardness mixed by O.Boogie http://www.mondayjazz.com/mixes/mj013_dedication%20_to_the_interplanetary_stewardess_by_oboogie.mp3
+MJ009 One 4orty mixed by Jon Kennedy http://www.mondayjazz.com/mixes/mj009_one_4orty_by_jon_kennedy.mp3
+MJ101 July by Dj Paul Pre http://www.mondayjazz.com/mixes/mj101_july_by_paul_pre.mp3
+MJ034 The Cancelled Formula mixed by Neil Something http://www.mondayjazz.com/mixes/mj034_the_cancelled_formula_by_neil_something.mp3
+MJ056 Static Noise mixed by Hubert Daviz http://www.mondayjazz.com/mixes/mj056_static_noise_by_hubert_daviz.mp3
+MJ002 One Shot in the Morning mixed by Genys http://www.mondayjazz.com/mixes/mj002_one_shot_in_the_morning_by_genys.mp3
+MJ045 The Time Tunnel mixed by Cinnaman http://www.mondayjazz.com/mixes/mj045_the_time_tunnel_by_cinnaman.mp3
+MJ083 MIA In The MIA mixed by Manuvers http://mondayjazz.com/mixes/mj083_mia_in_the_mia_by_manuvers.mp3
+MJ086 Mondayjazz Live! 04-04-2009 by Fulgeance http://mondayjazz.com/mixes/mj086_fulgeance_live_04042009.mp3
+MJ064 Music To Blink To mixed by Sunete Sub.Sol http://mondayjazz.com/mixes/mj064_music_to_blink_to_by_sunete_sub.sol.mp3
+MJ057 The Return mixed by 00Genesis http://www.mondayjazz.com/mixes/mj057_the_return_by_00genesis.mp3
+MJ087 Jazzing The Old Way by Paul Murphy http://mondayjazz.com/mixes/mj087_jazzing_the_old_way_by_paul_murphy.mp3
+MJ029 Hiver Normand mixed by Fulgeance http://www.mondayjazz.com/mixes/mj029_hiver_normand_by_fulgeance.mp3
+MJ010 45rpm Shmunk, Shmoul, Shmack mixed by Zhilvinas Noruishis http://www.mondayjazz.com/mixes/mj010_45rpm_sss_by_zhilvinas_noruishis.mp3
+MJ071 Various Artists mixed by fEux http://mondayjazz.com/mixes/mj071_various_artists_by_feux.mp3
+MJ021 New Life mixed by Jay Scarlett http://www.mondayjazz.com/mixes/mj021_new_life_by_jay_scarlett.mp3
+MJ067 Trippy Jazz Travel From Nowhere To Somewhere mixed by L'eau du Robinet http://mondayjazz.com/mixes/mj067_trippy_jazz_travel_from_nowhere_to_somewhere_by_leau_du_robinet.mp3
+MJ051 Are You Hung Up? mixed by A La Fu http://www.mondayjazz.com/mixes/mj051_are_you_hung_up_by_a_la_fu.mp3
+MJ024 Ostrabrama Live Session http://www.mondayjazz.com/mixes/mj024_ostrabrama_live_session.mp3
+MJ061 Floatation Device mixed by The Smokering http://www.mondayjazz.com/mixes/mj061_floatation_device_by_the_smokering.mp3
+MJ020 Above the Storm mixed by DJ Alda http://www.mondayjazz.com/mixes/mj020_above_the_storm_by_alda.mp3
+MJ095 A Mix Called Mondayjazz Mix by A Cat Called Fritz http://mondayjazz.com/mixes/mj095_a_tape_called_mondayjazz_mix_by_a_cat_called_fritz.mp3
+MJ092 Early Reflections by odd /even http://mondayjazz.com/mixes/mj092_early_reflections_by_oddeven.mp3
+MJ090 Beat Combos by Harrison Blakoldman http://mondayjazz.com/mixes/mj090_beat_combos_by_hbo.mp3
+MJ055 Enemy Earth Relics mixed by Recor http://www.mondayjazz.com/mixes/mj055_enemy_earth_relics_by_recor.mp3
+MJ094 Adventures On The Sun by Re:Source http://mondayjazz.com/mixes/mj094_adventures_on_the_sun_by_re_source.mp3
+MJ006 Summer Picks and Dips mixed by Zhil http://www.mondayjazz.com/mixes/mj006_summer_picks_n_dips_by_zhil.mp3
+MJ026 Kenbun mixed by Pablo Valentino http://www.mondayjazz.com/mixes/mj026_kenbun_by_pablo_valentino.mp3
+MJ014 Erikai mixed by Walkman http://www.mondayjazz.com/mixes/mj014_erikai_by_walkman.mp3
+MJ036 Weihnachtstape'07 mixed by Conikt http://www.mondayjazz.com/mixes/mj036_weihnachtstape_by_conikt.mp3
+MJ032 Yellow Snow mixed by Comfort Fit http://www.mondayjazz.com/mixes/mj032_yellow_snow_by_comfort_fit.mp3
+MJ004 Mondays Are Rewound Sundays mixed by UMC http://www.mondayjazz.com/mixes/mj004_mondays_are_rewound_sundays_by_umc.mp3
+MJ075 Belgium Beer And Poptarts mixed by Sinister Sound Team http://mondayjazz.com/mixes/mj075_belgium_beer_and_poptarts_by_sinister_sound_team.mp3
+MJ058 Retrospective Life mixed by Lo http://www.mondayjazz.com/mixes/mj058_retrospective_life_by_lo.mp3
+MJ027 Mixtape for Myself mixed by Hunee http://www.mondayjazz.com/mixes/mj027_mixtape_for_myself_by_hunee.mp3
+MJ047 Soulbasta Jazz Session 1 mixed by Latin Lover http://www.mondayjazz.com/mixes/mj047_soulbasta_jazz_session1_by_latin_lover.mp3
+MJ005 Yesterday is Todays Tomorrow mixed by Jef Metal http://www.mondayjazz.com/mixes/mj005_yesterday_is_todays_tomorrow_by_jeff_metal.mp3
+MJ096 Your Headz In The Cloudz by DaRon http://mondayjazz.com/mixes/mj096_your_headz_in_the_cloudz_by_daron.mp3
+MJ035 Ruff Shootings mixed by Lokid and Powell http://mondayjazz.com/mixes/mj035_ruff_shootings_by_lokid_and_powell.mp3
+MJ080 Far Out In Space mixed by Dj Synflood http://mondayjazz.com/mixes/mj080_far_out_in_space_by_dj_synflood.mp3
+MJ049 Left Field mixed by Fightex http://www.mondayjazz.com/mixes/mj049_left_field_by_fightex.mp3
+MJ053 Autumn Solace mixed by Cleptoclectics http://www.mondayjazz.com/mixes/mj053_autumn_solace_by_cleptoclectics.mp3
+MJ059 Driving Lessons mixed by Swede:art http://www.mondayjazz.com/mixes/mj059_driving_lessons_by_swedeart.mp3
+MJ084 Afterwords mixed by OL and Miracle Libido http://www.mondayjazz.com/mixes/mj084_afterwords_by_ol_and_miracle_libido.mp3
+MJ054 Neck Therapy mixed by Josip Klobuchar http://www.mondayjazz.com/mixes/mj054_neck_therapy_by_josip_klobuchar.mp3
+MJ042 Monday Sermon mixed by Dday One http://www.mondayjazz.com/mixes/mj042_monday_sermon_by_dday_one.mp3
+MJ017 On Monday I Want to Die mixed by Paul Nevermind http://www.mondayjazz.com/mixes/mj017_on_monday_i_want_to_die_by_paul_nevermind.mp3
+MJ025 Rollercoaster mixed by Hazel http://www.mondayjazz.com/mixes/mj025_rollercoaster_by_hazel.mp3
+MJ046 Colours mixed by Called Understandable Souls http://www.mondayjazz.com/mixes/mj046_colour_by_called_understandable_souls.mp3
+MJ065 Do You Know Tthe Tenjin St mixed by Olive Oil Still Human Being mixed by Soloal One http://mondayjazz.com/mixes/mj065_do_you_know_the_tenjin_st_by_olive_oil_-_still_human_being_by_soloal-one.mp3
+MJ097 Hela Hena by Dj Lovespook http://mondayjazz.com/mixes/mj097_hela_hena_by_dj_lovespook.mp3
+MJ039 Blackjack Beats mixed by Gamblin Matic and Stevo Casino http://www.mondayjazz.com/mixes/mj039_blackjack_beats_by_gamblin_matic_and_stevo_casino.mp3
+MJ068 Monday Consequence mixed by U-point http://mondayjazz.com/mixes/mj068_monday_consequence_by_u-point.mp3
+MJ030 The Escape of the Mingus mixed by Chewy B http://www.mondayjazz.com/mixes/mj030_the_escape_of_mingus_by_chewy_b.mp3
+MJ077 Other Sides Of The Cozmos mixed by See Visions http://mondayjazz.com/mixes/mj077_other_sides_of_the_cozmos_by_see_visions.mp3
+MJ019 Spiral Motion mixed by Skape http://www.mondayjazz.com/mixes/mj019_spiral_motion_by_skape.mp3
+---message--------------------------------------------------
+(chat) Sender: fernmelder@jabber.org/Antenna
+ Content: None
+parsed address: 
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+(chat) Sender: fernmelder@jabber.org/Antenna
+ Content: list
+parsed address: 
+ parsing as list command
+---message end----------------------------------------------
+---message--------------------------------------------------
+(chat) Sender: fernmelder@jabber.org/Antenna
+ Content: None
+parsed address: 
+unknown command
+---message end----------------------------------------------
+---message--------------------------------------------------
+(chat) Sender: fernmelder@jabber.org/Antenna
+ Content: *random
+parsed address: 
+ parsing as search command
+'random' - ''
+[(u'MJ081_Jazzercise!_Vol._2_mixed_by_Dj_Nerstylist', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0ff58>), (u'MJ065_Do_You_Know_Tthe_Tenjin_St_mixed_by_Olive_Oil_Still_Human_Being_mixed_by_Soloal_One', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5bad0>), (u'MJ097_Hela_Hena_by_Dj_Lovespook', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5baf8>), (u'MJ022_Wake_Up_mixed_by_Tobias_Kirmayer', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fd50>), (u'MJ025_Rollercoaster_mixed_by_Hazel', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5ba30>), (u'MJ033_The_Back_Handed_Party_mixed_by_Joe_Beats', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f800>), (u'MJ039_Blackjack_Beats_mixed_by_Gamblin_Matic_and_Stevo_Casino', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5bc10>), (u'MJ071_Various_Artists_mixed_by_fEux', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b378>), (u'MJ057_The_Return_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b2b0>), (u'MJ043_Magic_Mayer_mixed_by_Front_2_Blaq', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fbe8>), (u'MJ069_Phases_Of_The_Day_mixed_by_Ryan_Alexander', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fe90>), (u'MJ007_7_Inch_Selection_mixed_by_Deneez', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0ff30>), (u'MJ099_Now_Just_Listen_by_Dj_Blueprint', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fb20>), (u'MJ060_Redio_Sandwich_mixed_by_Jared_Turinsky_/_Red_Room_Beats', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f508>), (u'MJ001_Other_Worlds_mixed_by_1.1_and_Moxo_Tengu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fcd8>), (u'MJ035_Ruff_Shootings_mixed_by_Lokid_and_Powell', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b8c8>), (u'MJ070_Submerged_Above_Sound_mixed_by_Ponce_de_Beyond', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fdc8>), (u'MJ078_Box_Of_Chocolates_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f8c8>), (u'MJ045_The_Time_Tunnel_mixed_by_Cinnaman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b1e8>), (u'MJ083_MIA_In_The_MIA_mixed_by_Manuvers', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b210>), (u'MJ020_Above_the_Storm_mixed_by_DJ_Alda', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b530>), (u'MJ029_Hiver_Normand_mixed_by_Fulgeance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b350>), (u'MJ058_Retrospective_Life_mixed_by_Lo', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b7b0>), (u'MJ011_Morning_Routine_mixed_by_Astralas', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f828>), (u'MJ073_Monday_Marauders_mixed_by_Sifu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fe68>), (u'MJ086_Mondayjazz_Live!_04-04-2009_by_Fulgeance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b238>), (u'MJ064_Music_To_Blink_To_mixed_by_Sunete_Sub.Sol', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b260>), (u'MJ061_Floatation_Device_mixed_by_The_Smokering', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b4e0>), (u'MJ068_Monday_Consequence_mixed_by_U-point', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5bc38>), (u'MJ093_Space_Oddities_by_Robot_Koch', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f918>), (u'MJ034_The_Cancelled_Formula_mixed_by_Neil_Something', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b1c0>), (u'MJ052_Magic_Ritual_mixed_by_Tobrock', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fcb0>), (u'MJ098_Heavymentaldecay_by_C1GART_And_The_Fatlips', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fdf0>), (u'MJ004_Mondays_Are_Rewound_Sundays_mixed_by_UMC', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b760>), (u'MJ005_Yesterday_is_Todays_Tomorrow_mixed_by_Jef_Metal', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b878>), (u'MJ008_I_Versus_Myself_mixed_by_Pranza', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f968>), (u'MJ063_Love_Is_Everything_mixed_by_Mr._Hone', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fe18>), (u'MJ040_From_Monday_Till_Monday_mixed_by_Viper_and_Alex_D', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fda0>), (u'MJ054_Neck_Therapy_mixed_by_Josip_Klobuchar', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b9b8>), (u'MJ072_Headlights_mixed_by_Blunted_Monkz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f850>), (u'MJ021_New_Life_mixed_by_Jay_Scarlett', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b3a0>), (u'MJ012_Circulations_mixed_by_Dai-San', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f738>), (u'MJ028_Wacky_World_mixed_by_00Genesis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fad0>), (u'MJ090_Beat_Combos_by_Harrison_Blakoldman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b5d0>), (u'MJ094_Adventures_On_The_Sun_by_Re:Source', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b670>), (u'MJ026_Kenbun_mixed_by_Pablo_Valentino', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b6e8>), (u'MJ088_I_Go_By_Handsome_Twenty-four_Year_Old_by_dza', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fb70>), (u'MJ024_Ostrabrama_Live_Session', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b508>), (u'MJ051_Are_You_Hung_Up?_mixed_by_A_La_Fu', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b3f0>), (u'MJ013_Dedication_to_Interplanetary_Stewardness_mixed_by_O.Boogie', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0ffa8>), (u'MJ062_Acid_Jazz_n_Blunts_mixed_by_Namo', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0ff08>), (u'MJ038_Vote_For_Jazz_mixed_by_Hollenstein', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f7b0>), (u'MJ030_The_Escape_of_the_Mingus_mixed_by_Chewy_B', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5bb48>), (u'MJ080_Far_Out_In_Space_mixed_by_Dj_Synflood', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b918>), (u"MJ067_Trippy_Jazz_Travel_From_Nowhere_To_Somewhere_mixed_by_L'eau_du_Robinet", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b3c8>), (u'MJ053_Autumn_Solace_mixed_by_Cleptoclectics', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b940>), (u'MJ044_Praqtice_Makes_Perfeq_mixed_by_Architeq', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f8f0>), (u'MJ092_Early_Reflections_by_odd_/even', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b5a8>), (u'MJ075_Belgium_Beer_And_Poptarts_mixed_by_Sinister_Sound_Team', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b788>), (u'MJ032_Yellow_Snow_mixed_by_Comfort_Fit', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b738>), (u'MJ050_The_Jazztape_mixed_by_Justas_Fresh', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f5a8>), (u'MJ031_Temple_Of_Tones_mixed_by_Indiana_Tones', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fbc0>), (u'MJ016_Pearls_mixed_by_Pure_P', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f558>), (u'MJ059_Driving_Lessons_mixed_by_Swede:art', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b968>), (u'MJ101_July_by_Dj_Paul_Pre', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0ffd0>), (u'MJ096_Your_Headz_In_The_Cloudz_by_DaRon', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b8a0>), (u'MJ041_From_Jazz_to_Spaz_mixed_by_Dorian_Concept', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f9e0>), (u'MJ066_Possibilities_mixed_by_Teebs', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f5f8>), (u"MJ102_Excuse_I'm_Not_a_Dj_by_Ichiro_", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f580>), (u'MJ009_One_4orty_mixed_by_Jon_Kennedy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0ff80>), (u'MJ010_45rpm_Shmunk,_Shmoul,_Shmack_mixed_by_Zhilvinas_Noruishis', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b328>), (u'MJ006_Summer_Picks_and_Dips_mixed_by_Zhil', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b698>), (u'MJ015_Monday_Mish_Mosh_mixed_by_Jo_Ill', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fa08>), (u'MJ055_Enemy_Earth_Relics_mixed_by_Recor', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b648>), (u'MJ048_One_Of_These_Stormy_Mondays_mixed_by_Mnemotrauma', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f990>), (u'MJ089_Santo_Domingo_Beats_by_Cohoba', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fe40>), (u'MJ037_Mind_Reflections_mixed_by_Portformat', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fb48>), (u'MJ014_Erikai_mixed_by_Walkman', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b6c0>), (u'MJ095_A_Mix_Called_Mondayjazz_Mix_by_A_Cat_Called_Fritz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b580>), (u'MJ019_Spiral_Motion_mixed_by_Skape', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5bc88>), (u'MJ076_Specific_Components_mixed_by_Lapti', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f530>), (u'MJ049_Left_Field_mixed_by_Fightex', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b8f0>), (u'MJ047_Soulbasta_Jazz_Session_1_mixed_by_Latin_Lover', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b800>), (u'MJ017_On_Monday_I_Want_to_Die_mixed_by_Paul_Nevermind', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b9e0>), (u'MJ079_Audiopatchwork_mixed_by_Food_For_Ya_Soul', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f8a0>), (u'MJ023_Society_for_the_Musical_Education_mixed_by_Quazar', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f788>), (u'MJ018_Birds_Custard_mixed_by_DJ_Moneyshot', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0fd78>), (u'MJ056_Static_Noise_mixed_by_Hubert_Daviz', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b0f8>), (u'MJ046_Colours_mixed_by_Called_Understandable_Souls', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5baa8>), (u'MJ082_Holding_It_Down_mixed_by_Bene', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0faf8>), (u'MJ042_Monday_Sermon_mixed_by_Dday_One', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5ba08>), (u'MJ087_Jazzing_The_Old_Way_by_Paul_Murphy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b288>), (u'MJ002_One_Shot_in_the_Morning_mixed_by_Genys', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b198>), (u'MJ091_Pour_Le_Plaisir_by_Souleance', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f878>), (u"MJ036_Weihnachtstape'07_mixed_by_Conikt", <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b710>), (u'MJ027_Mixtape_for_Myself_mixed_by_Hunee', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b7d8>), (u'MJ077_Other_Sides_Of_The_Cozmos_mixed_by_See_Visions', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5bc60>), (u'MJ003_Etnosound_mixed_by_Sleeper', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f760>), (u'MJ084_Afterwords_mixed_by_OL_and_Miracle_Libido', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b990>), (u'MJ074_60_Minutes_With_Chief_mixed_by_Chief', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f7d8>), (u'MJ085_Afternoon_Delights_mixed_by_Marcin_Cichy', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba0f940>)]
+(u'MJ084_Afterwords_mixed_by_OL_and_Miracle_Libido', <PlugInsFolder.FeedReader.FeedLeafContainer instance at 0x2ba5b990>)
+http://www.mondayjazz.com/mixes/mj084_afterwords_by_ol_and_miracle_libido.mp3
+---message end----------------------------------------------
+---message--------------------------------------------------
+(None) Sender: servant@jabber.org/LivingRoom
+ Content: #type help to explore me.
+parsed address: 
+parsing as comment
+---message end----------------------------------------------

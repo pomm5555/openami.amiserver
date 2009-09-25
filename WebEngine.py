@@ -29,7 +29,7 @@ class WebServer():
         
         result = self.root.toHtml()
 	#result = "hallo :D"
-        return "<html><head>"+head+"</head><body>"+result+"</body></html>"
+        return "<html><head></head><body>"+result+"</body></html>"
     index.exposed = True
 
 
