@@ -1,8 +1,9 @@
-from CommunicationEngine import CommunicationEngine
+from xmppEngine import *
 from PlugIns import PlugIns
 from amiConfig import Config
 from AmiTree import Container
-from WebEngine import WebEngine
+from WebEngine import *
+import logging
 
 class EventEngine:
 
@@ -10,8 +11,6 @@ class EventEngine:
     root = Container("root", "root", "this is the root node")
 
     def __init__(self):
-
-        webserver = WebEngine(EventEngine.root)
 
         #print "initializing EventEngine..."
         EventEngine.root.addContainer("instance", Config.jid, "this is the tree instance "+Config.jid)
@@ -25,14 +24,15 @@ class EventEngine:
         # load plugin tree into me-node
         EventEngine.root.me.addChildList(p)
 
-        # assign address index cache to root.addressIndex
-        self.updateAddressCache()
+        # starting xmppEngine
+        if Config.get("server", "jabber").__eq__("on"):
+            print "starting xmppEngine"
+            xmpp = XMPPEngineStart(EventEngine.root)
 
-        #print EventEngine.root.returnTree(0)
-
-        print "starting xmpp client..."
-
-        com = CommunicationEngine(EventEngine.root)
+        # start webEngine
+        if Config.get("server", "web").__eq__("on"):
+            print "starting webEngine"
+            webserver = WebEngine(EventEngine.root)
         
         print "end"
 

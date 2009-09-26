@@ -1,9 +1,7 @@
 
 from AmiTree import *
 from PlugIn import PlugIn
-from CommunicationEngine import CommunicationEngine
 from amiConfig import Config
-from ctypes import cdll, c_int
 from EventEngine import EventEngine
 from Address import Address
 import time, socket

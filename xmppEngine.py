@@ -1,9 +1,25 @@
 import xmpp
-import sys, time
 from Packets.Packet import Packet
 from amiConfig import Config
 from Address import Address
 from AmiTree import *
+import time
+
+class XMPPEngineStart(Thread):
+
+    def __init__(self, root):
+        Thread.__init__(self)
+	self.root = root
+	#self.setDaemon(True)
+	self.start()
+	#while 1:
+	#    print "running xmppEngine"
+	#    time.sleep(5)
+
+    def run(self):
+        XMPPEngine(self.root)
+
+
 
 class XMPPEngine:
 
@@ -14,6 +30,8 @@ class XMPPEngine:
     def __init__(self, root):
 
         self.root = root
+
+        
 
 	# last time ping was sent, initialisation
 	self.last_time = 0
@@ -101,19 +119,19 @@ class XMPPEngine:
         # try to parse ass Address
         addr = Address(content)
         print "parsed address: " + addr.__str__()
-        
+
         if content.__eq__("show"):
             print " parsing as show command"
             self.send(self.root.returnTree(0), sender)
 
         elif content.__eq__("xml"):
             print " parsing as xml command"
-            self.send(self.root.me.toXml(), sender)
+            self.send(self.root.toXml(), sender)
 
         elif content.__eq__("list"):
             print " parsing as list command"
             result = ""
-            for elem in self.root.me.addressIndex:
+            for elem in self.root.getAddressList():
                 result += elem+"\n"
             self.send(result, sender)
 
@@ -172,7 +190,7 @@ Use following XML to sent a Packet:
             print "'"+searchstring+"' - '"+datastring+"'"
 
             # search in address index for searchstring and build a list with resulting addresses
-            for elem in self.root.me.addressIndex:
+            for elem in self.root.getAddressList():
                 if not elem.lower().find(searchstring.lower()) == -1:
                     result.append(elem)
 
@@ -227,7 +245,7 @@ Use following XML to sent a Packet:
     def stepOn(self, conn):
         try:
             self.client.Process(1)
-            print "is connected"
+            print time.strftime("%Y-%m-%d %H:%M:%S")+" is connected"
 	    if not self.client.isConnected():
                 print ">>>>DISCONNECT in stepOn<<<<"
                 print "reconnecting..."
@@ -263,9 +281,6 @@ Use following XML to sent a Packet:
         #self.send("*"+content+" is not a valid address.", sender)
 
     def disconnectHandler(self):
-        #
-        #  ACTS A LITTLE LOONEY
-        #
         print ">>>>DISCONNECT HANDLER<<<<"
         if not self.client.isConnected():
             print "reconnecting..."
@@ -279,7 +294,7 @@ Use following XML to sent a Packet:
 
         # DIRTY!!!!
         XMPPEngine.roster = self.roster
-            
+
         for elem in self.roster.getItems():
             if not self.rosterTree.has_key(elem) and not elem.__eq__(Config.jid):
                 self.rosterTree[elem]=elem
@@ -288,3 +303,9 @@ Use following XML to sent a Packet:
 
                 print elem
 
+if __name__ == "__main__":
+    root = Container("root", "root", "this is the root node")
+    xmpp = XMPPEngineStart(root)
+    sleep(1)
+    root.me = root.getChild(Config.jid)
+    root.me.addressIndex = root.me.getAddressList()

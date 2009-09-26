@@ -1,6 +1,6 @@
 syntax: glob
 *.pyc
 *.properties
-^logs/
-^PlugInsFolder/
-^run/
+^logs/*
+^PlugInsFolder/*
+^run/*

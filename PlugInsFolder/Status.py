@@ -1,7 +1,7 @@
 
 from AmiTree import Container
 from PlugIn import PlugIn
-from CommunicationEngine import CommunicationEngine
+from xmppEngine import XMPPEngine
 
 class Status(PlugIn):
 
@@ -23,7 +23,7 @@ class Status(PlugIn):
     def getBuddies(self, text=""):
         string = ""
 
-        for elem in CommunicationEngine.roster.getItems():
+        for elem in XMPPEngine.roster.getItems():
             string += elem+"\n"
 
         return string
