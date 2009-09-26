@@ -7,31 +7,32 @@ import os
 from AmiTree import Container
 from PlugIn import PlugIn
 
-class Madplay(PlugIn):
+class Nabaztag(PlugIn):
 
 
     def __init__(self, token, configFile):
         PlugIn.__init__(self)
-        self.architecture = "openwrt"
+        self.architecture = "all"
+        
 
         #plugin itself
-        self.content = Container("plugin", token, "This is a Madplay Plugin")
+        self.content = Container("plugin", token, "This is a Nabaztag Plugin")
 
-        #Plugin visibility, can be accessed, but is not listed
-        self.visible = False
-        
+        # hide Plugin from showing up in xml, search, show...
+        self.content.visible = False
+
         # set add container
-        self.content.addContainer("cmd", "Play", "Play Madplay", self.play)
+        self.content.addContainer("cmd", "Play", "Play Stream on Nabaztag", self.play)
 
-	self.content.addContainer("cmd", "Stop", "Stop Madplay", self.stop)
+	self.content.addContainer("cmd", "Stop", "Stop Nabaztag", self.stop)
 
     def play(self, text="http://www.munich-radio.de:8000"):
-        text = self.getText(text) 
+        text = self.getText(text)
         print text
-        os.system('curl "'+text+'" | madplay - &' )
+        os.system('curl http://api.nabaztag.com/vl/FR/api_stream.jsp?token=1230219014&sn=0019DB9C502A&urlList='+text)
 
     def stop(self, string=""):
-    	os.system('killall madplay')
+    	os.system('killall mpg123')
 
     # returns the plugin as a tree
     def getTree(self):

@@ -20,14 +20,10 @@ class FeedReader(PlugIn):
 
         # this line should be read from config file
         podcasts = Config.podcasts.split(",")
-	try:
-            for touple in podcasts:
-                t = touple.split(">")
-                self.content.addChild(Container("plugin", t[0], t[1]))
-        except:
-	    pass
-            	
-        # adding random node, plays a random track from MondayJazz    	
+        for touple in podcasts:
+            t = touple.split(">")
+            self.content.addChild(Container("plugin", t[0], t[1]))
+
         self.content.addContainer("cmd", "Random", "/FeedReader/MondayJazz", self.playRandom)
 
 

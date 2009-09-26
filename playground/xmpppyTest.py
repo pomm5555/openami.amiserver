@@ -1,36 +1,28 @@
-import xmpp
 import sys
 import xmpp
-import signal
-import time
-
-#jid=xmpp.protocol.JID("servant@jabber.org")
-#cl=xmpp.Client(jid.getDomain())
-#
-#cl.connect()
-#cl.auth(jid.getNode(),"servantjabbers")
-#
-#cl.sendInitialPresence(jid, None, 1)
-#cl.send(xmpp.protocol.Message("mt034@messi.mi.hdm-stuttgart.de","first message from ami_ce"))
 
 
 
 def messageHandler(conn,msg):
-    content = str(msg.getBody())
-    sender = str(msg.getFrom())
-    print "Sender: " + sender
-    print "Content: " + content
+    content = unicode(msg.getBody())
+    sender = unicode(msg.getFrom())
+    print u"Sender: " + sender
+    print u"Content: " + content
 
-    print content[0:1]
-    print content[1:]
+    send (content, sender)
 
-    if content.__eq__("get"):
-        send(root.returnTree(0), sender)
-    if content[0:1].__eq__("*"):
-        root.getByAddress(content[1:]).use()
+def disconnectHandler(self):
+    print ">>>>DISCONNECT HANDLER<<<<"
+    if not self.client.isConnected():
+        print "reconnecting..."
+        self.client.reconnectAndReauth()
 
 def stepOn(conn):
     try:
+        print "checking connection"
+        if not cl.isConnected():
+            print "trying reconnect..."
+            cl.reconnectAndReauth()
         conn.Process(1)
     except KeyboardInterrupt:
         return 0
@@ -47,12 +39,6 @@ def send(msg, sender):
 def main():
     print "start"
     global recipient
-    #global root
-    #root = Container("192.168.1.1", "Tree Root")
-    # create library object
-    #t = ITunes("ITunes")
-    # Add ITunes Plugin to tree
-    #root.addChild("ITunes", t.getTree())
 
     jid="servant@jabber.org"
     pwd="servantjabbers"
@@ -73,7 +59,8 @@ def main():
     if cl.auth(jid.getNode(),pwd) == None:
         print "authentication failed"
         sys.exit(0)
-    cl.RegisterHandler('message', messageCB)
+    cl.RegisterHandler('message', messageHandler)
+    cl.RegisterDisconnectHandler(disconnectHandler)
 
     print "authenticated"
 

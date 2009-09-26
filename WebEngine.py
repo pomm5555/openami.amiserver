@@ -58,4 +58,4 @@ class WebServer():
 
 
 if __name__ == "__main__":
-    we = WebEngine("hallo")
+    we = XMPPEngine("hallo")
