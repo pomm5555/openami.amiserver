@@ -12,7 +12,9 @@ class SoftKeys(PlugIn):
 
     def __init__(self, token, configFile):
         PlugIn.__init__(self)
-        self.architecture = "all"
+        self.architecture = "openwrt"
+
+        
 
         #plugin itself
         self.content = avrContainer("plugin", token, "This hopefully will be a Threaded SoftKey  Plugin")
@@ -45,30 +47,34 @@ class avrContainer(ThreadContainer):
         ##
         # Hardware Initialization
         ##
-        lib="/root/libavrBridgeC.so"
-        self.mega=cdll.LoadLibrary(lib)
 
-        self.mega.initUsbLib()
+        try:
+            lib=Config.absPath+Config.get("avrBridge", "lib")
+            self.mega=cdll.LoadLibrary(lib)
 
-        # init poti
-        self.mega.setPortPinDir(1,1,0)
-        self.mega.setPortPin(1,1,1)
+            self.mega.initUsbLib()
 
-        # set pins input
-        self.mega.setPortPinDir(0,0,0)
-        self.mega.setPortPinDir(0,1,0)
-        self.mega.setPortPinDir(0,2,0)
+            # init poti
+            self.mega.setPortPinDir(1,1,0)
+            self.mega.setPortPin(1,1,1)
 
-        # enable internal pullup
-        self.mega.setPortPin(0,0,1)
-        self.mega.setPortPin(0,1,1)
-        self.mega.setPortPin(0,2,1)
+            # set pins input
+            self.mega.setPortPinDir(0,0,0)
+            self.mega.setPortPinDir(0,1,0)
+            self.mega.setPortPinDir(0,2,0)
 
-        #LED output
-        self.mega.setPortPinDir(2,7,1)
+            # enable internal pullup
+            self.mega.setPortPin(0,0,1)
+            self.mega.setPortPin(0,1,1)
+            self.mega.setPortPin(0,2,1)
 
-        # light up the led
-        self.mega.setPortPin(2,7,1)
+            #LED output
+            self.mega.setPortPinDir(2,7,1)
+
+            # light up the led
+            self.mega.setPortPin(2,7,1)
+        except:
+            print "[SOFTKEY ERROR] Could not init plugin"
 
 
     def run(self):
