@@ -63,9 +63,14 @@ class PlugIns:
             if os.path.isdir(PluginsPath+"/"+elem):
                 print "+++ loding folder: "+PluginsPath+"."+elem
                 tmpcont = Container("folder", elem, "this is the tree representation of a folder")
+                tmpcont.setUse(self.display)
                 tmpcont.addChildList(self.loadPlugins(PluginsPath+"/"+elem, PackagePath+"."+elem, configFile))
                 result.append(tmpcont)
   
         return result
+
+
+    def display(self, string=""):
+        return self.toHtml()
 
 

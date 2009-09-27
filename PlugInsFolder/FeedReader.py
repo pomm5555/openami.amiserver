@@ -17,12 +17,15 @@ class FeedReader(PlugIn):
         #plugin itself, is threaded uses the its process method
         self.content = ThreadContainer("plugin", token, "This hopefully will be a Threaded Feedreader Plugin") #ThreadContainer
         self.content.setDo(self.process)
+        self.content.setUse(self.display)
 
         # this line should be read from config file
         podcasts = Config.podcasts.split(",")
         for touple in podcasts:
             t = touple.split(">")
-            self.content.addChild(Container("plugin", t[0], t[1]))
+            tmpcont = Container("plugin", t[0], t[1])
+            tmpcont.setUse(self.display)
+            self.content.addChild(tmpcont)
 
         self.content.addContainer("cmd", "Random", "/FeedReader/MondayJazz", self.playRandom)
 
@@ -87,7 +90,7 @@ class FeedReader(PlugIn):
             elem[1].use()
 
 
-    def display(self):
+    def display(self, string=""):
         return self.toHtml()
             
     # returns the plugin as a tree
