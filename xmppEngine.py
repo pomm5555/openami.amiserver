@@ -1,16 +1,17 @@
-import xmpp
+# coding: utf-8
+
+import xmpp, time
 from Packets.Packet import Packet
 from amiConfig import Config
 from Address import Address
 from AmiTree import *
-import time
 
 class XMPPEngineStart(Thread):
 
     def __init__(self, root):
         Thread.__init__(self)
 	self.root = root
-	#self.setDaemon(True)
+	self.setDaemon(True)
 	self.start()
 	#while 1:
 	#    print "running xmppEngine"
@@ -98,140 +99,152 @@ class XMPPEngine:
         #print " "+self.jid
 
         # extractint content from message
-        content = unicode(msg.getBody())
-        sender = unicode(msg.getFrom())
-        type = unicode(msg.getType())
-        self.chat = ""
 
-        # GROUPCHAT
-        try:
-            if type.__eq__("groupchat"):
-                print "GROUPCHAT!!!!!!"
-                self.chat = sender.split("/")[0]
-                print "chat: "+self.chat
-        except Exception, e:
-            print "[ERROR] sender: "+sender
-            print e
+        if msg.getBody():
 
-        print u"("+type+u") Sender: " + sender + u"\n Content: " + content
+            sender = unicode(msg.getFrom())
+            content = unicode(msg.getBody())
+            type = unicode(msg.getType())
+            self.chat = ""
+
+            #try:
+            #    content = msg.getBody().encode("iso-8859-1")
+            #except (UnicodeDecodeError, UnicodeEncodeError):
+            #    print "[ENCODING ERROR] ..."
+            #    content=u""
 
 
-        # try to parse ass Address
-        addr = Address(content)
-        print "parsed address: " + addr.__str__()
+            # GROUPCHAT
+            try:
+                if type.__eq__("groupchat"):
+                    print "GROUPCHAT!!!!!!"
+                    self.chat = sender.split("/")[0]
+                    print u"chat: "+self.chat
+            except Exception, e:
+                print u"[ERROR] sender: "+sender
+                print e
 
-        if content.__eq__("show"):
-            print " parsing as show command"
-            self.send(self.root.returnTree(0), sender)
+            #content = unicode(content, "iso-8859-1")
 
-        elif content.__eq__("xml"):
-            print " parsing as xml command"
-            self.send(self.root.toXml(), sender)
+            print u"("+type+u") Sender: " + sender + u"\n Content: " + content
 
-        elif content.__eq__("list"):
-            print " parsing as list command"
-            result = ""
-            for elem in self.root.getAddressList():
-                result += elem+"\n"
-            self.send(result, sender)
 
-        elif content.__eq__("help"):
-            print " parsing as help command"
-            help = '''
-enter:
-help to print this message
-xml to print xml representation
-show to print message overview
-list to print all available addresses
+            # try to parse ass Address
+            addr = Address(content)
+            print "parsed address: " + addr.__str__()
 
-search:
-enter search command with * before
-eg "*play"
+            if content.__eq__("show"):
+                print " parsing as show command"
+                self.send(self.root.returnTree(0), sender)
 
-Use following XML to sent a Packet:
-<?xml version="1.0" ?>
-<packet from="fernmelder@jabber.org" to="/Finder/Say">
-  <string name="text">
-    Hello master, my name is hal2000
-  </string>
-</packet>'''
-            self.send(help, sender)
+            elif content.__eq__("xml"):
+                print " parsing as xml command"
+                self.send(self.root.toXml(), sender)
 
-        elif addr.isAddress():
-            print " parsing as address command: "+addr.__str__()
-            print " with data: >"+addr.string+"<"
-            if True: #try:
-                if addr.string.__len__() == 0:
-                    result = self.root.getByAddress(addr.__str__()).use()
-                else:
-                    result = self.root.getByAddress(addr.__str__()).use(addr.string)
+            elif content.__eq__("list"):
+                print " parsing as list command"
+                result = ""
+                for elem in self.root.getChild(Config.get("jabber", "jid")).getAddressList():
+                    result += elem+"\n"
                 self.send(result, sender)
-                print " "+str(result)
-            #except Exception, e:
-            #    self.send("[ERROR] "+content+" is not a valid address.", sender)
-            #    print "[ERROR] "+str(e)
 
-        elif content[0:1].__eq__("#"):
-            print "parsing as comment"
+            elif content.__eq__("help"):
+                print " parsing as help command"
+                help = '''
+    enter:
+    help to print this message
+    xml to print xml representation
+    show to print message overview
+    list to print all available addresses
 
+    search:
+    enter search command with * before
+    eg "*play"
 
-        elif content[0:1].__eq__("*"):
-            print " parsing as search command"
-            result = []
-            answer = ""
+    Use following XML to sent a Packet:
+    <?xml version="1.0" ?>
+    <packet from="fernmelder@jabber.org" to="/Finder/Say">
+      <string name="text">
+        Hello master, my name is hal2000
+      </string>
+    </packet>'''
+                self.send(help, sender)
 
-            # seperate search string form data string
-            searchstring = content.split(" ")[0][1:]
-            datastring = ""
-            for elem in content.split(" ")[1:]:
-                datastring += " "+elem
-            datastring = datastring[1:]
-
-            print "'"+searchstring+"' - '"+datastring+"'"
-
-            # search in address index for searchstring and build a list with resulting addresses
-            for elem in self.root.getAddressList():
-                if not elem.lower().find(searchstring.lower()) == -1:
-                    result.append(elem)
-
-            # if there is only one address resulting, execute it
-            if result.__len__() == 1:
-                answer = " executing: "+result[0]
-                try:
-                    if datastring.__len__() == 0:
-                        tmp = str(self.root.getByAddress(result[0]).use())
+            elif addr.isAddress():
+                print " parsing as address command: "+addr.__str__()
+                print " with data: >"+addr.string+"<"
+                if True: #try:
+                    if addr.string.__len__() == 0:
+                        result = self.root.getByAddress(addr.__str__()).use()
                     else:
-                        tmp = str(self.root.getByAddress(result[0]).use(datastring))
+                        result = self.root.getByAddress(addr.__str__()).use(addr.string)
+                    self.send(result, sender)
+                    print " "+str(result)
+                #except Exception, e:
+                #    self.send("[ERROR] "+content+" is not a valid address.", sender)
+                #    print "[ERROR] "+str(e)
 
-                    if not tmp == None:
-                        answer+="\n"+str(tmp)
+            elif content[0:1].__eq__("#"):
+                print "parsing as comment"
 
+
+            elif content[0:1].__eq__("*"):
+                print " parsing as search command"
+                result = []
+                answer = ""
+
+                # seperate search string form data string
+                searchstring = content.split(" ")[0][1:]
+                datastring = ""
+                for elem in content.split(" ")[1:]:
+                    datastring += " "+elem
+                datastring = datastring[1:]
+
+                print "'"+searchstring+"' - '"+datastring+"'"
+
+                # search in address index for searchstring and build a list with resulting addresses
+                for elem in self.root.getAddressList():
+                    if not elem.lower().find(searchstring.lower()) == -1:
+                        result.append(elem)
+
+                # if there is only one address resulting, execute it
+                if result.__len__() == 1:
+                    answer = " executing: "+result[0]
+                    try:
+                        if datastring.__len__() == 0:
+                            tmp = str(self.root.getByAddress(result[0]).use())
+                        else:
+                            tmp = str(self.root.getByAddress(result[0]).use(datastring))
+
+                        if not tmp == None:
+                            answer+="\n"+str(tmp)
+
+                        self.send(answer, sender)
+                    except Exception, e:
+                        print "[ERROR] "+str(e)
+
+                # otherwise return result to sender
+                else:
+                    for elem in result:
+                        answer += elem+"\n"
                     self.send(answer, sender)
-                except Exception, e:
-                    print "[ERROR] "+str(e)
 
-            # otherwise return result to sender
+
+
+            elif content[0:5].__eq__("<?xml"):
+                print " parsing as packet command"
+                self.packetHandler(content, sender)
+
+
             else:
-                for elem in result:
-                    answer += elem+"\n"
-                self.send(answer, sender)
+                print "unknown command"
+                if self.jid.__eq__(str(msg.getFrom()).split("/")[0]):
+                    print " cannot answer my self with an invalid address"
+                else:
+                    # with two bots, that causes an endless loops
+                    pass #self.send(" unknown command", sender)
 
-
-
-        elif content[0:5].__eq__("<?xml"):
-            print " parsing as packet command"
-            self.packetHandler(content, sender)
-
-
-        else:
-            print "unknown command"
-            if self.jid.__eq__(str(msg.getFrom()).split("/")[0]):
-                print " cannot answer my self with an invalid address"
-            else:
-                # with two bots, that causes an endless loops
-                pass #self.send(" unknown command", sender)
-
-        print "---message end----------------------------------------------"
+            print "---message end----------------------------------------------"
 
 
     def presenceHandler(self, conn,msg):
@@ -246,6 +259,7 @@ Use following XML to sent a Packet:
         try:
             self.client.Process(1)
             print time.strftime("%Y-%m-%d %H:%M:%S")+" is connected"
+            self.pingJabber()
 	    if not self.client.isConnected():
                 print ">>>>DISCONNECT in stepOn<<<<"
                 print "reconnecting..."
@@ -259,9 +273,10 @@ Use following XML to sent a Packet:
         while self.stepOn(conn):
             pass
 
-    #deprecated, you can send now directly via plugin tree
+    # deprecated, you can send now directly via plugin tree
+    # or only for internal use
     def send(self, msg, receiver):
-        self.client.send(xmpp.protocol.Message(receiver, msg))
+        self.client.send(xmpp.protocol.Message(receiver, msg.decode("iso-8859-1")))
 
 
     def packetHandler(self, message, sender):
@@ -296,7 +311,7 @@ Use following XML to sent a Packet:
         XMPPEngine.roster = self.roster
 
         for elem in self.roster.getItems():
-            if not self.rosterTree.has_key(elem) and not elem.__eq__(Config.jid):
+            if not self.rosterTree.has_key(elem) and not elem.__eq__(Config.get("jabber", "jid")):
                 self.rosterTree[elem]=elem
                 self.send("#type help to explore me.", elem)
                 self.root.addChild(BuddyContainer("buddy", str(elem), "Buddy, maybe over the sea...", self.client))
@@ -305,7 +320,5 @@ Use following XML to sent a Packet:
 
 if __name__ == "__main__":
     root = Container("root", "root", "this is the root node")
-    xmpp = XMPPEngineStart(root)
-    sleep(1)
-    root.me = root.getChild(Config.jid)
-    root.me.addressIndex = root.me.getAddressList()
+    jabber = XMPPEngineStart(root)
+    time.sleep(1)

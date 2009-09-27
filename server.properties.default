@@ -1,3 +1,9 @@
+####################################################################################
+#                                                                                  #
+#                         EVENT ENGINE CONFIGURATION                               #
+#                                                                                  #
+####################################################################################
+
 [jabber]
 jid=servant@jabber.org
 pwd=servantjabbers
@@ -7,28 +13,55 @@ ressource=LivingRoom
 groupChat=ami
 groupServer=conference.jabber.org
 
+
+
+####################################################################################
+
 [server]
 token=servant@jabber.org
 information=Root Container
 architecture=macos
+# on/off
+jabber=on
+web=on
+
+
+
+####################################################################################
 
 [Plugins]
 PlugInsFolder=PlugInsFolder
+
+
+
+####################################################################################
 
 [iTunes]
 #ScriptUrl=http://www.macosxhints.com/article.php?story=20011108211802830
 ScriptPath=/Users/markus/fast/tunes.sh
 
+
+
+####################################################################################
+
 [avrBridge]
 lib=/PlugInsSupport/libavrBridgeC.dylib
 
+
+
+####################################################################################
+
 [Defaults]
-AudioPlay=/Audio/Mpg321/Play
-AudioStop=/Audio/Mpg321/Stop
+AudioPlay=/Audio/Mpg123/Play
+AudioStop=/Audio/Mpg123/Stop
 SetVol=/System/Finder/SetVol
 Notification=/Notification/Prowly/Prowl
 
+
+
+####################################################################################
+
 [FeedReader]
-Podcasts=MondayJazz>http://www.mondayjazz.com/mj.xml
+Podcasts=MondayJazz>http://www.mondayjazz.com/mj.xml,Hint>http://feeds.feedburner.com/hint/mixes
 
 

@@ -26,7 +26,6 @@ class FeedReader(PlugIn):
 
         self.content.addContainer("cmd", "Random", "/FeedReader/MondayJazz", self.playRandom)
 
-
         self.content.start()
 
 
@@ -59,6 +58,8 @@ class FeedReader(PlugIn):
                     for k, v in handler.links.items():
 
                         if not podcastContainer.content.has_key(k.replace(" ", "_")):
+                            k = k.encode( "utf-8" )
+                            v = v.encode( "utf-8" )
                             print k,v
 
                             podcastContainer.addChild(FeedLeafContainer("cmd", k, v))
@@ -84,13 +85,18 @@ class FeedReader(PlugIn):
         if elem:
             print elem
             elem[1].use()
+
+
+    def display(self):
+        return self.toHtml()
             
     # returns the plugin as a tree
     def getTree(self):
         return self.content
 
     def use(self, test=""):
-        return "+"+self.content.information
+        return self.toHtml()
+        #return "+"+self.content.information
 
     # just a little helper function
     def getText(self, var):
