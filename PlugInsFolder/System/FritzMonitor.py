@@ -43,7 +43,7 @@ class callmonitorContainer(ThreadContainer):
 
     def simpleHandler(self, d):
 
-        address = Address("/Defaults/Notification")
+        address = Address("/Defaults/notification")
 
         """a very simple handler for incoming calls, prints to stdout"""
         if d[1] == 'RING':
