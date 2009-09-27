@@ -112,7 +112,7 @@ class FeedReader(PlugIn):
 
 class FeedLeafContainer(Container):
     def use(self, str=None):
-        address = Address("/Defaults/Play") 
+        address = Address("/Defaults/audioplay")
         EventEngine.root.getByAddress(address.__str__()).use(self.information)
 
 
