@@ -20,10 +20,10 @@ class FeedReader(PlugIn):
         self.content.setUse(self.display)
 
         # this line should be read from config file
-        podcasts = Config.podcasts.split(",")
-        for touple in podcasts:
-            t = touple.split(">")
-            tmpcont = Container("plugin", t[0], t[1])
+        #podcasts = Config.podcasts.split(",")
+        for touple in Config.getSection("FeedReader"):
+            #t = touple.split(">")
+            tmpcont = Container("plugin", touple[0], touple[1])
             tmpcont.setUse(self.display)
             self.content.addChild(tmpcont)
 

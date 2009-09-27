@@ -173,16 +173,16 @@ class XMPPEngine:
             elif addr.isAddress():
                 print " parsing as address command: "+addr.__str__()
                 print " with data: >"+addr.string+"<"
-                if True: #try:
+                try:
                     if addr.string.__len__() == 0:
                         result = self.root.getByAddress(addr.__str__()).use()
                     else:
                         result = self.root.getByAddress(addr.__str__()).use(addr.string)
                     self.send(result, sender)
                     print " "+str(result)
-                #except Exception, e:
-                #    self.send("[ERROR] "+content+" is not a valid address.", sender)
-                #    print "[ERROR] "+str(e)
+                except Exception, e:
+                    self.send("[ERROR] "+content+" is not a valid address.", sender)
+                    print "[ERROR] "+str(e)
 
             elif content[0:1].__eq__("#"):
                 print "parsing as comment"
