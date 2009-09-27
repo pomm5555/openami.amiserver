@@ -50,6 +50,7 @@ class avrContainer(ThreadContainer):
 
         try:
             lib=Config.absPath+Config.get("avrBridge", "lib")
+	    print lib
             self.mega=cdll.LoadLibrary(lib)
 
             self.mega.initUsbLib()
@@ -73,8 +74,8 @@ class avrContainer(ThreadContainer):
 
             # light up the led
             self.mega.setPortPin(2,7,1)
-        except:
-            print "[SOFTKEY ERROR] Could not init plugin"
+	except Exception,e:
+            print "[SOFTKEY ERROR] Could not init plugin\n"+str(e)
 
 
     def run(self):
@@ -94,18 +95,18 @@ class avrContainer(ThreadContainer):
 
             if self.mega.getPortPin(0,0) == 0:
                 self.mega.setPortPin(2,7,1)
-                address = Address("/Defaults/Play")
+                address = Address("/Defaults/audioplay")
                 EventEngine.root.getByAddress(address.__str__()).use("http://www.mondayjazz.com/mixes/mj099_now_just_listen_by_dj_blueprint.mp3")
                 time.sleep(.5)
 
             if self.mega.getPortPin(0,1) == 0:
                 self.mega.setPortPin(2,7,0)
-                address = Address("/Defaults/Stop")
+                address = Address("/Defaults/audiostop")
                 EventEngine.root.getByAddress(address.__str__()).use()
                 time.sleep(.5)
                 
             if self.mega.getPortPin(0,2) == 0:
-                address = Address("/Defaults/Stop")
+                address = Address("/Defaults/audiostop")
                 EventEngine.root.getByAddress(address.__str__()).use()
                 address = Address("/FeedReader/Random")
                 EventEngine.root.getByAddress(address.__str__()).use()
