@@ -27,7 +27,7 @@ class FeedReader(PlugIn):
             tmpcont.setUse(self.display)
             self.content.addChild(tmpcont)
 
-        self.content.addContainer("cmd", "Random", "/FeedReader/MondayJazz", self.playRandom)
+        self.content.addContainer("cmd", "Random", "/FeedReader/mondayjazz", self.playRandom)
 
         self.content.start()
 

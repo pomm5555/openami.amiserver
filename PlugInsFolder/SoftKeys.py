@@ -15,11 +15,15 @@ class SoftKeys(PlugIn):
         self.architecture = "openwrt"
 
         
+        if self.architecture.__eq__(Config.get("server", "architecture")):
 
-        #plugin itself
-        self.content = avrContainer("plugin", token, "This hopefully will be a Threaded SoftKey  Plugin")
-        self.content.name = "softKeyThread"
-        self.content.start()
+            #plugin itself
+            self.content = avrContainer("plugin", token, "This hopefully will be a Threaded SoftKey  Plugin")
+            self.content.name = "softKeyThread"
+            self.content.start()
+
+        else:
+            self.content = Container("plugin", token, "not supported")
 
     # returns the plugin as a tree
     def getTree(self):
