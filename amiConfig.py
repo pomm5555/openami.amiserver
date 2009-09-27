@@ -36,7 +36,7 @@ class Config:
     Notification = config.get('Defaults', 'Notification')
 
     # Feed Reader
-    podcasts = config.get('FeedReader', 'Podcasts')
+    #podcasts = config.get('FeedReader', 'Podcasts')
 
     # get path to script
     absPath = os.path.abspath(".")
@@ -49,6 +49,13 @@ class Config:
             print "[CONFIG ERROR] could not get "+section+"->"+option
             return "error"
 
+    @staticmethod
+    def getSection(section):
+        #:
+        return Config.config.items(section)
+        #except:
+        #    print "[CONFIG ERROR] could not get section "+section
+        #    return "error"
 
 if __name__ == "__main__":
     logger = logging.getLogger("Config")
@@ -61,3 +68,6 @@ if __name__ == "__main__":
     #add formatter to ch
     ch.setFormatter(formatter)
     logger.addHandler(ch)
+
+    print(Config.getSection("FeedReader"))
+    print(Config.get("FeedReader", "cre"))
