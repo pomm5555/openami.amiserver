@@ -72,14 +72,17 @@ class callmonitorContainer(ThreadContainer):
         host='fritz.box'
         port=1012
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((host, port))
-        while 1:
-            line = s.recv(1024)
-            if not line:
-                break
-            self.handler(line.strip().split(';'))
-            time.sleep(1)
-        s.close()
+        try:
+            s.connect((host, port))
+            while 1:
+                line = s.recv(1024)
+                if not line:
+                    break
+                self.handler(line.strip().split(';'))
+                time.sleep(1)
+            s.close()
+        except:
+            print "[SOCKET ERROR]"
 
     def toHtml(self):
         if self.visible:

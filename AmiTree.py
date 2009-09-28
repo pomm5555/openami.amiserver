@@ -2,8 +2,8 @@
 # and open the template in the editor.
 
 from threading import Thread
-import xmpp, types, cherrypy
 from Address import Address
+import types
 
 __author__="markus"
 __date__ ="$Aug 16, 2009 3:56:03 PM$"
@@ -19,6 +19,8 @@ class Container:
         self.parent = None
         if use:
             self.setUse(use)
+        
+
 
     def __str__(self):
         return self.information
@@ -67,12 +69,15 @@ class Container:
 
 
     def use(self, unspecified=""):
+        return self.useL(unspecified)
+
+    def useL(self, unspecified=""):
         return self.information
 
 
     def setUse(self, use):
         #self.use = use
-        self.use = types.MethodType(use.im_func, self, self.__class__)
+        self.useL = types.MethodType(use.im_func, self, self.__class__)
 
     def printTree(self, i):
         #print self.visible
@@ -114,8 +119,6 @@ class Container:
             for k, v in self.content.items():
                 result+=v.toHtml()
 
-            #if result.__eq__(""):
-            #    return "<li><a href=\""+self.getAddress()+"\">"+self.token+"</a>"+result+"</li>"
             return "<ul><li><a href=\""+self.getAddress()+"\">"+self.token+"</a></li>"+result+"</ul>"
         else:
             return ""
@@ -174,15 +177,6 @@ class Container:
             return var
 
 
-    
-    # This function should enable any treenode to send messages in an easy way! TODO
-    #
-    #def send(self, address):
-    #    address = Address(Config.Notification)
-    # 	EventEngine.root.getByAddress(address.__str__()).use(address.string)
-
-
-
 class ThreadContainer(Thread, Container):
     def __init__(self, type, token, information="empty"):
         Thread.__init__(self, None)
@@ -209,5 +203,20 @@ class BuddyContainer(Container):
         #print "+++++"+address
         self.information = address
         return self
+
+
+class loggingContainer(Container):
+
+    def __init__(self, type, token, information):
+        Container.__int__(self, type, token, information)
+        self.log = []
+
+    def use(self, string=""):
+        result = ""
+        for elem in self.log:
+            result += elem+"\n"
+
+        return result
+
 
         

@@ -5,8 +5,8 @@
 ####################################################################################
 
 [jabber]
-jid=servant@jabber.org
-pwd=servantjabbers
+jid=beispiel@jabber.org
+pwd=*****
 host=jabber.org
 port=5222
 ressource=LivingRoom
@@ -18,12 +18,13 @@ groupServer=conference.jabber.org
 ####################################################################################
 
 [server]
-token=servant@jabber.org
+token=beispiel@jabber.org
 information=Root Container
-architecture=macos
+architecture=openwrt
 # on/off
-jabber=on
+jabber=off
 web=on
+logging=on
 
 
 
@@ -62,6 +63,13 @@ Notification=/Notification/Prowly/Prowl
 ####################################################################################
 
 [FeedReader]
-Podcasts=MondayJazz>http://www.mondayjazz.com/mj.xml,Hint>http://feeds.feedburner.com/hint/mixes
+MondayJazz=http://www.mondayjazz.com/mj.xml
 
+
+####################################################################################
+
+[Filesystem]
+properties1=server.properties
+properties2=server.properties
+testfolder=PlugInsSupport/web
 
