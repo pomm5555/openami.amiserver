@@ -17,7 +17,7 @@ class SoftKeys(PlugIn):
         
         if self.architecture.__eq__(Config.get("server", "architecture")):
 
-            #plugin itself
+            # plugin itself
             self.content = avrContainer("plugin", token, "This hopefully will be a Threaded SoftKey  Plugin")
             self.content.name = "softKeyThread"
             self.content.start()

@@ -49,27 +49,34 @@ class FeedReader(PlugIn):
 
                     print "parsing: "+tk
 
-                    xml = urllib.urlopen(feed.information)
-                    handler = PodcastHandler()
-                    parser = sax.make_parser()
-                    parser.setContentHandler(handler)
-                    parser.parse(xml)
+                    try:
+                        xml = urllib.urlopen(feed.information)
+                        handler = PodcastHandler()
+                        parser = sax.make_parser()
+                        parser.setContentHandler(handler)
+                        parser.parse(xml)
 
-                    #get Podcast Container
-                    podcastContainer = EventEngine.root.getByAddress(feed.getAddress())
 
-                    for k, v in handler.links.items():
+                        #get Podcast Container
+                        podcastContainer = EventEngine.root.getByAddress(feed.getAddress())
 
-                        if not podcastContainer.content.has_key(k.replace(" ", "_")):
-                            k = k.encode( "utf-8" )
-                            v = v.encode( "utf-8" )
-                            print k,v
+                        for k, v in handler.links.items():
 
-                            podcastContainer.addChild(FeedLeafContainer("cmd", k, v))
-                            # address = Address("/FeedReader/"+str(i))
-                            # print "#####" + EventEngine.root.getByAddress("/FeedReader").token
-                        else:
-                            pass
+                            if not podcastContainer.content.has_key(k.replace(" ", "_")):
+                                k = k.encode( "utf-8" )
+                                v = v.encode( "utf-8" )
+                                print k,v
+
+                                podcastContainer.addChild(FeedLeafContainer("cmd", k, v))
+                                # address = Address("/FeedReader/"+str(i))
+                                # print "#####" + EventEngine.root.getByAddress("/FeedReader").token
+                            else:
+                                pass
+
+                    except:
+                        xml = ""
+                        print "[URLLIB ERROR]"
+
 
             time.sleep(60*60) #every hour or so
 

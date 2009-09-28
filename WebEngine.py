@@ -25,7 +25,7 @@ class WebServer():
 
     def index(self):
 
-        head = ''' <link rel="stylesheet" type="text/css" href="classic.css" /> '''
+        head = ''' <link rel="stylesheet" type="text/css" href="servant@jabber.org/Filesystem/testfolder/classic.css" /> '''
         
         result = self.root.toHtml()
 	#result = "hallo :D"

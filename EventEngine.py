@@ -33,7 +33,10 @@ class EventEngine:
         if Config.get("server", "web").__eq__("on"):
             print "starting webEngine"
             webserver = WebEngine(EventEngine.root)
-        
+
+        print EventEngine.root.printTree(0)
+
+
         print "end"
 
     def loadPlugins(self):
