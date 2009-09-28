@@ -16,7 +16,8 @@ class Growl(PlugIn):
 
         #plugin itself
         self.content = Container("plugin", token, "this is a growl plugin")
-        
+        self.content.logging = True
+
         # set add container
         self.content.addContainer("cmd","Growl", "send growl notification", self.growl)
 

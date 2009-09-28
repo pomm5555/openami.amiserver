@@ -2,5 +2,4 @@ syntax: glob
 *.pyc
 *.properties
 ^logs/*
-^PlugInsFolder/*
 ^run/*
