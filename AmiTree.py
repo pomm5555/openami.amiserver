@@ -4,6 +4,9 @@
 from threading import Thread
 from Address import Address
 import types
+import logging
+import logging.config
+
 
 __author__="markus"
 __date__ ="$Aug 16, 2009 3:56:03 PM$"
@@ -17,10 +20,16 @@ class Container:
         self.type = type
         self.visible = True
         self.parent = None
+        self.logging = False
         if use:
             self.setUse(use)
-        
 
+        # logging for Tree Elements
+        logging.config.fileConfig("infologger.properties")
+
+        self.logger = logging.getLogger("info")
+
+        
 
     def __str__(self):
         return self.information
@@ -69,7 +78,10 @@ class Container:
 
 
     def use(self, unspecified=""):
-        return self.useL(unspecified)
+        data = self.useL(unspecified)
+        if self.logging:
+            self.logger.info("<container>"+self.getAddress().__str__()+"</container><data>"+data.__str__()+"</data>")
+        return data
 
     def useL(self, unspecified=""):
         return self.information
