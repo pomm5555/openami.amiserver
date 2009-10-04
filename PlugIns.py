@@ -12,7 +12,7 @@ class PlugIns:
     def __init__(self, pluginsFolder, configFile):
 
         #absolute folder to plugins
-        absPluginsFolder = Config.absPath+"/"+Config.plugInsFolder
+        absPluginsFolder = Config.absPath+"/"+Config.get("Plugins", "PlugInsFolder")
 
         #creating list whrer all plugins are loaded in
         self.content = []
@@ -40,8 +40,11 @@ class PlugIns:
     # recursive plugin finder
     def loadPlugins(self, PluginsPath, PackagePath, configFile):
 
+
         # get all elements in folder into list
         pluginFiles =  os.listdir(PluginsPath)
+        print pluginFiles
+        print PluginsPath, PackagePath
 
         result = []
 

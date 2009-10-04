@@ -9,7 +9,11 @@ class EventEngine:
     configFile = 'server.properties'
     root = Container("root", "root", "this is the root node")
 
-    def __init__(self):
+    def __init__(self, absPath):
+
+        Config.absPath = absPath
+        print ">"+absPath+"<"
+        print ">"+Config.absPath+"<"
 
         #print "initializing EventEngine..."
         EventEngine.root.addContainer("instance", Config.jid, "this is the tree instance "+Config.jid)
