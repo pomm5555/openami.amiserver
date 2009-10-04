@@ -136,7 +136,9 @@ class Container:
             return ""
 
     def toJqHtml(self):
-        if self.visible:
+
+
+        if self.visible and not self.content == {}:
 
             result=""
             for k, v in self.content.items():
