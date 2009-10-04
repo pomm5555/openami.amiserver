@@ -3360,3 +3360,126 @@ call without parameter
 [ERROR] Token themes is not a child of this is the root node
 192.168.178.20 - - [04/Oct/2009:20:52:40] "GET /themes/jqt/img/button_clicked.png HTTP/1.1" 500 1844 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-us) AppleWebKit/531.0+ (KHTML, like Gecko) Stainless/0.7 like Version/4.0 Safari/530.17"
 192.168.178.20 - - [04/Oct/2009:20:52:40] "GET /favicon.ico HTTP/1.1" 200 1406 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-us) AppleWebKit/531.0+ (KHTML, like Gecko) Stainless/0.7 like Version/4.0 Safari/530.17"
+192.168.178.20 - - [04/Oct/2009:21:01:00] "GET / HTTP/1.1" 200 29618 "" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:00] "GET /servant@jabber.org/Filesystem/html/jqtouch/jqtouch.min.js HTTP/1.1" 200 9397 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:00] "GET /servant@jabber.org/Filesystem/html/jqtouch/jqtouch.min.css HTTP/1.1" 200 645 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:00] "GET /servant@jabber.org/Filesystem/html/themes/apple/theme.min.css HTTP/1.1" 200 9305 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+[ERROR] Token themes is not a child of this is the root node
+192.168.178.20 - - [04/Oct/2009:21:01:00] "GET /themes/jqt/img/button_clicked.png HTTP/1.1" 500 1844 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+[ERROR] Token themes is not a child of this is the root node
+192.168.178.20 - - [04/Oct/2009:21:01:00] "GET /themes/jqt/img/back_button_clicked.png HTTP/1.1" 500 1844 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+[ERROR] Token themes is not a child of this is the root node
+192.168.178.20 - - [04/Oct/2009:21:01:00] "GET /themes/jqt/img/bg_row_select.gif HTTP/1.1" 500 1844 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+[ERROR] Token themes is not a child of this is the root node
+192.168.178.20 - - [04/Oct/2009:21:01:00] "GET /themes/jqt/img/chevron_white.png HTTP/1.1" 500 1844 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:00] "GET /servant@jabber.org/Filesystem/html/themes/apple/img/pinstripes.png HTTP/1.1" 200 117 "http://192.168.178.20:8080/servant@jabber.org/Filesystem/html/themes/apple/theme.min.css" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:00] "GET /servant@jabber.org/Filesystem/html/themes/apple/img/toolbar.png HTTP/1.1" 200 171 "http://192.168.178.20:8080/servant@jabber.org/Filesystem/html/themes/apple/theme.min.css" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:00] "GET /servant@jabber.org/Filesystem/html/themes/apple/img/chevron.png HTTP/1.1" 200 259 "http://192.168.178.20:8080/servant@jabber.org/Filesystem/html/themes/apple/theme.min.css" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+192.168.178.20 - - [04/Oct/2009:21:01:05] "GET / HTTP/1.1" 200 29618 "" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:05] "GET /servant@jabber.org/Filesystem/html/jqtouch/jqtouch.min.js HTTP/1.1" 200 9397 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:06] "GET /servant@jabber.org/Filesystem/html/jqtouch/jqtouch.min.css HTTP/1.1" 200 645 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:06] "GET /servant@jabber.org/Filesystem/html/themes/apple/theme.min.css HTTP/1.1" 200 9305 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+[ERROR] Token themes is not a child of this is the root node
+192.168.178.20 - - [04/Oct/2009:21:01:06] "GET /themes/jqt/img/button_clicked.png HTTP/1.1" 500 1844 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+[ERROR] Token themes is not a child of this is the root node
+192.168.178.20 - - [04/Oct/2009:21:01:06] "GET /themes/jqt/img/back_button_clicked.png HTTP/1.1" 500 1844 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+[ERROR] Token themes is not a child of this is the root node
+192.168.178.20 - - [04/Oct/2009:21:01:06] "GET /themes/jqt/img/bg_row_select.gif HTTP/1.1" 500 1844 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+[ERROR] Token themes is not a child of this is the root node
+192.168.178.20 - - [04/Oct/2009:21:01:06] "GET /themes/jqt/img/chevron_white.png HTTP/1.1" 500 1844 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:06] "GET /servant@jabber.org/Filesystem/html/themes/apple/img/pinstripes.png HTTP/1.1" 200 117 "http://192.168.178.20:8080/servant@jabber.org/Filesystem/html/themes/apple/theme.min.css" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:06] "GET /servant@jabber.org/Filesystem/html/themes/apple/img/toolbar.png HTTP/1.1" 200 171 "http://192.168.178.20:8080/servant@jabber.org/Filesystem/html/themes/apple/theme.min.css" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:06] "GET /servant@jabber.org/Filesystem/html/themes/apple/img/chevron.png HTTP/1.1" 200 259 "http://192.168.178.20:8080/servant@jabber.org/Filesystem/html/themes/apple/theme.min.css" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+192.168.178.20 - - [04/Oct/2009:21:01:20] "GET / HTTP/1.1" 200 29618 "" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:20] "GET /servant@jabber.org/Filesystem/html/jqtouch/jqtouch.min.js HTTP/1.1" 200 9397 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:20] "GET /servant@jabber.org/Filesystem/html/jqtouch/jqtouch.min.css HTTP/1.1" 200 645 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:20] "GET /servant@jabber.org/Filesystem/html/themes/apple/theme.min.css HTTP/1.1" 200 9305 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+[ERROR] Token themes is not a child of this is the root node
+192.168.178.20 - - [04/Oct/2009:21:01:20] "GET /themes/jqt/img/button_clicked.png HTTP/1.1" 500 1844 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+[ERROR] Token themes is not a child of this is the root node
+192.168.178.20 - - [04/Oct/2009:21:01:20] "GET /themes/jqt/img/back_button_clicked.png HTTP/1.1" 500 1844 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+[ERROR] Token themes is not a child of this is the root node
+with parameter
+call without parameter
+[ERROR] Token themes is not a child of this is the root node
+192.168.178.20 - - [04/Oct/2009:21:01:20] "GET /themes/jqt/img/chevron_white.png HTTP/1.1" 500 1844 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+192.168.178.20 - - [04/Oct/2009:21:01:20] "GET /themes/jqt/img/bg_row_select.gif HTTP/1.1" 500 1844 "http://192.168.178.20:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:20] "GET /servant@jabber.org/Filesystem/html/themes/apple/img/pinstripes.png HTTP/1.1" 200 117 "http://192.168.178.20:8080/servant@jabber.org/Filesystem/html/themes/apple/theme.min.css" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:20] "GET /servant@jabber.org/Filesystem/html/themes/apple/img/toolbar.png HTTP/1.1" 200 171 "http://192.168.178.20:8080/servant@jabber.org/Filesystem/html/themes/apple/theme.min.css" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
+with parameter
+call without parameter
+called without parameter
+192.168.178.20 - - [04/Oct/2009:21:01:20] "GET /servant@jabber.org/Filesystem/html/themes/apple/img/chevron.png HTTP/1.1" 200 259 "http://192.168.178.20:8080/servant@jabber.org/Filesystem/html/themes/apple/theme.min.css" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3"
