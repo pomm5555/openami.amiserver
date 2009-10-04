@@ -3,7 +3,6 @@ from PlugIns import PlugIns
 from amiConfig import Config
 from AmiTree import Container
 from WebEngine import *
-import logging
 
 class EventEngine:
 

@@ -3,6 +3,7 @@
 
 from threading import Thread
 from Address import Address
+from amiData import *
 import types
 import logging
 import logging.config
@@ -24,10 +25,7 @@ class Container:
         if use:
             self.setUse(use)
 
-        # logging for Tree Elements
-        logging.config.fileConfig("infologger.properties")
-
-        self.logger = logging.getLogger("info")
+        self.collector = Data.getCollector(self.getAddress())
 
         
 
@@ -80,7 +78,7 @@ class Container:
     def use(self, unspecified=""):
         data = self.useL(unspecified)
         if self.logging:
-            self.logger.info("<container>"+self.getAddress().__str__()+"</container><data>"+data.__str__()+"</data>")
+            self.collector.log(data.__str__())
         return data
 
     def useL(self, unspecified=""):
@@ -168,7 +166,8 @@ class Container:
         else:
             return self
 
-    def getAddress(self):
+    def getAddress(self):        
+        # TODO Address-cache would be useful
         address = self.RgetAddress()
         return address[address.find("/")+1:]
     
@@ -180,7 +179,7 @@ class Container:
             #print "this is root...-->"+self.token
             return self.token
 
-    # TODO Dirty!!! gehoert hier nicht her!!!
+    # TODO Dirty!!! gehoert hier nicht her!!! oder doch, mal konzept ueberlegen...
     def getText(self, var):
         try:
             var = var.strings["text"]

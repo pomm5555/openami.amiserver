@@ -1,0 +1,33 @@
+INFO:root:logging initialized
+INFO:root:logging initialized
+INFO:root:logging initialized
+INFO:root:logging initialized
+INFO:root:logging initialized
+INFO:root:logging initialized
+INFO:root:logging initialized
+INFO:root:logging initialized
+INFO:root:hallo test
+INFO:test:hallo dies ist der 2. test
+INFO:test.test2:mensch, ich hoff das klappt jetzt mal
+INFO:root:logging initialized
+INFO:cherrypy.error:[03/Oct/2009:19:47:08] ENGINE Bus STARTING
+INFO:cherrypy.error:[03/Oct/2009:19:47:08] ENGINE Started monitor thread '_TimeoutMonitor'.
+INFO:cherrypy.error:[03/Oct/2009:19:47:08] ENGINE Started monitor thread 'Autoreloader'.
+INFO:cherrypy.error:[03/Oct/2009:19:47:08] ENGINE Serving on 0.0.0.0:8080
+INFO:cherrypy.error:[03/Oct/2009:19:47:08] ENGINE Bus STARTED
+INFO:info.Status:This is a Status Plugin
+INFO:cherrypy.access.14739216:127.0.0.1 - - [03/Oct/2009:19:47:51] "GET /servant@jabber.org/Status HTTP/1.1" 200 48 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-us) AppleWebKit/531.0+ (KHTML, like Gecko) Stainless/0.6.5 like Version/4.0 Safari/530.17"
+INFO:cherrypy.access.14739216:127.0.0.1 - - [03/Oct/2009:19:47:51] "GET /favicon.ico HTTP/1.1" 200 1406 "http://localhost:8080/servant@jabber.org/Status" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-us) AppleWebKit/531.0+ (KHTML, like Gecko) Stainless/0.6.5 like Version/4.0 Safari/530.17"
+INFO:info.Status:This is a Status Plugin
+INFO:cherrypy.access.14739216:127.0.0.1 - - [03/Oct/2009:19:47:56] "GET /servant@jabber.org/Status HTTP/1.1" 200 48 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-us) AppleWebKit/531.0+ (KHTML, like Gecko) Stainless/0.6.5 like Version/4.0 Safari/530.17"
+INFO:cherrypy.access.14739216:127.0.0.1 - - [03/Oct/2009:19:47:56] "GET /favicon.ico HTTP/1.1" 200 1406 "http://localhost:8080/servant@jabber.org/Status" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-us) AppleWebKit/531.0+ (KHTML, like Gecko) Stainless/0.6.5 like Version/4.0 Safari/530.17"
+INFO:info.Status:This is a Status Plugin
+INFO:cherrypy.access.14739216:127.0.0.1 - - [03/Oct/2009:19:47:56] "GET /servant@jabber.org/Status HTTP/1.1" 200 48 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-us) AppleWebKit/531.0+ (KHTML, like Gecko) Stainless/0.6.5 like Version/4.0 Safari/530.17"
+INFO:cherrypy.access.14739216:127.0.0.1 - - [03/Oct/2009:19:47:56] "GET /favicon.ico HTTP/1.1" 200 1406 "http://localhost:8080/servant@jabber.org/Status" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-us) AppleWebKit/531.0+ (KHTML, like Gecko) Stainless/0.6.5 like Version/4.0 Safari/530.17"
+INFO:info.Status:This is a Status Plugin
+INFO:cherrypy.access.14739216:127.0.0.1 - - [03/Oct/2009:19:48:00] "GET /servant@jabber.org/Status HTTP/1.1" 200 48 "http://localhost:8080/" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-us) AppleWebKit/531.0+ (KHTML, like Gecko) Stainless/0.6.5 like Version/4.0 Safari/530.17"
+INFO:cherrypy.access.14739216:127.0.0.1 - - [03/Oct/2009:19:48:00] "GET /favicon.ico HTTP/1.1" 200 1406 "http://localhost:8080/servant@jabber.org/Status" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-us) AppleWebKit/531.0+ (KHTML, like Gecko) Stainless/0.6.5 like Version/4.0 Safari/530.17"
+INFO:root:logging initialized
+INFO:root:hallo test
+INFO:test:hallo dies ist der 2. test
+INFO:test.test2:mensch, ich hoff das klappt jetzt mal

@@ -13,10 +13,11 @@ class Status(PlugIn):
 
         #plugin itself
         self.content = Container("plugin", token, "This is a Status Plugin")
+        self.content.logging = True
 
         # set add container
         self.content.addContainer("cmd", "Buddies", "Show Buddies", self.getBuddies)
-
+        
 
         self.content.addContainer("cmd", "Root", "Show Root Node", self.getRoot)
 
