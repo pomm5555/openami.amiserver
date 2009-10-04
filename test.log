@@ -1,0 +1,37 @@
+filelogging initialized
+hallo dies ist der 2. test
+filelogging initialized
+hallo dies ist der 2. test
+filelogging initialized
+hallo dies ist der 2. test
+filelogging initialized
+hallo dies ist der 2. test
+mensch, ich hoff das klappt jetzt mal
+filelogging initialized
+hallo dies ist der 2. test
+mensch, ich hoff das klappt jetzt mal
+info        : INFO     filelogging initialized
+info        : INFO     hallo dies ist der 2. test
+info.test2  : INFO     mensch, ich hoff das klappt jetzt mal
+info        : INFO     filelogging initialized
+info.Status : INFO     This is a Status Plugin
+info        : INFO     filelogging initialized
+info.Status : INFO     This is a Status Plugin
+info        : INFO     filelogging initialized
+info        : INFO     filelogging initialized
+info.Status : INFO     servant@jabber.org/Status - This is a Status Plugin
+info.Status : INFO     servant@jabber.org/Status - This is a Status Plugin
+info.Status : INFO     servant@jabber.org/Status - This is a Status Plugin
+info.Growl  : INFO     servant@jabber.org/Notification/Growl - this is a growl plugin
+info.Growl  : INFO     servant@jabber.org/Notification/Growl - this is a growl plugin
+info        : INFO     filelogging initialized
+info        : INFO     filelogging initialized
+info        : INFO     filelogging initialized
+info        : INFO     filelogging initialized
+info        : INFO     filelogging initialized
+info        : INFO     filelogging initialized
+info        : INFO     filelogging initialized
+info        : INFO     filelogging initialized
+info        : INFO     filelogging initialized
+info        : INFO     filelogging initialized
+info        : INFO     filelogging initialized

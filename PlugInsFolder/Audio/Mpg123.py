@@ -23,17 +23,15 @@ class Mpg123(PlugIn):
 	self.content.addContainer("cmd", "Stop", "Stop Mpg123", self.stop)
 
     def play(self, text="http://www.munich-radio.de:8000"):
-        text = self.getText(text)
         print text
+        text = self.getText(text)
+
+        print "*** "+text
         print self.getAddress()
         os.system('curl '+text+' | mpg321 - &' )
 
     def stop(self, string=""):
     	os.system('killall mpg321')
-
-    # returns the plugin as a tree
-    def getTree(self):
-        return self.content
 
     # just a little helper function
     def getText(self, var):

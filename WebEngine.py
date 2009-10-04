@@ -25,7 +25,13 @@ class WebServer():
 
     def index(self):
 
-        head = ''' <link rel="stylesheet" type="text/css" href="servant@jabber.org/Filesystem/html/classic.css" /> '''
+        head = ''''''
+        #<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        #<script type="text/javascript"> google.load("jquery", "1.3.2"); </script>
+        #<script src="jqtouch/jqtouch.min.js" type="application/x-javascript" charset="utf-8"></script>
+        #<style type="text/css" media="screen">@import "jqtouch/jqtouch.min.css";</style>
+        #<style type="text/css" media="screen">@import "themes/jqt/theme.min.css";</style>
+        #'''
         
         result = self.root.toHtml()
 	#result = "hallo :D"
@@ -33,6 +39,9 @@ class WebServer():
     index.exposed = True
 
 
+
+    # This part of the program parses the URL which was called by a browser
+    # and calls the use method...
     def default(self, *args, **kwargs):
         
 	addr = ""
@@ -41,15 +50,23 @@ class WebServer():
 
         
         try:
+            print "with parameter"
 	    string = kwargs["string"]
+            print "parsed kwargs"
+            result = self.root.getByAddress(addr[1:]).use(string)
+            print "called use"
 	except:
-	    string = ""
+            print "call without parameter"
+            result = self.root.getByAddress(addr[1:]).use()
+            print "called without parameter"
+            string = ""
 
 
-        result = self.root.getByAddress(addr[1:]).use(string)
+        
         
 	try:
-	    return "+ "+str(type(result))+kwargs.__str__()+" | "+string+"<br/>\n"+result
+            return result
+	    #return "+ "+str(type(result))+kwargs.__str__()+" | "+string+"<br/>\n"+result
 	except:
 	    return "- "+str(type(result))+kwargs.__str__()+"<br/>\n"+string+"<br/>\n"#+result
 	
