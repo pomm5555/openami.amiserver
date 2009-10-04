@@ -14,17 +14,19 @@ __date__ ="$Aug 16, 2009 3:56:03 PM$"
 
 class Container:
 
-    def __init__(self, type, token, information="empty", use=None):
+    def __init__(self, type, token, information="empty", use=None, logging=False):
         self.content = {}
         self.information = information
         self.token = token.replace(" ", "_")
         self.type = type
         self.visible = True
         self.parent = None
-        self.logging = False
+        self.logging = logging
         if use:
             self.setUse(use)
 
+        # bei der initialisierung ist getAddress noch auf token beschraekt weil parent noch nicht besetzt oder so
+        # TODO
         self.collector = Data.getCollector(self.getAddress())
 
         
@@ -149,7 +151,7 @@ class Container:
                 if not v.content == {}:
                     content += "<li class='arrow'><a class='' href='#"+v.getAddress().replace("/", "_").replace("@", "_").replace(".", "_")+"'>"+k+"</a></li>"
                 else:
-                    content += "<li><a class='' target='_blank' href='"+v.getAddress()+"'>"+k+"</a></li>"
+                    content += "<li><a class='' target='_self' href='"+v.getAddress()+"'>"+k+"</a></li>"
             content += "</ul>"
 
             html = "<div id='"+address+"'>"+toolbar+content+"</div>"+result
@@ -163,8 +165,8 @@ class Container:
 
     
     # add container without creating it first, token, information and optionally a method that is triggered.
-    def addContainer(self, type, token, information="empty", use=None):
-        self.addChild(Container(type, token, information))
+    def addContainer(self, type, token, information="empty", use=None, logging=False):
+        self.addChild(Container(type, token, information, logging=logging))
         if use:
             self.getChild(token).setUse(use)
 

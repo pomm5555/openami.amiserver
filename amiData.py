@@ -1,6 +1,7 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 import time
+from amiConfig import Config
 
 
 class Collector:
@@ -13,7 +14,7 @@ class Collector:
 
 class Data:
     type = "file" # file | sqlite
-    file = "logs/data.log"
+    file = Config.get("DataCollector", "file")
     console = "true"
 
     # Collector Factory
