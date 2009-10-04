@@ -19,7 +19,7 @@ class Growl(PlugIn):
         self.content.logging = True
 
         # set add container
-        self.content.addContainer("cmd","Growl", "send growl notification", self.growl)
+        self.content.addContainer("cmd","Growl", "send growl notification", self.growl, logging=True)
 
     def growl(self, text="Notification"):
         text = self.getText(text)

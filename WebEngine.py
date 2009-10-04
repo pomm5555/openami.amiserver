@@ -1,6 +1,7 @@
 import cherrypy, time
 from threading import Thread
 from Address import Address
+from amiConfig import Config
 
 class WebEngine(Thread):
 
@@ -35,12 +36,14 @@ class WebServer():
 
     def index(self):
 
+        addr = Config.get("server", "token")
+
         head = '''
         <script type="text/javascript" src="http://www.google.com/jsapi"></script>
         <script type="text/javascript"> google.load("jquery", "1.3.2"); </script>
-        <script src="servant@jabber.org/Filesystem/html/jqtouch/jqtouch.min.js" type="application/x-javascript" charset="utf-8"></script>
-        <style type="text/css" media="screen">@import "servant@jabber.org/Filesystem/html/jqtouch/jqtouch.min.css";</style>
-        <style type="text/css" media="screen">@import "servant@jabber.org/Filesystem/html/themes/apple/theme.min.css";</style>
+        <script src="'''+addr+'''/Filesystem/html/jqtouch/jqtouch.min.js" type="application/x-javascript" charset="utf-8"></script>
+        <style type="text/css" media="screen">@import "'''+addr+'''/Filesystem/html/jqtouch/jqtouch.min.css";</style>
+        <style type="text/css" media="screen">@import "'''+addr+'''/Filesystem/html/themes/apple/theme.min.css";</style>
         <script type="text/javascript" charset="utf-8">
         $(document).ready(function(){
             $.jQTouch({
@@ -84,38 +87,15 @@ class WebServer():
             print "called without parameter"
             string = ""
 
+
 	try:
-            return result
-	    #return "+ "+str(type(result))+kwargs.__str__()+" | "+string+"<br/>\n"+result
+            if not addr.find("Filesystem")  == -1:
+                return result
+            else:
+                return '<div id="get"><div class="toolbar"><h1>Result</h1><a class="back" href="#">Back</a></div><div class="info">'+result+'</div></div>'
 	except:
 	    return "- "+str(type(result))+kwargs.__str__()+"<br/>\n"+string+"<br/>\n"#+result
     default.exposed = True
-    
-    
-    # This part of the program parses the URL which was called by a browser
-    # and calls the use method... jqtouch style
-#    def default(self, *args, **kwargs):
-#
-#	addr = ""
-#	for elem in args:
-#	    addr += "/"+elem
-#
-#        try:
-#	    string = kwargs["string"]
-#            result = self.root.getByAddress(addr[1:]).use(string)
-#	except:
-#            result = self.root.getByAddress(addr[1:]).use()
-#            string = ""
-#
-#	try:
-#            return '<html><head/><body><div id="get"><div class="toolbar"></div><div class="info">'+result+'</div></div></body></html>'
-#	    #return "+ "+str(type(result))+kwargs.__str__()+" | "+string+"<br/>\n"+result
-#	except:
-#	    return "- "+str(type(result))+kwargs.__str__()+"<br/>\n"+string+"<br/>\n"#+result
-#
-#    default.exposed = True
-
-
 
 
     
