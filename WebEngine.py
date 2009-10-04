@@ -94,7 +94,7 @@ class WebServer():
             else:
                 return '<div id="get"><div class="toolbar"><h1>Result</h1><a class="back" href="#">Back</a></div><div class="info">'+result+'</div></div>'
 	except:
-	    return "- "+str(type(result))+kwargs.__str__()+"<br/>\n"+string+"<br/>\n"#+result
+	    return '<div id="get"><div class="toolbar"><h1>Result</h1><a class="back" href="#">Back</a></div><div class="info">done</div></div>'
     default.exposed = True
 
 
