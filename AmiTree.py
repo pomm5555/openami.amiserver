@@ -132,6 +132,35 @@ class Container:
             return "<ul><li><a href=\""+self.getAddress()+"\">"+self.token+"</a></li>"+result+"</ul>"
         else:
             return ""
+
+    def toJqHtml(self):
+        if self.visible:
+
+            result=""
+            for k, v in self.content.items():
+                result+=v.toJqHtml()
+
+            address = self.getAddress().replace("/", "_").replace("@", "_").replace(".", "_")
+            token = self.token
+
+            toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a></div>"
+            content = "<ul>"#<ul><li><a class="" href="#edge">Edge to Edge</a></li></ul>"
+            for k, v in self.content.items():
+                if not v.content == {}:
+                    content += "<li class='arrow'><a class='' href='#"+v.getAddress().replace("/", "_").replace("@", "_").replace(".", "_")+"'>"+k+"</a></li>"
+                else:
+                    content += "<li><a class='' target='_blank' href='"+v.getAddress()+"'>"+k+"</a></li>"
+            content += "</ul>"
+
+            html = "<div id='"+address+"'>"+toolbar+content+"</div>"+result
+
+            return html
+
+
+
+        else:
+            return ""
+
     
     # add container without creating it first, token, information and optionally a method that is triggered.
     def addContainer(self, type, token, information="empty", use=None):
