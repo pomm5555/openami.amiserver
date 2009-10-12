@@ -1,8 +1,9 @@
-import os.path
-import os
+from EventProcessing import Behavior
+import os, re
 from AmiTree import Container
 from PlugIn import PlugIn
 from amiConfig import Config
+from EventProcessing import *
 
 class Filesystem(PlugIn):
 
@@ -23,9 +24,15 @@ class Filesystem(PlugIn):
             
 
     def file(self, string=""):
-        f =  open(self.information)
-        return f.read()
-        #return self.information
+
+        if re.match(".*?\.mp3", self.information):
+            return Formatter.ajax("MP3", Behavior.audio(self.information))
+
+        if re.match(".*?\.log", self.information) or re.match(".*?\.properties", self.information):
+            return Formatter.ajax("TXT", Behavior.text(self.information))
+
+        else:
+            return Behavior.text(self.information)
 
 
     # returns the plugin as a tree

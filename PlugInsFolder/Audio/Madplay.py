@@ -3,7 +3,7 @@
 # growlnotify -m "hallo" -t "hallo"
 
 
-import os
+import os, re
 from AmiTree import Container
 from PlugIn import PlugIn
 
@@ -12,7 +12,7 @@ class Madplay(PlugIn):
 
     def __init__(self, token, configFile):
         PlugIn.__init__(self)
-        self.architecture = "openwrt"
+        self.architecture = "all"
 
         #plugin itself
         self.content = Container("plugin", token, "This is a Madplay Plugin")
@@ -28,7 +28,12 @@ class Madplay(PlugIn):
     def play(self, text="http://www.munich-radio.de:8000"):
         text = self.getText(text) 
         print text
-        os.system('curl "'+text+'" | madplay - &' )
+        if re.match(".*?\.mp3", text):
+            os.system("madplay \""+text+"\"")
+            return "Playing File: "+text
+        else:
+            os.system('curl "'+text+'" | madplay - &' )
+            return "Playing Stream: "+text
 
     def stop(self, string=""):
     	os.system('killall madplay')
@@ -44,3 +49,4 @@ class Madplay(PlugIn):
             return test
         except:
             return var
+
