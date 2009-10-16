@@ -26,8 +26,9 @@ class Madplay(PlugIn):
 	self.content.addContainer("cmd", "Stop", "Stop Madplay", self.stop)
 
     def play(self, text="http://www.munich-radio.de:8000"):
-        text = self.getText(text) 
-        print text
+        print "trying to play: >"+str(text)+"<"
+        text = self.getText(text)
+        print "trying to play:"+text
         if re.match(".*?\.mp3", text):
             os.system("madplay \""+text+"\"")
             return "Playing File: "+text
