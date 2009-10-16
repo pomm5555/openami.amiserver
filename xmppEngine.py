@@ -32,8 +32,6 @@ class XMPPEngine:
 
         self.root = root
 
-        
-
 	# last time ping was sent, initialisation
 	self.last_time = 0
 	self.keepalive = 60
@@ -85,7 +83,7 @@ class XMPPEngine:
 	    delta = now - self.last_time
 	    if delta>self.keepalive:
 	    	#self.client.send(' ')
-		self.client.sendPresence(self.jid, "can i send a message here?")
+		self.client.sendPresence("\n")
 		print "sent some presence"
                 self.last_time = now
 	except Exception,e:
@@ -170,22 +168,7 @@ class XMPPEngine:
     </packet>'''
                 self.send(help, sender)
 
-            elif addr.isAddress():
-                print " parsing as address command: "+addr.__str__()
-                print " with data: >"+addr.string+"<"
-                try:
-                    if addr.string.__len__() == 0:
-                        result = self.root.getByAddress(addr.__str__()).use()
-                    else:
-                        result = self.root.getByAddress(addr.__str__()).use(addr.string)
-                    self.send(result, sender)
-                    print " "+str(result)
-                except Exception, e:
-                    self.send("[ERROR] "+content+" is not a valid address.", sender)
-                    print "[ERROR] "+str(e)
 
-            elif content[0:1].__eq__("#"):
-                print "parsing as comment"
 
 
             elif content[0:1].__eq__("*"):
@@ -207,27 +190,56 @@ class XMPPEngine:
                     if not elem.lower().find(searchstring.lower()) == -1:
                         result.append(elem)
 
+                print result, result.__len__()
+
                 # if there is only one address resulting, execute it
                 if result.__len__() == 1:
-                    answer = " executing: "+result[0]
-                    try:
+                    answer = " executing: "+result[0][5:]
+                    #try:
+                    if True:
                         if datastring.__len__() == 0:
-                            tmp = str(self.root.getByAddress(result[0]).use())
+                            tmp = str(self.root.getByAddress(result[0][5:]).use())
                         else:
-                            tmp = str(self.root.getByAddress(result[0]).use(datastring))
+                            tmp = str(self.root.getByAddress(result[0][5:]).use(datastring))
 
                         if not tmp == None:
                             answer+="\n"+str(tmp)
 
                         self.send(answer, sender)
-                    except Exception, e:
-                        print "[ERROR] "+str(e)
+                    #except Exception, e:
+                    #    print "[SEARCH PARSE ERROR] "+str(e)
 
                 # otherwise return result to sender
                 else:
                     for elem in result:
-                        answer += elem+"\n"
+                        answer += elem[5:]+"\n"
                     self.send(answer, sender)
+
+
+
+            elif addr.isAddress():
+                print " parsing as address command: "+addr.__str__()
+                print " with data: >"+addr.data+"<"
+                try:
+                    if addr.data.__len__() == 0:
+                        #print "call address WITHOUT parameter"
+                        result = self.root.getByAddress(addr.__str__()).use()
+                    else:
+                        #print "call address WITH parameter"
+                        result = self.root.getByAddress(addr.__str__()).use(addr.data)
+                    if not result == None:
+                        self.send(result, sender)
+                        
+                    print " "+str(result)
+                except Exception, e:
+                    self.send("[ADDRESS XMPP ERROR] "+content+" is not a valid address.", sender)
+                    print "[ADDRESS XMPP ERROR] "+str(e)
+
+            elif content[0:1].__eq__("#"):
+                print "parsing as comment"
+
+
+
 
 
 
@@ -258,7 +270,7 @@ class XMPPEngine:
     def stepOn(self, conn):
         try:
             self.client.Process(1)
-            print time.strftime("%Y-%m-%d %H:%M:%S")+" is connected"
+            #print time.strftime("%Y-%m-%d %H:%M:%S")+" is connected"
             self.pingJabber()
 	    if not self.client.isConnected():
                 print ">>>>DISCONNECT in stepOn<<<<"

@@ -2,12 +2,19 @@ import re
 from amiConfig import Config
 
 def main():
-    a = Address("/test")
-    print a.tokens
-    print a.string
-    print a
-    if a.isAddress():
-        print "we habe a packet"
+    adl= ('/test',
+          'ami.client@jabber.org/test some data which can be got from Address.data',
+          'servant@jabber.org',
+          'was weiss ich')
+          
+    for elem in adl:
+        a = Address(elem)
+        print a.data
+        print a.__str__()
+        if a.isAddress():
+            print "we have an Address\n\n\n\n"
+        else:
+            print "address is not valid\n\n\n"
 
 
 class Address:
@@ -15,26 +22,22 @@ class Address:
     def __init__(self, addr):
 
         self.tokens = []
-        self.string = ""
+        self.data = ""
         self.valid = False
         
         patLocal = re.compile(r"^(/\w+)+.*")
-        patAbs = re.compile(r"\w*@\w*.\w{2,4}(/\w+)*.*")
+        patAbs = re.compile(r".*?@\w*.\w{2,4}(/\w+)*.*")
 
         # parse absolute addressed address
         if not patAbs.match(addr) == None:
 
-            # has string
+            # has data
             if not addr.find(" ")==-1:
-                print "packet has string"
-                self.string = addr[addr.find(" ")+1:]
+                self.data = addr[addr.find(" ")+1:]
                 addr = addr[:addr.find(" ")]
-                print self.string
 
             # fill tokens
             self.tokens = addr.split("/")
-            print "address tokens: ",
-            print self.tokens
 
             # set packet valid
             self.valid = True
@@ -42,9 +45,9 @@ class Address:
 
         # parse local addressed address
         elif not patLocal.match(addr) == None:
-            # has string
+            # has data
             if not addr.find(" ")==-1:
-                self.string = addr[addr.find(" ")+1:]
+                self.data = addr[addr.find(" ")+1:]
                 addr = addr[:addr.find(" ")]
 
             #fill tokens
@@ -53,8 +56,6 @@ class Address:
 
             # set packet valid
             self.valid = True
-
-
 
 
     def __str__(self):

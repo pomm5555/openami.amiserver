@@ -22,6 +22,7 @@ class Container:
         self.visible = True
         self.parent = None
         self.logging = logging
+        self.addresslist = None
         if use:
             self.setUse(use)
 
@@ -103,7 +104,6 @@ class Container:
     def returnTree(self, i):
 
         ret = ""
-
         for elem in range(0,i):
                 ret += "-"
 
@@ -137,7 +137,6 @@ class Container:
 
     def toJqHtml(self):
 
-
         if self.visible and not self.content == {}:
 
             result=""
@@ -160,8 +159,6 @@ class Container:
 
             return html
 
-
-
         else:
             return ""
 
@@ -174,23 +171,26 @@ class Container:
 
 
     def getAddressList(self):
-        result = []
-        #print self.visible
-        for k,v in self.content.items():
-            if v.visible:
-                result += v.getAddressList()
+        if not self.addresslist:
+            result = []
+            #print self.visible
+            for k,v in self.content.items():
+                if v.visible:
+                    result += v.getAddressList()
 
-        # if result list is empty, its a leaf
-        if not result:
-            result.append(self.token)
-            return result
+            # if result list is empty, its a leaf
+            if not result:
+                result.append(self.token)
+                return result
 
-        # it is not a leaf...
-        addressList = []
-        for elem in result:
-            addressList.append(self.token+"/"+elem)
+            # it is not a leaf...
+            addressList = []
+            for elem in result:
+                addressList.append(self.token+"/"+elem)
 
-        return addressList
+            self.addresslist = addressList
+            return addressList
+        return self.addresslist
 
 
     def root(self):
