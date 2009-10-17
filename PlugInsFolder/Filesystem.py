@@ -64,22 +64,22 @@ class Filesystem(PlugIn):
 
         # get all elements in folder into list
         folder =  os.listdir(Path)
-        print folder
+        #print folder
 
         result = []
 
         for elem in folder:
             # add folders as plugin
             # if dir
-            print Path+"/"+elem
+            #print Path+"/"+elem
             if os.path.isdir(Path+"/"+elem):
-                print "### loding folder: "+elem
+                #print "### loding folder: "+elem
                 tmpcont = Container("folder", elem, "this is the tree representation of a folder")
                 tmpcont.addChildList(self.loadFilesystemFolder(Path+"/"+elem))
                 result.append(tmpcont)
             #if file
             else:
-                print "### adding file: "+Path+"/"+elem
+                #print "### adding file: "+Path+"/"+elem
                 result.append(Container("cmd", elem, Path+"/"+elem, self.file))
                 
         return result
