@@ -43,8 +43,8 @@ class PlugIns:
 
         # get all elements in folder into list
         pluginFiles =  os.listdir(PluginsPath)
-        print pluginFiles
-        print PluginsPath, PackagePath
+        #print pluginFiles
+        #print PluginsPath, PackagePath
 
         result = []
 

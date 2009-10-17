@@ -38,7 +38,7 @@ def disconnectHandler(self):
 
 def stepOn(conn):
     try:
-        print "checking connection"
+        #print "checking connection"
         if not cl.isConnected():
             print "trying reconnect..."
             cl.reconnectAndReauth()
@@ -56,18 +56,22 @@ def send(msg, sender):
 
 
 def main():
-    print "Š"
-
     print "start"
     global recipient
 
-    jid="servant@jabber.org"
-    pwd="servantjabbers"
+    try:
+        jid=sys.argv[1]
+	print "jid="+jid
+        pwd=sys.argv[2]
+	print "pwd="+pwd
+    except:
+        print "wrong arguments: right is: [jid] [password]"
+	sys.exit(0)
 
     jid=xmpp.protocol.JID(jid)
 
     global cl
-    cl = xmpp.Client(jid.getDomain(), debug=[])
+    cl = xmpp.Client(jid.getDomain())
     
     print "cl defiend, trying to connect"
 

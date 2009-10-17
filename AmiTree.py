@@ -192,6 +192,8 @@ class Container:
             return addressList
         return self.addresslist
 
+    def parent(self):
+        return self.parent
 
     def root(self):
         if self.parent:
