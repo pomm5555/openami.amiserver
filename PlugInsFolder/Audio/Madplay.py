@@ -29,11 +29,11 @@ class Madplay(PlugIn):
         print "trying to play: >"+str(text)+"<"
         text = self.getText(text)
         print "trying to play:"+text
-        if re.match(".*?\.mp3", text):
-            os.system("madplay \""+text+"\"")
+        if re.match("^http://.*?", text):
+            os.system('curl "'+text+'" | madplay - &' )
             return "Playing File: "+text
         else:
-            os.system('curl "'+text+'" | madplay - &' )
+            os.system("madplay \""+text+"\"")
             return "Playing Stream: "+text
 
     def stop(self, string=""):
