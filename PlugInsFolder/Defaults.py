@@ -19,10 +19,13 @@ class Defaults(PlugIn):
         for pair in Config.getSection("Defaults"):
             self.content.addContainer("cmd", pair[0], pair[1], self.general)
 
-    def general(self, string=""):
-        string = self.getText(string)
+    def general(self, string=None):
         address = Address(self.information)
-    	EventEngine.root.getByAddress(address.__str__()).use(string)
+        if not string:
+            return EventEngine.root.getByAddress(address.__str__()).use()
+        
+        string = self.getText(string)
+    	return EventEngine.root.getByAddress(address.__str__()).use(string)
 
     # returns the plugin as a tree
     def getTree(self):

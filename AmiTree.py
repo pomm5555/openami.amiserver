@@ -227,6 +227,7 @@ class ThreadContainer(Thread, Container):
     def __init__(self, type, token, information="empty"):
         Thread.__init__(self, None)
         Container.__init__(self, type, token, information)
+        self.daemon = True
 
 
     def setDo(self, method):
@@ -238,12 +239,14 @@ class ThreadContainer(Thread, Container):
         pass
 
 class BuddyContainer(Container):
-    def __init__(self, type, token, information, client):
+    def __init__(self, type, token, information, send):
         Container.__init__(self, type, token, information)
-        self.client = client
+        self.send = send
 
     def use(self, msg=""):
-        self.client.send(xmpp.protocol.Message(self.token, self.token+"/"+self.information+" "+msg))
+        message=self.token+"/"+self.information+" "+msg
+        print 'sending: '+message
+        self.send(message, self.token)
 
     def getByAddress(self, address):
         #print "+++++"+address

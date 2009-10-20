@@ -326,7 +326,7 @@ class XMPPEngine:
             if not self.rosterTree.has_key(elem) and not elem.__eq__(Config.get("jabber", "jid")):
                 self.rosterTree[elem]=elem
                 self.send("#type help to explore me.", elem)
-                self.root.addChild(BuddyContainer("buddy", str(elem), "Buddy, maybe over the sea...", self.client))
+                self.root.addChild(BuddyContainer("buddy", str(elem), "Buddy, maybe over the sea...", self.send))
 
                 print elem
 
