@@ -6,7 +6,9 @@ class Behavior():
     @staticmethod
     def audio(string):
         address = Address('/Defaults/audioplay')
-    	EventEngine.root.getByAddress(address.__str__()).use(string)
+    	result = EventEngine.root.getByAddress(address.__str__()).use(string)
+        print "result from behavior audio: "+result
+        return result
 
     @staticmethod
     def text(file):
@@ -19,6 +21,8 @@ class Formatter():
     @staticmethod
     def ajax(head, string):
         #return 'ajaxreturn'
+        if not string:
+            string = ""
 	return '<div id="get"><div class="toolbar"><h1>'+head+'</h1><a class="back" href="#">Back</a></div><div class="info" style="text-align: left; ">'+string.replace("\n","<br/>\n")+'</div></div>'
 
 
