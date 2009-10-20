@@ -1,6 +1,7 @@
 import os, re
 from AmiTree import Container
 from PlugIn import PlugIn
+from amiConfig import Config
 
 class PowerSwitch(PlugIn):
 
@@ -28,8 +29,11 @@ class PowerSwitchContainer(Container):
             address = self.getAddress().replace("/", "_").replace("@", "_").replace(".", "_")
             token = self.token
 
+            on=Config.jid+'/Defaults/audioplay'
+            off=Config.jid+'/Defaults/audiostop'
+
             toolbar = '<div class="toolbar"><h1>'+token+'</h1><a class="back" href="#">Back</a></div>'
-            content = '<ul><li>Lamp 1<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get(\'servant@jabber.org/Defaults/audioplay\');else $.get(\'servant@jabber.org/Defaults/audiostop\');"/></span></li></ul>'
+            content = '<ul><li>Lamp 1<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get(\''+on+'\');else $.get(\''+off+'\');"/></span></li></ul>'
                                                                             #if(this.checked)alert(\'hallo\')
             html = "<div id='"+address+"'>"+toolbar+content+"</div>"+result
 
