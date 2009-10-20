@@ -1,6 +1,0 @@
-setup.py
-AmiCe.egg-info/PKG-INFO
-AmiCe.egg-info/SOURCES.txt
-AmiCe.egg-info/dependency_links.txt
-AmiCe.egg-info/requires.txt
-AmiCe.egg-info/top_level.txt
