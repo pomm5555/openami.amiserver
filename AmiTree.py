@@ -227,7 +227,7 @@ class ThreadContainer(Thread, Container):
     def __init__(self, type, token, information="empty"):
         Thread.__init__(self, None)
         Container.__init__(self, type, token, information)
-        self.daemon = True
+	self.daemon = True
 
 
     def setDo(self, method):

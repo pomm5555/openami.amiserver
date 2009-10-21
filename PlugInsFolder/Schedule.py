@@ -28,27 +28,29 @@ class Schedule(PlugIn):
 
         d = Config.getSection("Scheduler")
 
-        while True:
+	if not d == []:
+            #print d
+            while True:
 
-            sleeptime = None
-            for elem in d:
-                rhythm = eval(elem[0])
-                # when has the thread to wake up next time for specific value?
-                tmp = rhythm - round(time.time()) % rhythm
-                if not sleeptime:
-                    sleeptime = tmp
-                if sleeptime > tmp:
-                    sleeptime = tmp
+                sleeptime = None
+                for elem in d:
+                    rhythm = eval(elem[0])
+                    # when has the thread to wake up next time for specific value?
+                    tmp = rhythm - round(time.time()) % rhythm
+                    if not sleeptime:
+                        sleeptime = tmp
+                    if sleeptime > tmp:
+                        sleeptime = tmp
 
-            time.sleep(sleeptime)
+                time.sleep(sleeptime)
 
-            execute = []
-            for elem in d:
-                rhythm = eval(elem[0])
-                if rhythm - round(time.time()) % rhythm == rhythm:
-                    execute.append(elem)
+                execute = []
+                for elem in d:
+                    rhythm = eval(elem[0])
+                    if rhythm - round(time.time()) % rhythm == rhythm:
+                        execute.append(elem)
 
-            for elem in execute:
-                addr = Address(elem[1])
-                print addr.__str__()
-                print EventEngine.root.getByAddress(addr.__str__()).use()
+                for elem in execute:
+                    addr = Address(elem[1])
+                    print addr.__str__()
+                    print EventEngine.root.getByAddress(addr.__str__()).use()
