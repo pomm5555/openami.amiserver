@@ -12,6 +12,7 @@ use:
 to install...
 
 '''
+print os.path.abspath(".")
 abs_path = os.path.abspath(".")
 name='amiServerd'
 pid_dir=abs_path+'/run'
@@ -47,6 +48,7 @@ def stat():
 
 def start_event_engine():
     print "starting event engine..."
+    Config.absPath = abs_path
     e = EventEngine(abs_path)
 
 

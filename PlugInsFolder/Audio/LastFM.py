@@ -1,5 +1,5 @@
 import os
-from AmiTree import Container
+from AmiTree import *
 from PlugIn import PlugIn
 from amiConfig import Config
 
@@ -34,6 +34,9 @@ class LastFM(PlugIn):
         playlist = Container("cmd","Playlist","playlist")
         library = Container("cmd","Library","Library")
         neighbours = Container("cmd","Neighbours","neighbours")
+        similar = Container("cmd","Similar","Play similar artist")
+
+
 
         love.setUse(self.love)
         skip.setUse(self.skip)
@@ -42,6 +45,7 @@ class LastFM(PlugIn):
         playlist.setUse(self.playlist)
         library.setUse(self.library)
         neighbours.setUse(self.neighbours)
+        similar.setUse(self.similar)
 
         self.content.addChild(love)
         self.content.addChild(ban)
@@ -50,6 +54,10 @@ class LastFM(PlugIn):
         self.content.addChild(playlist)
         self.content.addChild(library)
         self.content.addChild(neighbours)
+        self.content.addChild(similar)
+
+        # UI Elements
+        self.content.addChild(TextfieldContainer("ui", "SimilarArtist", "PlaySimilarArtiest", target=Config.jid+"/Audio/LastFM/Similar"))
 
     def stop(self,var):
         print "Stop"
@@ -79,6 +87,13 @@ class LastFM(PlugIn):
     def skip(self,var):
         print "LastFm Skip"
         os.system("echo 'skip' | nc " + host + " " + port)
+
+    def similar(self, artist):
+        print "LastFm similar"
+        # lastfm://artist/cher/similarartists
+        os.system("echo 'play lastfm://artist/"+artist+"/similarartists' | nc " + host + " " + port)
+
+
 
 
     # just a little helper function
