@@ -14,7 +14,8 @@ class Collector:
 
 class Data:
     type = "file" # file | sqlite
-    file = Config.get("DataCollector", "file")
+    file = Config.absPath+"/"+Config.get("DataCollector", "file")
+    print Config.absPath+"/"+Config.get("DataCollector", "file")
     console = "true"
 
     # Collector Factory

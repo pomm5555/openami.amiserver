@@ -39,7 +39,7 @@ class Config:
     #podcasts = config.get('FeedReader', 'Podcasts')
 
     # get path to script
-    absPath = ""#os.path.abspath(".")
+    absPath = os.path.abspath(".")
 
     @staticmethod
     def get(section, option):

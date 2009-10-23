@@ -6,14 +6,17 @@ from WebEngine import *
 
 class EventEngine:
 
-    configFile = 'server.properties'
-    root = Container("root", "root", "this is the root node")
 
     def __init__(self, absPath):
 
-        Config.absPath = absPath
-        print ">"+absPath+"<"
-        print ">"+Config.absPath+"<"
+        #Config.absPath = absPath
+        #print ">"+absPath+"<"
+        #print ">"+Config.absPath+"<"
+
+        EventEngine.configFile = 'server.properties'
+        EventEngine.root = Container("root", "root", "this is the root node")
+
+
 
         #print "initializing EventEngine..."
         EventEngine.root.addContainer("instance", Config.jid, "this is the tree instance "+Config.jid)

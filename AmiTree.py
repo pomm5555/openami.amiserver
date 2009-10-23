@@ -147,12 +147,19 @@ class Container:
             token = self.token
 
             toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a></div>"
-            content = "<ul>"#<ul><li><a class="" href="#edge">Edge to Edge</a></li></ul>"
+            content = "<ul>"
             for k, v in self.content.items():
                 if not v.content == {}:
                     content += "<li class='arrow'><a class='' href='#"+v.getAddress().replace("/", "_").replace("@", "_").replace(".", "_")+"'>"+k+"</a></li>"
                 else:
-                    content += "<li><a class='' target='_self' href='"+v.getAddress()+"'>"+k+"</a></li>"
+                    test = None
+                    try: #TODO better error handling, when method toJqHtmlElement throws error, no exception is be thrown
+                        test = v.toJqHtmlElement
+                    except AttributeError:
+                        content += "<li><a class='' target='_self' href='"+v.getAddress()+"'>"+k+"</a></li>"
+                    if test:
+                        content += v.toJqHtmlElement()
+
             content += "</ul>"
 
             html = "<div id='"+address+"'>"+toolbar+content+"</div>"+result
@@ -268,4 +275,30 @@ class loggingContainer(Container):
         return result
 
 
+class SwitchContainer(Container):
+
+    def __init__(self, type, token, information="empty", use=None, logging=False, on=None, off=None):
+        Container.__init__(self, type, token, information="empty", use=None, logging=False)
+        self.on = on
+        self.off = off
+
+    def toJqHtmlElement(self):
+        if self.visible:
+            content = '<li>'+self.token+'<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get(\''+self.on+'\');else $.get(\''+self.off+'\');"/></span></li>'
+            return content
+        else:
+            return ""
         
+class TextfieldContainer(Container):
+
+    def __init__(self, type, token, information="empty", use=None, logging=False, target=None):
+        Container.__init__(self, type, token, information="empty", use=None, logging=False)
+        self.target = target
+
+    def toJqHtmlElement(self):
+        if self.visible:
+            content = '<li><input type="text" name="'+self.token+'" placeholder="'+self.token+'" id="sole_name" onBlur="$.get(\''+self.target+'?string=\'+$(this).val());"/></li>'
+            return content
+        else:
+            return ""
+
