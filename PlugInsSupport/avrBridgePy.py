@@ -99,12 +99,12 @@ if __name__ == "__main__":
 #        time.sleep(1)
 
     # GPIO Input TEST
-    cache = 1
-    while True:
-        value = (mega.getPortPin(1,0)+1)%2
-        if not cache == value:
-            cache = value
-            print value
+#    cache = 1
+#    while True:
+#        value = (mega.getPortPin(1,0)+1)%2
+#        if not cache == value:
+#            cache = value
+#            print value
 
 
     # ADC TEST
