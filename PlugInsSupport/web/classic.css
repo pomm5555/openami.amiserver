@@ -1,0 +1,10 @@
+/* @override http://192.168.178.34:8080/classic.css */
+
+ul {
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+a {
+	color: red;
+	
+}
