@@ -17,14 +17,20 @@ class LastFM(PlugIn):
         # hide Plugin from showing up in xml, search, show...
         self.content.visible = True
 
-        for pair in Config.getSection("LastFM"):
-            global user,host,port
-            if (pair[0] == "user"):
-                user = pair[1]
-            if (pair[0] == "host"):
-                host = pair[1]
-            if (pair[0] == "port"):
-                port = pair[1]
+        global user, host, port
+        user = Config.get("LastFM", "user")
+        host = Config.get("LastFM", "host")
+        port = Config.get("LastFM", "port")
+
+
+        #for pair in Config.getSection("LastFM"):
+        #    global user,host,port
+        #    if (pair[0] == "user"):
+        #        user = pair[1]
+        #    if (pair[0] == "host"):
+        #        host = pair[1]
+        #    if (pair[0] == "port"):
+        #        port = pair[1]
 
         print user,host,port
         love = Container("cmd","Love","love")

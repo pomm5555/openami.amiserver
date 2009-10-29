@@ -1,5 +1,5 @@
 from xmppEngine import *
-from PlugIns import PlugIns
+from plugLoder import PlugIns
 from amiConfig import Config
 from AmiTree import Container
 from WebEngine import *
@@ -9,14 +9,8 @@ class EventEngine:
 
     def __init__(self, absPath):
 
-        #Config.absPath = absPath
-        #print ">"+absPath+"<"
-        #print ">"+Config.absPath+"<"
-
         EventEngine.configFile = 'server.properties'
         EventEngine.root = Container("root", "root", "this is the root node")
-
-
 
         #print "initializing EventEngine..."
         EventEngine.root.addContainer("instance", Config.jid, "this is the tree instance "+Config.jid)
@@ -40,29 +34,29 @@ class EventEngine:
             print "starting webEngine"
             webserver = WebEngine(EventEngine.root)
 
-        print EventEngine.root.printTree(0)
+        #print EventEngine.root.printTree(0)
 
 
         print "end"
 
-    def loadPlugins(self):
-
-        # - Load system plugin
-
-        p = PlugIns(Config.plugInsFolder, configFile)
-        plugins = p.getTree()
-
-        print plugins.printTree(0)
-        print "---------------------"
-        print plugins.getAddressList()
-        print "----------------------"
-
-
-        print "Plugins loaded sucessfully."
-        return plugins
-
-
-    def updateAddressCache(self):
-        EventEngine.root.me.addressIndex = EventEngine.root.me.getAddressList()
+    #def loadPlugins(self):
+#
+ #       # - Load system plugin
+##
+#        p = PlugIns(Config.plugInsFolder, configFile)
+#        plugins = p.getTree()
+#
+ #       print plugins.printTree(0)
+ #       print "---------------------"
+ ##       print plugins.getAddressList()
+ #       print "----------------------"
+#
+#
+#        print "Plugins loaded sucessfully."
+#        return plugins
+#
+#
+#    def updateAddressCache(self):
+#        EventEngine.root.me.addressIndex = EventEngine.root.me.getAddressList()
 
 
