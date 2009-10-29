@@ -12,14 +12,13 @@ use:
 to install...
 
 '''
-
+print os.path.abspath(".")
 abs_path = os.path.abspath(".")
 name='amiServerd'
 pid_dir=abs_path+'/run'
 stdin=abs_path+'/logs'
 stdout=abs_path+'/logs'
 stderr=abs_path+'/logs'
-
 
 def run():
     daemon = Daemon(name, pid_dir, stdin, stdout, stderr)
@@ -49,7 +48,8 @@ def stat():
 
 def start_event_engine():
     print "starting event engine..."
-    e = EventEngine()
+    Config.absPath = abs_path
+    e = EventEngine(abs_path)
 
 
 def display_help():

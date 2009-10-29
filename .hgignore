@@ -1,6 +1,10 @@
 syntax: glob
 *.pyc
 *.properties
-^logs/
-^PlugInsFolder/
-^run/
+*.mp3
+
+syntax: regexp
+^logs
+^run
+^PlugInsSupport/sound
+^playground
