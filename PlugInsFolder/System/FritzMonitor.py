@@ -1,9 +1,7 @@
 
 from AmiTree import *
 from PlugIn import PlugIn
-from CommunicationEngine import CommunicationEngine
 from amiConfig import Config
-from ctypes import cdll, c_int
 from EventEngine import EventEngine
 from Address import Address
 import time, socket
@@ -45,7 +43,7 @@ class callmonitorContainer(ThreadContainer):
 
     def simpleHandler(self, d):
 
-        address = Address("/Defaults/Notification")
+        address = Address("/Defaults/notification")
 
         """a very simple handler for incoming calls, prints to stdout"""
         if d[1] == 'RING':
@@ -58,20 +56,49 @@ class callmonitorContainer(ThreadContainer):
             print 'Call ended!'
             #EventEngine.root.getByAddress(address.__str__()).use('Call ended!')
 
+        self.log.append("<br/>\n"+d.__str__())
+
     def __init__(self, type, token, information="empty"):
         ThreadContainer.__init__(self, type, token, information="empty")
         self.information = "hehehehe, callmonitor"
         self.handler = self.simpleHandler
+
+        self.log = []
+        self.log.append("Call Monitor Log:")
+
 
 
     def run(self):
         host='fritz.box'
         port=1012
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((host, port))
-        while 1:
-            line = s.recv(1024)
-            if not line:
-                break
-            self.handler(line.strip().split(';'))
-        s.close()
+        try:
+            s.connect((host, port))
+            while 1:
+                line = s.recv(1024)
+                if not line:
+                    break
+                self.handler(line.strip().split(';'))
+                time.sleep(1)
+            s.close()
+        except:
+            print "[SOCKET ERROR]"
+
+    def toHtml(self):
+        if self.visible:
+            result=""
+            for k, v in self.content.items():
+                result+=v.toHtml()
+
+            #if result.__eq__(""):
+            #    return "<li><a href=\""+self.getAddress()+"\">"+self.token+"</a>"+result+"</li>"
+            return "<ul><li><a href=\""+self.getAddress()+"\">"+self.token+"</a> L</li>"+result+"</ul>"
+            
+        else:
+            return ""
+
+    def use(self, string=""):
+        result = ""
+        for elem in self.log:
+            result += "\n"+elem
+        return result

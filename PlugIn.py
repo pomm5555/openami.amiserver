@@ -11,8 +11,10 @@ __date__ ="$Aug 16, 2009 3:48:26 PM$"
 class PlugIn:
 
     def __init__(self):
+        self.content = None
         self.architecture = "all"
 
     def getTree(self):
-        pass
+        return self.content
+
 
