@@ -1,6 +1,6 @@
 # coding: utf-8
 
-import xmpp, time
+import xmppony, time
 from Packets.Packet import Packet
 from amiConfig import Config
 from Address import Address
@@ -11,11 +11,8 @@ class XMPPEngineStart(Thread):
     def __init__(self, root):
         Thread.__init__(self)
 	self.root = root
-	self.setDaemon(True)
+	self.setDaemon(False)
 	self.start()
-	#while 1:
-	#    print "running xmppEngine"
-	#    time.sleep(5)
 
     def run(self):
         XMPPEngine(self.root)
@@ -36,8 +33,8 @@ class XMPPEngine:
 	self.last_time = 0
 	self.keepalive = 60
 
-        self.jid=xmpp.protocol.JID(Config.jid)
-        self.client = xmpp.Client(self.jid.getDomain(), debug=[])
+        self.jid=xmppony.protocol.JID(Config.jid)
+        self.client = xmppony.Client(self.jid.getDomain(), debug=[])
 
         #define static attribute client
         XMPPEngine.client = self.client
@@ -68,7 +65,7 @@ class XMPPEngine:
         #GROUPCHAT
         room = Config.groupChat+"@"+Config.groupServer+"/"+Config.jid.split("@")[0]
         print "Joining groupchat: " + room
-        self.client.send(xmpp.Presence(to=room))
+        self.client.send(xmppony.Presence(to=room))
 
         print "Communicationengine is online, or should be... #TODO" #TODO
 
@@ -264,8 +261,8 @@ class XMPPEngine:
         prs_type=msg.getType()
         who=msg.getFrom()
         if prs_type == "subscribe":
-            self.client.send(xmpp.Presence(to=who, typ = 'subscribed'))
-            self.client.send(xmpp.Presence(to=who, typ = 'subscribe'))
+            self.client.send(xmppony.Presence(to=who, typ = 'subscribed'))
+            self.client.send(xmppony.Presence(to=who, typ = 'subscribe'))
 
     def stepOn(self, conn):
         try:
@@ -288,7 +285,7 @@ class XMPPEngine:
     # deprecated, you can send now directly via plugin tree
     # or only for internal use
     def send(self, msg, receiver):
-        self.client.send(xmpp.protocol.Message(receiver, msg.decode("iso-8859-1")))
+        self.client.send(xmppony.protocol.Message(receiver, msg.decode("iso-8859-1")))
 
 
     def packetHandler(self, message, sender):

@@ -20,7 +20,7 @@ groupServer=conference.jabber.org
 [server]
 token=geheim@jabber.org
 information=Root Container
-architecture=macos
+architecture=openwrt
 # on/off
 jabber=off
 web=on
@@ -46,16 +46,16 @@ ScriptPath=/Users/markus/fast/tunes.sh
 ####################################################################################
 
 [avrBridge]
-lib=/PlugInsSupport/libavrBridgeC.dylib
+lib=/PlugInsSupport/libavrBridgeC.so
 
 
 
 ####################################################################################
 
 [Defaults]
-AudioPlay=/Audio/Mpg123/Play
-AudioStop=/Audio/Mpg123/Stop
-SetVol=/System/Finder/SetVol
+AudioPlay=/Audio/Madplay/Play
+AudioStop=/Audio/Madplay/Stop
+SetVol=/System/Openwrt/SetVol
 Notification=/Notification/Prowly/Prowl
 
 
@@ -80,3 +80,12 @@ html=PlugInsSupport/web
 
 [DataCollector]
 file=logs/datacollector.log
+
+
+[Scheduler]
+
+[LastFM]
+user=evel
+host=192.168.178.34
+port=2323
+
