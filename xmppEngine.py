@@ -330,4 +330,5 @@ class XMPPEngine:
 if __name__ == "__main__":
     root = Container("root", "root", "this is the root node")
     jabber = XMPPEngineStart(root)
-    time.sleep(1)
+    while True:
+        time.sleep(1)

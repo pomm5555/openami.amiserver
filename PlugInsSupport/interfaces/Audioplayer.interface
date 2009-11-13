@@ -1,0 +1,23 @@
+<div id="get">
+    <div class="toolbar">
+        <h1>Test interface #1</h1>
+        <a class="back" href="#">Back</a>
+    </div>
+<div class="info" style="text-align: left; ">
+
+    <a onclick="$.get('_JID_/Defaults/setvol?string=10');">vol 10</a><br/>
+    <a onclick="$.get('_JID_/Defaults/setvol?string=20');">vol 20</a><br/>
+    <a onclick="$.get('_JID_/Defaults/setvol?string=30');">vol 30</a><br/>
+    <a onclick="$.get('_JID_/Defaults/setvol?string=40');">vol 40</a><br/>
+    <a onclick="$.get('_JID_/Defaults/setvol?string=50');">vol 50</a><br/>
+    <a onclick="$.get('_JID_/Defaults/setvol?string=60');">vol 60</a><br/>
+    <a onclick="$.get('_JID_/Defaults/setvol?string=70');">vol 70</a><br/>
+    <a onclick="$.get('_JID_/Defaults/setvol?string=80');">vol 80</a><br/>
+    <a onclick="$.get('_JID_/Defaults/setvol?string=90');">vol 90</a><br/>
+    <a onclick="$.get('_JID_/Defaults/setvol?string=100');">vol 100</a><br/>
+    <a onclick="$.get('_JID_/Defaults/audioplay');">play</a><br/>
+    <a onclick="$.get('_JID_/Defaults/audiostop');">stop</a><br/>
+    <a onClick="alert('Hey dude, ALERT!');">alert</a><br/>
+
+
+</div></div>

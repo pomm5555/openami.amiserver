@@ -36,9 +36,6 @@ class FritzMonitor(PlugIn):
         except:
             return var
 
-
-
-
 class callmonitorContainer(ThreadContainer):
 
     def simpleHandler(self, d):
