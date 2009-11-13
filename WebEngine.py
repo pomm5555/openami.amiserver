@@ -49,8 +49,6 @@ class WebServer():
                 icon: 'jqtouch.png',
                 statusBar: 'black-translucent',
                 preloadImages: [
-                    ' '''+addr+'''/Filesystem/html/themes/jqt/img/chevron_white.png',
-                    ' '''+addr+'''/Filesystem/html/themes/jqt/img/bg_row_select.gif',
                     ' '''+addr+'''/Filesystem/html/themes/jqt/img/back_button_clicked.png',
                     ' '''+addr+'''/Filesystem/html/themes/jqt/img/button_clicked.png'
                     ]

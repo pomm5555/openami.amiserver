@@ -31,6 +31,9 @@ class Filesystem(PlugIn):
         if re.match(".*?\.log", self.information) or re.match(".*?\.properties", self.information):
             return Formatter.ajax("TXT", Behavior.text(self.information))
 
+        if re.match(".*?\.interface", self.information):
+            return ("TXT", Behavior.text(self.information).replace("_JID_", Config.jid))
+
         else:
             return Behavior.text(self.information)
 
