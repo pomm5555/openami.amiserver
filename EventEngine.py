@@ -34,6 +34,8 @@ class EventEngine:
         if Config.get("server", "jabber").__eq__("on"):
             print "starting xmppEngine"
             xmpp = XMPPEngineStart(EventEngine.root)
+        else:
+            print "jabber not active"
 
         # start webEngine
         if Config.get("server", "web").__eq__("on"):

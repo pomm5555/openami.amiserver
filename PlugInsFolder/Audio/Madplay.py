@@ -25,6 +25,7 @@ class Madplay(PlugIn):
 
 	self.content.addContainer("cmd", "Stop", "Stop Madplay", self.stop)
 
+
     def play(self, text=None):
         if not text:
             text="http://munich-radio.de:8000/"
@@ -54,6 +55,7 @@ class Madplay(PlugIn):
         except:
             return var
 
+
 class MadplayContainer(Container):
     def toJqHtml__(self):
 
@@ -68,11 +70,11 @@ class MadplayContainer(Container):
 
             toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a></div>"
             items = "<li><a class=\"\" href=\"#edge\">Edge to Edge</a></li>"
-            content = '<form action=""><ul>'+items+'</ul></form>'
+            content = '<ul>'+items+'</ul>'
 
             html = "<div id='"+address+"'>"+toolbar+content+"</div>"+result
 
-            return html
+            return "hallo"
 
         else:
             return ""

@@ -56,7 +56,7 @@ class avrBridge():
         self.mega.setDac(PIN, VALUE)
 
     def setPortPin(self, PORT, PIN, ON):
-        self.mega.setPortPinDir(PORT, PIN, 1)
+        #self.mega.setPortPinDir(PORT, PIN, 1)
         self.mega.setPortPin(PORT, PIN, ON)
 
     def getPortPin(self, PORT, PIN):
