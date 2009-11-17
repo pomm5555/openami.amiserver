@@ -4,6 +4,7 @@ from PlugIn import PlugIn
 from amiConfig import Config
 from Address import *
 from EventEngine import *
+import urllib2
 
 class Services(PlugIn):
 
@@ -21,7 +22,7 @@ class Services(PlugIn):
         jqC.rendering = Container.PLAIN
 
         test = Container("cmd", "test", "Get the Tree or Subtree as JQ Touch HTML", self.test)
-        #jqC.rendering = Container.PLAIN
+        test.rendering = Container.PLAIN
 
         self.content.addChild(xmlC)
         self.content.addChild(jqC)
@@ -45,6 +46,13 @@ class Services(PlugIn):
             return EventEngine.root.toJqHtml()
 
     def test(self, string=""):
-        addr = Address("servant@jabber.org/Services/JqHtml").__str__()
+
+
+
+        addr = "http://192.168.178.34:8080/ami.client@jabber.org/Services/JqHtml"
         link = "servant@jabber.org/Status"
-        return EventEngine.root.getByAddress(addr).use(link)
+        #EventEngine.root.getByAddress(addr).use(link)
+
+        answer = urllib2.urlopen(addr+"?string="+link).read()
+
+        return answer

@@ -7,7 +7,7 @@ from amiData import *
 import types
 import logging
 import logging.config
-
+from amiConfig import Config
 
 __author__="markus"
 __date__ ="$Aug 16, 2009 3:56:03 PM$"
@@ -162,7 +162,7 @@ class Container:
                     try: #TODO better error handling, when method toJqHtmlElement throws error, no exception is be thrown
                         test = v.toJqHtmlElement
                     except AttributeError:
-                        content += "<li><a class='' target='_self' href='"+v.getAddress()+"'>"+k+"</a></li>"
+                        content += "<li><a class='' target='_self' href='http://"+Config.systemIp+":"+Config.systemPort+"/"+v.getAddress()+"'>"+k+"</a></li>"
                     if test:
                         content += v.toJqHtmlElement()
 
