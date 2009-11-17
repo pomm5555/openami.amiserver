@@ -2,6 +2,7 @@ import cherrypy, time
 from threading import Thread
 from Address import Address
 from amiConfig import Config
+from AmiTree import *
 
 class WebEngine(Thread):
 
@@ -69,24 +70,30 @@ class WebServer():
 	for elem in args:
 	    addr += "/"+elem
 
+        target = self.root.getByAddress(addr[1:])
+
         try:
-            
+
 	    string = kwargs["string"]
             print "with parameter: "+string
-            result = self.root.getByAddress(addr[1:]).use(string)
+            result = target.use(string)
             print "called use"
 	except:
             print "call without parameter: "+addr[1:]
-            result = self.root.getByAddress(addr[1:]).use()
+            result = target.use()
             print "called without parameter"
             string = ""
 
-
 	try:
-            if not addr.find("Filesystem")  == -1:
+            if "Filesystem" in addr:
                 return result
-            else:
+            elif target.rendering == 0:
+                return result
+            elif target.rendering == 1:
                 return '<div id="get"><div class="toolbar"><h1>Result</h1><a class="back" href="#">Back</a></div><div class="info">'+result+'</div></div>'
+            else:
+                return 'No Rendering No Service!'
+            
 	except:
 	    return '<div id="get"><div class="toolbar"><h1>Result</h1><a class="back" href="#">Back</a></div><div class="info">done</div></div>'
     default.exposed = True

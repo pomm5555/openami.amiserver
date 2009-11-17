@@ -14,6 +14,10 @@ __date__ ="$Aug 16, 2009 3:56:03 PM$"
 
 class Container:
 
+    PLAIN = 0
+    JQ = 1
+
+
     def __init__(self, type, token, information="empty", use=None, logging=False):
         self.content = {}
         self.information = information
@@ -23,6 +27,8 @@ class Container:
         self.parent = None
         self.logging = logging
         self.addresslist = None
+        # how should webengine render the containers content jq|plain...
+        self.rendering = Container.JQ
         if use:
             self.setUse(use)
 
