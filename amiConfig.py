@@ -1,5 +1,5 @@
 import ConfigParser, os
-import logging
+import logging, socket
 
 class Config:
 
@@ -8,6 +8,10 @@ class Config:
     file = open(filename, "r")
     config.readfp(file)
     file.close()
+
+    #getting Systems IP Address.
+    systemIp = socket.gethostbyname(socket.gethostname())
+    systemPort = "8080"
 
     # parsing jabber section the old way, should not be used anymore
     jid = config.get('jabber', 'jid')
