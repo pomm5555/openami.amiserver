@@ -71,7 +71,7 @@ class Networking(PlugIn):
         else:
             return ""
 
-    def use(self, string=""):
+    def usemethod(self, string=""):
         result = ""
         for elem in self.log:
             result += "\n" + elem
@@ -81,11 +81,32 @@ class WebBuddyContainer(Container):
     def __init__(self, type, token, information):
         Container.__init__(self, type, token, information)
         self.rendering = Container.PLAIN
+        self.request = None
         addr = "http://" + self.information + ":8080/" + self.token + "/Services/JqHtml" + "?string=" + self.token
         print addr
-        self.answer = urllib2.urlopen(addr).read()
-        print self.answer
-
+        self.webcontent = urllib2.urlopen(addr).read()
+        print self.webcontent
+        
+    def getByAddress(self, address):
+        #print "+++++"+address
+        print address
+        self.request = address
+        return self
+    
+    def toJqHtmlElement(self):
+        if self.visible:
+            content = "<li class='arrow'><a target='_self' href='"+self.getAddress()+"'><img src='/"+Config.get("server", "token")+"/Filesystem/html/images/amiNetwork.png' />"+self.token+"</a></li>"
+            return content
+        else:
+            return ""
     def use(self, msg=""):
-        return self.answer
+        if self.request:
+            print ">>>>>>>"+self.request
+            print self.information
+            print self.token
+            print "#######"+self.webcontent
+            
+            return urllib2.urlopen("http://"+self.information+":8080/"+self.token+"/"+self.request).read()
+        else:
+            return self.webcontent  
     
