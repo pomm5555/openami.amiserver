@@ -162,7 +162,8 @@ class Container:
                     try: #TODO better error handling, when method toJqHtmlElement throws error, no exception is be thrown
                         test = v.toJqHtmlElement
                     except AttributeError:
-                        content += "<li><a class='' target='_self' href='http://"+Config.systemIp+":"+Config.systemPort+"/"+v.getAddress()+"'>"+k+"</a></li>"
+#absolut addressing                        content += "<li><a class='' target='_self' href='http://"+Config.systemIp+":"+Config.systemPort+"/"+v.getAddress()+"'>"+k+"</a></li>"
+                        content += "<li><a class='' target='_self' href='"+v.getAddress()+"'>"+k+"</a></li>"
                     if test:
                         content += v.toJqHtmlElement()
 
