@@ -7,7 +7,7 @@ from EventEngine import EventEngine
 from Address import Address
 import time, socket, urllib2
 
-class ClientListener(PlugIn):
+class Networking(PlugIn):
 
 
     def __init__(self, token, configFile):
