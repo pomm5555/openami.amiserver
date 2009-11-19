@@ -42,11 +42,14 @@ class Networking(PlugIn):
     
         print 'start ClientListener ...'
     
-        while True :
+        while True:
             clientName , remoteIp = my_socket.recvfrom(8192)
             print 'message (%s) from : %s' % (str(clientName), remoteIp[0])
-            self.root().addChild(WebBuddyContainer("remoteInstanceView", clientName, remoteIp[0]))
-            
+            if self.root().content.has_key(clientName):
+                print "client is already in list"
+            else:
+                print "welcome new client: "+clientName
+                self.root().addChild(WebBuddyContainer("remoteInstanceView", clientName, remoteIp[0]))
             
     def send(self):
         my_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -56,27 +59,7 @@ class Networking(PlugIn):
         while True :
             my_socket.sendto(Config.get("server", "token"), ('<broadcast>' , 8081))
             time.sleep(60)
-
-
-    def toHtml(self):
-        if self.visible:
-            result = ""
-            for k, v in self.content.items():
-                result += v.toHtml()
-
-            #if result.__eq__(""):
-            #    return "<li><a href=\""+self.getAddress()+"\">"+self.token+"</a>"+result+"</li>"
-            return "<ul><li><a href=\"" + self.getAddress() + "\">" + self.token + "</a> L</li>" + result + "</ul>"
-            
-        else:
-            return ""
-
-    def usemethod(self, string=""):
-        result = ""
-        for elem in self.log:
-            result += "\n" + elem
-        return result
-    
+   
 class WebBuddyContainer(Container):
     def __init__(self, type, token, information):
         Container.__init__(self, type, token, information)
@@ -95,18 +78,18 @@ class WebBuddyContainer(Container):
     
     def toJqHtmlElement(self):
         if self.visible:
-            content = "<li class='arrow'><a target='_self' href='"+self.getAddress()+"'><img src='/"+Config.get("server", "token")+"/Filesystem/html/images/amiNetwork.png' />"+self.token+"</a></li>"
+            content = "<li class='arrow'><a target='_self' href='" + self.getAddress() + "'><img src='/" + Config.get("server", "token") + "/Filesystem/html/images/amiNetwork.png' />" + self.token + "</a></li>"
             return content
         else:
             return ""
     def use(self, msg=""):
         if self.request:
-            print ">>>>>>>"+self.request
+            print ">>>>>>>" + self.request
             print self.information
             print self.token
-            print "#######"+self.webcontent
+            print "#######" + self.webcontent
             
-            return urllib2.urlopen("http://"+self.information+":8080/"+self.token+"/"+self.request).read()
+            return urllib2.urlopen("http://" + self.information + ":8080/" + self.token + "/" + self.request).read()
         else:
             return self.webcontent  
     
