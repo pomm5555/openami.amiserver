@@ -13,6 +13,7 @@ class PlugIn:
     def __init__(self):
         self.content = None
         self.architecture = "all"
+        self.master = False # Use True on your Plugin if you want to use your Plugin only on amiMasters!
 
     def getTree(self):
         return self.content
