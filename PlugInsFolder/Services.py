@@ -5,6 +5,7 @@ from amiConfig import Config
 from Address import *
 from EventEngine import *
 import urllib2
+import simplejson as json
 
 class Services(PlugIn):
 
@@ -21,8 +22,14 @@ class Services(PlugIn):
         jqC = Container("cmd", "JqHtml", "Get the Tree or Subtree as JQ Touch HTML", self.getJq)
         jqC.rendering = Container.PLAIN
 
+
         test = Container("cmd", "test", "Get the Tree or Subtree as JQ Touch HTML", self.test)
         test.rendering = Container.PLAIN
+
+        
+        test = Container("cmd", "test", "Get the Tree or Subtree as JQ Touch HTML", self.test)
+        test.rendering = Container.PLAIN
+
 
         self.content.addChild(xmlC)
         self.content.addChild(jqC)

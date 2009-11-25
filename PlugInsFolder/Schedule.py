@@ -34,7 +34,7 @@ class Schedule(PlugIn):
 
                 sleeptime = None
                 for elem in d:
-                    rhythm = eval(elem[0])
+                    rhythm = eval(elem[1].split("|")[1])
                     # when has the thread to wake up next time for specific value?
                     tmp = rhythm - round(time.time()) % rhythm
                     if not sleeptime:
@@ -46,11 +46,11 @@ class Schedule(PlugIn):
 
                 execute = []
                 for elem in d:
-                    rhythm = eval(elem[0])
+                    rhythm = eval(elem[1].split("|")[1])
                     if rhythm - round(time.time()) % rhythm == rhythm:
                         execute.append(elem)
 
                 for elem in execute:
-                    addr = Address(elem[1])
+                    addr = Address(elem[1].split("|")[0])
                     print addr.__str__()
                     print EventEngine.root.getByAddress(addr.__str__()).use()
