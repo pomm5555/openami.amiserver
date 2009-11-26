@@ -25,13 +25,21 @@ class Dashboard(PlugIn):
 
         #res = self.root().__str__()
         
-        javascript = '$.getJSON(\'/servant@jabber.org/System/Temperature/LivingRoom\', function(data){alert(\'Data Loaded: \' + data[0]);});'
+        javascript = """
+        $.getJSON(\'/servant@jabber.org/System/Temperature/LivingRoom\', 
+                   function(data){
+                       $(\'span.amiDash1\').text(data[0]);
+                   }
+                 );
+        
+        
+        """
         
         
         
         liElements = []
         
-        liElements.append('<small>small</small>Big Text<em>Emphasized</em>')
+        liElements.append('<small>small</small><span class="amiDash1">Big Text</span><em>Emphasized</em>')
         liElements.append('<small>small</small>Big Text<em>Emphasized</em>')
         liElements.append('<small>small</small>Big Text<em>Emphasized</em>')
         liElements.append('<small>small</small>Big Text<em>Emphasized</em>')

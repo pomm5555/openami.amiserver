@@ -81,7 +81,6 @@ class WebServer():
         target = self.root.getByAddress(addr)
 
         try:
-
             string = kwargs["string"]
             print "with parameter: " + string
             result = target.use(string)
