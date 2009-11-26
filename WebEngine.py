@@ -58,10 +58,10 @@ class WebServer():
     # and calls the use method...
     def default(self, *args, **kwargs):
         
-        print "BEGIN"
-        print args
-        print kwargs
-        print "END"
+        #print "BEGIN"
+        #print args
+        #print kwargs
+        #print "END"
         
         str=""
         for elem in args:
@@ -69,7 +69,7 @@ class WebServer():
         for k, v in kwargs.items():
             str+=" "+k+"="+v    
         
-        return str
+        #return str
         
         # build url start
         addr = ""
