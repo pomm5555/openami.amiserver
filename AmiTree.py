@@ -285,7 +285,7 @@ class loggingContainer(Container):
 class SwitchContainer(Container):
 
     def __init__(self, type, token, information="empty", use=None, logging=False, on=None, off=None):
-        Container.__init__(self, type, token, information="empty", use=None, logging=False)
+        Container.__init__(self, type, token, information, use, logging)
         self.on = on
         self.off = off
 
@@ -299,7 +299,7 @@ class SwitchContainer(Container):
 class TextfieldContainer(Container):
 
     def __init__(self, type, token, information="empty", use=None, logging=False, target=None):
-        Container.__init__(self, type, token, information="empty", use=None, logging=False)
+        Container.__init__(self, type, token, information, use, logging)
         self.target = target
 
     def toJqHtmlElement(self):
