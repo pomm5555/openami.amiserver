@@ -10,14 +10,17 @@ div.floaty ul{
 }
 div.floaty ul li{
 	display: inline-block;
+	-webkit-border-radius: 5px;
+	margin: 0;
 	padding: 0;
 }
 
-div.floaty ul li{
+div.floaty ul a{
 	font-size: 10px;
-	height: 40px;
-	width: 60px;
-
+	width: 90px;
+	padding: 40px 0 5px;
+	margin-bottom: 0;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c4d4e), to(#000000));
 }
 /* @end */
 
@@ -29,9 +32,12 @@ div.floaty {
 	background: rgba(0,0,0,0.93);
 	color: #000;
 	height: 60px;
+	z-index: 1;
 }
 
 div.current ul {
 	margin-bottom: 75;
 }
 
+
+	
