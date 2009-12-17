@@ -32,7 +32,7 @@ class WebServer():
             <ul>
                 <li><a href='/'''+addr+'''/Dashboard' class="slideup">Dashboard</a></li>
                 <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+''''>Tree</a></li>
-                <li><a href='/'''+addr+'''/System/FritzMonitor' class="flip">Kernel Info</a></li>
+                <li><a href='/'''+addr+'''/System/FritzMonitor' class="flip">CallLog</a></li>
                 <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="flip">Audioplayer</a></li>
             </ul>
         </div>
@@ -69,7 +69,7 @@ class WebServer():
                 });
 
                 $('.floaty').makeFloaty({
-                    spacing: 380,
+                    spacing: 400,
                     time: '0.0s'
                 });
 
