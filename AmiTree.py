@@ -152,11 +152,13 @@ class Container:
             address = self.getAddress().replace("/", "_").replace("@", "_").replace(".", "_")
             token = self.token
 
-            toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a></div>"
+            toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a><a class='togglefloaty button slideup' href='#about'>More</a></div>"
             content = "<ul>"
             for k, v in self.content.items():
+
                 if not v.content == {}:
                     content += "<li class='arrow'><a class='' href='#"+v.getAddress().replace("/", "_").replace("@", "_").replace(".", "_")+"'>"+k+"</a></li>"
+
                 else:
                     test = None
                     try: #TODO better error handling, when method toJqHtmlElement throws error, no exception is be thrown

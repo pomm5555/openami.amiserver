@@ -6,7 +6,7 @@
 <div class="info" style="text-align: left; margin:none; padding:none">
 
 <!-- hook in some css-->
-<img style="display:none" src="/servant@jabber.org/Filesystem/interfaces/images/tabs_playlist.png" onload="var oLink = document.createElement('link'); oLink.href = '/servant@jabber.org/Filesystem/interfaces/css/player.css'; oLink.rel = 'stylesheet'; oLink.type = 'text/css'; document.body.appendChild(oLink);"/>
+<img style="display:none" src="_JID_/Filesystem/interfaces/images/tabs_playlist.png" onload="var oLink = document.createElement('link'); oLink.href = '_JID_/Filesystem/interfaces/css/player.css'; oLink.rel = 'stylesheet'; oLink.type = 'text/css'; document.body.appendChild(oLink);"/>
 
 	<div id="wrapper">
                 <div id="content">
