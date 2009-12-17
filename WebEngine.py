@@ -30,10 +30,10 @@ class WebServer():
         navigationbar = '''
         <div class="floaty" style="display: block;">
             <ul>
-                <li><a href='/'''+addr+'''/Dashboard' class="slideup">Dashboard</a></li>
-                <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+''''>Tree</a></li>
-                <li><a href='/'''+addr+'''/System/FritzMonitor' class="flip">CallLog</a></li>
-                <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="flip">Audioplayer</a></li>
+                <li><a href='/'''+addr+'''/Dashboard' class="slideup hidefloaty">Dashboard</a></li>
+                <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+'''' class="hidefloaty">Tree</a></li>
+                <li><a href='/'''+addr+'''/System/FritzMonitor' class="flip hidefloaty">CallLog</a></li>
+                <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="flip hidefloaty">Audio</a></li>
             </ul>
         </div>
         '''
@@ -67,6 +67,12 @@ class WebServer():
                     $(this).removeClass('active');
                     return false;
                 });
+
+                /*$('.hidefloaty').click(function(){
+                    $('.floaty').hideFloaty();
+                    $(this).removeClass('active');
+                    return false;
+                });*/
 
                 $('.floaty').makeFloaty({
                     spacing: 400,
