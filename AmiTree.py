@@ -151,8 +151,10 @@ class Container:
 
             address = self.getAddress().replace("/", "_").replace("@", "_").replace(".", "_")
             token = self.token
-
-            toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a><a class='togglefloaty button slideup' href='#about'>More</a></div>"
+			
+	    home = self.root().content.keys()[0].replace("/","_").replace("@","_").replace(".","_")
+			
+            toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a><a class='notsoleftButton' href='#"+home+" '>Home</a><a class='togglefloaty button slideup' href='#about'>More</a></div>"
             content = "<ul>"
             for k, v in self.content.items():
 
