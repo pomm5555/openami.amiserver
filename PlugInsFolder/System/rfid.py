@@ -1,20 +1,22 @@
 import os
 from AmiTree import Container
 from PlugIn import PlugIn
-
+from xmppEngine import XMPPEngine
 ##
 # OSX and AppleScript specific plugin that controls some Finder/System functionality
 ##
 class rfid(PlugIn):
 	
     def __init__(self, token, configFile):
-
-        #plugin itself
-        self.content = Container("plugin", token, "This is a rfid Plugin")
+	PlugIn.__init__(self)
+	self.architecture = "all"
+       	#plugin itself
+	self.content = Container("plugin", token, "This is a rfid Plugin")
+      	
 
         # set add container
 
-        self.content.addContainer("cmd","last", "get last seen tag", self.getLast)
+       	self.content.addContainer("cmd","last", "get last seen tag", self.getLast)
 
 
     def getTree(self):
