@@ -1,0 +1,53 @@
+<div id="get">
+    <div class="toolbar">
+        <h1>Audioplay</h1>
+        <a class="back" href="#">Back</a>
+    </div>
+<div class="info" style="text-align: left; margin:none; padding:none">
+
+<!-- hook in some css-->
+<img style="display:none" src="_JID_/Filesystem/interfaces/images/tabs_playlist.png" onload="var oLink = document.createElement('link'); oLink.href = '_JID_/Filesystem/interfaces/css/player.css'; oLink.rel = 'stylesheet'; oLink.type = 'text/css'; document.body.appendChild(oLink);"/>
+
+	<div id="wrapper">
+                <div id="content">
+                    <div id="title">
+                            <p class="title">Funky Snack by DJ Double</p>
+                            <p class="interpreter">MondayJazz</p>
+                    </div>
+                    <div id="player">
+                            <div id="controls">
+                                    <div id="player_skim" class="player_conts">skim</div>
+                                    <div id="player_control" class="player_conts">
+                                            <a class="backward" onclick="$.get('_JID_/Defaults/audioback')");>backward</a>
+                                            <a class="play" onclick="$.get('_JID_/Defaults/audioplay'); $('a.play').hide(); $('a.stop').show();">play</a>
+                                            <a class="stop" onclick="$.get('_JID_/Defaults/audiostop'); $('a.stop').hide(); $('a.play').show();">play</a>
+                                            <a class="forward" onclick="$.get('_JID_/Defaults/audiostop')">forward</a>
+                                    </div>
+                            </div>
+
+                    </div>
+                    <div id="playlists">
+                            list playlists
+                    </div>
+                    <div id="root_audio">
+                            Play Root Audio
+                    </div>
+                    <div id="search">
+                            search interface
+                    </div>
+                </div>
+		<div id="tabs">
+			<a href="#" class="controls tab_bt" onclick="$('div#player').show(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#search').hide();">controls</a>
+                        <a href="#" class="playlists tab_bt" onclick="$('div#player').hide(); $('div#playlists').show();$('div#root_audio').hide(); $('div#search').hide();">playlists</a>
+                        <a href="#" class="speakers tab_bt" onclick="$('div#player').hide(); $('div#playlists').hide();$('div#root_audio').show(); $('div#search').hide();">speakers</a>
+                        <a href="#" class="search tab_bt" onclick="$('div#player').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#search').show();">search</a>
+		</div>
+	</div>
+
+
+<!-- var oLink = document.createElement("link")
+oLink.href = "mypath/mycss.css";
+oLink.rel = "stylesheet";
+oLink.type = "text/css";
+document.body.appendChild(oLink);
+-->

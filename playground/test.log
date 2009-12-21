@@ -1,0 +1,5 @@
+INFO:root:test
+INFO:root:test
+WARNING:test.hallo:hallo
+INFO:test.naechster:mein
+DEBUG:test.sonst:name ist test
