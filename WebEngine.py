@@ -23,6 +23,7 @@ class WebServer():
         self.root = root
 
     def index(self):
+        self.contentType('text/html')
 
         addr = Config.get("server", "token")
 
@@ -30,10 +31,10 @@ class WebServer():
         navigationbar = '''
         <div class="floaty" style="display: block;">
             <ul>
-                <li><a href='/'''+addr+'''/Dashboard' class="slideup">Dashboard</a></li>
-                <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+''''>Tree</a></li>
-                <li><a href='/'''+addr+'''/System/FritzMonitor' class="flip">Kernel Info</a></li>
-                <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="flip">Audioplayer</a></li>
+                <li><a href='/'''+addr+'''/Dashboard' class="slideup hidefloaty">Dashboard</a></li>
+                <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+'''' class="hidefloaty">Tree</a></li>
+                <li><a href='/'''+addr+'''/System/FritzMonitor' class="flip hidefloaty">CallLog</a></li>
+                <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="flip hidefloaty">Audio</a></li>
             </ul>
         </div>
         '''
@@ -68,8 +69,14 @@ class WebServer():
                     return false;
                 });
 
+                /*$('.hidefloaty').click(function(){
+                    $('.floaty').hideFloaty();
+                    $(this).removeClass('active');
+                    return false;
+                });*/
+
                 $('.floaty').makeFloaty({
-                    spacing: 380,
+                    spacing: 400,
                     time: '0.0s'
                 });
 
@@ -79,15 +86,17 @@ class WebServer():
         '''
 
         result = self.root.toJqHtml()
-        return '<html ><head>' + head + '</head><body>' + result + navigationbar + '</body></html>'
-        # manifest="/'+addr+'/Filesystem/html/cache.manifest"
+
+        return '<html manifest="/cache.manifest"><head>' + head + '</head><body>' + result + navigationbar + '</body></html>'
     index.exposed = True
-
-
 
     # This part of the program parses the URL which was called by a browser
     # and calls the use method...
     def default(self, *args, **kwargs):
+
+        jid = Config.get("server", "token")
+
+        self.contentType('text/html')
         
         str=""
         for elem in args:
@@ -101,20 +110,46 @@ class WebServer():
         addr = ""
         for elem in args:
             addr += "/" + elem
+
+        print '* '+addr
         addr= addr[1:]
-    
+
+        
+
+        if addr.__eq__('cache.manifest'):
+            print 'CACHE MANIFEST REQUEST!!!!!'
+            self.contentType('text/cache-manifest')
+            return '''CACHE MANIFEST
+
+'''+jid+'''/Filesystem/html/themes/jqt/theme.css
+'''+jid+'''/Filesystem/html/ami.css
+'''+jid+'''/Filesystem/html/jqtouch/jquery.1.3.2.min.js
+'''+jid+'''/Filesystem/html/jqtouch/jqtouch.css
+'''+jid+'''/Filesystem/html/extensions/jqt.floaty.js
+'''+jid+'''/Filesystem/html/jqtouch/jqtouch.js
+'''+jid+'''/Filesystem/html/themes/jqt/img/toolbar.png
+'''+jid+'''/Filesystem/html/themes/jqt/img/button.png
+'''+jid+'''/Filesystem/html/themes/jqt/img/back_button.png
+'''+jid+'''/Filesystem/html/themes/jqt/img/chevron.png
+'''+jid+'''/Filesystem/html/images/appIcon.png
+'''+jid+'''/Filesystem/html/images/startup.png
+
+NETWORK:
+/'''+jid+'''/
+'''
+        self._cp_config = {'response.headers.Content-Type': 'text/html'}
         # get target object
         target = self.root.getByAddress(addr)
 
         try:
             string = kwargs["string"]
-            print "with parameter: " + string
+            #print "with parameter: " + string
             result = target.use(string)
-            print "called use"
+            #print "called use"
         except:
-            print "call without parameter: " + addr
+            #print "call without parameter: " + addr
             result = target.use()
-            print "called without parameter"
+            #print "called without parameter"
             string = ""
 
         try:
@@ -132,3 +167,16 @@ class WebServer():
             
             
     default.exposed = True
+
+
+    def contentType(self, type):
+        cherrypy.response.headers['Content-Type'] = type
+        print cherrypy.response.headers['Content-Type']
+#try:
+#            self._cp_config['response.headers.Content-Type'] = type
+#            print '--->'+((self._cp_config['response.headers.Content-Type'])).__str__()
+#        except:
+#            cherrypy.config.update({'response.headers.Content-Type': type})
+#            print ((cherrypy.config)['response.headers.Content-Type']).__str__()
+#            print (dir(cherrypy)).__str__()
+        
