@@ -20,7 +20,7 @@ div.floaty ul a{
 	width: 90px;
 	padding: 40px 0 5px;
 	margin-bottom: 0;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c4d4e), to(#000000));
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#222), to(#000000));
 }
 /* @end */
 
