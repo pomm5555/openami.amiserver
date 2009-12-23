@@ -29,7 +29,7 @@ class WebServer():
 
         #Muss vom Plugin generiert werden, damit es zu jeder zeit neu dynamisch geladen werden kann!
         navigationbar = '''
-        <div class="floaty" style="display: block;">
+        <div class='floaty' style='display:none'>
             <ul>
                 <li><a href='/'''+addr+'''/Dashboard' class="slideup hidefloaty">Dashboard</a></li>
                 <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+'''' class="hidefloaty">Home</a></li>
@@ -57,7 +57,7 @@ class WebServer():
                 addGlossToIcon: true,
                 cacheGetRequests: false,
                 startupScreen: '/'''+addr+'''/Filesystem/html/images/startup.png',
-                statusBar: 'black'
+                statusBar: 'black-translucent'
             });
 
 
@@ -76,12 +76,23 @@ class WebServer():
                 });*/
 
                 $('.floaty').makeFloaty({
-                    spacing: 400,
-                    time: '0.0s'
+                    spacing: 0,
+                    time: '0.5s',
+                    align: 'bottom'
                 });
 
                 $('.arrow').bind("swipe",function(event, data){
-                    $(this).append("<a href='#' onClick='$(this).parent().remove();'>remove</a>");
+                    if(data.direction=='right') {
+                        if (true){
+                            alert($(this).children(".removebutton").html())
+                            $(this).append("<small class='counter removebutton' onClick='$(this).parent().hide();'>remove</small>");
+                        } else {
+                            alert('there is already a button')
+                        }
+                    }else {
+                        print
+                        $('.removebutton').hide();
+                    }
                 });
 
 
@@ -91,8 +102,12 @@ class WebServer():
         '''
 
         result = self.root.toJqHtml()
-
-        return '<html manifest="/cache.manifest"><head>' + head + '</head><body>' + result + navigationbar + '</body></html>'
+        caching = True
+        if caching:
+            manifest=' manifest="/cache.manifest"'
+        else:
+            manifest=''
+        return '<html'+manifest+'><head>' + head + '</head><body>' + result + navigationbar + '</body></html>'
     index.exposed = True
 
     # This part of the program parses the URL which was called by a browser
@@ -125,7 +140,7 @@ class WebServer():
             print 'CACHE MANIFEST REQUEST!!!!!'
             self.contentType('text/cache-manifest')
             return '''CACHE MANIFEST
-#revision 0.11
+#revision 0.32
 '''+jid+'''/Filesystem/html/themes/jqt/theme.css
 '''+jid+'''/Filesystem/html/ami.css
 '''+jid+'''/Filesystem/html/jqtouch/jquery.1.3.2.min.js
