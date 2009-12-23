@@ -24,7 +24,7 @@ class FeedReader(PlugIn):
         for touple in Config.getSection("FeedReader"):
             #t = touple.split(">")
             tmpcont = Container("plugin", touple[0], touple[1])
-            tmpcont.setUse(self.display)
+            #tmpcont.setUse(self.display)
             self.content.addChild(tmpcont)
 
         self.content.addContainer("cmd", "Random", "/FeedReader/mondayjazz", self.playRandom)

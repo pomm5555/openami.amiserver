@@ -137,7 +137,7 @@ class Container:
             for k, v in self.content.items():
                 result+=v.toHtml()
 
-            return "<ul><li><a href=\""+self.getAddress()+"\">"+self.token+"</a></li>"+result+"</ul>"
+            return "<ul class='rounded'><li><a href=\""+self.getAddress()+"\">"+self.token+"</a></li>"+result+"</ul>"
         else:
             return ""
 
@@ -151,11 +151,17 @@ class Container:
 
             address = self.getAddress().replace("/", "_").replace("@", "_").replace(".", "_")
             token = self.token
+<<<<<<< local
+
+            toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a><a class='togglefloaty button slideup' href='#about'>More</a></div>"
+            content = "<ul class='rounded'>"
+=======
 			
 	    home = self.root().content.keys()[0].replace("/","_").replace("@","_").replace(".","_")
 			
             toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a><a class='notsoleftButton' href='#"+home+" '>Home</a><a class='togglefloaty button slideup' href='#about'>More</a></div>"
             content = "<ul>"
+>>>>>>> other
             for k, v in self.content.items():
 
                 if not v.content == {}:
