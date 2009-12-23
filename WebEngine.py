@@ -32,7 +32,7 @@ class WebServer():
         <div class="floaty" style="display: block;">
             <ul>
                 <li><a href='/'''+addr+'''/Dashboard' class="slideup hidefloaty">Dashboard</a></li>
-                <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+'''' class="hidefloaty">Tree</a></li>
+                <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+'''' class="hidefloaty">Home</a></li>
                 <li><a href='/'''+addr+'''/System/FritzMonitor' class="flip hidefloaty">CallLog</a></li>
                 <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="flip hidefloaty">Audio</a></li>
             </ul>
@@ -49,7 +49,7 @@ class WebServer():
         <style type="text/css" media="screen">@import "'''+addr+'''/Filesystem/html/ami.css";</style>
         <script src="'''+addr+'''/Filesystem/html/jqtouch/jquery.1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="'''+addr+'''/Filesystem/html/jqtouch/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
-        <!--<script src="'''+addr+'''/Filesystem/html/extensions/jqt.offline.js" type="application/x-javascript" charset="utf-8"></script>-->
+        <script src="'''+addr+'''/Filesystem/html/extensions/jqt.offline.js" type="application/x-javascript" charset="utf-8"></script>
         <script src="'''+addr+'''/Filesystem/html/extensions/jqt.floaty.js" type="application/x-javascript" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
             var jQT = new $.jQTouch({
@@ -79,6 +79,11 @@ class WebServer():
                     spacing: 400,
                     time: '0.0s'
                 });
+
+                $('.arrow').bind("swipe",function(event, data){
+                    $(this).append("<a href='#' onClick='$(this).parent().remove();'>remove</a>");
+                });
+
 
             });
             
@@ -120,7 +125,7 @@ class WebServer():
             print 'CACHE MANIFEST REQUEST!!!!!'
             self.contentType('text/cache-manifest')
             return '''CACHE MANIFEST
-#revision 0.0
+#revision 0.11
 '''+jid+'''/Filesystem/html/themes/jqt/theme.css
 '''+jid+'''/Filesystem/html/ami.css
 '''+jid+'''/Filesystem/html/jqtouch/jquery.1.3.2.min.js
@@ -172,11 +177,4 @@ NETWORK:
     def contentType(self, type):
         cherrypy.response.headers['Content-Type'] = type
         print cherrypy.response.headers['Content-Type']
-#try:
-#            self._cp_config['response.headers.Content-Type'] = type
-#            print '--->'+((self._cp_config['response.headers.Content-Type'])).__str__()
-#        except:
-#            cherrypy.config.update({'response.headers.Content-Type': type})
-#            print ((cherrypy.config)['response.headers.Content-Type']).__str__()
-#            print (dir(cherrypy)).__str__()
         

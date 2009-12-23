@@ -137,7 +137,7 @@ class Container:
             for k, v in self.content.items():
                 result+=v.toHtml()
 
-            return "<ul><li><a href=\""+self.getAddress()+"\">"+self.token+"</a></li>"+result+"</ul>"
+            return "<ul class='rounded'><li><a href=\""+self.getAddress()+"\">"+self.token+"</a></li>"+result+"</ul>"
         else:
             return ""
 
@@ -153,7 +153,7 @@ class Container:
             token = self.token
 
             toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a><a class='togglefloaty button slideup' href='#about'>More</a></div>"
-            content = "<ul>"
+            content = "<ul class='rounded'>"
             for k, v in self.content.items():
 
                 if not v.content == {}:
