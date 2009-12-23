@@ -151,17 +151,18 @@ class Container:
 
             address = self.getAddress().replace("/", "_").replace("@", "_").replace(".", "_")
             token = self.token
-<<<<<<< local
+			
+	    home = self.root().token.replace("/","_").replace("@","_").replace(".","_")
 
-            toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a><a class='togglefloaty button slideup' href='#about'>More</a></div>"
+            if self.token.__eq__("root"):
+                backbutton = ''
+            else:
+                backbutton = "<a class='back' href='#'>Back</a>"
+
+            homebutton=""#<a class='notsoleftButton' href='#"+home+" '>Home</a>"
+
+            toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1>"+backbutton+homebutton+"<a class='togglefloaty button slideup' href='#about'>More</a></div>"
             content = "<ul class='rounded'>"
-=======
-			
-	    home = self.root().content.keys()[0].replace("/","_").replace("@","_").replace(".","_")
-			
-            toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a><a class='notsoleftButton' href='#"+home+" '>Home</a><a class='togglefloaty button slideup' href='#about'>More</a></div>"
-            content = "<ul>"
->>>>>>> other
             for k, v in self.content.items():
 
                 if not v.content == {}:
@@ -178,7 +179,7 @@ class Container:
                         content += v.toJqHtmlElement()
 
             content += "</ul>"
-
+            content += "<div class='info'>"+self.information+"</div>"
             html = "<div id='"+address+"'>"+toolbar+content+"</div>"+result
 
             return html

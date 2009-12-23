@@ -1,6 +1,6 @@
 /* @override http://localhost:8080/geheim@jabber.org/Filesystem/html/ami.css */
 
-/* @group custom */
+/* @group floatybar */
 
 div.floaty ul{
 	margin: 0;
@@ -11,7 +11,7 @@ div.floaty ul{
 div.floaty ul li{
 	display: inline-block;
 	-webkit-border-radius: 5px;
-	margin: 0;
+	margin: 0 0 10px;
 	padding: 0;
 }
 
@@ -22,22 +22,13 @@ div.floaty ul a{
 	margin-bottom: 0;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#222), to(#000000));
 }
-/* @end */
 
 div.floaty {
+	/*-webkit-border-radius: 10px;*/
 	-webkit-box-shadow: rgba(0,0,0, .5) 0px 1px 1px;
 	width: 100%;
-	margin: 0 0;
-	padding: 5px 10px;
+	padding: 10px;
 	background: rgba(0,0,0,0.93);
-	color: #000;
-	height: 60px;
-	z-index: 1;
+	margin: 0 0%;
 }
-
-div.current ul {
-	margin-bottom: 75;
-}
-
-
-	
+/* @end */
