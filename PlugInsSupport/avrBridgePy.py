@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from ctypes import c_int
 from ctypes import cdll
 import time
@@ -43,7 +45,7 @@ class avrBridge():
     OFF = 0
 
     def __init__(self):
-        lib = "../PlugInsSupport/libavrBridgeC.dylib"
+        lib = "libavrBridgeC.so"
         self.mega = cdll.LoadLibrary(lib)
         self.mega.initUsbLib()
 
@@ -76,6 +78,8 @@ if __name__ == "__main__":
 
     mega = avrBridge()
 
+    mega.setPortPin(2,5,1)
+
     # DAC TEST
 #    VALUE=2
 #    while True:
@@ -93,8 +97,8 @@ if __name__ == "__main__":
 #    while True:
 #        PORT = 2
 #        ON = int(time.time() % 2)
-#        print ON
-#        for PIN in (0, 1, 3):
+ #       print ON
+ #       for PIN in (0, 1, 5):
 #            mega.setPortPin(PORT, PIN, ON)
 #        time.sleep(1)
 
