@@ -3,10 +3,10 @@ from urllib import urlencode
 import os, sys
 from AmiTree import Container
 from PlugIn import PlugIn
+import pynotify
+from amiConfig import Config
 
-
-
-class Prowly(PlugIn):
+class Notification(PlugIn):
 
 
     def __init__(self, token, configFile):
@@ -18,6 +18,14 @@ class Prowly(PlugIn):
 
         # set add container
         self.content.addContainer("cmd","Prowl", "send Push notification", self.prowl)
+        self.content.addContainer("cmd","Ubuntu", "show Ubuntu Notification", self.unotify)
+
+    def unotify(self, text="Notification"):
+        text = self.getText(text)
+        pynotify.init(Config.get('server', 'token'))
+        n=pynotify.Notification(Config.get('server', 'token'), text)
+        n.show()
+        return text
 
     def prowl(self, text="Notification"):
         text = self.getText(text)
@@ -49,10 +57,6 @@ class Prowly(PlugIn):
         else:
             return "Error notificating"
 
-
-    # returns the plugin as a tree
-    def getTree(self):
-        return self.content
 
     # just a little helper function
     def getText(self, var):
