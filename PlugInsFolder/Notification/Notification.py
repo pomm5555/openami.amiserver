@@ -3,7 +3,6 @@ from urllib import urlencode
 import os, sys
 from AmiTree import Container
 from PlugIn import PlugIn
-import pynotify
 from amiConfig import Config
 
 class Notification(PlugIn):
@@ -15,10 +14,16 @@ class Notification(PlugIn):
 
         #plugin itself
         self.content = Container("plugin", token, "this is a Prowl plugin")
-
+		
+		#get platform we're running on
+	platform = Config.get('server','architecture')
+		
+	if (platform == "macos"):
         # set add container
-        self.content.addContainer("cmd","Prowl", "send Push notification", self.prowl)
-        self.content.addContainer("cmd","Ubuntu", "show Ubuntu Notification", self.unotify)
+        	self.content.addContainer("cmd","Prowl", "send Push notification", self.prowl)
+        else:
+        	import pynotify
+        	self.content.addContainer("cmd","Ubuntu", "show Ubuntu Notification", self.unotify)
 
     def unotify(self, text="Notification"):
         text = self.getText(text)
