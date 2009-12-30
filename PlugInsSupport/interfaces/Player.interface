@@ -7,30 +7,51 @@
 
 <!-- hook in some css-->
 <img style="display:none" src="_JID_/Filesystem/interfaces/images/tabs_playlist.png" onload="var oLink = document.createElement('link'); oLink.href = '_JID_/Filesystem/interfaces/css/player.css'; oLink.rel = 'stylesheet'; oLink.type = 'text/css'; document.body.appendChild(oLink);"/>
+<script type="text/javascript">
+
+function update() {
+	$.get("_JID_/Audio/LastFM/Now_Playing", function(data){
+ 	 $("#title").text(data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back",""));
+	});
+}
+
+setInterval("update()", 3000);
+</script>
 
 	<div id="wrapper">
                 <div id="content">
                     <div id="title">
-                            <p class="title">Funky Snack by DJ Double</p>
+                            <p class="title">Artist</p>
                             <p class="interpreter">MondayJazz</p>
                     </div>
                     <div id="player">
                             <div id="controls">
-                                    <div id="player_skim" class="player_conts">skim</div>
+                                    <div id="player_skim" class="player_conts">skim?</div>
                                     <div id="player_control" class="player_conts">
                                             <a class="backward" onclick="$.get('_JID_/Defaults/audioback')");>backward</a>
                                             <a class="play" onclick="$.get('_JID_/Defaults/audioplay'); $('a.play').hide(); $('a.stop').show();">play</a>
                                             <a class="stop" onclick="$.get('_JID_/Defaults/audiostop'); $('a.stop').hide(); $('a.play').show();">play</a>
-                                            <a class="forward" onclick="$.get('_JID_/Defaults/audiostop')">forward</a>
+                                            <a class="forward" onclick="$.get('_JID_/Defaults/audioskip')">forward</a>
                                     </div>
                             </div>
 
                     </div>
                     <div id="playlists">
-                            list playlists
+                            <ul>
+                            	<li>testitem</li>
+                            </ul>
                     </div>
                     <div id="root_audio">
                             Play Root Audio
+
+
+                            <ul>
+                            	<li>  
+                            	<script type="text/javascript">
+							var = document.getElementById('ami_lab_aminet_org_PowerSwitch');
+							print var;
+							</script></li>
+                            </ul>                            
                     </div>
                     <div id="search">
                             search interface

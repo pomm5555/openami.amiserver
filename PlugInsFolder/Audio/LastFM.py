@@ -41,7 +41,7 @@ class LastFM(PlugIn):
         library = Container("cmd","Library","Library")
         neighbours = Container("cmd","Neighbours","neighbours")
         similar = Container("cmd","Similar","Play similar artist")
-
+        now_playing = Container("cmd","Now Playing","get Now Playing Info")
 
 
         love.setUse(self.love)
@@ -52,7 +52,8 @@ class LastFM(PlugIn):
         library.setUse(self.library)
         neighbours.setUse(self.neighbours)
         similar.setUse(self.similar)
-
+        now_playing.setUse(self.getNp)
+        
         self.content.addChild(love)
         self.content.addChild(ban)
         self.content.addChild(skip)
@@ -61,7 +62,8 @@ class LastFM(PlugIn):
         self.content.addChild(library)
         self.content.addChild(neighbours)
         self.content.addChild(similar)
-
+        self.content.addChild(now_playing)
+        
         # UI Elements
         self.content.addChild(TextfieldContainer("ui", "SimilarArtist", "PlaySimilarArtiest", target=Config.jid+"/Audio/LastFM/Similar"))
 
@@ -94,12 +96,16 @@ class LastFM(PlugIn):
         print "LastFm Skip"
         os.system("echo 'skip' | nc " + host + " " + port)
 
+
     def similar(self, artist):
         print "LastFm similar"
         # lastfm://artist/cher/similarartists
         os.system("echo 'play lastfm://artist/"+artist+"/similarartists' | nc " + host + " " + port)
 
-
+    def getNp(self,var):
+        print "LastFM  get now Playing"
+        info = pipe = os.popen("curl http://192.168.1.131","r")
+        return info.read()
 
 
     # just a little helper function
