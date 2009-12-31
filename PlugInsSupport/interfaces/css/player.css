@@ -51,12 +51,12 @@ div#title p.interpreter{
 /* @group Player */
 
 div#controls {
-	background-image: url(../images/sample_artwork.png);
+/*	background-image: url(../images/sample_artwork.png); */
 	height: 254px;
 }
 
 div#player_skim {
-	background-color: rgba(0,0,0,0.9);
+	background-color: rgba(0,0,0,0.6);
 	position: relative;
 	height: 40px;
 }
@@ -64,7 +64,7 @@ div#player_skim {
 /* @group Control */
 
 div#player_control {
-	background-color: rgba(0,0,0,0.9);
+	background-color: rgba(0,0,0,0.6);
 	height: 65px;
 	padding-top: 15px;
 	position: absolute;

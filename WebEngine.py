@@ -15,6 +15,8 @@ class WebEngine(Thread):
     def run(self):
         cherrypy.config.update({'server.socket_host': '0.0.0.0',
                                 'server.socket_port': 8080, })
+                                
+
         cherrypy.quickstart(WebServer(self.root))
 
 class WebServer():
@@ -102,7 +104,9 @@ class WebServer():
         '''
 
         result = self.root.toJqHtml()
-        caching = True
+        
+        # control caching
+        caching = False
         if caching:
             manifest=' manifest="/cache.manifest"'
         else:
