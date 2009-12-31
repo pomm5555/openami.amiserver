@@ -42,6 +42,7 @@ class LastFM(PlugIn):
         neighbours = Container("cmd","Neighbours","neighbours")
         similar = Container("cmd","Similar","Play similar artist")
         now_playing = Container("cmd","Now Playing","get Now Playing Info")
+        coverart = Container("cmd","CoverArt", "get CoverART")
 
 
         love.setUse(self.love)
@@ -53,6 +54,7 @@ class LastFM(PlugIn):
         neighbours.setUse(self.neighbours)
         similar.setUse(self.similar)
         now_playing.setUse(self.getNp)
+        coverart.setUse(self.getCoverArt)
         
         self.content.addChild(love)
         self.content.addChild(ban)
@@ -63,6 +65,7 @@ class LastFM(PlugIn):
         self.content.addChild(neighbours)
         self.content.addChild(similar)
         self.content.addChild(now_playing)
+        self.content.addChild(coverart)
         
         # UI Elements
         self.content.addChild(TextfieldContainer("ui", "SimilarArtist", "PlaySimilarArtiest", target=Config.jid+"/Audio/LastFM/Similar"))
@@ -106,6 +109,35 @@ class LastFM(PlugIn):
         print "LastFM  get now Playing"
         info = pipe = os.popen("curl http://192.168.1.131","r")
         return info.read()
+        
+    def getCoverArt(self,var):
+        np = pipe = os.popen("curl http://192.168.1.131","r")
+        np = np.read()
+        tmp = np.partition('-')
+        np = tmp[0]
+        
+        import ecs
+        import bitly
+        bitlyapi = bitly.Api(login='ka010', apikey='R_58288185ef31fed1a8fd65439367bbe0')
+        
+        ecs.setLicenseKey('AKIAIICBON46BQIRCOUQ')
+        ecs.setSecretKey('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')
+        print "** Searching Amazon for " +np
+        search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=np, ResponseGroup='Images')
+        img=search.next().LargeImage.URL
+        print img
+        
+        imgshort = bitlyapi.shorten(img)
+        print imgshort
+        print "LastFM getCoverArt"
+        
+        os.system("rm PlugInsSupport/interfaces/images/test.jpg")
+        os.system("curl " +img + " > PlugInsSupport/interfaces/images/test.jpg")
+        os.system("scp PlugInsSupport/interfaces/images/test.jpg root@ami:/srv/http")
+        
+        return img
+
+        
 
 
     # just a little helper function

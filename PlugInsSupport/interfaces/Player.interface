@@ -1,6 +1,9 @@
+
+
 <div id="get">
     <div class="toolbar">
         <h1>Audioplay</h1>
+		
         <a class="back" href="#">Back</a>
     </div>
 <div class="info" style="text-align: left; margin:none; padding:none">
@@ -11,18 +14,38 @@
 
 function update() {
 	$.get("_JID_/Audio/LastFM/Now_Playing", function(data){
- 	 $("#title").text(data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back",""));
+ 	 $("#title").html("<p>"+data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") +"<p>" );
 	});
+
+
+	// $("#player_skim").html("<img src='_JID_/Filesystem/interfaces/images/test.jpg' width='128' height='128' />");
+	 
+	$.get("_JID_/Audio/LastFM/CoverArt", function(data){
+	 tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","")
+
+
+ 	//$("#controls").css("background-image","url(_JID_/Filesystem/interfaces/images/sample_artwork.png)");
+	//$("#controls").css("background-image","url(_JID_/Filesystem/interfaces/images/test.png)");
+ //	$("#controls").css("height","254px");
+ 	//$("#controls").css("width","354");
+	 $("#player_skim").html("<img src='"+tmp+"' width='324' height='256' />");
+ //	 $("#player_skim").html("<img src='_JID_/Filesystem/interfaces/images/test.jpg' width='324' height='256' />");
+ 	
+	});
+
+
+	 	
 }
 
-setInterval("update()", 3000);
+update()
+setInterval("update()", 15000);
 </script>
 
 	<div id="wrapper">
                 <div id="content">
                     <div id="title">
-                            <p class="title">Artist</p>
-                            <p class="interpreter">MondayJazz</p>
+                            <p class="title">Updating...</p>
+                            <p class="interpreter"></p>
                     </div>
                     <div id="player">
                             <div id="controls">
@@ -38,7 +61,9 @@ setInterval("update()", 3000);
                     </div>
                     <div id="playlists">
                             <ul>
-                            	<li>testitem</li>
+                            	<li class="arrow">testitem
+                            			<a href="#"></a>
+                            	</li>
                             </ul>
                     </div>
                     <div id="root_audio">
