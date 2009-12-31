@@ -76,7 +76,10 @@ setInterval("update()", 30000);
                             </ul>                            
                     </div>
                     <div id="search">
-                            search interface
+                            <ul>
+                            	<li><input type="text" name="Search" placeholder="search" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Similar?string='+$(this).val()); setTimeout('update()',2000) "/></li>
+                            </ul>
+                           
                     </div>
                 </div>
 		<div id="tabs">
