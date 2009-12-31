@@ -23,11 +23,6 @@ function update() {
 	$.get("_JID_/Audio/LastFM/CoverArt", function(data){
 	 tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","")
 
-
- 	//$("#controls").css("background-image","url(_JID_/Filesystem/interfaces/images/sample_artwork.png)");
-	//$("#controls").css("background-image","url(_JID_/Filesystem/interfaces/images/test.png)");
- //	$("#controls").css("height","254px");
- 	//$("#controls").css("width","354");
 	 $("#player_skim").html("<img src='"+tmp+"' width='324' height='256' />");
  //	 $("#player_skim").html("<img src='_JID_/Filesystem/interfaces/images/test.jpg' width='324' height='256' />");
  	
@@ -55,6 +50,8 @@ setInterval("update()", 30000);
                                             <a class="play" onclick="$.get('_JID_/Defaults/audioplay'); $('a.play').hide(); $('a.stop').show();">play</a>
                                             <a class="stop" onclick="$.get('_JID_/Defaults/audiostop'); $('a.stop').hide(); $('a.play').show();">play</a>
                                             <a class="forward" onclick="$.get('_JID_/Defaults/audioskip'); setTimeout('update()',2000)">forward</a>
+                                            <a class="love" onclick="$.get('_JID_/Audio/LastFM/Love'); setTimeout('update()',2000)">love</a>
+                                            <a class="ban" onclick="$.get('_JID_/Audio/LastFM/Ban'); setTimeout('update()',2000)">ban</a>
                                     </div>
                             </div>
 
