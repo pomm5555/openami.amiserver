@@ -117,8 +117,6 @@ class LastFM(PlugIn):
         np = tmp[0]
         
         import ecs
-        import bitly
-        bitlyapi = bitly.Api(login='ka010', apikey='R_58288185ef31fed1a8fd65439367bbe0')
         
         ecs.setLicenseKey('AKIAIICBON46BQIRCOUQ')
         ecs.setSecretKey('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')
@@ -126,14 +124,9 @@ class LastFM(PlugIn):
         search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=np, ResponseGroup='Images')
         img=search.next().LargeImage.URL
         print img
-        
-        imgshort = bitlyapi.shorten(img)
-        print imgshort
+
         print "LastFM getCoverArt"
-        
-        os.system("rm PlugInsSupport/interfaces/images/test.jpg")
-        os.system("curl " +img + " > PlugInsSupport/interfaces/images/test.jpg")
-        os.system("scp PlugInsSupport/interfaces/images/test.jpg root@ami:/srv/http")
+
         
         return img
 
