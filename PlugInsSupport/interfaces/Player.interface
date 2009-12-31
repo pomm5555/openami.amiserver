@@ -13,17 +13,17 @@
 <script type="text/javascript">
 
 function update() {
+
+
 	$.get("_JID_/Audio/LastFM/Now_Playing", function(data){
- 	 $("#title").html("<p>"+data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") +"<p>" );
+ 	 $(".title").html("<p>"+data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") +"<p>" );
 	});
 
-
-	// $("#player_skim").html("<img src='_JID_/Filesystem/interfaces/images/test.jpg' width='128' height='128' />");
 	 
 	$.get("_JID_/Audio/LastFM/CoverArt", function(data){
 	 tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","")
 
-	 $("#player_skim").html("<img src='"+tmp+"' width='324' height='256' />");
+	 $("#player_skim").html("<img src='"+tmp+"' width='320' height='256' />");
  //	 $("#player_skim").html("<img src='_JID_/Filesystem/interfaces/images/test.jpg' width='324' height='256' />");
  	
 	});
@@ -42,9 +42,10 @@ setInterval("update()", 30000);
                             <p class="title">Updating...</p>
                             <p class="interpreter"></p>
                     </div>
+                                                        <div id="player_skim" class="player_conts">skim?</div>
                     <div id="player">
                             <div id="controls">
-                                    <div id="player_skim" class="player_conts">skim?</div>
+
                                     <div id="player_control" class="player_conts">
                                             <a class="backward" onclick="$.get('_JID_/Defaults/audioback')");>backward</a>
                                             <a class="play" onclick="$.get('_JID_/Defaults/audioplay'); $('a.play').hide(); $('a.stop').show();">play</a>
@@ -76,10 +77,12 @@ setInterval("update()", 30000);
                             </ul>                            
                     </div>
                     <div id="search">
-                            <ul>
-                            	<li><input type="text" name="Search" placeholder="search" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Similar?string='+$(this).val()); setTimeout('update()',2000) "/></li>
-                            </ul>
-                           
+                    	<div id="search2" >
+                            <h1>Search</h1>
+                            <p><input class="searchbar" type="text" name="Search Artist" placeholder="Search for similar Artists" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Similar?string='+$(this).val()); setTimeout('update()',3000) "/></p>
+                            <br>
+                            <p><input class="searchbar" type="text" name="Search Genre" placeholder="Search for Genre" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Genre?string='+$(this).val()); setTimeout('update()',3000) "/></p>
+                        </div>
                     </div>
                 </div>
 		<div id="tabs">
