@@ -38,7 +38,7 @@ function update() {
 }
 
 update()
-setInterval("update()", 15000);
+setInterval("update()", 30000);
 </script>
 
 	<div id="wrapper">
@@ -54,7 +54,7 @@ setInterval("update()", 15000);
                                             <a class="backward" onclick="$.get('_JID_/Defaults/audioback')");>backward</a>
                                             <a class="play" onclick="$.get('_JID_/Defaults/audioplay'); $('a.play').hide(); $('a.stop').show();">play</a>
                                             <a class="stop" onclick="$.get('_JID_/Defaults/audiostop'); $('a.stop').hide(); $('a.play').show();">play</a>
-                                            <a class="forward" onclick="$.get('_JID_/Defaults/audioskip')">forward</a>
+                                            <a class="forward" onclick="$.get('_JID_/Defaults/audioskip'); setTimeout('update()',2000)">forward</a>
                                     </div>
                             </div>
 
