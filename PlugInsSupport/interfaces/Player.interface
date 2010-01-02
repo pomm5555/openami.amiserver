@@ -22,8 +22,8 @@ function update() {
 	 
 	$.get("_JID_/Audio/LastFM/CoverArt", function(data){
 	 tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","")
-
-	 $("#player_skim").html("<img src='"+tmp+"' width='320' height='256' />");
+	 
+	 $("#player_skim").html("<img src='"+tmp+"' width='320' height='364' />");
  //	 $("#player_skim").html("<img src='_JID_/Filesystem/interfaces/images/test.jpg' width='324' height='256' />");
  	
 	});
@@ -38,11 +38,12 @@ setInterval("update()", 30000);
 
 	<div id="wrapper">
                 <div id="content">
+                <div id="player_skim" class="player_conts"></div> 
                     <div id="title">
                             <p class="title">Updating...</p>
                             <p class="interpreter"></p>
                     </div>
-                                                        <div id="player_skim" class="player_conts">skim?</div>
+                   
                     <div id="player">
                             <div id="controls">
 
@@ -51,45 +52,43 @@ setInterval("update()", 30000);
                                             <a class="play" onclick="$.get('_JID_/Defaults/audioplay'); $('a.play').hide(); $('a.stop').show();">play</a>
                                             <a class="stop" onclick="$.get('_JID_/Defaults/audiostop'); $('a.stop').hide(); $('a.play').show();">play</a>
                                             <a class="forward" onclick="$.get('_JID_/Defaults/audioskip'); setTimeout('update()',2000)">forward</a>
-                                            <a class="love" onclick="$.get('_JID_/Audio/LastFM/Love'); setTimeout('update()',2000)">love</a>
-                                            <a class="ban" onclick="$.get('_JID_/Audio/LastFM/Ban'); setTimeout('update()',2000)">ban</a>
+                                            <a class="love" onclick="$.get('_JID_/Audio/LastFM/Love'); ">love</a>
+                                            <a class="ban" onclick="$.get('_JID_/Audio/LastFM/Ban'); ">ban</a>
                                     </div>
                             </div>
 
                     </div>
                     <div id="playlists">
-                            <ul>
-                            	<li class="arrow">testitem
-                            			<a href="#"></a>
-                            	</li>
-                            </ul>
+
                     </div>
-                    <div id="root_audio">
-                            Play Root Audio
-
-
-                            <ul>
-                            	<li>  
-                            	<script type="text/javascript">
-							var = document.getElementById('ami_lab_aminet_org_PowerSwitch');
-							print var;
-							</script></li>
-                            </ul>                            
+                    <div id="root_audio" >
+                          <div class="audiosinks">
+                           <ul class="plastic">
+                        	  <p>Audio Sinks</p><br>
+                        	  <li class="arrow">Lab<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get('_JID_/AudioSwitch/Port0/ON');else $.get('_JID_/AudioSwitch/Port0/OFF';"/></span></li>
+                    		  <li class="arrow">Kitchen<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get('_JID_/AudioSwitch/Port0/ON');else $.get('_JID_/AudioSwitch/Port0/OFF';"/></span></li>
+                    		  <li class="arrow">Living<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get('_JID_/AudioSwitch/Port0/ON');else $.get('_JID_/AudioSwitch/Port0/OFF';"/></span></li>
+                    		  <li class="arrow">Bedroom<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get('_JID_/AudioSwitch/Port0/ON');else $.get('_JID_/AudioSwitch/Port0/OFF';"/></span></li>
+                    		</ul>
+                    	</div>	
                     </div>
                     <div id="search">
-                    	<div id="search2" >
-                            <h1>Search</h1>
-                            <p><input class="searchbar" type="text" name="Search Artist" placeholder="Search for similar Artists" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Similar?string='+$(this).val()); setTimeout('update()',3000) "/></p>
+                    	<div id="search2" class="audiosinks">
+                           <ul class="plastic">
+                        	<p>Search</p><br>
+                            <p><input class="searchbar" type="text" name="Search Artist" placeholder="Search for similar Artists" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Similar?string='+$(this).val()); setTimeout('update()',3000) ; "/></p>
                             <br>
                             <p><input class="searchbar" type="text" name="Search Genre" placeholder="Search for Genre" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Genre?string='+$(this).val()); setTimeout('update()',3000) "/></p>
+                        	<br>
+                        	</ul>
                         </div>
                     </div>
                 </div>
 		<div id="tabs">
-			<a href="#" class="controls tab_bt" onclick="$('div#player').show(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#search').hide();">controls</a>
-                        <a href="#" class="playlists tab_bt" onclick="$('div#player').hide(); $('div#playlists').show();$('div#root_audio').hide(); $('div#search').hide();">playlists</a>
-                        <a href="#" class="speakers tab_bt" onclick="$('div#player').hide(); $('div#playlists').hide();$('div#root_audio').show(); $('div#search').hide();">speakers</a>
-                        <a href="#" class="search tab_bt" onclick="$('div#player').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#search').show();">search</a>
+			<a href="#" class="controls tab_bt" onclick="$('div#player').show(500); $('div#playlists').hide();$('div#root_audio').hide(); $('div#search').hide();">controls</a>
+                        <a href="#" class="playlists tab_bt" onclick="$('div#player').hide(); $('div#playlists').show(500);$('div#root_audio').hide(); $('div#search').hide();">playlists</a>
+                        <a href="#" class="speakers tab_bt" onclick="$('div#player').hide(); $('div#playlists').hide();$('div#root_audio').show(500); $('div#search').hide();">speakers</a>
+                        <a href="#" class="search tab_bt " onclick="$('div#player').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#search').show(500);">search</a>
 		</div>
 	</div>
 

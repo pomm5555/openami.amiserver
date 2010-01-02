@@ -79,7 +79,7 @@ class WebServer():
 
                 $('.floaty').makeFloaty({
                     spacing: 0,
-                    time: '0.5s',
+                    time: '0.2s',
                     align: 'bottom'
                 });
 

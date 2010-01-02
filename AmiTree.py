@@ -162,7 +162,7 @@ class Container:
             homebutton=""#<a class='notsoleftButton' href='#"+home+" '>Home</a>"
 
             toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1>"+backbutton+homebutton+"<a class='togglefloaty button slideup' href='#about'>More</a></div>"
-            content = "<ul class='rounded'>"
+            content = "<ul class='plastic'>"
             for k, v in self.content.items():
 
                 if not v.content == {}:
