@@ -22,7 +22,8 @@ div#wrapper{
 
 div#content {
 	background-color: black;
-	height: 325px;
+   /* height: 325px; */
+    height : 364px;
 	position: relative;
 }
 
@@ -30,9 +31,13 @@ div#content {
 
 div#title{
 	background-image: url(../images/bg_title.png);
+	top: 0;
+	width : 100%
+	position: absolute;
 	margin-top: 0;
 	padding-top: 18px;
 	height: 53px;
+	opacity: 0.8;
 }
 
 div#title p.title{
@@ -52,20 +57,20 @@ div#title p.interpreter{
 
 div#controls {
 /*	background-image: url(../images/sample_artwork.png); */
-	height: 254px;
+	height: 274px;
 }
 
 div#player_skim {
 	background-color: rgba(0,0,0,0.6);
 	position: relative;
-	height: 40px;
+	height: 1px;
 }
 
 /* @group Control */
 
 div#player_control {
 	background-color: rgba(0,0,0,0.6);
-	height: 65px;
+	height: 40px;
 	padding-top: 15px;
 	position: absolute;
 	bottom: 0;
@@ -148,13 +153,22 @@ div#player_control a.ban{
 	background-color: black;
 	height: 64px;
 	width:	254px;
-	opacity: 0.8;
+	
 	right: 50%;
-	font-size: 14px;
+	font-size: 18px;
+	font-weight: bolder;
 	color: white;
 }
 
+.audiosinks {
 
+	opacity: 0.8;
+	font-size: 18px;
+	color: green;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
 /* @end */
 
 /* @group Playlists */
