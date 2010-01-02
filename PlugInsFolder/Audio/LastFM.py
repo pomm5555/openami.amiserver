@@ -1,4 +1,5 @@
 import os
+import sys
 from AmiTree import *
 from PlugIn import PlugIn
 from amiConfig import Config
@@ -43,7 +44,7 @@ class LastFM(PlugIn):
         similar = Container("cmd","Similar","Play similar artist")
         now_playing = Container("cmd","Now Playing","get Now Playing Info")
         coverart = Container("cmd","CoverArt", "get CoverART")
-
+        getstate = Container("cmd","State", "get Player State")
 
         love.setUse(self.love)
         skip.setUse(self.skip)
@@ -55,6 +56,7 @@ class LastFM(PlugIn):
         similar.setUse(self.similar)
         now_playing.setUse(self.getNp)
         coverart.setUse(self.getCoverArt)
+        getstate.setUse(self.getState)
         
         self.content.addChild(love)
         self.content.addChild(ban)
@@ -66,6 +68,7 @@ class LastFM(PlugIn):
         self.content.addChild(similar)
         self.content.addChild(now_playing)
         self.content.addChild(coverart)
+        self.content.addChild(getstate)
         
         # UI Elements
         self.content.addChild(TextfieldContainer("ui", "SimilarArtist", "PlaySimilarArtiest", target=Config.jid+"/Audio/LastFM/Similar"))
@@ -126,13 +129,18 @@ class LastFM(PlugIn):
         print img
 
         print "LastFM getCoverArt"
-
         
         return img
 
         
-
-
+    def getState(self, var):
+        print "LastFM getState"
+        pstree = os.popen("ps ax").read()
+        if 'madplay' in pstree:
+          return "playing"
+        else:
+          return "not playing"
+          
     # just a little helper function
     def getText(self, var):
         try:

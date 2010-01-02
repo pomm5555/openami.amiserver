@@ -2,6 +2,7 @@
 from AmiTree import Container
 from PlugIn import PlugIn
 from xmppEngine import XMPPEngine
+import os
 
 class Status(PlugIn):
 
@@ -18,7 +19,8 @@ class Status(PlugIn):
         # set add container
         self.content.addContainer("cmd", "Buddies", "Show Buddies", self.getBuddies)
         
-
+        self.content.addContainer("cmd","State", "get Player State", self.getState)
+        
         self.content.addContainer("cmd", "Root", "Show Root Node", self.getRoot)
 
     def getBuddies(self, text=""):
@@ -28,6 +30,14 @@ class Status(PlugIn):
             string += elem+"\n"
 
         return string
+        
+    def getState(self, var):
+        print "LastFM getState"
+        pstree = os.popen("ps ax").read()
+        if 'madplay' in pstree:
+          return "playing"
+        else:
+          return "not playing"
 
     def getRoot(self, text=""):
         string = ""
