@@ -14,6 +14,47 @@
 
 function update() {
 
+	$.get("_JID_/Status/State", function(data){
+ 	 	tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") ;
+ 	 	if (tmp == 'playing')  	 	{
+ 	 		$('a.play').hide(); 
+ 	 		$('a.stop').show();
+ 	 	}
+ 	 	else 	{
+ 	 		$('a.stop').hide(); 
+ 	 		$('a.play').show();
+ 	 	}
+	});
+	
+	$.get("_JID_/Status/State", function(data){
+ 	 	tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") ;
+ 	 	if (tmp == 'playing')  	 	{ 		
+			$("#state_dev").attr('checked','true');
+ 	 	}
+ 	 	else 	{
+			$("#state_dev").attr('checked','false');
+ 	 	}
+	});
+	
+	$.get("http://192.168.1.1:8080/ami.wrtv2@aminet.org/Status/State", function(data){
+ 	 	tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") ;
+ 	 	if (tmp == 'playing')  	 	{
+			$("#state_lab").attr('checked','true');
+ 	 	}
+ 	 	else 	{
+ 	 		$("#state_lab").attr('checked','false');
+ 	 	}
+	});
+	
+	$.get("http://192.168.1.170:8080/ami.wrt@aminet.org/Status/State", function(data){
+ 	 	tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") ;
+ 	 	if (tmp == 'playing')  	 	{
+			$("#state_kitchen").attr('checked','true');
+ 	 	}
+ 	 	else 	{
+			$("#state_kitchen").attr('checked','false');
+ 	 	}
+	});
 
 	$.get("_JID_/Audio/LastFM/Now_Playing", function(data){
  	 $(".title").html("<p>"+data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") +"<p>" );
@@ -51,7 +92,7 @@ setInterval("update()", 30000);
                                             <a class="backward" onclick="$.get('_JID_/Defaults/audioback')");>backward</a>
                                             <a class="play" onclick="$.get('_JID_/Defaults/audioplay'); $('a.play').hide(); $('a.stop').show();">play</a>
                                             <a class="stop" onclick="$.get('_JID_/Defaults/audiostop'); $('a.stop').hide(); $('a.play').show();">play</a>
-                                            <a class="forward" onclick="$.get('_JID_/Defaults/audioskip'); setTimeout('update()',2000)">forward</a>
+                                            <a class="forward" onclick="$.get('_JID_/Defaults/audioskip'); setTimeout('update()',2500)">forward</a>
                                             <a class="love" onclick="$.get('_JID_/Audio/LastFM/Love'); ">love</a>
                                             <a class="ban" onclick="$.get('_JID_/Audio/LastFM/Ban'); ">ban</a>
                                     </div>
@@ -65,10 +106,10 @@ setInterval("update()", 30000);
                           <div class="audiosinks">
                            <ul class="plastic">
                         	  <p>Audio Sinks</p><br>
-                        	  <li class="arrow">Lab<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get('_JID_/AudioSwitch/Port0/ON');else $.get('_JID_/AudioSwitch/Port0/OFF';"/></span></li>
-                    		  <li class="arrow">Kitchen<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get('_JID_/AudioSwitch/Port0/ON');else $.get('_JID_/AudioSwitch/Port0/OFF';"/></span></li>
-                    		  <li class="arrow">Living<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get('_JID_/AudioSwitch/Port0/ON');else $.get('_JID_/AudioSwitch/Port0/OFF';"/></span></li>
-                    		  <li class="arrow">Bedroom<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get('_JID_/AudioSwitch/Port0/ON');else $.get('_JID_/AudioSwitch/Port0/OFF';"/></span></li>
+                        	  <li class="arrow">Lab<span class="toggle"><input id="state_lab" type="checkbox"  onChange="if(this.checked) $.get('http://192.168.1.1:8080/ami.wrtv2@aminet.org/Audio/Madplay/Play?string=http://192.168.1.131:8000/source');else $.get('http://192.168.1.1:8080/ami.wrtv2@aminet.org/Audio/Madplay/Stop');"/></span></li>
+                    		  <li class="arrow">Kitchen<span class="toggle"><input id="state_kitchen" type="checkbox" onChange="if(this.checked) $.get('http://192.168.1.1:8080/ami.wrt@aminet.org/Audio/Madplay/Play?string=http://192.168.1.131:8000/source');else $.get('http://192.168.1.1:8080/ami.wrtv2@aminet.org/Audio/Madplay/Stop');"/></span></li>
+                    		  <li class="arrow">Living<span class="toggle"><input id="state_living" type="checkbox" onChange="if(this.checked) $.get('_JID_/AudioSwitch/Port0/ON');else $.get('_JID_/AudioSwitch/Port0/OFF');"/></span></li>
+                    		  <li class="arrow">DevBox<span class="toggle"><input id="state_dev"   type="checkbox" onChange="if(this.checked) $.get('http://localhost:8080/ami.lab@aminet.org/Audio/Madplay/Play?string=http://192.168.1.131:8000/source');else $.get('http://localhost:8080/ami.lab@aminet.org/Audio/Madplay/Stop');"/></span></li>
                     		</ul>
                     	</div>	
                     </div>
@@ -85,9 +126,9 @@ setInterval("update()", 30000);
                     </div>
                 </div>
 		<div id="tabs">
-			<a href="#" class="controls tab_bt" onclick="$('div#player').show(500); $('div#playlists').hide();$('div#root_audio').hide(); $('div#search').hide();">controls</a>
+			<a href="#" class="controls tab_bt" onclick=" $('div#search').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#player').show(500); ">controls</a>
                         <a href="#" class="playlists tab_bt" onclick="$('div#player').hide(); $('div#playlists').show(500);$('div#root_audio').hide(); $('div#search').hide();">playlists</a>
-                        <a href="#" class="speakers tab_bt" onclick="$('div#player').hide(); $('div#playlists').hide();$('div#root_audio').show(500); $('div#search').hide();">speakers</a>
+                        <a href="#" class="speakers tab_bt" onclick="$('div#player').hide(); $('div#playlists').hide();$('div#search').hide();$('div#root_audio').show(500); ">speakers</a>
                         <a href="#" class="search tab_bt " onclick="$('div#player').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#search').show(500);">search</a>
 		</div>
 	</div>

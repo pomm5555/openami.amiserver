@@ -36,7 +36,7 @@ class WebServer():
                 <li><a href='/'''+addr+'''/Dashboard' class="slideup hidefloaty">Dashboard</a></li>
                 <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+'''' class="hidefloaty">Home</a></li>
                 <li><a href='/'''+addr+'''/System/FritzMonitor' class="flip hidefloaty">CallLog</a></li>
-                <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="flip hidefloaty">Audio</a></li>
+                <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="slideup hidefloaty">Audio</a></li>
             </ul>
         </div>
         '''
@@ -157,6 +157,7 @@ class WebServer():
 '''+jid+'''/Filesystem/html/themes/jqt/img/chevron.png
 '''+jid+'''/Filesystem/html/images/appIcon.png
 '''+jid+'''/Filesystem/html/images/startup.png
+
 
 NETWORK:
 /'''+jid+'''/
