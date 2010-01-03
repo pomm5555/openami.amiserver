@@ -15,7 +15,7 @@ class Dashboard(PlugIn):
         #plugin itself
         self.content = Container("plugin", token, "This is a Status Plugin", self.getParts)
         self.content.rendering = Container.PLAIN
-       
+       	self.content.visible = False
 
     def getParts(self, text=""):
         string = ""
@@ -39,7 +39,7 @@ class Dashboard(PlugIn):
         
         liElements = []
         
-        liElements.append('<small>small</small><span class="amiDash1">Big Text</span><em>Emphasized</em>')
+        liElements.append('<small>small</small><span class="amiDash1">State</span><em>Emphasized</em>')
         liElements.append('<small>small</small>Big Text<em>Emphasized</em>')
         liElements.append('<small>small</small>Big Text<em>Emphasized</em>')
         liElements.append('<small>small</small>Big Text<em>Emphasized</em>')

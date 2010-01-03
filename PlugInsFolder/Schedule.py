@@ -17,9 +17,9 @@ class Schedule(PlugIn):
 
         # create plugin itself
         self.content = ThreadContainer("plugin", token, "This hopefully will be a Scheduler  Plugin")
-
+        self.content.visible = False
         self.content.setDo(self.sched)
-
+		
         # start thread
         self.content.start()
 

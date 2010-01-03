@@ -29,30 +29,31 @@ function update() {
 	$.get("_JID_/Status/State", function(data){
  	 	tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") ;
  	 	if (tmp == 'playing')  	 	{ 		
-			$("#state_dev").attr('checked','true');
+			$("#state_dev").attr('checked',true);
  	 	}
  	 	else 	{
-			$("#state_dev").attr('checked','false');
+		 	$("#state_dev").attr('checked',false);
  	 	}
 	});
 	
-	$.get("http://192.168.1.1:8080/ami.wrtv2@aminet.org/Status/State", function(data){
+	
+	$.get("_JID_/Global/lab", function(data){
  	 	tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") ;
- 	 	if (tmp == 'playing')  	 	{
-			$("#state_lab").attr('checked','true');
+ 	 	if (tmp == 'playing')  	 	{ 		
+			$("#state_lab").attr('checked',true);
  	 	}
  	 	else 	{
- 	 		$("#state_lab").attr('checked','false');
+		 	$("#state_lab").attr('checked',false);
  	 	}
 	});
 	
-	$.get("http://192.168.1.170:8080/ami.wrt@aminet.org/Status/State", function(data){
+	$.get("_JID_/Global/kitchen", function(data){
  	 	tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") ;
- 	 	if (tmp == 'playing')  	 	{
-			$("#state_kitchen").attr('checked','true');
+ 	 	if (tmp == 'playing')  	 	{ 		
+			$("#state_kitchen").attr('checked',true);
  	 	}
  	 	else 	{
-			$("#state_kitchen").attr('checked','false');
+		 	$("#state_kitchen").attr('checked',false);
  	 	}
 	});
 
@@ -68,12 +69,11 @@ function update() {
  //	 $("#player_skim").html("<img src='_JID_/Filesystem/interfaces/images/test.jpg' width='324' height='256' />");
  	
 	});
-
-
 	 	
 }
 
-update()
+
+update();
 setInterval("update()", 30000);
 </script>
 
@@ -100,36 +100,46 @@ setInterval("update()", 30000);
 
                     </div>
                     <div id="playlists">
+						<div id="search2" class="audiosinks">
+                           <ul class="edgetoedge">
 
+                            <li ><a href=""  onclick="$.get('_JID_/Audio/LastFM/Library');">Library</a></li>
+                            <li ><a href="" onclick="$.get('_JID_/Audio/LastFM/Playlist');">Playlist</a></li>
+                            <li ><a href="" onclick="$.get('_JID_/Audio/LastFM/Neighbours');">Neighbours</a></li>
+                            <li ><a href="">Random</a></li>
+                        	</ul>
+                        </div>
                     </div>
                     <div id="root_audio" >
                           <div class="audiosinks">
-                           <ul class="plastic">
-                        	  <p>Audio Sinks</p><br>
+                           <ul class="edgetoedge">
+         
                         	  <li class="arrow">Lab<span class="toggle"><input id="state_lab" type="checkbox"  onChange="if(this.checked) $.get('http://192.168.1.1:8080/ami.wrtv2@aminet.org/Audio/Madplay/Play?string=http://192.168.1.131:8000/source');else $.get('http://192.168.1.1:8080/ami.wrtv2@aminet.org/Audio/Madplay/Stop');"/></span></li>
-                    		  <li class="arrow">Kitchen<span class="toggle"><input id="state_kitchen" type="checkbox" onChange="if(this.checked) $.get('http://192.168.1.1:8080/ami.wrt@aminet.org/Audio/Madplay/Play?string=http://192.168.1.131:8000/source');else $.get('http://192.168.1.1:8080/ami.wrtv2@aminet.org/Audio/Madplay/Stop');"/></span></li>
+                    		  <li class="arrow">Kitchen<span class="toggle"><input id="state_kitchen" type="checkbox" onChange="if(this.checked) $.get('http://192.168.1.170:8080/ami.wrtv1@aminet.org/Audio/Madplay/Play?string=http://192.168.1.131:8000/source');else $.get('http://192.168.1.170:8080/ami.wrtv1@aminet.org/Audio/Madplay/Stop');"/></span></li>
                     		  <li class="arrow">Living<span class="toggle"><input id="state_living" type="checkbox" onChange="if(this.checked) $.get('_JID_/AudioSwitch/Port0/ON');else $.get('_JID_/AudioSwitch/Port0/OFF');"/></span></li>
-                    		  <li class="arrow">DevBox<span class="toggle"><input id="state_dev"   type="checkbox" onChange="if(this.checked) $.get('http://localhost:8080/ami.lab@aminet.org/Audio/Madplay/Play?string=http://192.168.1.131:8000/source');else $.get('http://localhost:8080/ami.lab@aminet.org/Audio/Madplay/Stop');"/></span></li>
+                    		  <li class="arrow">DevBox<span class="toggle"><input id="state_dev"   type="checkbox" onChange="if(this.checked) $.get('ami.lab@aminet.org/Audio/Madplay/Play?string=http://192.168.1.131:8000/source');else $.get('ami.lab@aminet.org/Audio/Madplay/Stop');"/></span></li>
                     		</ul>
                     	</div>	
                     </div>
                     <div id="search">
                     	<div id="search2" class="audiosinks">
-                           <ul class="plastic">
-                        	<p>Search</p><br>
-                            <p><input class="searchbar" type="text" name="Search Artist" placeholder="Search for similar Artists" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Similar?string='+$(this).val()); setTimeout('update()',3000) ; "/></p>
-                            <br>
-                            <p><input class="searchbar" type="text" name="Search Genre" placeholder="Search for Genre" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Genre?string='+$(this).val()); setTimeout('update()',3000) "/></p>
-                        	<br>
+                           <ul class="edgetoedge">
+                        	
+                        	
+                            <li><input class="searchbar" type="text" name="Search Artist" placeholder="Search for similar Artists" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Similar?string='+$(this).val()); setTimeout('update()',3000) ; "/></li>
+                            
+                            <li><input class="searchbar" type="text" name="Search Genre" placeholder="Search for Tag" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Tag?string='+$(this).val()); setTimeout('update()',3000) ;"/></li>
+                        	
+                        	
                         	</ul>
                         </div>
                     </div>
                 </div>
 		<div id="tabs">
-			<a href="#" class="controls tab_bt" onclick=" $('div#search').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#player').show(500); ">controls</a>
-                        <a href="#" class="playlists tab_bt" onclick="$('div#player').hide(); $('div#playlists').show(500);$('div#root_audio').hide(); $('div#search').hide();">playlists</a>
-                        <a href="#" class="speakers tab_bt" onclick="$('div#player').hide(); $('div#playlists').hide();$('div#search').hide();$('div#root_audio').show(500); ">speakers</a>
-                        <a href="#" class="search tab_bt " onclick="$('div#player').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#search').show(500);">search</a>
+			<a href="#" class="controls tab_bt" onclick=" $('div#search').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#player').show(500);  $('.speakers').css('background-color','rgba(90,156,255,0.0)'); $('.playlists').css('background-color','rgba(90,156,255,0.0)'); $('.search').css('background-color','rgba(90,156,255,0.0)'); $('.controls').css('background-color','rgba(255,255,255,0.1)');">controls</a>
+                        <a href="#" class="playlists tab_bt" onclick="$('div#player').hide(); $('div#playlists').show(500);$('div#root_audio').hide(); $('div#search').hide(); $('.controls').css('background-color','rgba(90,156,255,0.0)'); $('.speakers').css('background-color','rgba(90,156,255,0.0)'); $('.search').css('background-color','rgba(90,156,255,0.0)');  $('.playlists').css('background-color','rgba(255,255,255,0.1)');">playlists</a>
+                        <a href="#" class="speakers tab_bt" onclick="$('div#player').hide(); $('div#playlists').hide();$('div#search').hide();$('div#root_audio').show(500);  $('.controls').css('background-color','rgba(90,156,255,0.0)'); $('.playlists').css('background-color','rgba(90,156,255,0.0)'); $('.search').css('background-color','rgba(90,156,255,0.0)'); $('.speakers').css('background-color','rgba(255,255,255,0.1)'); ">speakers</a>
+                        <a href="#" class="search tab_bt " onclick="$('div#player').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#search').show(500); $('.controls').css('background-color','rgba(90,156,255,0.0)'); $('.speakers').css('background-color','rgba(90,156,255,0.0)'); $('.playlists').css('background-color','rgba(90,156,255,0.0)');  $('.search').css('background-color','rgba(255,255,255,0.1)'); ">search</a>
 		</div>
 	</div>
 

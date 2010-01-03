@@ -45,6 +45,7 @@ class LastFM(PlugIn):
         now_playing = Container("cmd","Now Playing","get Now Playing Info")
         coverart = Container("cmd","CoverArt", "get CoverART")
         getstate = Container("cmd","State", "get Player State")
+        tag = Container("cmd", "Tag", "find Music by Tag")
 
         love.setUse(self.love)
         skip.setUse(self.skip)
@@ -57,6 +58,7 @@ class LastFM(PlugIn):
         now_playing.setUse(self.getNp)
         coverart.setUse(self.getCoverArt)
         getstate.setUse(self.getState)
+        tag.setUse(self.tag)
         
         self.content.addChild(love)
         self.content.addChild(ban)
@@ -69,6 +71,7 @@ class LastFM(PlugIn):
         self.content.addChild(now_playing)
         self.content.addChild(coverart)
         self.content.addChild(getstate)
+        self.content.addChild(tag)
         
         # UI Elements
         self.content.addChild(TextfieldContainer("ui", "SimilarArtist", "PlaySimilarArtiest", target=Config.jid+"/Audio/LastFM/Similar"))
@@ -107,6 +110,11 @@ class LastFM(PlugIn):
         print "LastFm similar"
         # lastfm://artist/cher/similarartists
         os.system("echo 'play lastfm://artist/"+artist+"/similarartists' | nc " + host + " " + port)
+        
+    def tag(self, tag):
+        print "LastFm Tag"
+        
+        os.system("echo 'play lastfm://tag/"+tag+"' | nc " + host + " " + port)
 
     def getNp(self,var):
         print "LastFM  get now Playing"
