@@ -18,7 +18,7 @@ class Container:
     JQ = 1
 
 
-    def __init__(self, type, token, information="empty", use=None, logging=False):
+    def __init__(self, type, token, information="empty", use=None, use_args=None, logging=False):
         self.content = {}
         self.information = information
         self.token = token.replace(" ", "_")
@@ -29,7 +29,9 @@ class Container:
         self.addresslist = None
         # how should webengine render the containers content jq|plain...
         self.rendering = Container.JQ
+        self.use_args=use_args
         if use:
+
             self.setUse(use)
 
         # bei der initialisierung ist getAddress noch auf token beschraekt weil parent noch nicht besetzt oder so
@@ -94,8 +96,9 @@ class Container:
         return self.information
 
 
-    def setUse(self, use):
+    def setUse(self, use, use_args=None):
         #self.use = use
+        self.use_args = use_args
         self.useL = types.MethodType(use.im_func, self, self.__class__)
 
     def printTree(self, i):
@@ -162,7 +165,7 @@ class Container:
             homebutton=""#<a class='notsoleftButton' href='#"+home+" '>Home</a>"
 
             toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1>"+backbutton+homebutton+"<a class='togglefloaty button slideup' href='#about'>More</a></div>"
-            content = "<ul class='plastic'>"
+            content = "<ul class='rounded'>"
             for k, v in self.content.items():
 
                 if not v.content == {}:
@@ -252,7 +255,7 @@ class ThreadContainer(Thread, Container):
     def __init__(self, type, token, information="empty"):
         Thread.__init__(self, None)
         Container.__init__(self, type, token, information)
-	self.daemon = False
+        self.daemon = False
 
 
     def setDo(self, method):
