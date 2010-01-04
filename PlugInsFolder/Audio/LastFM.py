@@ -118,11 +118,13 @@ class LastFM(PlugIn):
 
     def getNp(self,var):
         print "LastFM  get now Playing"
-        info = pipe = os.popen("curl http://192.168.1.131","r")
-        return info.read()
+        #info = pipe = os.popen("curl http://192.168.1.131","r")
+        info = os.popen('echo info | nc ' + host + ' ' + port)
+	return info.read()
         
     def getCoverArt(self,var):
-        np = pipe = os.popen("curl http://192.168.1.131","r")
+        np = os.popen('echo info | nc ' + host + ' ' + port)
+	#np = pipe = os.popen("curl http://192.168.1.131","r")
         np = np.read()
         tmp = np.partition('-')
         np = tmp[0]

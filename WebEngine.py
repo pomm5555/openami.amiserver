@@ -144,7 +144,7 @@ class WebServer():
             print 'CACHE MANIFEST REQUEST!!!!!'
             self.contentType('text/cache-manifest')
             return '''CACHE MANIFEST
-#revision 0.32
+#revision 0.33
 '''+jid+'''/Filesystem/html/themes/jqt/theme.css
 '''+jid+'''/Filesystem/html/ami.css
 '''+jid+'''/Filesystem/html/jqtouch/jquery.1.3.2.min.js
