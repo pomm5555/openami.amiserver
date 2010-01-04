@@ -20,10 +20,12 @@ class Global(PlugIn):
 
         # set add container
         
-        for pair in Config.getSection("Global"): 
-            container = Container("cmd", pair[0], "global cmd" )
-            container.setUse(self.getState,pair[1])
-            self.content.addChild(container)
+
+        if not Config.getSection('Global').__eq__(''):
+            for pair in Config.getSection("Global"): 
+                container = Container("cmd", pair[0], "global cmd" )
+                container.setUse(self.getState,pair[1])
+                self.content.addChild(container)
 
      
 
