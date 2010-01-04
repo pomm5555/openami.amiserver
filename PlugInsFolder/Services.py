@@ -22,9 +22,8 @@ class Services(PlugIn):
         jqC = Container("cmd", "JqHtml", "Get the Tree or Subtree as JQ Touch HTML", self.getJq)
         jqC.rendering = Container.PLAIN
 
-
-        test = Container("cmd", "test", "Get the Tree or Subtree as JQ Touch HTML", self.test)
-        test.rendering = Container.PLAIN
+        multirequest = Container("cmd", "multirequest", "Access multiple requests with one request, function returns some JSON code, or should", self.mreq)
+        multirequest.rendering = Container.PLAIN
 
         
         test = Container("cmd", "test", "Get the Tree or Subtree as JQ Touch HTML", self.test)
@@ -33,6 +32,7 @@ class Services(PlugIn):
 
         self.content.addChild(xmlC)
         self.content.addChild(jqC)
+        self.content.addChild(multirequest)
         self.content.addChild(test)
 
     def getXml(self, string=""):
@@ -51,6 +51,17 @@ class Services(PlugIn):
             return tmp
         else:
             return EventEngine.root.toJqHtml()
+
+    def mreq(self, string=''):
+        print string
+        requests = json.loads(string)
+        print requests
+        
+        result = {}
+        for key, request in requests.items():
+            result[key]=self.root().getByAddress(request).use()
+        return json.dumps(result)
+        
 
     def test(self, string=""):
 
