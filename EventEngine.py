@@ -1,4 +1,3 @@
-import EventEngine
 from xmppEngine import *
 from plugLoder import PlugIns
 from amiConfig import Config
@@ -37,7 +36,7 @@ class EventEngine:
             print "starting webEngine"
             webserver = WebEngine(EventEngine.root)
 
-        #print EventEngine.root.printTree(0)
+        print EventEngine.root.printTree(0)
 
 
         print "end"
@@ -61,3 +60,4 @@ class EventEngine:
 #
 #    def updateAddressCache(self):
 #        EventEngine.root.me.addressIndex = EventEngine.root.me.getAddressList()
+
