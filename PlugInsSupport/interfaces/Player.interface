@@ -4,7 +4,7 @@
     <div class="toolbar">
         <h1>Audioplay</h1>
 		
-        <a class="back" href="#">Back</a>
+        <a class="back" href="#" onClick='clearTimeout(player_timer)'>Back</a>
     </div>
 <div class="info" style="text-align: left; margin:none; padding:none">
 
@@ -74,7 +74,7 @@ function update() {
 
 
 update();
-setInterval("update()", 30000);
+player_timer = setInterval("update()", 5000);
 </script>
 
 	<div id="wrapper">
