@@ -25,19 +25,14 @@ class Services(PlugIn):
         multirequest = Container("cmd", "multirequest", "Access multiple requests with one request, function returns some JSON code, or should", self.mreq)
         multirequest.rendering = Container.PLAIN
 
-        
-        test = Container("cmd", "test", "Get the Tree or Subtree as JQ Touch HTML", self.test)
-        test.rendering = Container.PLAIN
-
 
         self.content.addChild(xmlC)
         self.content.addChild(jqC)
         self.content.addChild(multirequest)
-        self.content.addChild(test)
 
     def getXml(self, string=""):
         if not string.__eq__(''):
-            address = Address(string).__str__()
+            v
             tmp =  EventEngine.root.getByAddress(address).toXml()
             return tmp
         else:
@@ -59,18 +54,6 @@ class Services(PlugIn):
         
         result = {}
         for key, request in requests.items():
-            result[key]=self.root().getByAddress(request).use()
+            request = Address(request)
+            result[key]=self.root().getByAddress(request.__str__()).use()
         return json.dumps(result)
-        
-
-    def test(self, string=""):
-
-
-
-        addr = "http://192.168.178.34:8080/ami.client@jabber.org/Services/JqHtml"
-        link = "servant@jabber.org/Status"
-        #EventEngine.root.getByAddress(addr).use(link)
-
-        answer = urllib2.urlopen(addr+"?string="+link).read()
-
-        return answer

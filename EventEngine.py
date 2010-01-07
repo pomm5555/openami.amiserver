@@ -36,10 +36,7 @@ class EventEngine:
             print "starting webEngine"
             webserver = WebEngine(EventEngine.root)
 
-        print EventEngine.root.printTree(0)
-
-
-        print "end"
+        #print EventEngine.root.printTree(0)
 
     #def loadPlugins(self):
 #

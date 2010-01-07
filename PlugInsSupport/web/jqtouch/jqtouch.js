@@ -17,9 +17,9 @@
     (c) 2009 by jQTouch project members.
     See LICENSE.txt for license.
     
-    $Revision: 121 $
-    $Date: 2009-11-16 18:22:34 +0100 (Mo, 16 Nov 2009) $
-    $LastChangedBy: davidcolbykaneda $
+    $Revision: 129 $
+    $Date: 2010-01-02 22:49:03 +0100 (Sa, 02 Jan 2010) $
+    $LastChangedBy: RBoulanouar $
 
 */
 
@@ -108,8 +108,8 @@
                 }
             }
             if (hairextensions)  { 
-		$head.prepend(hairextensions);
-	    }
+                $head.prepend(hairextensions);
+            }
 
             // Initialize on document load:
             $(document).ready(function(){
@@ -159,6 +159,11 @@
                 {
                     $body.click(function(e){
                         var $el = $(e.target);
+
+                        if ($el.attr('nodeName')!=='A' && $el.attr('nodeName')!=='AREA'){
+                            $el = $el.closest('a, area');
+                        }
+
                         if ($el.isExternalLink())
                         {
                             return true;
@@ -298,6 +303,11 @@
             else if ($el.is(jQTSettings.backSelector)) {
                 goBack(hash);
             }
+            // Allow tap on item with no href
+            else if ($el.attr('href') == '#') {
+                $el.unselect();
+                return true;
+            }
             // Branch on internal or external href
             else if (hash && hash!='#') {
                 $el.addClass('active');
@@ -330,6 +340,14 @@
             if(toPage.length === 0){
                 $.fn.unselect();
                 console.error('Target element is missing.');
+                return false;
+            }
+            
+            // Error check for fromPage=toPage
+            if(toPage.hasClass('current'))
+            {
+                $.fn.unselect();
+                console.error('Target element is the current page.');
                 return false;
             }
             
@@ -466,13 +484,13 @@
                     }
                 });
             }
-            else if ($referrer)
+            else if (settings.$referrer)
             {
-                $referrer.unselect();
+                settings.$referrer.unselect();
             }
         }
         function submitForm(e, callback){
-            var $form = (typeof(e)==='string') ? $(e).eq(0) : $(e.target);
+            var $form = (typeof(e)==='string') ? $(e).eq(0) : ( e.target ? $(e.target) : $(e) );
 
             if ($form.length && $form.is(jQTSettings.formSelector)) {
                 showPageByHref($form.attr('action'), {
@@ -551,7 +569,7 @@
                                 
                 // Check for swipe
                 if (absX > absY && (absX > 35) && deltaT < 1000) {
-                    $el.trigger('swipe', {direction: (deltaX < 0) ? 'left' : 'right'}).unbind('touchmove touchend');
+                    $el.trigger('swipe', {direction: (deltaX < 0) ? 'left' : 'right', deltaX: deltaX, deltaY: deltaY }).unbind('touchmove touchend');
                 } else if (absY > 1) {
                     $el.removeClass('active');
                 }
