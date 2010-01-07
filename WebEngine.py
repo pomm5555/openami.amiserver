@@ -144,7 +144,7 @@ class WebServer():
             #print 'CACHE MANIFEST REQUEST!!!!!'
             self.contentType('text/cache-manifest')
             return '''CACHE MANIFEST
-#revision 0.46
+#revision 0.53
 '''+jid+'''/Filesystem/html/themes/jqt/theme.css
 '''+jid+'''/Filesystem/html/ami.css
 '''+jid+'''/Filesystem/html/jqtouch/jquery.1.3.2.min.js
@@ -155,8 +155,26 @@ class WebServer():
 '''+jid+'''/Filesystem/html/themes/jqt/img/button.png
 '''+jid+'''/Filesystem/html/themes/jqt/img/back_button.png
 '''+jid+'''/Filesystem/html/themes/jqt/img/chevron.png
+'''+jid+'''/Filesystem/html/themes/jqt/img/on_off.png
+'''+jid+'''/Filesystem/html/themes/jqt/img/loading.gif
 '''+jid+'''/Filesystem/html/images/appIcon.png
 '''+jid+'''/Filesystem/html/images/startup.png
+'''+jid+'''/Filesystem/interfaces/images/bg_bottom.png
+'''+jid+'''/Filesystem/interfaces/images/bg_title.png
+'''+jid+'''/Filesystem/interfaces/images/control_backward.png
+'''+jid+'''/Filesystem/interfaces/images/control_ban.png
+'''+jid+'''/Filesystem/interfaces/images/control_forward.png
+'''+jid+'''/Filesystem/interfaces/images/control_love.png
+'''+jid+'''/Filesystem/interfaces/images/control_play.png
+'''+jid+'''/Filesystem/interfaces/images/control_stop.png
+'''+jid+'''/Filesystem/interfaces/images/map.png
+'''+jid+'''/Filesystem/interfaces/images/tabs_audiosink.png
+'''+jid+'''/Filesystem/interfaces/images/tabs_magnifier.png
+'''+jid+'''/Filesystem/interfaces/images/tabs_playlist.png
+'''+jid+'''/Filesystem/interfaces/images/tabs_controls.png
+'''+jid+'''/Filesystem/interfaces/images/test.png
+'''+jid+'''/Filesystem/interfaces/css/player.css
+
 
 
 NETWORK:
