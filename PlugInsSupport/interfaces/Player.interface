@@ -15,26 +15,26 @@
 
 function update() {
 
-	$.getJSON('_JID_/Services/multirequest?string={"np":"/Audio/LastFM/Now_Playing","coverart":"/Audio/LastFM/CoverArt","state":"/Status/State"}', function(data){
- 	 	if (data['state'] == 'playing')  	 	{
- 	 		$('a.play').hide(); 
- 	 		$('a.stop').show();
-                        $("#state_dev").attr('checked',true);
- 	 	}
- 	 	else 	{
- 	 		$('a.stop').hide(); 
- 	 		$('a.play').show();
-                        $("#state_dev").attr('checked',false);
- 	 	}
+	$.getJSON('_JID_/Services/multirequest?string={"np":"/Audio/LastFM/Now_Playing","coverart":"/Audio/LastFM/CoverArt","state":"/Audio/LastFM/State"}', function(data){
+                //alert(data['np']+'/'+$(".title").html())
+                if (data['np'] != $(".title").html()){
+                    //alert(data['state'])
+                    if (data['state'] == 'playing') {
+                            $('a.play').hide();
+                            $('a.stop').show();
+                            $("#state_dev").attr('checked',true);
+                    }
+                    else 	{
+                            $('a.stop').hide();
+                            $('a.play').show();
+                            $("#state_dev").attr('checked',false);
+                    }
 
-                var ts = new Date().getTime();
+                    var ts = new Date().getTime();
 
-                $(".title").html("<p>"+data["np"]+"<p>" );
-                $("#content").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+')');
-                //$("#content").css('background', 'url("'+data["coverart"]+'")');
-                //$("#player_skim").html("<img src='"+data['coverart']+"'/>");
-                //$("#player_skim").html("<img src='_JID_/Audio/LastFM/CoverArtImage?"+ts+"' width='320'/>");
-                //$("#coverimage").attr("src", "_JID_/Audio/LastFM/CoverArtImage?"+ts);
+                    $(".title").html(data["np"]);
+                    $("#content").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+')');
+                }
 	});
 	
 
@@ -43,7 +43,7 @@ function update() {
 
 
 update();
-player_timer = setInterval("update()", 10000);
+player_timer = setInterval("update()", 5000);
 </script>
 
 	<div id="wrapper">
