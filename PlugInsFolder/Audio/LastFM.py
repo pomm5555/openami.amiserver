@@ -132,17 +132,18 @@ class LastFM(PlugIn):
         np = os.popen('echo info | nc ' + host + ' ' + port)
 	#np = pipe = os.popen("curl http://192.168.1.131","r")
         np = np.read()
-        tmp = np.partition('-')
-        np = tmp[0]
+        (artist, song, album) = np.split(' - ')
+        print artist, song, album
+        np = artist
 
-        if not self.lastCover.__eq__(tmp[0]):
-            self.lastCover = tmp[0]
+        if not self.lastCover == artist+song+album:
+            self.lastCover = artist+song+album
             import ecs
 
             ecs.setLicenseKey('AKIAIICBON46BQIRCOUQ')
             ecs.setSecretKey('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')
-            print "** Searching Amazon for " +np
-            search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=np, ResponseGroup='Images')
+            print "** Searching Amazon for "+artist+" "+album
+            search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, Title=album, ResponseGroup='Images')
             img=search.next().LargeImage.URL
             print img
             self.lastImg = img
