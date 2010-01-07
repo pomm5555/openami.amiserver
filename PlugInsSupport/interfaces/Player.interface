@@ -2,7 +2,7 @@
 
 <div id="get">
     <div class="toolbar">
-        <h1>Audioplay</h1>
+        <h1>LastFM</h1>
 		
         <a class="back" href="#" onClick="clearTimeout(player_timer);">Back</a>
 
@@ -12,12 +12,30 @@
 <!-- hook in some css-->
 <img style="display:none" src="_JID_/Filesystem/interfaces/images/tabs_playlist.png" onload="var oLink = document.createElement('link'); oLink.href = '_JID_/Filesystem/interfaces/css/player.css'; oLink.rel = 'stylesheet'; oLink.type = 'text/css'; document.body.appendChild(oLink);"/>
 <script type="text/javascript">
+function pause(millis)
+{
+        var date = new Date();
+        var curDate = null;
+
+        do { curDate = new Date(); }
+        while(curDate-date < millis)
+}
 
 function update() {
 
+        function delay(delay) {
+            var startTime = new Date();
+            var endTime = null;
+            do {
+                endTime = new Date();
+            } while ((endTime - startTime) < delay);
+        }
+
+
 	$.getJSON('_JID_/Services/multirequest?string={"np":"/Audio/LastFM/Now_Playing","coverart":"/Audio/LastFM/CoverArt","state":"/Audio/LastFM/State"}', function(data){
-                //alert(data['np']+'/'+$(".title").html())
-                if (data['np'] != $(".title").html()){
+                playingdata = data["np"].split(' - ')
+                //alert(playingdata[1]+'/'+$(".title").html())
+                if (playingdata[1] != $(".title").html()){
                     //alert(data['state'])
                     if (data['state'] == 'playing') {
                             $('a.play').hide();
@@ -32,15 +50,18 @@ function update() {
 
                     var ts = new Date().getTime();
 
-                    $(".title").html(data["np"]);
+                    $(".title").html(playingdata[1]);
+                    $(".interpreter").html(playingdata[0]);
+
+                    delay(500);
                     $("#content").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+')');
+
                 }
 	});
 	
 
 	 	
 }
-
 
 update();
 player_timer = setInterval("update()", 5000);
@@ -52,7 +73,6 @@ player_timer = setInterval("update()", 5000);
                     <div id="title">
                             <p class="title">Updating...</p>
                             <p class="interpreter"></p>
-                            <img id="coverimage" />
                     </div>
                    
                     <div id="player">
