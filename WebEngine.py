@@ -106,7 +106,7 @@ class WebServer():
         result = self.root.toJqHtml()
         
         # control caching
-        caching = False
+        caching = True
         if caching:
             manifest=' manifest="/cache.manifest"'
         else:
@@ -135,16 +135,16 @@ class WebServer():
         for elem in args:
             addr += "/" + elem
 
-        print '* '+addr
+        #print '* '+addr
         addr= addr[1:]
 
         
 
         if addr.__eq__('cache.manifest'):
-            print 'CACHE MANIFEST REQUEST!!!!!'
+            #print 'CACHE MANIFEST REQUEST!!!!!'
             self.contentType('text/cache-manifest')
             return '''CACHE MANIFEST
-#revision 0.35
+#revision 0.46
 '''+jid+'''/Filesystem/html/themes/jqt/theme.css
 '''+jid+'''/Filesystem/html/ami.css
 '''+jid+'''/Filesystem/html/jqtouch/jquery.1.3.2.min.js
@@ -161,6 +161,7 @@ class WebServer():
 
 NETWORK:
 /'''+jid+'''/
+http://*
 '''
         self._cp_config = {'response.headers.Content-Type': 'text/html'}
         # get target object
@@ -196,5 +197,5 @@ NETWORK:
 
     def contentType(self, type):
         cherrypy.response.headers['Content-Type'] = type
-        print cherrypy.response.headers['Content-Type']
+        #print cherrypy.response.headers['Content-Type']
         

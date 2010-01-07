@@ -1,5 +1,4 @@
-import os
-import sys
+import os, urllib2, sys
 from AmiTree import *
 from PlugIn import PlugIn
 from amiConfig import Config
@@ -44,6 +43,7 @@ class LastFM(PlugIn):
         similar = Container("cmd","Similar","Play similar artist")
         now_playing = Container("cmd","Now Playing","get Now Playing Info")
         coverart = Container("cmd","CoverArt", "get CoverART")
+        coverartimage = Container("cmd","CoverArtImage", "get CoverART Image")
         getstate = Container("cmd","State", "get Player State")
         tag = Container("cmd", "Tag", "find Music by Tag")
 
@@ -57,6 +57,11 @@ class LastFM(PlugIn):
         similar.setUse(self.similar)
         now_playing.setUse(self.getNp)
         coverart.setUse(self.getCoverArt)
+        coverart.lastCover = ''
+        coverart.lastImg = ''
+        coverartimage.setUse(self.getCoverArtImage)
+        coverartimage.rendering = Container.PLAIN
+
         getstate.setUse(self.getState)
         tag.setUse(self.tag)
         
@@ -70,6 +75,7 @@ class LastFM(PlugIn):
         self.content.addChild(similar)
         self.content.addChild(now_playing)
         self.content.addChild(coverart)
+        self.content.addChild(coverartimage)
         self.content.addChild(getstate)
         self.content.addChild(tag)
         
@@ -128,28 +134,40 @@ class LastFM(PlugIn):
         np = np.read()
         tmp = np.partition('-')
         np = tmp[0]
-        
-        import ecs
-        
-        ecs.setLicenseKey('AKIAIICBON46BQIRCOUQ')
-        ecs.setSecretKey('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')
-        print "** Searching Amazon for " +np
-        search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=np, ResponseGroup='Images')
-        img=search.next().LargeImage.URL
-        print img
 
-        print "LastFM getCoverArt"
-        
+        if not self.lastCover.__eq__(tmp[0]):
+            self.lastCover = tmp[0]
+            import ecs
+
+            ecs.setLicenseKey('AKIAIICBON46BQIRCOUQ')
+            ecs.setSecretKey('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')
+            print "** Searching Amazon for " +np
+            search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=np, ResponseGroup='Images')
+            img=search.next().LargeImage.URL
+            print img
+            self.lastImg = img
+            print "LastFM getCoverArt!!!!!!!!!!!"
+
+            return img
+        else:
+            print 'LOADING CACHED IMAGE FOR COVERART!!!'+self.lastImg
+            return self.lastImg
+
+    def getCoverArtImage(self,var):
+        addr = Address('/Audio/LastFM/CoverArt')
+        imgurl = self.root().getByAddress(addr.__str__()).use()
+        print imgurl
+        img = urllib2.urlopen(imgurl).read()
         return img
 
-        
+
     def getState(self, var):
         print "LastFM getState"
-        pstree = os.popen("ps ax").read()
-        if 'madplay' in pstree:
-          return "playing"
-        else:
+        np = os.popen('echo info | nc ' + host + ' ' + port).read()
+        if np == ' -  - ':
           return "not playing"
+        else:
+          return "playing"
           
     # just a little helper function
     def getText(self, var):

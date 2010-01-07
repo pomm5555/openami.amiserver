@@ -4,7 +4,8 @@
     <div class="toolbar">
         <h1>Audioplay</h1>
 		
-        <a class="back" href="#" onClick='clearTimeout(player_timer)'>Back</a>
+        <a class="back" href="#" onClick="clearTimeout(player_timer);">Back</a>
+
     </div>
 <div class="info" style="text-align: left; margin:none; padding:none">
 
@@ -14,67 +15,35 @@
 
 function update() {
 
-	$.get("_JID_/Status/State", function(data){
- 	 	tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") ;
- 	 	if (tmp == 'playing')  	 	{
+	$.getJSON('_JID_/Services/multirequest?string={"np":"/Audio/LastFM/Now_Playing","coverart":"/Audio/LastFM/CoverArt","state":"/Status/State"}', function(data){
+ 	 	if (data['state'] == 'playing')  	 	{
  	 		$('a.play').hide(); 
  	 		$('a.stop').show();
+                        $("#state_dev").attr('checked',true);
  	 	}
  	 	else 	{
  	 		$('a.stop').hide(); 
  	 		$('a.play').show();
+                        $("#state_dev").attr('checked',false);
  	 	}
-	});
-	
-	$.get("_JID_/Status/State", function(data){
- 	 	tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") ;
- 	 	if (tmp == 'playing')  	 	{ 		
-			$("#state_dev").attr('checked',true);
- 	 	}
- 	 	else 	{
-		 	$("#state_dev").attr('checked',false);
- 	 	}
-	});
-	
-	
-	$.get("_JID_/Global/lab", function(data){
- 	 	tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") ;
- 	 	if (tmp == 'playing')  	 	{ 		
-			$("#state_lab").attr('checked',true);
- 	 	}
- 	 	else 	{
-		 	$("#state_lab").attr('checked',false);
- 	 	}
-	});
-	
-	$.get("_JID_/Global/kitchen", function(data){
- 	 	tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") ;
- 	 	if (tmp == 'playing')  	 	{ 		
-			$("#state_kitchen").attr('checked',true);
- 	 	}
- 	 	else 	{
-		 	$("#state_kitchen").attr('checked',false);
- 	 	}
-	});
 
-	$.get("_JID_/Audio/LastFM/Now_Playing", function(data){
- 	 $(".title").html("<p>"+data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","") +"<p>" );
-	});
+                var ts = new Date().getTime();
 
-	 
-	$.get("_JID_/Audio/LastFM/CoverArt", function(data){
-	 tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","")
-	 
-	 $("#player_skim").html("<img src='"+tmp+"' width='320' height='364' />");
- //	 $("#player_skim").html("<img src='_JID_/Filesystem/interfaces/images/test.jpg' width='324' height='256' />");
- 	
+                $(".title").html("<p>"+data["np"]+"<p>" );
+                $("#content").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+')');
+                //$("#content").css('background', 'url("'+data["coverart"]+'")');
+                //$("#player_skim").html("<img src='"+data['coverart']+"'/>");
+                //$("#player_skim").html("<img src='_JID_/Audio/LastFM/CoverArtImage?"+ts+"' width='320'/>");
+                //$("#coverimage").attr("src", "_JID_/Audio/LastFM/CoverArtImage?"+ts);
 	});
+	
+
 	 	
 }
 
 
 update();
-player_timer = setInterval("update()", 5000);
+player_timer = setInterval("update()", 10000);
 </script>
 
 	<div id="wrapper">
@@ -83,6 +52,7 @@ player_timer = setInterval("update()", 5000);
                     <div id="title">
                             <p class="title">Updating...</p>
                             <p class="interpreter"></p>
+                            <img id="coverimage" />
                     </div>
                    
                     <div id="player">
