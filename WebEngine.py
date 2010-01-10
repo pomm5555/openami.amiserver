@@ -144,7 +144,7 @@ class WebServer():
             #print 'CACHE MANIFEST REQUEST!!!!!'
             self.contentType('text/cache-manifest')
             return '''CACHE MANIFEST
-#revision 0.53
+#revision 0.67
 '''+jid+'''/Filesystem/html/themes/jqt/theme.css
 '''+jid+'''/Filesystem/html/ami.css
 '''+jid+'''/Filesystem/html/jqtouch/jquery.1.3.2.min.js
@@ -177,6 +177,7 @@ class WebServer():
 
 
 
+
 NETWORK:
 /'''+jid+'''/
 http://*
@@ -191,7 +192,8 @@ http://*
             result = target.use(string)
             #print "called use"
         except:
-            #print "call without parameter: " + addr
+            print "\** called: " + addr
+            
             result = target.use()
             #print "called without parameter"
             string = ""

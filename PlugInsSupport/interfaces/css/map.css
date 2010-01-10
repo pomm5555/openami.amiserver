@@ -14,13 +14,13 @@
 	margin: 0;
 }
 
-div#wrapper{
+div#map_wrapper{
 	text-align: center;
 	font: 12px "Lucida Grande", Lucida, Verdana, sans-serif;
 	color: white;
 }
 
-div#content {
+div#map_content {
    /* height: 325px; */
     height : 364px;
 	position: relative;
@@ -28,12 +28,9 @@ div#content {
 	background-repeat: no-repeat;
 }
 
-div#content .coverartbg{
-	background-image: url(../images/sample_artwork.png);
-}
 /* @group Title */
 
-div#title{
+div#map_title{
 	background-image: url(../images/bg_title.png);
 	top: 0;
 	width : 100%
@@ -59,76 +56,95 @@ div#title p.interpreter{
 
 /* @group Player */
 
-div#controls {
+div#map_controls {
 /*	background-image: url(../images/sample_artwork.png); */
-	height: 274px;
+
 }
 
-div#player_skim {
+div#map_skim {
 	background-color: rgba(0,0,0,0.6);
 	position: relative;
-	height: 1px;
+	vertical-align: middle;
+	text-align: center;
+
 }
 
 /* @group Control */
 
-div#player_control {
-	background-color: rgba(0,0,0,0.6);
-	height: 40px;
+div#map_sensors {
+	background-color: rgba(0,0,0,0.4);
+	height: 364px;
 	padding-top: 15px;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+	
 }
 
-div#player_control a.backward{
-	background-image: url(../images/control_backward.png);
-	overflow: hidden;
-	width: 22px;
-	display: block;
-	height: 0;
-	padding-top: 19px;
+div#map_sensors a.generic {
+	background: url(../images/map_sensor.png) no-repeat center center;
+	opacity: 0.2;
 	position: absolute;
-	left: 25%;
-	margin-top: 2px;
+	width: 30px;
+	height: 30px;
+
 }
 
-div#player_control a.play{
-	background-image: url(../images/control_play.png);
-	overflow: hidden;
-	width: 15px;
-	display: block;
-	height: 0;
-	padding-top: 24px;
+div#map_control {
+	background-color: rgba(0,0,0,0.4);
+	height: 364px;
+	padding-top: 15px;
 	position: absolute;
-	right: 48%;
+	bottom: 0;
+	width: 100%;
+	display: block;
 }
 
-div#player_control a.stop{
+div#map_control a.backward{
+	background: url(../images/map_lightbulb.png) no-repeat center center;
+	opacity: 0.2;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 15%;
+	top: 15%;
+}
+
+div#map_control a.play{
+	background: url(../images/map_lightbulb.png)no-repeat center center;;
+	overflow: hidden;
+	width: 40px;
+	height: 40px;
+	display: block;
+	position: absolute;
+	right: 25%;
+	top: 25%;
+}
+
+div#map_control a.stop{
 	overflow: hidden;
 	width: 15px;
 	display: none;
 	height: 0;
-	padding-top: 24px;
 	position: absolute;
 	right: 48%;
 	background: url(../images/control_stop.png) no-repeat center center;
 }
 
-div#player_control a.forward{
-	background-image: url(../images/control_forward.png);
+div#map_control a.forward{
+	background: url(../images/map_lightbulb.png) no-repeat center center;
 	overflow: hidden;
-	width: 22px;
+	width: 40px;
 	display: block;
-	height: 0;
-	padding-top: 19px;
+	height: 40px;
 	position: absolute;
-	right: 25%;
-	margin-top: 2px;
+	left: 45%;
+	bottom: 7%;
+	
 }
 
-div#player_control a.love{
-	background-image: url(../images/control_love.png);
+div#map_control a.love{
+	background-image: url(../images/map_light.png);
 	overflow: hidden;
 	width: 22px;
 	display: block;
@@ -139,7 +155,7 @@ div#player_control a.love{
 	margin-top: 2px;
 }
 
-div#player_control a.ban{
+div#map_control a.ban{
 	background-image: url(../images/control_ban.png);
 	overflow: hidden;
 	width: 22px;
@@ -165,13 +181,13 @@ div#player_control a.ban{
 }
 
 .audiosinks {
-
 	opacity: 0.8;
 	font-size: 18px;
 	color: green;
 	position: absolute;
 	width: 100%;
 	bottom: 0;
+	
 }
 /* @end */
 
@@ -199,6 +215,7 @@ div#root_audio {
 
 div#search {
 	display: none;
+	height: 364px;
 }
 
 
@@ -232,12 +249,12 @@ div#tabs a.tab_bt.active{
 }
 
 div#tabs a.controls{
-	background-image: url(../images/tabs_controls.png);
+	background-image: url(../images/tabs_light.png);
 	
 }
 
 div#tabs a.playlists{
-	background-image: url(../images/tabs_playlist.png);
+	background-image: url(../images/tabs_sensors.png);
 }
 
 div#tabs a.speakers{

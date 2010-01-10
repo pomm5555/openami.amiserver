@@ -32,10 +32,12 @@ function update() {
         }
 
 
-	$.getJSON('_JID_/Services/multirequest?string={"np":"/Audio/LastFM/Now_Playing","coverart":"/Audio/LastFM/CoverArt","state":"/Audio/LastFM/State"}', function(data){
+	$.getJSON('_JID_/Services/multirequest?string={"np":"/Defaults/nowplaying","coverart":"/Defaults/coverart", "state":"/Defaults/state"}', function(data){
                 playingdata = data["np"].split(' - ')
                 //alert(playingdata[1]+'/'+$(".title").html())
-                if (playingdata[1] != $(".title").html()){
+  			 
+			// had to disable this check, so the interface is updated when the user exits and reenters 
+             // if (playingdata[1] != $(".title").html()){
                     //alert(data['state'])
                     if (data['state'] == 'playing') {
                             $('a.play').hide();
@@ -53,10 +55,10 @@ function update() {
                     $(".title").html(playingdata[1]);
                     $(".interpreter").html(playingdata[0]);
 
-                    delay(500);
-                    $("#content").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+')');
+                    delay(2000);
+                    $(".coverartbg").css('background', 'url(_JID_/Audio/Boxee/coverartimg?'+ts+') no-repeat center center');
 
-                }
+              //  }
 	});
 	
 
@@ -64,11 +66,11 @@ function update() {
 }
 
 update();
-player_timer = setInterval("update()", 3000);
+var player_timer = setInterval("update()", 30000);
 </script>
 
 	<div id="wrapper">
-                <div id="content">
+                <div id="content" class="coverartbg">
                 <div id="player_skim" class="player_conts"></div> 
                     <div id="title">
                             <p class="title">Updating...</p>
@@ -83,8 +85,8 @@ player_timer = setInterval("update()", 3000);
                                             <a class="play" onclick="$.get('_JID_/Defaults/audioplay'); $('a.play').hide(); $('a.stop').show();">play</a>
                                             <a class="stop" onclick="$.get('_JID_/Defaults/audiostop'); $('a.stop').hide(); $('a.play').show();">play</a>
                                             <a class="forward" onclick="$.get('_JID_/Defaults/audioskip'); setTimeout('update()',2500)">forward</a>
-                                            <a class="love" onclick="$.get('_JID_/Audio/LastFM/Love'); ">love</a>
-                                            <a class="ban" onclick="$.get('_JID_/Audio/LastFM/Ban'); ">ban</a>
+                                            <a class="love" onclick="$.get('_JID_/Defaults/love'); ">love</a>
+                                            <a class="ban" onclick="$.get('_JID_/Defaults/ban'); ">ban</a>
                                     </div>
                             </div>
 
@@ -93,17 +95,18 @@ player_timer = setInterval("update()", 3000);
 						<div id="search2" class="audiosinks">
                            <ul class="edgetoedge">
 
-                            <li ><a href=""  onclick="$.get('_JID_/Audio/LastFM/Library');">Library</a></li>
-                            <li ><a href="" onclick="$.get('_JID_/Audio/LastFM/Playlist');">Playlist</a></li>
-                            <li ><a href="" onclick="$.get('_JID_/Audio/LastFM/Neighbours');">Neighbours</a></li>
+                            <li ><a href=""  onclick="$.get('_JID_/Defaults/library');">Library</a></li>
+                            <li ><a href="" onclick="$.get('_JID_/Defaults/playlist');">Playlist</a></li>
+                            <li ><a href="" onclick="$.get('_JID_/Defaults/neighbours');">Neighbours</a></li>
                             <li ><a href="">Random</a></li>
                         	</ul>
                         </div>
                     </div>
                     <div id="root_audio" >
+                    <span class="toggle"></span>
                           <div class="audiosinks">
                            <ul class="edgetoedge">
-         
+         						
                         	  <li class="arrow">Lab<span class="toggle"><input id="state_lab" type="checkbox"  onChange="if(this.checked) $.get('http://192.168.1.1:8080/ami.wrtv2@aminet.org/Audio/Madplay/Play?string=http://192.168.1.131:8000/source');else $.get('http://192.168.1.1:8080/ami.wrtv2@aminet.org/Audio/Madplay/Stop');"/></span></li>
                     		  <li class="arrow">Kitchen<span class="toggle"><input id="state_kitchen" type="checkbox" onChange="if(this.checked) $.get('http://192.168.1.170:8080/ami.wrtv1@aminet.org/Audio/Madplay/Play?string=http://192.168.1.131:8000/source');else $.get('http://192.168.1.170:8080/ami.wrtv1@aminet.org/Audio/Madplay/Stop');"/></span></li>
                     		  <li class="arrow">Living<span class="toggle"><input id="state_living" type="checkbox" onChange="if(this.checked) $.get('_JID_/AudioSwitch/Port0/ON');else $.get('_JID_/AudioSwitch/Port0/OFF');"/></span></li>
@@ -116,9 +119,9 @@ player_timer = setInterval("update()", 3000);
                            <ul class="edgetoedge">
                         	
                         	
-                            <li><input class="searchbar" type="text" name="Search Artist" placeholder="Search for similar Artists" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Similar?string='+$(this).val()); setTimeout('update()',3000) ; "/></li>
+                            <li><input class="searchbar" type="text" name="Search Artist" placeholder="Search for similar Artists" id="searchbox" onBlur="$.get('_JID_/Audio/Boxee/Similar?string='+$(this).val()); setTimeout('update()',3000) ; "/></li>
                             
-                            <li><input class="searchbar" type="text" name="Search Genre" placeholder="Search for Tag" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Tag?string='+$(this).val()); setTimeout('update()',3000) ;"/></li>
+                            <li><input class="searchbar" type="text" name="Search Genre" placeholder="Search for Tag" id="searchbox" onBlur="$.get('_JID_/Audio/Boxee/Tag?string='+$(this).val()); setTimeout('update()',3000) ;"/></li>
                         	
                         	
                         	</ul>

@@ -2,8 +2,8 @@ import os, urllib2, sys
 from AmiTree import *
 from PlugIn import PlugIn
 from amiConfig import Config
-
-class LastFM(PlugIn):
+import re
+class Boxee(PlugIn):
 
 
     def __init__(self, token, configFile):
@@ -12,15 +12,15 @@ class LastFM(PlugIn):
 
 
         #plugin itself
-        self.content = Container("plugin", token, "LastFM Plugin")
+        self.content = Container("plugin", token, "Boxee Plugin")
 
         # hide Plugin from showing up in xml, search, show...
         self.content.visible = True
 
         global user, host, port
-        user = Config.get("LastFM", "user")
-        host = Config.get("LastFM", "host")
-        port = Config.get("LastFM", "port")
+        user = Config.get("Boxee", "user")
+        host = Config.get("Boxee", "host")
+        port = Config.get("Boxee", "port")
 
 
         #for pair in Config.getSection("LastFM"):
@@ -39,23 +39,23 @@ class LastFM(PlugIn):
         stop = Container("cmd","Stop","stop")
         playlist = Container("cmd","Playlist","playlist")
         library = Container("cmd","Library","Library")
-        neighbours = Container("cmd","Neighbours","neighbours")
-        similar = Container("cmd","Similar","Play similar artist")
+        pause = Container("cmd","Pause","pause")
         now_playing = Container("cmd","Now Playing","get Now Playing Info")
         coverart = Container("cmd","CoverArt", "get CoverART")
         coverartimage = Container("cmd","CoverArtImage", "get CoverART Image")
         getstate = Container("cmd","State", "get Player State")
         tag = Container("cmd", "Tag", "find Music by Tag")
-
+        similar = Container("cmd","Similar","Play similar artist")
+        
         love.setUse(self.love)
         skip.setUse(self.skip)
         ban.setUse(self.ban)
         stop.setUse(self.stop)
         playlist.setUse(self.playlist)
         library.setUse(self.library)
-        neighbours.setUse(self.neighbours)
-        similar.setUse(self.similar)
+        pause.setUse(self.pause)
         now_playing.setUse(self.getNp)
+        similar.setUse(self.similar)
         coverart.setUse(self.getCoverArt)
         coverart.lastCover = ''
         coverart.lastImg = ''
@@ -72,68 +72,79 @@ class LastFM(PlugIn):
         self.content.addChild(stop)
         self.content.addChild(playlist)
         self.content.addChild(library)
-        self.content.addChild(neighbours)
-        self.content.addChild(similar)
+        self.content.addChild(pause)
         self.content.addChild(now_playing)
         self.content.addChild(coverart)
         self.content.addChild(coverartimage)
         self.content.addChild(getstate)
         self.content.addChild(tag)
+        self.content.addChild(similar)
         
         # UI Elements
         self.content.addChild(TextfieldContainer("ui", "SimilarArtist", "PlaySimilarArtiest", target=Config.jid+"/Audio/LastFM/Similar"))
 
     def stop(self,var):
         #print "Stop"
-        os.system("echo 'stop' | nc " +host + " " + port)
+        os.system("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=Stop")
+
+    def similar(self,artist):
+        #print "LastFm Neighbours"
+        os.system("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=ExecBuiltIn\(PlayMedia\('lastfm://artist/"+artist+"/similarartist'\)\)")
 
     def neighbours(self,var):
-        #print "LastFm Neighbours"
-        os.system("echo 'play lastfm://user/"+user+"/neighbours' | nc " + host + " " + port)
+       #print "LastFm Neighbours"
+       os.system("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=ExecBuiltIn\(PlayMedia\('lastfm://user/ka010/neighbours'\)\)")
+
     
     def playlist(self,var):
         #print "LastFm Playlist"
         #print host,port
-        os.system("echo 'play lastfm://user/"+user+"/playlist' | nc " +host + " " + port)
+        os.system("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=ExecBuiltIn\(PlayMedia\('lastfm://user/ka010/radio'\)\)")
 
     def library(self,var):
         #print "LastFm Library"
-        os.system("echo 'play lastfm://user/"+user+"/library' | nc " +host + " " + port)
+        os.system("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=ExecBuiltIn\(PlayMedia\(lastfm://user/ka010/library\)\)")
 
     def ban(self,var):
         #print "LastFm Ban"
-        os.system("echo 'ban' | nc " +host + " " + port)
+        os.system("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=ExecBuiltIn\(LastFM.Ban\(false\)\)")
 
     def love(self,var):
         #print "LastFm Love"
-        os.system("echo 'love' | nc " + host + " " + port)
+        os.system("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=ExecBuiltIn\(LastFM.Love\(false\)\)")
 
     def skip(self,var):
         #print "LastFm Skip"
-        os.system("echo 'skip' | nc " + host + " " + port)
+        os.system("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=PlayNext")
 
 
-    def similar(self, artist):
+    def pause(self, var):
         #print "LastFm similar"
         # lastfm://artist/cher/similarartists
-        os.system("echo 'play lastfm://artist/"+artist+"/similarartists' | nc " + host + " " + port)
+        os.system("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=Pause")
         
     def tag(self, tag):
         #print "LastFm Tag"
         
-        os.system("echo 'play lastfm://tag/"+tag+"' | nc " + host + " " + port)
+        os.system("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=ExecBuiltIn\(PlayMedia\(lastfm://tag/test\)\)")
 
     def getNp(self,var):
         #print "LastFM  get now Playing"
         #info = pipe = os.popen("curl http://192.168.1.131","r")
-        info = os.popen('echo info | nc ' + host + ' ' + port)
-        np = info.read().replace('"',"")
+        info =         os.popen("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=GetCurrentlyPlaying")
+        np = info.read().replace(":","").splitlines()
+        artist = np[6].replace("<li>","").replace("Artist","")
+        album = np[7].replace("<li>","").replace("Album","")
+        title = np[5].replace("<li>","").replace("Title","")
+        np = artist + " - " + title + " - " + album
 	return np
         
     def getCoverArt(self,var):
-        np = os.popen('echo info | nc ' + host + ' ' + port)
+        np = os.popen("curl http://localhost:8080/ami.lab@aminet.org/Audio/Boxee/Now_Playing").read()
 	#np = pipe = os.popen("curl http://192.168.1.131","r")
-        np = np.read()
+       
+        np = re.sub(r'<[^>]*?>', '', np)
+        np = np.replace("Back","").replace("Result","")
         print "\n*********", np
         (artist, song, album) = np.split(' - ')
         #print artist, song, album
@@ -158,7 +169,7 @@ class LastFM(PlugIn):
             return self.lastImg
 
     def getCoverArtImage(self,var):
-        addr = Address('/Audio/LastFM/CoverArt')
+        addr = Address('/Audio/Boxee/CoverArt')
         imgurl = self.root().getByAddress(addr.__str__()).use()
         #print imgurl
         img = urllib2.urlopen(imgurl).read()
