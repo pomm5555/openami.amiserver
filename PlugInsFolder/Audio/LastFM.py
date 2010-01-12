@@ -137,8 +137,10 @@ class LastFM(PlugIn):
     def getCoverArt(self,var):
         np = os.popen('echo info | nc ' + host + ' ' + port)
         np = np.read()
-        #print "\n*********", np
-        (artist, song, album) = np.split(' - ')
+        try:
+            (artist, song, album) = np.split(' - ')
+        except:
+            return '/Filesystem/interfaces/images/nocoverart.png'
 
         if '-  -' in np:
             return '/Filesystem/interfaces/images/nocoverart.png'
@@ -146,20 +148,13 @@ class LastFM(PlugIn):
         if not self.lastCover == artist+song+album:
             self.lastCover = artist+song+album
             import ecs
-
             ecs.setLicenseKey('AKIAIICBON46BQIRCOUQ')
             ecs.setSecretKey('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')
-            print "** Searching Amazon for "+artist+" "+album
             search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, Title=album, ResponseGroup='Images')
             img=search.next().LargeImage.URL
-            print img
             self.lastImg = img
-            print "LastFM getCoverArt!!!!!!!!!!!"
-            print 'img', img
             return img
         else:
-            #print 'LOADING CACHED IMAGE FOR COVERART!!!'+self.lastImg
-            #print 'lastimg', self.lastImg, self.lastCover
             return self.lastImg
 
     def getCoverArtImage(self,var):
@@ -167,9 +162,11 @@ class LastFM(PlugIn):
         print 'addr', addr
         imgurl = self.root().getByAddress(addr.__str__()).use()
         print '!!!!COVERARTIMG', imgurl
-        print imgurl
-        if not self.cachedimageurl.__eq__(imgurl):
+        if not imgurl in self.cachedimageurl:
             print 'GETTING NEW IMAGEDATA'
+            if '/Filesystem/interfaces/images/nocoverart.png' in imgurl:
+                imgurl = Address(imgurl).__str__()
+                return self.root().getByAddress(imgurl).use()
             self.cachedimageurl = imgurl
             self.cachedimagedata = urllib2.urlopen(self.cachedimageurl).read()
             return self.cachedimagedata

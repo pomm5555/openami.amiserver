@@ -4,7 +4,7 @@
     <div class="toolbar">
         <h1>LastFM</h1>
 		
-        <a class="back" href="#" onClick="clearTimeout(player_timer);">Back</a>
+        <a class="back" href="#">Back</a>
 
     </div>
 <div class="info" style="text-align: left; margin:none; padding:none">
@@ -13,7 +13,17 @@
 <img style="display:none" src="_JID_/Filesystem/interfaces/images/tabs_playlist.png" onload="var oLink = document.createElement('link'); oLink.href = '_JID_/Filesystem/interfaces/css/player.css'; oLink.rel = 'stylesheet'; oLink.type = 'text/css'; document.body.appendChild(oLink);"/>
 <script type="text/javascript">
 
+                $('#audioplayer').
+                    bind("pageAnimationStart", function(e, info){
+                        if (info.direction == 'in'){
+                            intInterval=window.setInterval('update()', 5000);
+                        } else {
+                            intInterval=window.clearInterval(intInterval);
+                        }
+                    });
+
 coverartcache = 'Not initialized'
+npcache = 'Not initialized'
 
 function update() {
 
@@ -30,10 +40,9 @@ function update() {
                 playingdata = data["np"].split(' - ')
                 //alert(data['coverart']+'/'+coverartcache)
   			 
-                // had to disable this check, so the interface is updated when the user exits and reenters
-                //if (playingdata[1] != $(".title").html()){
-                if (data['coverart'] != coverartcache){
+                if (data['coverart'] != coverartcache && coverartcache != data['coverart']){
                     coverartcache = data['coverart']
+                    npcache = data['np']
                     //alert(data['state'])
                     if (data['state'] == 'playing') {
                             $('a.play').hide();
@@ -50,20 +59,13 @@ function update() {
 
                     $(".title").html(playingdata[1]);
                     $(".interpreter").html(playingdata[0]);
-
-                    //delay(2000);
-                    //alert('now cover art loads')
                     $(".coverartbg").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+') no-repeat center center');
-
                 }
 	});
-	
-
-	 	
 }
 
 update();
-var player_timer = setInterval("update()", 3000);
+
 </script>
 
 	<div id="wrapper">

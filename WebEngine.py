@@ -83,13 +83,7 @@ class WebServer():
                     align: 'bottom'
                 });
 
-                $('#audioplayer').
-                    bind('pageAnimationStart', function(e, info){
-                        alert('Started animating ' + info.direction + '&hellip; ');
-                    }).
-                    bind('pageAnimationEnd', function(e, info){
-                        alert(' finished animating ' + info.direction);
-                    });
+
 
 
                 $('.arrow').bind("swipe",function(event, data){
@@ -190,9 +184,19 @@ NETWORK:
 /'''+jid+'''/
 http://*
 '''
+
+        if addr.__eq__('favicon.ico'):
+            addr = Address('/Filesystem/html/images/favicon.ico')
+            return self.root.getByAddress(addr).use()
+
+        if addr.__eq__('.png'):
+            return ''
+
+
         self._cp_config = {'response.headers.Content-Type': 'text/html'}
         # get target object
         target = self.root.getByAddress(addr)
+
 
         try:
             string = kwargs["string"]

@@ -36,25 +36,4 @@ class EventEngine:
             print "starting webEngine"
             webserver = WebEngine(EventEngine.root)
 
-        #print EventEngine.root.printTree(0)
-
-    #def loadPlugins(self):
-#
- #       # - Load system plugin
-##
-#        p = PlugIns(Config.plugInsFolder, configFile)
-#        plugins = p.getTree()
-#
- #       print plugins.printTree(0)
- #       print "---------------------"
- ##       print plugins.getAddressList()
- #       print "----------------------"
-#
-#
-#        print "Plugins loaded sucessfully."
-#        return plugins
-#
-#
-#    def updateAddressCache(self):
-#        EventEngine.root.me.addressIndex = EventEngine.root.me.getAddressList()
 
