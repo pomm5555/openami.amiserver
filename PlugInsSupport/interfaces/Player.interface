@@ -16,7 +16,7 @@
                 $('#audioplayer').
                     bind("pageAnimationStart", function(e, info){
                         if (info.direction == 'in'){
-                            intInterval=window.setInterval('update()', 5000);
+                            intInterval=window.setInterval('update()', 7000);
                         } else {
                             intInterval=window.clearInterval(intInterval);
                         }
