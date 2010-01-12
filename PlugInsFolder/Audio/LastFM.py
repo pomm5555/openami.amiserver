@@ -62,6 +62,8 @@ class LastFM(PlugIn):
         coverart.rendering = Container.PLAIN
         coverartimage.setUse(self.getCoverArtImage)
         coverartimage.rendering = Container.PLAIN
+        coverartimage.cachedimageurl = ''
+        coverartimage.cachedimagedata = ''
 
         getstate.setUse(self.getState)
         tag.setUse(self.tag)
@@ -127,17 +129,19 @@ class LastFM(PlugIn):
         #print "LastFM  get now Playing"
         #info = pipe = os.popen("curl http://192.168.1.131","r")
         info = os.popen('echo info | nc ' + host + ' ' + port)
-        np = info.read().replace('"',"")
+        np = info.read() #.replace('"',"")
+        if '-  -' in np:
+            np = 'No Title - No Artist - No Album'
 	return np
         
     def getCoverArt(self,var):
         np = os.popen('echo info | nc ' + host + ' ' + port)
-	#np = pipe = os.popen("curl http://192.168.1.131","r")
         np = np.read()
-        print "\n*********", np
+        #print "\n*********", np
         (artist, song, album) = np.split(' - ')
-        #print artist, song, album
-        np = artist
+
+        if '-  -' in np:
+            return '/Filesystem/interfaces/images/nocoverart.png'
 
         if not self.lastCover == artist+song+album:
             self.lastCover = artist+song+album
@@ -145,24 +149,33 @@ class LastFM(PlugIn):
 
             ecs.setLicenseKey('AKIAIICBON46BQIRCOUQ')
             ecs.setSecretKey('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')
-            #print "** Searching Amazon for "+artist+" "+album
+            print "** Searching Amazon for "+artist+" "+album
             search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, Title=album, ResponseGroup='Images')
             img=search.next().LargeImage.URL
-            #print img
+            print img
             self.lastImg = img
-            #print "LastFM getCoverArt!!!!!!!!!!!"
-
+            print "LastFM getCoverArt!!!!!!!!!!!"
+            print 'img', img
             return img
         else:
             #print 'LOADING CACHED IMAGE FOR COVERART!!!'+self.lastImg
+            #print 'lastimg', self.lastImg, self.lastCover
             return self.lastImg
 
     def getCoverArtImage(self,var):
         addr = Address('/Audio/LastFM/CoverArt')
+        print 'addr', addr
         imgurl = self.root().getByAddress(addr.__str__()).use()
-        #print imgurl
-        img = urllib2.urlopen(imgurl).read()
-        return img
+        print '!!!!COVERARTIMG', imgurl
+        print imgurl
+        if not self.cachedimageurl.__eq__(imgurl):
+            print 'GETTING NEW IMAGEDATA'
+            self.cachedimageurl = imgurl
+            self.cachedimagedata = urllib2.urlopen(self.cachedimageurl).read()
+            return self.cachedimagedata
+        else:
+            print 'USING CACHED IMAGEDATA'
+            return self.cachedimagedata
 
 
     def getState(self, var):
