@@ -48,9 +48,9 @@ class Services(PlugIn):
             return EventEngine.root.toJqHtml()
 
     def mreq(self, string=''):
-        #print string
+        print string
         requests = json.loads(string)
-        #print requests
+        print requests
         
         result = {}
         for key, request in requests.items():

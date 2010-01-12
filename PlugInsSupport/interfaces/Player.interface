@@ -1,6 +1,6 @@
 
 
-<div id="get">
+<div id="audioplayer">
     <div class="toolbar">
         <h1>LastFM</h1>
 		
@@ -12,14 +12,8 @@
 <!-- hook in some css-->
 <img style="display:none" src="_JID_/Filesystem/interfaces/images/tabs_playlist.png" onload="var oLink = document.createElement('link'); oLink.href = '_JID_/Filesystem/interfaces/css/player.css'; oLink.rel = 'stylesheet'; oLink.type = 'text/css'; document.body.appendChild(oLink);"/>
 <script type="text/javascript">
-function pause(millis)
-{
-        var date = new Date();
-        var curDate = null;
 
-        do { curDate = new Date(); }
-        while(curDate-date < millis)
-}
+coverartcache = 'Not initialized'
 
 function update() {
 
@@ -34,10 +28,12 @@ function update() {
 
 	$.getJSON('_JID_/Services/multirequest?string={"np":"/Defaults/nowplaying","coverart":"/Defaults/coverart", "state":"/Defaults/state"}', function(data){
                 playingdata = data["np"].split(' - ')
-                //alert(playingdata[1]+'/'+$(".title").html())
+                //alert(data['coverart']+'/'+coverartcache)
   			 
-			// had to disable this check, so the interface is updated when the user exits and reenters 
-             // if (playingdata[1] != $(".title").html()){
+                // had to disable this check, so the interface is updated when the user exits and reenters
+                //if (playingdata[1] != $(".title").html()){
+                if (data['coverart'] != coverartcache){
+                    coverartcache = data['coverart']
                     //alert(data['state'])
                     if (data['state'] == 'playing') {
                             $('a.play').hide();
@@ -55,10 +51,11 @@ function update() {
                     $(".title").html(playingdata[1]);
                     $(".interpreter").html(playingdata[0]);
 
-                    delay(2000);
-                    $(".coverartbg").css('background', 'url(_JID_/Audio/Boxee/coverartimg?'+ts+') no-repeat center center');
+                    //delay(2000);
+                    //alert('now cover art loads')
+                    $(".coverartbg").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+') no-repeat center center');
 
-              //  }
+                }
 	});
 	
 
@@ -66,11 +63,11 @@ function update() {
 }
 
 update();
-var player_timer = setInterval("update()", 30000);
+var player_timer = setInterval("update()", 3000);
 </script>
 
 	<div id="wrapper">
-                <div id="content" class="coverartbg">
+                <div id="content" class="coverartbg" style='background-color:black'>
                 <div id="player_skim" class="player_conts"></div> 
                     <div id="title">
                             <p class="title">Updating...</p>

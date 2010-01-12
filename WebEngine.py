@@ -33,10 +33,10 @@ class WebServer():
         navigationbar = '''
         <div class='floaty' style='display:none'>
             <ul>
-                <li><a href='/'''+addr+'''/Dashboard' class="slideup hidefloaty">Dashboard</a></li>
-                <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+'''' class="hidefloaty">Home</a></li>
-                <li><a href='/'''+addr+'''/Filesystem/interfaces/Map.interface' class="slideup hidefloaty">Map</a></li>
-                <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="slideup hidefloaty">Audio</a></li>
+                <li><a href='/'''+addr+'''/Dashboard' class="">Dashboard</a></li>
+                <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+'''' class="">Home</a></li>
+                <li><a href='/'''+addr+'''/Filesystem/interfaces/Map.interface' class="">Map</a></li>
+                <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="slideup">Audio</a></li>
             </ul>
         </div>
         '''
@@ -57,7 +57,7 @@ class WebServer():
             var jQT = new $.jQTouch({
                 icon: '/'''+addr+'''/Filesystem/html/images/appIcon.png',
                 addGlossToIcon: true,
-                cacheGetRequests: false,
+                cacheGetRequests: true,
                 startupScreen: '/'''+addr+'''/Filesystem/html/images/startup.png',
                 statusBar: 'black-translucent'
             });
@@ -83,6 +83,15 @@ class WebServer():
                     align: 'bottom'
                 });
 
+                $('#audioplayer').
+                    bind('pageAnimationStart', function(e, info){
+                        alert('Started animating ' + info.direction + '&hellip; ');
+                    }).
+                    bind('pageAnimationEnd', function(e, info){
+                        alert(' finished animating ' + info.direction);
+                    });
+
+
                 $('.arrow').bind("swipe",function(event, data){
                     if(data.direction=='right') {
                         if (true){
@@ -95,8 +104,7 @@ class WebServer():
                         print
                         $('.removebutton').hide();
                     }
-                });
-
+                });                
 
             });
             
@@ -138,13 +146,13 @@ class WebServer():
         #print '* '+addr
         addr= addr[1:]
 
-        
+        cachrev = time.time().__str__() #Config.get("server", "interfacerev")
 
         if addr.__eq__('cache.manifest'):
             #print 'CACHE MANIFEST REQUEST!!!!!'
             self.contentType('text/cache-manifest')
             return '''CACHE MANIFEST
-#revision 0.67
+#revision '''+cachrev+'''
 '''+jid+'''/Filesystem/html/themes/jqt/theme.css
 '''+jid+'''/Filesystem/html/ami.css
 '''+jid+'''/Filesystem/html/jqtouch/jquery.1.3.2.min.js
