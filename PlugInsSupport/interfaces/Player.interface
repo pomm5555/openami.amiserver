@@ -56,7 +56,7 @@ function update() {
                     $(".interpreter").html(playingdata[0]);
 
                     delay(2000);
-                    $(".coverartbg").css('background', 'url(_JID_/Audio/Boxee/coverartimg?'+ts+') no-repeat center center');
+                    $(".coverartbg").css('background', 'url(_JID_/Audio/Boxee/CoverArtImage?'+ts+') no-repeat center center');
 
               //  }
 	});
