@@ -162,7 +162,7 @@ class Container:
             else:
                 backbutton = "<a class='back' href='#'>Back</a>"
 
-            homebutton=""#<a class='notsoleftButton' href='#"+home+" '>Home</a>"
+            homebutton="<a href='#root'><img class='cam' style='-webkit-user-select: none' src='http://192.168.1.239:8081/' height=30 width=40></a>"#<a class='notsoleftButton' href='#"+home+" '>Home</a>"
 
             toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1>"+backbutton+homebutton+"<a class='togglefloaty button slideup' href='#about'>More</a></div>"
             content = "<ul class='rounded'>"

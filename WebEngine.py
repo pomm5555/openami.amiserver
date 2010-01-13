@@ -35,7 +35,7 @@ class WebServer():
             <ul>
                 <li><a href='/'''+addr+'''/Dashboard' class="">Dashboard</a></li>
                 <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+'''' class="">Home</a></li>
-                <li><a href='/'''+addr+'''/Filesystem/interfaces/Map.interface' class="">Map</a></li>
+                <li><a href='/'''+addr+'''/Filesystem/interfaces/Cam.interface' class="">Map</a></li>
                 <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="">Audio</a></li>
             </ul>
         </div>
@@ -114,7 +114,7 @@ class WebServer():
         result = self.root.toJqHtml()
         
         # control caching
-        caching = True
+        caching = False
         if caching:
             manifest=' manifest="/cache.manifest"'
         else:
