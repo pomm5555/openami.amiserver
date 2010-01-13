@@ -59,7 +59,17 @@ function update() {
 
                     $(".title").html(playingdata[1]);
                     $(".interpreter").html(playingdata[0]);
+<<<<<<< local
                     $(".coverartbg").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+') no-repeat center center');
+=======
+
+
+                    delay(2000);
+                    $(".coverartbg").css('background', 'url(_JID_/Audio/Boxee/CoverArtImage?'+ts+') no-repeat center center');
+
+             
+
+>>>>>>> other
                 }
 	});
 }
