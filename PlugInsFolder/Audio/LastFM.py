@@ -23,15 +23,6 @@ class LastFM(PlugIn):
         port = Config.get("LastFM", "port")
 
 
-        #for pair in Config.getSection("LastFM"):
-        #    global user,host,port
-        #    if (pair[0] == "user"):
-        #        user = pair[1]
-        #    if (pair[0] == "host"):
-        #        host = pair[1]
-        #    if (pair[0] == "port"):
-        #        port = pair[1]
-
         print user,host,port
         love = Container("cmd","Love","love")
         skip = Container("cmd","Skip","skip")
@@ -137,6 +128,7 @@ class LastFM(PlugIn):
     def getCoverArt(self,var):
         np = os.popen('echo info | nc ' + host + ' ' + port)
         np = np.read()
+
         try:
             (artist, song, album) = np.split(' - ')
         except:

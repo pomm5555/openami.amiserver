@@ -298,28 +298,60 @@ class loggingContainer(Container):
 
 class SwitchContainer(Container):
 
-    def __init__(self, type, token, information="empty", use=None, logging=False, on=None, off=None):
+    def __init__(self, type, token, information="empty", use=None, logging=False, on=None, off=None, checked=True):
         Container.__init__(self, type, token, information, use, logging)
         self.on = on
         self.off = off
+        self.checked = checked
 
     def toJqHtmlElement(self):
         if self.visible:
-            content = '<li>'+self.token+'<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get(\''+self.on+'\');else $.get(\''+self.off+'\');"/></span></li>'
+            checkedStr = ''
+            if self.checked == True:
+                checkedStr = " checked=\'checked\'"
+            content = '<li>'+self.token+'<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get(\''+self.on+'\');else $.get(\''+self.off+'\');"' + checkedStr + '/></span></li>'
             return content
         else:
             return ""
-        
+
+    def setChecked(self, checked):
+        self.checked = checked
+
+class CheckBoxContainer(Container):
+
+    def __init__(self, type, token, information=None, use=None, logging=False, toogle=None, checked=True):
+        Container.__init__(self, type, token, information, use, logging)
+        if information==None:
+            self.information = token
+        self.checked = checked
+        self.toogle = toogle
+
+    def toJqHtmlElement(self):
+        if self.visible:
+            checkedStr = ''
+            if self.checked == True:
+                checkedStr = ' checked=\"checked\"'
+            content = '<li><input type=\"checkbox\" onChange="if(this.checked) $.get(\''+self.toogle+'?string=True\');else $.get(\''+self.toogle+'?string=False\');" title=\"' + self.information + '\"' + checkedStr + '/></li>'
+            return content
+        else:
+            return ""
+
+    def setChecked(self, checked):
+        self.checked = checked
+
 class TextfieldContainer(Container):
 
-    def __init__(self, type, token, information="empty", use=None, logging=False, target=None):
+    def __init__(self, type, token, information="empty", use=None, logging=False, target=None, value=""):
         Container.__init__(self, type, token, information, use, logging)
         self.target = target
+        self.value = value
 
     def toJqHtmlElement(self):
         if self.visible:
-            content = '<li><input type="text" name="'+self.token+'" placeholder="'+self.token+'" id="sole_name" onBlur="$.get(\''+self.target+'?string=\'+$(this).val());"/></li>'
+            content = '<li><input type="text" name="'+self.token+'" placeholder="'+self.token+'" id="sole_name" onBlur="$.get(\''+self.target+'?string=\'+$(this).val());" value="'+self.value+'"/></li>'
             return content
         else:
             return ""
 
+    def setValue(self, value):
+        self.value = value
