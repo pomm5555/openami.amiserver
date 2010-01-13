@@ -408,6 +408,11 @@
                 if (!$node.attr('id')) {
                     $node.attr('id', 'page-' + (++newPageCount));
                 }
+                var o=document.getElementById($node.attr('id'));
+                if (o) {
+                   var p=document.getElementsByTagName("BODY")[0];
+                   if (p) p.removeChild(o);
+                }
                 $node.appendTo($body);
                 if ($node.hasClass('current') || !targetPage ) {
                     targetPage = $node;

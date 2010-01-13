@@ -23,15 +23,6 @@ class LastFM(PlugIn):
         port = Config.get("LastFM", "port")
 
 
-        #for pair in Config.getSection("LastFM"):
-        #    global user,host,port
-        #    if (pair[0] == "user"):
-        #        user = pair[1]
-        #    if (pair[0] == "host"):
-        #        host = pair[1]
-        #    if (pair[0] == "port"):
-        #        port = pair[1]
-
         print user,host,port
         love = Container("cmd","Love","love")
         skip = Container("cmd","Skip","skip")
@@ -87,7 +78,7 @@ class LastFM(PlugIn):
 
     def stop(self,var):
         #print "Stop"
-        os.system("echo 'stop' | nc " +host + " " + port)
+        return os.popen("echo 'pause' | nc " +host + " " + port).read()
 
     def neighbours(self,var):
         #print "LastFm Neighbours"
@@ -126,40 +117,43 @@ class LastFM(PlugIn):
         os.system("echo 'play lastfm://tag/"+tag+"' | nc " + host + " " + port)
 
     def getNp(self,var):
-        #print "LastFM  get now Playing"
-        #info = pipe = os.popen("curl http://192.168.1.131","r")
         info = os.popen('echo info | nc ' + host + ' ' + port)
         np = info.read() #.replace('"',"")
-        if '-  -' in np:
+        if np == '':
+            np = 'ShellFM - not running - No Album'
+        elif '-  -' in np:
             np = 'No Title - No Artist - No Album'
 	return np
         
     def getCoverArt(self,var):
         np = os.popen('echo info | nc ' + host + ' ' + port)
         np = np.read()
-        #print "\n*********", np
-        (artist, song, album) = np.split(' - ')
 
-        if '-  -' in np:
+        if np == '':
             return '/Filesystem/interfaces/images/nocoverart.png'
+        elif '-  -' in np:
+            return '/Filesystem/interfaces/images/nocoverart.png'
+
+        try:
+            (artist, song, album) = np.split(' - ')
+        except:
+            return '/Filesystem/interfaces/images/nocoverart.png'
+
 
         if not self.lastCover == artist+song+album:
             self.lastCover = artist+song+album
             import ecs
-
             ecs.setLicenseKey('AKIAIICBON46BQIRCOUQ')
             ecs.setSecretKey('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')
-            print "** Searching Amazon for "+artist+" "+album
-            search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, Title=album, ResponseGroup='Images')
+            try:
+                search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, Title=album, ResponseGroup='Images')
+            except:
+                self.lastImg = '/Filesystem/interfaces/images/nocoverart.png'
+                return self.lastImg
             img=search.next().LargeImage.URL
-            print img
             self.lastImg = img
-            print "LastFM getCoverArt!!!!!!!!!!!"
-            print 'img', img
             return img
         else:
-            #print 'LOADING CACHED IMAGE FOR COVERART!!!'+self.lastImg
-            #print 'lastimg', self.lastImg, self.lastCover
             return self.lastImg
 
     def getCoverArtImage(self,var):
@@ -167,9 +161,11 @@ class LastFM(PlugIn):
         print 'addr', addr
         imgurl = self.root().getByAddress(addr.__str__()).use()
         print '!!!!COVERARTIMG', imgurl
-        print imgurl
-        if not self.cachedimageurl.__eq__(imgurl):
+        if not imgurl in self.cachedimageurl:
             print 'GETTING NEW IMAGEDATA'
+            if '/Filesystem/interfaces/images/nocoverart.png' in imgurl:
+                imgurl = Address(imgurl).__str__()
+                return self.root().getByAddress(imgurl).use()
             self.cachedimageurl = imgurl
             self.cachedimagedata = urllib2.urlopen(self.cachedimageurl).read()
             return self.cachedimagedata
@@ -181,10 +177,12 @@ class LastFM(PlugIn):
     def getState(self, var):
         #print "LastFM getState"
         np = os.popen('echo info | nc ' + host + ' ' + port).read()
-        if np == ' -  - ':
-          return "not playing"
+        if np=='':
+            return "not playing"
+        elif ' -  - ' in np:
+            return "not playing"
         else:
-          return "playing"
+            return "playing"
           
     # just a little helper function
     def getText(self, var):

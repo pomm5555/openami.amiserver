@@ -49,7 +49,11 @@ class Services(PlugIn):
 
     def mreq(self, string=''):
         print string
-        requests = json.loads(string)
+        try:
+            requests = json.loads(string)
+        except:
+            requests = {"np":"error - error - error","coverart":"", "state":"playing"}
+            print '[ERROR] Json could not be decoded... in services.py'
         print requests
         
         result = {}
