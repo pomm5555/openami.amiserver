@@ -78,6 +78,11 @@ body.landscape .toolbar > h1 {
     border-width: 0 8px 0 14px;
     -webkit-border-image: url(img/back_button.png) 0 8 0 14;
 }
+.cam {
+    right: 65px;
+    left: auto;
+    position: absolute;
+}
 .back.active {
     -webkit-border-image: url(img/back_button_clicked.png) 0 8 0 14;
     color: #aaa;

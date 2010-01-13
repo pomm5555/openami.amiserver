@@ -18,7 +18,7 @@ class Container:
     JQ = 1
 
 
-    def __init__(self, type, token, information="empty", use=None, logging=False):
+    def __init__(self, type, token, information="empty", use=None, use_args=None, logging=False):
         self.content = {}
         self.information = information
         self.token = token.replace(" ", "_")
@@ -29,7 +29,9 @@ class Container:
         self.addresslist = None
         # how should webengine render the containers content jq|plain...
         self.rendering = Container.JQ
+        self.use_args=use_args
         if use:
+
             self.setUse(use)
 
         # bei der initialisierung ist getAddress noch auf token beschraekt weil parent noch nicht besetzt oder so
@@ -94,8 +96,9 @@ class Container:
         return self.information
 
 
-    def setUse(self, use):
+    def setUse(self, use, use_args=None):
         #self.use = use
+        self.use_args = use_args
         self.useL = types.MethodType(use.im_func, self, self.__class__)
 
     def printTree(self, i):
@@ -151,17 +154,18 @@ class Container:
 
             address = self.getAddress().replace("/", "_").replace("@", "_").replace(".", "_")
             token = self.token
-<<<<<<< local
+			
+	    home = self.root().token.replace("/","_").replace("@","_").replace(".","_")
 
-            toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a><a class='togglefloaty button slideup' href='#about'>More</a></div>"
+            if self.token.__eq__("root"):
+                backbutton = ''
+            else:
+                backbutton = "<a class='back' href='#'>Back</a>"
+
+            homebutton="<a href='#root'><img class='cam' style='-webkit-user-select: none' src='http://192.168.1.239:8081/' height=30 width=40></a>"#<a class='notsoleftButton' href='#"+home+" '>Home</a>"
+
+            toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1>"+backbutton+homebutton+"<a class='togglefloaty button slideup' href='#about'>More</a></div>"
             content = "<ul class='rounded'>"
-=======
-			
-	    home = self.root().content.keys()[0].replace("/","_").replace("@","_").replace(".","_")
-			
-            toolbar = "<div class='toolbar'><h1 style='opacity:1;'>"+token+"</h1><a class='back' href='#'>Back</a><a class='notsoleftButton' href='#"+home+" '>Home</a><a class='togglefloaty button slideup' href='#about'>More</a></div>"
-            content = "<ul>"
->>>>>>> other
             for k, v in self.content.items():
 
                 if not v.content == {}:
@@ -178,7 +182,7 @@ class Container:
                         content += v.toJqHtmlElement()
 
             content += "</ul>"
-
+            content += "<div class='info'>"+self.information+"</div>"
             html = "<div id='"+address+"'>"+toolbar+content+"</div>"+result
 
             return html
@@ -251,7 +255,7 @@ class ThreadContainer(Thread, Container):
     def __init__(self, type, token, information="empty"):
         Thread.__init__(self, None)
         Container.__init__(self, type, token, information)
-	self.daemon = False
+        self.daemon = False
 
 
     def setDo(self, method):
@@ -294,28 +298,60 @@ class loggingContainer(Container):
 
 class SwitchContainer(Container):
 
-    def __init__(self, type, token, information="empty", use=None, logging=False, on=None, off=None):
+    def __init__(self, type, token, information="empty", use=None, logging=False, on=None, off=None, checked=True):
         Container.__init__(self, type, token, information, use, logging)
         self.on = on
         self.off = off
+        self.checked = checked
 
     def toJqHtmlElement(self):
         if self.visible:
-            content = '<li>'+self.token+'<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get(\''+self.on+'\');else $.get(\''+self.off+'\');"/></span></li>'
+            checkedStr = ''
+            if self.checked == True:
+                checkedStr = " checked=\'checked\'"
+            content = '<li>'+self.token+'<span class="toggle"><input type="checkbox" onChange="if(this.checked) $.get(\''+self.on+'\');else $.get(\''+self.off+'\');"' + checkedStr + '/></span></li>'
             return content
         else:
             return ""
-        
+
+    def setChecked(self, checked):
+        self.checked = checked
+
+class CheckBoxContainer(Container):
+
+    def __init__(self, type, token, information=None, use=None, logging=False, toogle=None, checked=True):
+        Container.__init__(self, type, token, information, use, logging)
+        if information==None:
+            self.information = token
+        self.checked = checked
+        self.toogle = toogle
+
+    def toJqHtmlElement(self):
+        if self.visible:
+            checkedStr = ''
+            if self.checked == True:
+                checkedStr = ' checked=\"checked\"'
+            content = '<li><input type=\"checkbox\" onChange="if(this.checked) $.get(\''+self.toogle+'?string=True\');else $.get(\''+self.toogle+'?string=False\');" title=\"' + self.information + '\"' + checkedStr + '/></li>'
+            return content
+        else:
+            return ""
+
+    def setChecked(self, checked):
+        self.checked = checked
+
 class TextfieldContainer(Container):
 
-    def __init__(self, type, token, information="empty", use=None, logging=False, target=None):
+    def __init__(self, type, token, information="empty", use=None, logging=False, target=None, value=""):
         Container.__init__(self, type, token, information, use, logging)
         self.target = target
+        self.value = value
 
     def toJqHtmlElement(self):
         if self.visible:
-            content = '<li><input type="text" name="'+self.token+'" placeholder="'+self.token+'" id="sole_name" onBlur="$.get(\''+self.target+'?string=\'+$(this).val());"/></li>'
+            content = '<li><input type="text" name="'+self.token+'" placeholder="'+self.token+'" id="sole_name" onBlur="$.get(\''+self.target+'?string=\'+$(this).val());" value="'+self.value+'"/></li>'
             return content
         else:
             return ""
 
+    def setValue(self, value):
+        self.value = value
