@@ -1,7 +1,7 @@
-
+from ConfigParser import ConfigParser
+from amiConfig import Config
 from AmiTree import Container
 from PlugIn import PlugIn
-from xmppEngine import XMPPEngine
 import Address
 
 class Dashboard(PlugIn):
@@ -11,7 +11,6 @@ class Dashboard(PlugIn):
         PlugIn.__init__(self)
         self.architecture = "all"
 
-
         #plugin itself
         self.content = Container("plugin", token, "This is a Status Plugin", self.getParts)
         self.content.rendering = Container.PLAIN
@@ -19,39 +18,70 @@ class Dashboard(PlugIn):
 
     def getParts(self, text=""):
         string = ""
-        
-        #addr = Address("/Services/JqHtml")
-        #result = EventEngine.root.getByAddress(addr.__str__()).use()
 
-        #res = self.root().__str__()
-        
+        #getting stuff from seperate config file
+        config = ConfigParser()
+        configpath = Config.absPath+'/properties/dashboard.properties'
+        config.readfp(open(configpath))
+
+     
         javascript = """
-        $.getJSON(\'/servant@jabber.org/System/Temperature/LivingRoom\', 
-                   function(data){
-                       $(\'span.amiDash1\').text(data[0]);
-                   }
-                 );
-        
-        
-        """
-        
-        
-        
+<script type="text/javascript">
+
+                $('#audioplayer').
+                    bind("pageAnimationStart", function(e, info){
+                        if (info.direction == 'in'){
+                            intInterval=window.setInterval('update()', 5000);
+                        } else {
+                            intInterval=window.clearInterval(intInterval);
+                        }
+                    });
+
+coverartcache = 'Not initialized'
+npcache = 'Not initialized'
+
+function update() {
+
+        function delay(delay) {
+            var startTime = new Date();
+            var endTime = null;
+            do {
+                endTime = new Date();
+            } while ((endTime - startTime) < delay);
+        }
+
+	$.getJSON('_JID_/Services/multirequest?string={"np":"/Defaults/nowplaying","coverart":"/Defaults/coverart", "state":"/Defaults/state"}', function(data){
+                playingdata = data["np"].split(' - ')
+                //alert(data['coverart']+'/'+coverartcache)
+
+
+                    $(".title").html(playingdata[1]);
+                    $(".interpreter").html(playingdata[0]);
+                    $(".coverartbg").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+') no-repeat center center');
+	});
+}
+
+update();
+
+</script>
+"""
+
         liElements = []
-        
-        liElements.append('<small>small</small><span class="amiDash1">State</span><em>Emphasized</em>')
-        liElements.append('<small>small</small>Big Text<em>Emphasized</em>')
-        liElements.append('<small>small</small>Big Text<em>Emphasized</em>')
-        liElements.append('<small>small</small>Big Text<em>Emphasized</em>')
+
+
+	for item in config.sections():
+            smalltextid = config.get(item, 'smalltext')+config.get(item, 'largetext')+'small'
+            largetextid = config.get(item, 'smalltext')+config.get(item, 'largetext')+'large'
+            liElements.append('<div class="dashboardiconcontainer"><img src="'+Config.get("server", "token")+'/'+config.get(item, 'icon')+'" class="dashboardicon"/></div><span class="amiDash1">'+config.get(item, 'largetext')+'</span><em>'+config.get(item, 'smalltext')+'</em>')
+
+        print 'string={"np":"/Defaults/nowplaying","coverart":"/Defaults/coverart", "state":"/Defaults/state"}'
+
         
         list = ""
         for elem in liElements:
             list += '<li><a href="#">'+elem+'</a></li>'
         list = '<ul class="metal">'+list+'</ul>'
         
-        result = '<div id="get"><div class="toolbar"><h1>Result</h1><a class="back" href="#">Back</a></div>'+list+'</div>'
+        result = '<div id="dashboard"><div class="toolbar"><h1>Result</h1><a class="back" href="#">Back</a></div>'+list+'</div>'
         
-        jscriptHook = '<img style="display:none;" src="/servant@jabber.org/Filesystem/interfaces/images/tabs_playlist.png" onload="'+javascript+'"/>'
-
-        
-        return result+jscriptHook
+        return result

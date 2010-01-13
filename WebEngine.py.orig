@@ -33,10 +33,15 @@ class WebServer():
         navigationbar = '''
         <div class='floaty'>
             <ul>
-                <li><a href='/'''+addr+'''/Dashboard' class="">Dashboard</a></li>
+                <li><a href='/'''+addr+'''/Dashboard' class="slideup">Dashboard</a></li>
                 <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+'''' class="">Home</a></li>
+<<<<<<< local
                 <li><a href='/'''+addr+'''/Filesystem/interfaces/Cam.interface' class="">Map</a></li>
                 <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="">Audio</a></li>
+=======
+                <li><a href='/'''+addr+'''/Filesystem/interfaces/Map.interface' class="slideup">Map</a></li>
+                <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="slideup">Audio</a></li>
+>>>>>>> other
             </ul>
         </div>
         '''
@@ -134,7 +139,13 @@ class WebServer():
         #print '* '+addr
         addr= addr[1:]
 
-        cachrev = time.time().__str__() #Config.get("server", "interfacerev")
+
+        if Config.get("server", "interfacerev") == 'on':
+            cachrev = Config.get("server", "caching")
+        else:
+            cachrev = time.time().__str__()
+
+
 
         if addr.__eq__('cache.manifest'):
             #print 'CACHE MANIFEST REQUEST!!!!!'
