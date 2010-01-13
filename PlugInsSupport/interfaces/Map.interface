@@ -6,7 +6,7 @@
 		
         <a class="back" href="#" onClick="clearTimeout(player_timer);">Back</a>
     </div>
-<div class="info" style="text-align: left; margin:none; padding:none">
+<div class="mapinfo" style="text-align: left; margin:none; padding:none">
 
 <!-- hook in some css-->
 <img style="display:none" src="_JID_/Filesystem/interfaces/images/tabs_playlist.png" onload="var oLink = document.createElement('link'); oLink.href = '_JID_/Filesystem/interfaces/css/map.css'; oLink.rel = 'stylesheet'; oLink.type = 'text/css'; document.body.appendChild(oLink);"/>

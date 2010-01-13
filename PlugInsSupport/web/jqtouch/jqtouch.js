@@ -17,9 +17,9 @@
     (c) 2009 by jQTouch project members.
     See LICENSE.txt for license.
     
-    $Revision: 129 $
-    $Date: 2010-01-02 22:49:03 +0100 (Sa, 02 Jan 2010) $
-    $LastChangedBy: RBoulanouar $
+    $Revision: 109 $
+    $Date: 2009-10-06 12:23:30 -0400 (Tue, 06 Oct 2009) $
+    $LastChangedBy: davidcolbykaneda $
 
 */
 
@@ -37,7 +37,7 @@
             hist=[], 
             newPageCount=0, 
             jQTSettings={}, 
-	        hashCheckInterval,
+            hashCheck, 
             currentPage, 
             orientation, 
             isMobileWebKit = RegExp(" Mobile/").test(navigator.userAgent), 
@@ -49,6 +49,7 @@
             defaultAnimations=['slide','flip','slideup','swap','cube','pop','dissolve','fade','back'], 
             animations=[], 
             hairextensions='';
+
         // Get the party started
         init(options);
 
@@ -107,9 +108,7 @@
                     hairextensions += '<meta name="apple-mobile-web-app-status-bar-style" content="' + jQTSettings.statusBar + '" />';
                 }
             }
-            if (hairextensions)  { 
-                $head.prepend(hairextensions);
-            }
+            if (hairextensions) $head.append(hairextensions);
 
             // Initialize on document load:
             $(document).ready(function(){
@@ -159,12 +158,7 @@
                 {
                     $body.click(function(e){
                         var $el = $(e.target);
-
-                        if ($el.attr('nodeName')!=='A' && $el.attr('nodeName')!=='AREA'){
-                            $el = $el.closest('a, area');
-                        }
-
-                        if ($el.isExternalLink())
+                        if ($el.attr('target') == '_blank' || $el.attr('rel') == 'external' || $el.is('input[type="checkbox"]'))
                         {
                             return true;
                         } else {
@@ -192,19 +186,19 @@
                 
                 // Go to the top of the "current" page
                 $(currentPage).addClass('current');
-                location.hash = '#' + $(currentPage).attr('id');
+                location.hash = $(currentPage).attr('id');
                 addPageToHistory(currentPage);
                 scrollTo(0, 0);
-                startHashCheck();
+                dumbLoopStart();
             });
         }
         
         // PUBLIC FUNCTIONS
         function goBack(to) {
             // Init the param
-                var numberOfPages = Math.min(parseInt(to || 1, 10), hist.length-1),
-                    curPage = hist[0];
-                
+            if (hist.length > 1) {
+                var numberOfPages = Math.min(parseInt(to || 1, 10), hist.length-1);
+
                 // Search through the history for an ID
                 if( isNaN(numberOfPages) && typeof(to) === "string" && to != '#' ) {
                     for( var i=1, length=hist.length; i < length; i++ ) {
@@ -220,20 +214,26 @@
                     numberOfPages = 1;
                 };
 
-                if (hist.length > 1)
-                {
-                    // Remove all pages in front of the target page
-                    hist.splice(0, numberOfPages);
-                    animatePages(curPage.page, hist[0].page, curPage.animation, curPage.reverse === false);
-                }
-                else
-                {
-                    location.hash = '#' + curPage.id;
-                }
+                // Grab the current page for the "from" info
+                var animation = hist[0].animation;
+                var fromPage = hist[0].page;
 
+                // Remove all pages in front of the target page
+                hist.splice(0, numberOfPages);
+
+                // Grab the target page
+                var toPage = hist[0].page;
+
+                // Make the animations
+                animatePages(fromPage, toPage, animation, true);
+                
                 return publicObj;
+            } else {
+                console.error('No pages in history.');
+                return false;
+            }
         }
-        function goTo(toPage, animation, reverse) {
+        function goTo(toPage, animation) {
             var fromPage = hist[0].page;
             
             if (typeof(toPage) === 'string') {
@@ -248,8 +248,8 @@
                     }
                 }
             }
-            if (animatePages(fromPage, toPage, animation, reverse)) {
-                addPageToHistory(toPage, animation, reverse);
+            if (animatePages(fromPage, toPage, animation)) {
+                addPageToHistory(toPage, animation);
                 return publicObj;
             }
             else
@@ -268,25 +268,24 @@
             // Grab the clicked element
             var $el = $(e.target);
 
-            if ($el.attr('nodeName')!=='A' && $el.attr('nodeName')!=='AREA'){
-                $el = $el.closest('a, area');
+            if ($el.attr('nodeName')!=='A'){
+                $el = $el.parent('a');
             }
             
             var target = $el.attr('target'), 
-                hash = $el.attr('hash'), 
-                animation=null;
+            hash = $el.attr('hash'), 
+            animation=null;
             
             if (tapReady == false || !$el.length) {
-                console.warn('Not able to tap element.');
+                console.warn('Not able to tap element.')
                 return false;
             }
             
-            if ($el.isExternalLink())
+            if ($el.attr('target') == '_blank' || $el.attr('rel') == 'external')
             {
-                $el.removeClass('active');
                 return true;
             }
-
+            
             // Figure out the animation to use
             for (var i = animations.length - 1; i >= 0; i--){
                 if ($el.is(animations[i].selector)) {
@@ -303,15 +302,10 @@
             else if ($el.is(jQTSettings.backSelector)) {
                 goBack(hash);
             }
-            // Allow tap on item with no href
-            else if ($el.attr('href') == '#') {
-                $el.unselect();
-                return true;
-            }
             // Branch on internal or external href
             else if (hash && hash!='#') {
                 $el.addClass('active');
-                goTo($(hash).data('referrer', $el), animation, $(this).hasClass('reverse'));
+                goTo($(hash).data('referrer', $el), animation);
             } else {
                 $el.addClass('loading active');
                 showPageByHref($el.attr('href'), {
@@ -324,14 +318,14 @@
             }
             return false;
         }
-        function addPageToHistory(page, animation, reverse) {
+        function addPageToHistory(page, animation) {
             // Grab some info
             var pageId = page.attr('id');
+
             // Prepend info to page history
             hist.unshift({
                 page: page, 
                 animation: animation, 
-                reverse: reverse || false,
                 id: pageId
             });
         }
@@ -343,14 +337,6 @@
                 return false;
             }
             
-            // Error check for fromPage=toPage
-            if(toPage.hasClass('current'))
-            {
-                $.fn.unselect();
-                console.error('Target element is the current page.');
-                return false;
-            }
-            
             // Collapse the keyboard
             $(':focus').blur();
 
@@ -358,15 +344,12 @@
             scrollTo(0, 0);
             
             // Define callback to run after animation completes
-            var callback = function animationEnd(event){
+            var callback = function(event){
+
                 if (animation)
                 {
-                    toPage.removeClass('in ' + animation.name);
-                    fromPage.removeClass('current out ' + animation.name);
-                    if (backwards) {                    
-                        toPage.toggleClass('reverse');
-                        fromPage.toggleClass('reverse');
-                    }
+                    toPage.removeClass('in reverse ' + animation.name);
+                    fromPage.removeClass('current out reverse ' + animation.name);
                 }
                 else
                 {
@@ -374,12 +357,12 @@
                 }
 
                 toPage.trigger('pageAnimationEnd', { direction: 'in' });
-                fromPage.trigger('pageAnimationEnd', { direction: 'out' });
-
-                clearInterval(hashCheckInterval);
+    	        fromPage.trigger('pageAnimationEnd', { direction: 'out' });
+                
+                clearInterval(dumbLoop);
                 currentPage = toPage;
-                location.hash = '#' + currentPage.attr('id');
-                startHashCheck();
+                location.hash = currentPage.attr('id');
+                dumbLoopStart();
 
                 var $originallink = toPage.data('referrer');
                 if ($originallink) {
@@ -395,13 +378,8 @@
             if ($.support.WebKitAnimationEvent && animation && jQTSettings.useAnimations) {
                 toPage.one('webkitAnimationEnd', callback);
                 tapReady = false;
-                if (backwards) {                    
-                    toPage.toggleClass('reverse');
-                    fromPage.toggleClass('reverse');
-                }
-                toPage.addClass(animation.name + ' in current ');
-                fromPage.addClass(animation.name + ' out');
-
+                toPage.addClass(animation.name + ' in current ' + (backwards ? ' reverse' : ''));
+                fromPage.addClass(animation.name + ' out' + (backwards ? ' reverse' : ''));
             } else {
                 toPage.addClass('current');
                 callback();
@@ -409,17 +387,19 @@
 
             return true;
         }
-        function hashCheck() {
-            var curid = currentPage.attr('id');
-            if (location.hash == '') {
-                location.hash = '#' + curid;
-            } else if (location.hash != '#' + curid) {
-                clearInterval(hashCheckInterval);
-                goBack(location.hash);
-            }
-        }
-        function startHashCheck(){
-            hashCheckInterval = setInterval(hashCheck, 100);
+        function dumbLoopStart() {
+            dumbLoop = setInterval(function(){
+                var curid = currentPage.attr('id');
+                if (location.hash == '') {
+                    location.hash = '#' + curid;
+                } else if (location.hash != '#' + curid) {
+                    try {
+                        goBack(location.hash)
+                    } catch(e) {
+                        console.error('Unknown hash change.');
+                    }
+                }
+            }, 100);
         }
         function insertPages(nodes, animation) {
             var targetPage = null;
@@ -428,9 +408,12 @@
                 if (!$node.attr('id')) {
                     $node.attr('id', 'page-' + (++newPageCount));
                 }
-                
-		        $body.trigger('pageInserted', {page: $node.appendTo($body)});
-
+                var o=document.getElementById($node.attr('id'));
+                if (o) {
+                   var p=document.getElementsByTagName("BODY")[0];
+                   if (p) p.removeChild(o);
+                }
+                $node.appendTo($body);
                 if ($node.hasClass('current') || !targetPage ) {
                     targetPage = $node;
                 }
@@ -465,7 +448,7 @@
                         var firstPage = insertPages(data, settings.animation);
                         if (firstPage)
                         {
-                            if (settings.method == 'GET' && jQTSettings.cacheGetRequests === true && settings.$referrer)
+                            if (settings.method == 'GET' && jQTSettings.cacheGetRequests && settings.$referrer)
                             {
                                 settings.$referrer.attr('href', '#' + firstPage.attr('id'));
                             }
@@ -475,24 +458,22 @@
                         }
                     },
                     error: function (data) {
-                        if (settings.$referrer) {
-            		    settings.$referrer.unselect();
-            		}
+                        if (settings.$referrer) settings.$referrer.unselect();
                         if (settings.callback) {
                             settings.callback(false);
                         }
                     }
                 });
             }
-            else if (settings.$referrer)
+            else if ($referrer)
             {
-                settings.$referrer.unselect();
+                $referrer.unselect();
             }
         }
         function submitForm(e, callback){
-            var $form = (typeof(e)==='string') ? $(e).eq(0) : ( e.target ? $(e.target) : $(e) );
+            var $form = (typeof(e)==='string') ? $(e) : $(e.target);
 
-            if ($form.length && $form.is(jQTSettings.formSelector)) {
+            if ($form.length && $form.is(jQTSettings.formSelector) && $form.attr('action')) {
                 showPageByHref($form.attr('action'), {
                     data: $form.serialize(),
                     method: $form.attr('method') || "POST",
@@ -526,22 +507,22 @@
             $body.removeClass('profile landscape').addClass(orientation).trigger('turn', {orientation: orientation});
             // scrollTo(0, 0);
         }
-        function handleTouch(e) {            
+        function handleTouch(e) {
+
             var $el = $(e.target);
 
             // Only handle touchSelectors
             if (!$(e.target).is(touchSelectors.join(', ')))
             {
-                var $link = $(e.target).closest('a, area');
+                var $link = $(e.target).closest('a');
                 
-                if ($link.length && $link.is(touchSelectors.join(', '))){
+                if ($link.length){
                     $el = $link;
                 } else {
                     return;
                 }
             }
-
-            if (e)
+            if (event)
             {
                 var hoverTimeout = null,
                     startX = event.changedTouches[0].clientX,
@@ -569,7 +550,7 @@
                                 
                 // Check for swipe
                 if (absX > absY && (absX > 35) && deltaT < 1000) {
-                    $el.trigger('swipe', {direction: (deltaX < 0) ? 'left' : 'right', deltaX: deltaX, deltaY: deltaY }).unbind('touchmove touchend');
+                    $el.trigger('swipe', {direction: (deltaX < 0) ? 'left' : 'right'}).unbind('touchmove touchend');
                 } else if (absY > 1) {
                     $el.removeClass('active');
                 }
@@ -582,6 +563,16 @@
             
                 if (deltaY === 0 && deltaX === 0) {
                     $el.makeActive();
+                    // New approach:
+                    // Fake the double click?
+                    // TODO: Try with all click events (no tap)
+                    // if (deltaT < 40)
+                    // {
+                    //     setTimeout(function(){
+                    //        $el.trigger('touchstart')
+                    //          .trigger('touchend');
+                    //     }, 0);
+                    // }
                     $el.trigger('tap');
                 } else {
                     $el.removeClass('active');
@@ -613,9 +604,9 @@
         $.fn.swipe = function(fn) {
             if ($.isFunction(fn))
             {
-                return $(this).bind('swipe', fn);
-            } else {
-                return $(this).trigger('swipe');
+                return this.each(function(i, el){
+                    $(el).bind('swipe', fn);  
+                });
             }
         }
         $.fn.tap = function(fn){
@@ -624,14 +615,10 @@
                 var tapEvent = (jQTSettings.useFastTouch && $.support.touch) ? 'tap' : 'click';
                 return $(this).live(tapEvent, fn);
             } else {
-                return $(this).trigger('tap');
+                $(this).trigger('tap');
             }
         }
-        $.fn.isExternalLink = function(){
-            var $el = $(this);
-            return ($el.attr('target') == '_blank' || $el.attr('rel') == 'external' || $el.is('input[type="checkbox"], input[type="radio"], a[href^="http://maps.google.com:"], a[href^="mailto:"], a[href^="tel:"], a[href^="javascript:"], a[href*="youtube.com/v"], a[href*="youtube.com/watch"]'));
-        }
-
+        
         publicObj = {
             getOrientation: getOrientation,
             goBack: goBack,

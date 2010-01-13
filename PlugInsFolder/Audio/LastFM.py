@@ -78,7 +78,7 @@ class LastFM(PlugIn):
 
     def stop(self,var):
         #print "Stop"
-        os.system("echo 'stop' | nc " +host + " " + port)
+        return os.popen("echo 'pause' | nc " +host + " " + port).read()
 
     def neighbours(self,var):
         #print "LastFm Neighbours"
@@ -117,11 +117,11 @@ class LastFM(PlugIn):
         os.system("echo 'play lastfm://tag/"+tag+"' | nc " + host + " " + port)
 
     def getNp(self,var):
-        #print "LastFM  get now Playing"
-        #info = pipe = os.popen("curl http://192.168.1.131","r")
         info = os.popen('echo info | nc ' + host + ' ' + port)
         np = info.read() #.replace('"',"")
-        if '-  -' in np:
+        if np == '':
+            np = 'ShellFM - not running - No Album'
+        elif '-  -' in np:
             np = 'No Title - No Artist - No Album'
 	return np
         
@@ -129,20 +129,27 @@ class LastFM(PlugIn):
         np = os.popen('echo info | nc ' + host + ' ' + port)
         np = np.read()
 
+        if np == '':
+            return '/Filesystem/interfaces/images/nocoverart.png'
+        elif '-  -' in np:
+            return '/Filesystem/interfaces/images/nocoverart.png'
+
         try:
             (artist, song, album) = np.split(' - ')
         except:
             return '/Filesystem/interfaces/images/nocoverart.png'
 
-        if '-  -' in np:
-            return '/Filesystem/interfaces/images/nocoverart.png'
 
         if not self.lastCover == artist+song+album:
             self.lastCover = artist+song+album
             import ecs
             ecs.setLicenseKey('AKIAIICBON46BQIRCOUQ')
             ecs.setSecretKey('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')
-            search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, Title=album, ResponseGroup='Images')
+            try:
+                search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, Title=album, ResponseGroup='Images')
+            except:
+                self.lastImg = '/Filesystem/interfaces/images/nocoverart.png'
+                return self.lastImg
             img=search.next().LargeImage.URL
             self.lastImg = img
             return img
@@ -170,10 +177,12 @@ class LastFM(PlugIn):
     def getState(self, var):
         #print "LastFM getState"
         np = os.popen('echo info | nc ' + host + ' ' + port).read()
-        if np == ' -  - ':
-          return "not playing"
+        if np=='':
+            return "not playing"
+        elif ' -  - ' in np:
+            return "not playing"
         else:
-          return "playing"
+            return "playing"
           
     # just a little helper function
     def getText(self, var):
