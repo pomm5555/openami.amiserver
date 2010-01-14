@@ -16,9 +16,9 @@ class Temperature(PlugIn):
         self.architecture = "macos"
 
         #plugin itself
-        self.content = Container("plugin", token, "This is just a test")
+        self.content = Container("plugin", token, 'Temperature Plugin')
         
-        temp = Container("cmd","LivingRoom", "get temperatur dummys", self.get)
+        temp = Container("cmd","LivingRoom", '0.5', self.get)
         temp.rendering = Container.PLAIN
         
         # set add container
@@ -27,4 +27,6 @@ class Temperature(PlugIn):
 
 
     def get(self, string=""):
-        return json.dumps(["22.5", "&#176;C" ])
+        self.information =  str(float(self.information)+0.7)
+        #return self.information
+        return self.information+" &#176;C"
