@@ -35,7 +35,7 @@ class WebServer():
             <ul>
                 <li><a href='/'''+addr+'''/Dashboard' class="slideup">Dashboard</a></li>
                 <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+'''' class="">Home</a></li>
-                <li><a href='/'''+addr+'''/Filesystem/interfaces/Cam.interface' class="">Map</a></li>
+                <li><a href='/'''+addr+'''/Filesystem/interfaces/Map.interface' class="">Map</a></li>
                 <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="">Audio</a></li>
             </ul>
         </div>
