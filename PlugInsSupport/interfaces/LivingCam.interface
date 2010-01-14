@@ -1,0 +1,25 @@
+
+
+<div id="Map">
+    <div class="toolbar">
+        <h1>Map View</h1>
+		
+        <a class="back" href="#">Back</a>
+    </div>
+<div class="mapinfo" style="text-align: left; margin:none; padding:none">
+
+<!-- hook in some css-->
+<img style="display:none" src="_JID_/Filesystem/interfaces/images/tabs_playlist.png" onload="var oLink = document.createElement('link'); oLink.href = '_JID_/Filesystem/interfaces/css/map.css'; oLink.rel = 'stylesheet'; oLink.type = 'text/css'; document.body.appendChild(oLink);"/>
+
+
+	<div id="map_wrapper">
+              <a href="#"> <img style="-webkit-user-select: none" src="http://192.168.1.190:8081/"></a>
+	</div>
+
+
+<!-- var oLink = document.createElement("link")
+oLink.href = "mypath/mycss.css";
+oLink.rel = "stylesheet";
+oLink.type = "text/css";
+document.body.appendChild(oLink);
+-->

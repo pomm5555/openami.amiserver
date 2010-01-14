@@ -53,6 +53,15 @@ div.dashboardiconcontainer {
 	text-align: center;
 	overflow: hidden;
 }
+div.dashboardcamcontainer {
+	width: 50;
+	height: 60px;
+	padding-top: 0;
+	float: left;
+	margin-right: 15px;
+	text-align: center;
+	
+}
 
 #dashboard ul.metal li a {
 	padding-top: 0;
