@@ -41,7 +41,6 @@ class Dashboard(PlugIn):
             icon = config.get(item, 'icon')
             smalltextid = (smalltext+str(id)).replace('/', '_')
             largetextid = (largetext+str(id)).replace('/', '_')
-            link = config.get(item,"link")
 
             #codegeneration for largetext
             if largetext.startswith('/'):
@@ -61,7 +60,7 @@ class Dashboard(PlugIn):
 
             
             #liElements.append('<div class="dashboardiconcontainer"><img src="'+Config.get("server", "token")+'/'+config.get(item, 'icon')+'" class="dashboardicon"/></div><span class="amiDash1">'+config.get(item, 'largetext')+'</span><em>'+config.get(item, 'smalltext')+'</em>')
-            liElements.append('<a href="'+link+'"><div class="dashboardiconcontainer"><img src="'+jid+'/'+icon+'" class="dashboardicon"/></div><span class="amiDash1 '+largetextid+'">'+largetext+'</span><em class="'+smalltextid+'">'+smalltext+'</em></a>')
+            liElements.append('<div class="dashboardiconcontainer"><img src="'+jid+'/'+icon+'" class="dashboardicon"/></div><span class="amiDash1 '+largetextid+'">'+largetext+'</span><em class="'+smalltextid+'">'+smalltext+'</em>')
 
         json = '{'+json[:-1]+'}'
         print refresher
@@ -104,24 +103,29 @@ update();
 """
 
 
-#<<<<<<< local
-#=======
-#
-#	for item in config.sections():
-#            smalltextid = config.get(item, 'smalltext')+config.get(item, 'largetext')+'small'
-#            largetextid = config.get(item, 'smalltext')+config.get(item, 'largetext')+'large'
-#
-#            link = config.get(item,"link")
-#
-#            if config.get(item,"cam") != "":
-#                img = "<img style='-webkit-user-select: none' height="'50'" width="'60'" src="+config.get(item,"cam") + " />"
-#            else:
-#                img = "<img src="+Config.get("server","token")+"/"+config.get(item,"icon") + " class='dashboardicon'/>"
-#
-#            liElements.append('<a href="'+link+'"><div class="dashboardcamcontainer">'+img+'</div><span class="amiDash1">'+config.get(item, 'largetext')+'</span><em>'+config.get(item, 'smalltext')+'</em></a>')
-#>>>>>>> other
+<<<<<<< local
+=======
+    
+	for item in config.sections():
+            smalltextid = config.get(item, 'smalltext')+config.get(item, 'largetext')+'small'
+            largetextid = config.get(item, 'smalltext')+config.get(item, 'largetext')+'large'
+            
+            link = config.get(item,"link")
+            
+            if config.get(item,"cam") != "":
+                img = "<img style='-webkit-user-select: none' height="'50'" width="'60'" src="+config.get(item,"cam") + " />"
+            else:
+                img = "<img src="+Config.get("server","token")+"/"+config.get(item,"icon") + " class='dashboardicon'/>"
+            
+            liElements.append('<a href="'+link+'"><div class="dashboardcamcontainer">'+img+'</div><span class="amiDash1">'+config.get(item, 'largetext')+'</span><em>'+config.get(item, 'smalltext')+'</em></a>')
+>>>>>>> other
 
+<<<<<<< local
+=======
+        print 'string={"np":"/Defaults/nowplaying","coverart":"/Defaults/coverart", "state":"/Defaults/state"}'
 
+        
+>>>>>>> other
         list = ""
         for elem in liElements:
             
