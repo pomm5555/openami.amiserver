@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import os
+import os, random
 import simplejson as json
 from AmiTree import Container
 from PlugIn import PlugIn
@@ -18,7 +18,7 @@ class Temperature(PlugIn):
         #plugin itself
         self.content = Container("plugin", token, 'Temperature Plugin')
         
-        temp = Container("cmd","LivingRoom", '0.5', self.get)
+        temp = Container("cmd","LivingRoom", '20', self.get)
         temp.rendering = Container.PLAIN
         
         # set add container
@@ -27,6 +27,6 @@ class Temperature(PlugIn):
 
 
     def get(self, string=""):
-        self.information =  str(float(self.information)+0.7)
-        #return self.information
+        self.information =  str(float(self.information)+random.random()-.5)[0:4]
+        return self.information
         return self.information+" &#176;C"
