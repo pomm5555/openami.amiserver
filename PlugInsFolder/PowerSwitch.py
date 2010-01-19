@@ -83,11 +83,13 @@ class PowerSwitch(PlugIn):
 
     
     def toggle(self,var):
-        if state[var]:
-            state[var] = False
+	global states
+	x = int(var)
+        if states[x]:
+            states[x] = False
             addr = Address(self.getParent().getAddress()+'/Port'+var+'/OFF')
         else:
-            state[var] = True
+            states[x] = True
             addr = Address(self.getParent().getAddress()+'/Port'+var+'/ON')
         
         print '\n *** toggled: ' , var, " addr: " , addr
