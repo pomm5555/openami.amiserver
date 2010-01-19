@@ -118,7 +118,7 @@ class LastFM(PlugIn):
 
     def getNp(self,var):
         info = os.popen('echo info | nc ' + host + ' ' + port)
-        np = info.read() #.replace('"',"")
+        np = info.read().replace('"',"")
         if np == '':
             np = 'ShellFM - not running - No Album'
         elif '-  -' in np:
@@ -127,7 +127,7 @@ class LastFM(PlugIn):
         
     def getCoverArt(self,var):
         np = os.popen('echo info | nc ' + host + ' ' + port)
-        np = np.read()
+        np = np.read().replace('"',"")
 
         if np == '':
             return '/Filesystem/interfaces/images/nocoverart.png'
@@ -147,9 +147,15 @@ class LastFM(PlugIn):
             ecs.setSecretKey('HiYwl4/VtJieBz5FVpLJQJxYZKQckzqLrwlCFz7T')
             try:
                 search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, Title=album, ResponseGroup='Images')
+               #search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, ResponseGroup='Images')
             except:
-                self.lastImg = '/Filesystem/interfaces/images/nocoverart.png'
-                return self.lastImg
+                
+                try:
+                    search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, ResponseGroup='Images')
+                except:
+                    print "\n *** No cover found \n"
+                    self.lastImg = '/Filesystem/interfaces/images/nocoverart.png'
+                    return self.lastImg
             img=search.next().LargeImage.URL
             self.lastImg = img
             return img
