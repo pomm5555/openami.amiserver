@@ -3,6 +3,7 @@ from AmiTree import *
 from PlugIn import PlugIn
 from amiConfig import Config
 import re
+import ecs
 class Boxee(PlugIn):
 
 
@@ -22,7 +23,8 @@ class Boxee(PlugIn):
         host = Config.get("Boxee", "host")
         port = Config.get("Boxee", "port")
 
-
+        global np
+        np = ""
         #for pair in Config.getSection("LastFM"):
         #    global user,host,port
         #    if (pair[0] == "user"):
@@ -129,37 +131,54 @@ class Boxee(PlugIn):
         os.system("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=ExecBuiltIn\(PlayMedia\(lastfm://tag/test\)\)")
 
     def getNp(self,var):
+        global np
         #print "LastFM  get now Playing"
         #info = pipe = os.popen("curl http://192.168.1.131","r")
-        info =         os.popen("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=GetCurrentlyPlaying")
-        np = info.read().replace(":","").splitlines()
-        artist = np[6].replace("<li>","").replace("Artist","")
-        album = np[7].replace("<li>","").replace("Album","")
-        title = np[5].replace("<li>","").replace("Title","")
-        np = artist + " - " + title + " - " + album
-	return np
+        info = os.popen("curl http://" + host + ":"+port+"/xbmcCmds/xbmcHttp?command=GetCurrentlyPlaying")
+        tmp = info.read()
+        print "\n ***** Boxee NP: ", tmp
+        if 'Nothing Playing' in tmp or 'screen_saver' in tmp:
+            np = 'Boxee - not playing - No Album'
+            return np
+        else:
+            np = tmp.replace(":","").splitlines()
+            artist = np[6].replace("<li>","").replace("Artist","")
+            album = np[7].replace("<li>","").replace("Album","")
+            title = np[5].replace("<li>","").replace("Title","")
+            np = artist + " - " + title + " - " + album
+            return np
+	
         
     def getCoverArt(self,var):
-        np = os.popen("curl http://localhost:8080/ami.lab@aminet.org/Audio/Boxee/Now_Playing").read()
+       # np = os.popen("curl http://localhost:8080/ami.lab@aminet.org/Audio/Boxee/Now_Playing").read()
 	#np = pipe = os.popen("curl http://192.168.1.131","r")
        
-        np = re.sub(r'<[^>]*?>', '', np)
-        np = np.replace("Back","").replace("Result","")
+       # np = re.sub(r'<[^>]*?>', '', np)
+        #np = np.replace("Back","").replace("Result","")
+        global np
         print "\n*********", np
         (artist, song, album) = np.split(' - ')
         #print artist, song, album
-        np = artist
+        #np = artist
 
         if not self.lastCover == artist+song+album:
             self.lastCover = artist+song+album
-            import ecs
+
 
             ecs.setLicenseKey('AKIAIICBON46BQIRCOUQ')
             ecs.setSecretKey('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')
-            #print "** Searching Amazon for "+artist+" "+album
-            search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, Title=album, ResponseGroup='Images')
+            print "** Searching Amazon for "+artist+" "+album
+            try:
+                search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, Title=album, ResponseGroup='Images')
+            except:
+                try:
+                    search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, ResponseGroup='Images')
+                except:
+                    print "\n *** No cover found \n"
+                    self.lastImg = '/Filesystem/interfaces/images/nocoverart.png'
+                    return self.lastImg
             img=search.next().LargeImage.URL
-            #print img
+            print img
             self.lastImg = img
             #print "LastFM getCoverArt!!!!!!!!!!!"
 

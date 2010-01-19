@@ -16,7 +16,7 @@
                 $('#audioplayer').
                     bind("pageAnimationStart", function(e, info){
                         if (info.direction == 'in'){
-                            intInterval=window.setInterval('update()', 5000);
+                            intInterval=window.setInterval('update()', 10000);
                         } else {
                             intInterval=window.clearInterval(intInterval);
                         }
@@ -40,7 +40,10 @@ function update() {
                 playingdata = data["np"].split(' - ')
                 //alert(data['coverart']+'/'+coverartcache)
   			 
-                if (data['coverart'] != coverartcache && coverartcache != data['coverart']){
+
+			
+                
+				if (data['coverart'] != coverartcache && coverartcache != data['coverart']){
                     coverartcache = data['coverart']
                     npcache = data['np']
                     //alert(data['state'])
@@ -57,9 +60,18 @@ function update() {
 
                     var ts = new Date().getTime();
 
-                    $(".title").html(playingdata[1]);
-                    $(".interpreter").html(playingdata[0]);
-                    $(".coverartbg").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+') no-repeat center center');
+				 $(".title").hide(200);
+				 $(".title").html(playingdata[1]);
+				 $(".title").show(200);
+				 $(".interpreter").hide(200);
+                 $(".interpreter").html(playingdata[0]);
+				 $(".interpreter").show(200);
+				
+				$(".coverartbg").css('background', 'url(_JID_/Defaults/coverartimg?'+ts+') no-repeat center center');
+				$(".coverartbg").fadeIn(300);
+                    //$(".title").html(playingdata[1]);
+                   // $(".interpreter").html(playingdata[0]);
+                    //$(".coverartbg").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+') no-repeat center center');
                 }
 	});
 }
@@ -75,7 +87,22 @@ update();
                             <p class="title">Updating...</p>
                             <p class="interpreter"></p>
                     </div>
-                   
+                
+					<div class="backendselector">
+ 					<ul class="edgetoedge">
+						<li class="info" style="opacity: 0.7">
+                            <select id="backend" onchange="$.get('_JID_/Defaults/set?string='+this.value)";>
+								<optgroup label="Backend">
+									<option value="LastFM">LastFM</option>
+									<option value="Boxee">Boxee</option>
+									<option value="Madplay">Madplay</option>
+									<option value="iTunes">iTunes</option>
+								</optgroup>
+							</select>
+                        </li>
+                    </ul>
+					</div>
+					
                     <div id="player">
                             <div id="controls">
 
@@ -83,7 +110,7 @@ update();
                                             <a class="backward" onclick="$.get('_JID_/Defaults/audioback')");>backward</a>
                                             <a class="play" onclick="$.get('_JID_/Defaults/audioplay'); $('a.play').hide(); $('a.stop').show();">play</a>
                                             <a class="stop" onclick="$.get('_JID_/Defaults/audiostop'); $('a.stop').hide(); $('a.play').show();">play</a>
-                                            <a class="forward" onclick="$.get('_JID_/Defaults/audioskip'); setTimeout('update()',2500)">forward</a>
+                                            <a class="forward" onclick="$.get('_JID_/Defaults/audioskip'); ">forward</a>
                                             <a class="love" onclick="$.get('_JID_/Defaults/love'); ">love</a>
                                             <a class="ban" onclick="$.get('_JID_/Defaults/ban'); ">ban</a>
                                     </div>
