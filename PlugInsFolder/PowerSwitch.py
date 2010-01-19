@@ -7,6 +7,8 @@ import os
 from AmiTree import Container
 from PlugIn import PlugIn
 from amiConfig import Config 
+from EventEngine import EventEngine
+from Address import Address
 
 class PowerSwitch(PlugIn):
 
@@ -24,6 +26,9 @@ class PowerSwitch(PlugIn):
         self.content.visible = True
         
 #	tmp = self.content.addContainer("type","Port0", "Port0 (LAB)", self.set(0,1))        
+	
+	self.content.addContainer('cmd','toggle','toggle',self.toggle)
+	
 	on = Container("cmd","ON","on")
 	off = Container("cmd","OFF","off")
 
@@ -57,7 +62,7 @@ class PowerSwitch(PlugIn):
 	            
 	on3 = Container("cmd","ON","on")
 	off3 = Container("cmd","OFF","off")            
-	tmp3 = Container("type","Port3","Port3")                           
+	tmp3 = Container("type","Port3","Port3")                          
 	tmp3.addChild(on3)                                             
 	tmp3.addChild(off3)
 	on3.setUse(self.on3)
@@ -73,6 +78,13 @@ class PowerSwitch(PlugIn):
 	allOff.setUse(self.allOff)
 	self.content.addChild(tmpAll)
 
+    
+    def toggle(self,var):
+        
+        addr = Address(self.getParent().getAddress()+'/Port'+var+'/ON')
+        print '\n *** toggled: ' , var, " addr: " , addr
+        EventEngine.root.getByAddress(addr.__str__()).use
+        
 
     def on0(self, text=""):
     	os.system('/workspace/amiServer/PlugInsSupport/./powerswitch.sh 1 on')
