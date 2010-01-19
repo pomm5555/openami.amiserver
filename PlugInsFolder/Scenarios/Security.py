@@ -40,8 +40,8 @@ class Security(PlugIn):
             #print(dir(EventEngine.root))
             addr = Address('/Defaults/notification')
             EventEngine.root.getByAddress(addr.__str__()).use('[openAMI] - Security Alert - Motion detected at: '+lastMotion)
-            #os.system('madplay /Volumes/DEV/workspace/tmp/siren_1.mp3')
-            os.system('madplay /Volumes/DEV/workspace/tmp/sec0.mp3 /Volumes/DEV/workspace/tmp/sec1.mp3')
+            #os.system('madplay /workspace/tmp/siren_1.mp3')
+            os.system('madplay /workspace/tmp/sec0.mp3 /workspace/tmp/sec1.mp3')
             
     def lastMotion(self,var):
         print "\n *********** ", lastMotion , " LastMotion Requested"
