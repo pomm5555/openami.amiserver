@@ -12,20 +12,61 @@
 <img style="display:none" src="_JID_/Filesystem/interfaces/images/tabs_playlist.png" onload="var oLink = document.createElement('link'); oLink.href = '_JID_/Filesystem/interfaces/css/map.css'; oLink.rel = 'stylesheet'; oLink.type = 'text/css'; document.body.appendChild(oLink);"/>
 <script type="text/javascript">
 
-function update_map() {
+   $('#Map').
+                    bind("pageAnimationStart", function(e, info){
+                        if (info.direction == 'in'){
+                            intInterval=window.setInterval('update_map()', 10000);
+                        } else {
+                            intInterval=window.clearInterval(intInterval);
+                        }
+                    });
 
- 
-	$.get("_JID_/Audio/LastFM/CoverArt", function(data){
+
+function update_map() {
+  
+	$.get("_JID_/PowerSwitch/getStates", function(data){
 	 tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","")
-	 
-	 $("#map_skim").html("<img src='_JID_/Filesystem/interfaces/images/map.png' width='320' height='364' />");
+	 states = tmp.split(' - ');	
+ 	port0 = states[1];
+	port1 = states[2];
+	port2 = states[3];
+	port3 = states[4]
+	if (port0 == "False")	{
+		$(".room2").fadeTo("slow",0.3);
+	}  
+	else	 {
+		$(".room2").fadeTo("slow",1.0);
+	}
+
+        if (port1 == "False")   {
+                $(".room0").fadeTo("slow",0.3);
+        }
+        else     {
+                $(".room0").fadeTo("slow",1.0);
+        }
+
+        if (port2 == "False")   {
+                $(".room3").fadeTo("slow",0.3);
+        }
+        else     {
+                $(".room3").fadeTo("slow",1.0);
+        }
+
+        if (port3 == "False")   {
+                $(".room1").fadeTo("slow",0.3);
+        }
+        else     {
+                $(".room1").fadeTo("slow",1.0);
+        }
+
+//	 $("#map_skim").html("<img src='_JID_/Filesystem/interfaces/images/map.png' width='320' height='364' />");
  //	 $("#player_skim").html("<img src='_JID_/Filesystem/interfaces/images/test.jpg' width='324' height='256' />");
  
 	});
 	 	
 }
 
-
+update_map();
 </script>
 
 	<div id="map_wrapper">
