@@ -20,9 +20,16 @@ class Scripts(PlugIn):
 
         self.content.addContainer("cmd","AppleScript", "apple a script", self.appleScript)
 
+	self.content.addContainer("cmd","ShellScript", "execute Shell Commands", self.shellScript)
 
     def getTree(self):
+
         return self.content
+
+    def shellScript(self,var):
+	print '\n *** executing shellscript: ', var
+	ret = os.popen(var).read()
+	return ret
 
     def appleScript(self, script="tell application \"Finder\" to say \"Hi, I am the AppleScript PlugIn\" using \"Vicki\""):
         script = self.getText(script)
