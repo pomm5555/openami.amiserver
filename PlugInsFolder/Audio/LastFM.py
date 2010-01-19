@@ -146,10 +146,10 @@ class LastFM(PlugIn):
             ecs.setLicenseKey('AKIAIICBON46BQIRCOUQ')
             ecs.setSecretKey('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')
             try:
-                search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, Title=album, ResponseGroup='Images')
-               #search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, ResponseGroup='Images')
+               # search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, Title=album, ResponseGroup='Images')
+               search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, ResponseGroup='Images')
             except:
-                
+		print "\n *** No Cover found, trying Artist only"                
                 try:
                     search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, ResponseGroup='Images')
                 except:
