@@ -36,13 +36,13 @@ function update() {
         }
 
 
-	$.getJSON('_JID_/Services/multirequest?string={"np":"/Defaults/nowplaying","coverart":"/Defaults/coverart", "state":"/Defaults/state"}', function(data){
+	$.getJSON('_JID_/Services/multirequest?string={"np":"/Defaults/nowplaying","coverart":"/Defaults/coverart", "state":"/Defaults/state", "backend":"/Defaults/getBackend"}', function(data){
                 playingdata = data["np"].split(' - ')
                 //alert(data['coverart']+'/'+coverartcache)
   			 
 
 			
-                
+                $('#backend').attr('value','test');
 				if (data['coverart'] != coverartcache && coverartcache != data['coverart']){
                     coverartcache = data['coverart']
                     npcache = data['np']
@@ -92,12 +92,12 @@ update();
  					<ul class="edgetoedge">
 						<li class="info" style="opacity: 0.7">
                             <select id="backend" onchange="$.get('_JID_/Defaults/set?string='+this.value)";>
-								<optgroup label="Backend">
+								
 									<option value="LastFM">LastFM</option>
 									<option value="Boxee">Boxee</option>
 									<option value="Madplay">Madplay</option>
 									<option value="iTunes">iTunes</option>
-								</optgroup>
+								
 							</select>
                         </li>
                     </ul>

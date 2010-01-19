@@ -38,10 +38,10 @@ function update_map() {
 
                                     <div id="map_control">
 
-                                            <a class="play" onclick="$.get('_JID_/Defaults/audioback')");></a>
-                                         	<a class="backward" onclick="$.get('_JID_/Defaults/audioback')");></a>
-                                            <a class="forward" onclick="$.get('_JID_/Defaults/audioskip'); setTimeout('update_map()',2500)"></a>
-                                            <a class="backward" onclick="$.get('_JID_/Defaults/audioback')");></a>
+                                            <a class="room0" onclick="$.get('_JID_/PowerSwitch/toggle?string=0')";></a>
+                                         	<a class="room1" onclick="$.get('_JID_/PowerSwitch/toggle?string=1')";></a>
+                                            <a class="room2" onclick="$.get('_JID_/PowerSwitch/toggle?string=2');"></a>
+                                            <a class="room3" onclick="$.get('_JID_/PowerSwitch/toggle?string=3')";></a>
                                     </div>
                             </div>
 
