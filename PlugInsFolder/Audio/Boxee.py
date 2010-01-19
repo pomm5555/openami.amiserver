@@ -167,10 +167,12 @@ class Boxee(PlugIn):
 
             ecs.setLicenseKey('AKIAIICBON46BQIRCOUQ')
             ecs.setSecretKey('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')
-            print "** Searching Amazon for "+artist+" "+album
+            print "** Searching Amazon for "+artist+" - "+album
             try:
                 search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, Title=album, ResponseGroup='Images')
+           	print "\n*** serach result: " , search
             except:
+                print 'No Cover found, trying Artist only'
                 try:
                     search = ecs.ItemSearch(Keywords='Music', SearchIndex='Music',Artist=artist, ResponseGroup='Images')
                 except:
