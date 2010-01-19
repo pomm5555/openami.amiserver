@@ -83,7 +83,7 @@ class PowerSwitch(PlugIn):
         
         addr = Address(self.getParent().getAddress()+'/Port'+var+'/ON')
         print '\n *** toggled: ' , var, " addr: " , addr
-        EventEngine.root.getByAddress(addr.__str__()).use
+        EventEngine.root.getByAddress(addr.__str__()).use()
         
 
     def on0(self, text=""):
