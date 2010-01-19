@@ -108,6 +108,7 @@ div#map_control a.backward{
 	height: 40px;
 	left: 15%;
 	top: 15%;
+	display: block;
 }
 
 div#map_control a.room0{
@@ -157,7 +158,7 @@ div#map_control a.room3{
 div#map_control a.stop{
 	overflow: hidden;
 	width: 15px;
-	display: none;
+	display: block;
 	height: 0;
 	position: absolute;
 	right: 48%;
@@ -177,7 +178,7 @@ div#map_control a.forward{
 }
 
 div#map_control a.love{
-	background-image: url(../images/map_light.png);
+	background-image: url(../images/map_lightbulb.png);
 	overflow: hidden;
 	width: 22px;
 	display: block;
