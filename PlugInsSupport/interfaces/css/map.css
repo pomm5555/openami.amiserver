@@ -151,8 +151,8 @@ div#map_control a.room3{
 	height: 40px;
 	display: block;
 	position: absolute;
-	right: 50%;
-	top: 80%;
+	right: 80%;
+	top: 65%;
 }
 
 div#map_control a.stop{
