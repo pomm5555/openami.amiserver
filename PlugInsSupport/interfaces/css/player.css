@@ -173,6 +173,33 @@ div#player_control a.ban{
 	width: 100%;
 	bottom: 0;
 }
+
+.seperator {
+    opacity: 0.9;
+    text-align: top;
+    height: 10px;
+    vertical-align: top;
+    
+    background-color: black;
+    color: white;
+    font-size: 8px;
+    margin: 1px 0 0 0;
+    
+
+    width: 50%;
+    right: 25%;
+    position: absolute;
+}
+
+.backendselect {
+
+	opacity: 0.7;
+	font-size: 6px;
+
+	color: white;
+	height: 10%;
+    top: 0px;
+}
 /* @end */
 
 /* @group Playlists */
@@ -201,7 +228,9 @@ div#search {
 	display: none;
 }
 
-
+.backend {
+    text-color: black;   
+}
 
 /* @end */
 

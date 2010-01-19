@@ -13,7 +13,10 @@
 
 
 	<div id="map_wrapper">
-              <a href="#"> <img style="-webkit-user-select: none" src="http://192.168.1.239:8081/"></a>
+	<ul class="edgetoedge">
+        <li>Last Activity<img style="-webkit-user-select: none" src="http://home.arcor.de/ka010/labcam.jpg"></li>
+     	<li>Live View<img style="-webkit-user-select: none" src="http://kahome.selfip.org:8082/"></a></li>
+	</ul>
 	</div>
 
 

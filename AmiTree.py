@@ -18,7 +18,7 @@ class Container:
     JQ = 1
 
 
-    def __init__(self, type, token, information="empty", use=None, use_args=None, logging=False):
+    def __init__(self, type, token, information="empty", use=None, args="none", logging=False):
         self.content = {}
         self.information = information
         self.token = token.replace(" ", "_")
@@ -29,7 +29,7 @@ class Container:
         self.addresslist = None
         # how should webengine render the containers content jq|plain...
         self.rendering = Container.JQ
-        self.use_args=use_args
+        self.use_args=args
         if use:
 
             self.setUse(use)
@@ -95,7 +95,9 @@ class Container:
     def useL(self, unspecified=""):
         return self.information
 
-
+    def setUseArgs(self, args):
+        self.use_args =args
+        
     def setUse(self, use, use_args=None):
         #self.use = use
         self.use_args = use_args
@@ -192,11 +194,11 @@ class Container:
 
     
     # add container without creating it first, token, information and optionally a method that is triggered.
-    def addContainer(self, type, token, information="empty", use=None, logging=False):
-        self.addChild(Container(type, token, information, logging=logging))
+    def addContainer(self, type, token, information="empty", use=None, args="none",logging=False):
+        self.addChild(Container(type, token, information,args=args, logging=logging))
         if use:
             self.getChild(token).setUse(use)
-
+            
 
     def getAddressList(self):
         if not self.addresslist:
