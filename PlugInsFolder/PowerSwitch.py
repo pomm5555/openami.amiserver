@@ -29,6 +29,9 @@ class PowerSwitch(PlugIn):
 	
 	self.content.addContainer('cmd','toggle','toggle',self.toggle)
 	
+	global states
+	states = {0:False,1:False,2:False,3:False}
+	
 	on = Container("cmd","ON","on")
 	off = Container("cmd","OFF","off")
 
@@ -80,8 +83,13 @@ class PowerSwitch(PlugIn):
 
     
     def toggle(self,var):
+        if state[var]:
+            state[var] = False
+            addr = Address(self.getParent().getAddress()+'/Port'+var+'/OFF')
+        else:
+            state[var] = True
+            addr = Address(self.getParent().getAddress()+'/Port'+var+'/ON')
         
-        addr = Address(self.getParent().getAddress()+'/Port'+var+'/ON')
         print '\n *** toggled: ' , var, " addr: " , addr
         EventEngine.root.getByAddress(addr.__str__()).use()
         
