@@ -28,6 +28,7 @@ class PowerSwitch(PlugIn):
 #	tmp = self.content.addContainer("type","Port0", "Port0 (LAB)", self.set(0,1))        
 	
 	self.content.addContainer('cmd','toggle','toggle',self.toggle)
+	self.content.addContainer('cmd','getStates', 'getStates', self.getStates)
 	self.content.addContainer('cmd','getState','getState', self.getState)
 	global states
 	states = {0:False,1:False,2:False,3:False}
@@ -81,6 +82,12 @@ class PowerSwitch(PlugIn):
 	allOff.setUse(self.allOff)
 	self.content.addChild(tmpAll)
 
+    def getStates(self,var):
+	global states
+	ret=""
+	for key in states.keys():
+	    ret+=' - ' + str(states[key])
+	return ret
 
     def getState(self,var):
     	global states
