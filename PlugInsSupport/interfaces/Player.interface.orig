@@ -1,0 +1,154 @@
+
+
+<div id="audioplayer">
+    <div class="toolbar">
+        <h1>LastFM</h1>
+		
+        <a class="back" href="#">Back</a>
+
+    </div>
+<div class="info" style="text-align: left; margin:none; padding:none">
+
+<!-- hook in some css-->
+<img style="display:none" src="_JID_/Filesystem/interfaces/images/tabs_playlist.png" onload="var oLink = document.createElement('link'); oLink.href = '_JID_/Filesystem/interfaces/css/player.css'; oLink.rel = 'stylesheet'; oLink.type = 'text/css'; document.body.appendChild(oLink);"/>
+<script type="text/javascript">
+
+                $('#audioplayer').
+                    bind("pageAnimationStart", function(e, info){
+                        if (info.direction == 'in'){
+                            intInterval=window.setInterval('update()', 7000);
+                        } else {
+                            intInterval=window.clearInterval(intInterval);
+                        }
+                    });
+
+coverartcache = 'Not initialized'
+npcache = 'Not initialized'
+
+function update() {
+
+        function delay(delay) {
+            var startTime = new Date();
+            var endTime = null;
+            do {
+                endTime = new Date();
+            } while ((endTime - startTime) < delay);
+        }
+
+
+	$.getJSON('_JID_/Services/multirequest?string={"np":"/Defaults/nowplaying","coverart":"/Defaults/coverart", "state":"/Defaults/state"}', function(data){
+                playingdata = data["np"].split(' - ')
+                //alert(data['coverart']+'/'+coverartcache)
+  			 
+                if (data['coverart'] != coverartcache && coverartcache != data['coverart']){
+                    coverartcache = data['coverart']
+                    npcache = data['np']
+                    //alert(data['state'])
+                    if (data['state'] == 'playing') {
+                            $('a.play').hide();
+                            $('a.stop').show();
+                            $("#state_dev").attr('checked',true);
+                    }
+                    else 	{
+                            $('a.stop').hide();
+                            $('a.play').show();
+                            $("#state_dev").attr('checked',false);
+                    }
+
+                    var ts = new Date().getTime();
+
+                    $(".title").html(playingdata[1]);
+                    $(".interpreter").html(playingdata[0]);
+<<<<<<< local
+                    $(".coverartbg").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+') no-repeat center center');
+=======
+
+
+                    delay(2000);
+                    $(".coverartbg").css('background', 'url(_JID_/Audio/Boxee/CoverArtImage?'+ts+') no-repeat center center');
+
+             
+
+>>>>>>> other
+                }
+	});
+}
+
+update();
+
+</script>
+
+	<div id="wrapper">
+                <div id="content" class="coverartbg" style='background-color:black'>
+                <div id="player_skim" class="player_conts"></div> 
+                    <div id="title">
+                            <p class="title">Updating...</p>
+                            <p class="interpreter"></p>
+                    </div>
+                   
+                    <div id="player">
+                            <div id="controls">
+
+                                    <div id="player_control" class="player_conts">
+                                            <a class="backward" onclick="$.get('_JID_/Defaults/audioback')");>backward</a>
+                                            <a class="play" onclick="$.get('_JID_/Defaults/audioplay'); $('a.play').hide(); $('a.stop').show();">play</a>
+                                            <a class="stop" onclick="$.get('_JID_/Defaults/audiostop'); $('a.stop').hide(); $('a.play').show();">play</a>
+                                            <a class="forward" onclick="$.get('_JID_/Defaults/audioskip'); setTimeout('update()',2500)">forward</a>
+                                            <a class="love" onclick="$.get('_JID_/Defaults/love'); ">love</a>
+                                            <a class="ban" onclick="$.get('_JID_/Defaults/ban'); ">ban</a>
+                                    </div>
+                            </div>
+
+                    </div>
+                    <div id="playlists">
+						<div id="search2" class="audiosinks">
+                           <ul class="edgetoedge">
+
+                            <li ><a href=""  onclick="$.get('_JID_/Defaults/library');">Library</a></li>
+                            <li ><a href="" onclick="$.get('_JID_/Defaults/playlist');">Playlist</a></li>
+                            <li ><a href="" onclick="$.get('_JID_/Defaults/neighbours');">Neighbours</a></li>
+                            <li ><a href="">Random</a></li>
+                        	</ul>
+                        </div>
+                    </div>
+                    <div id="root_audio" >
+                    <span class="toggle"></span>
+                          <div class="audiosinks">
+                           <ul class="edgetoedge">
+         						
+                        	  <li class="arrow">Lab<span class="toggle"><input id="state_lab" type="checkbox"  onChange="if(this.checked) $.get('http://192.168.1.1:8080/ami.wrtv2@aminet.org/Audio/Madplay/Play?string=http://192.168.1.131:8000/source');else $.get('http://192.168.1.1:8080/ami.wrtv2@aminet.org/Audio/Madplay/Stop');"/></span></li>
+                    		  <li class="arrow">Kitchen<span class="toggle"><input id="state_kitchen" type="checkbox" onChange="if(this.checked) $.get('http://192.168.1.170:8080/ami.wrtv1@aminet.org/Audio/Madplay/Play?string=http://192.168.1.131:8000/source');else $.get('http://192.168.1.170:8080/ami.wrtv1@aminet.org/Audio/Madplay/Stop');"/></span></li>
+                    		  <li class="arrow">Living<span class="toggle"><input id="state_living" type="checkbox" onChange="if(this.checked) $.get('_JID_/AudioSwitch/Port0/ON');else $.get('_JID_/AudioSwitch/Port0/OFF');"/></span></li>
+                    		  <li class="arrow">DevBox<span class="toggle"><input id="state_dev"   type="checkbox" onChange=""/></span></li>
+                    		</ul>
+                    	</div>	
+                    </div>
+                    <div id="search">
+                    	<div id="search2" class="audiosinks">
+                           <ul class="edgetoedge">
+                        	
+                        	
+                            <li><input class="searchbar" type="text" name="Search Artist" placeholder="Search for similar Artists" id="searchbox" onBlur="$.get('_JID_/Audio/Boxee/Similar?string='+$(this).val()); setTimeout('update()',3000) ; "/></li>
+                            
+                            <li><input class="searchbar" type="text" name="Search Genre" placeholder="Search for Tag" id="searchbox" onBlur="$.get('_JID_/Audio/Boxee/Tag?string='+$(this).val()); setTimeout('update()',3000) ;"/></li>
+                        	
+                        	
+                        	</ul>
+                        </div>
+                    </div>
+                </div>
+		<div id="tabs">
+			<a href="#" class="controls tab_bt" onclick=" $('div#search').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#player').show(500);  $('.speakers').css('background-color','rgba(90,156,255,0.0)'); $('.playlists').css('background-color','rgba(90,156,255,0.0)'); $('.search').css('background-color','rgba(90,156,255,0.0)'); $('.controls').css('background-color','rgba(255,255,255,0.1)');">controls</a>
+                        <a href="#" class="playlists tab_bt" onclick="$('div#player').hide(); $('div#playlists').show(500);$('div#root_audio').hide(); $('div#search').hide(); $('.controls').css('background-color','rgba(90,156,255,0.0)'); $('.speakers').css('background-color','rgba(90,156,255,0.0)'); $('.search').css('background-color','rgba(90,156,255,0.0)');  $('.playlists').css('background-color','rgba(255,255,255,0.1)');">playlists</a>
+                        <a href="#" class="speakers tab_bt" onclick="$('div#player').hide(); $('div#playlists').hide();$('div#search').hide();$('div#root_audio').show(500);  $('.controls').css('background-color','rgba(90,156,255,0.0)'); $('.playlists').css('background-color','rgba(90,156,255,0.0)'); $('.search').css('background-color','rgba(90,156,255,0.0)'); $('.speakers').css('background-color','rgba(255,255,255,0.1)'); ">speakers</a>
+                        <a href="#" class="search tab_bt " onclick="$('div#player').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#search').show(500); $('.controls').css('background-color','rgba(90,156,255,0.0)'); $('.speakers').css('background-color','rgba(90,156,255,0.0)'); $('.playlists').css('background-color','rgba(90,156,255,0.0)');  $('.search').css('background-color','rgba(255,255,255,0.1)'); ">search</a>
+		</div>
+	</div>
+
+
+<!-- var oLink = document.createElement("link")
+oLink.href = "mypath/mycss.css";
+oLink.rel = "stylesheet";
+oLink.type = "text/css";
+document.body.appendChild(oLink);
+-->

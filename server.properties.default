@@ -1,0 +1,87 @@
+[DataCollector]
+file = logs/datacollector.log
+
+[Boxee]
+host = 127.0.0.1
+user = ka010
+port = 8800
+
+[Scheduler]
+
+[FeedReader]
+mondayjazz = http://www.mondayjazz.com/mj.xml
+
+[Filesystem]
+interfaces = PlugInsSupport/interfaces
+html = PlugInsSupport/web
+properties = server.properties
+log = logs
+
+[Global]
+lab = 192.168.1.1/ami.wrtv2@aminet.org
+dev-box = localhost/ami.lab@aminet.org
+kitchen = 192.168.1.170/ami.wrtv1@aminet.org
+
+[server]
+web = on
+logging = off
+information = Root Container
+interfacerev = PLEASE_DEFINE_THIS
+token = ami.lab@aminet.org
+master = PLEASE_DEFINE_THIS
+architecture = macos
+jabber = off
+
+[iTunes]
+scriptpath = /Users/markus/fast/tunes.sh
+
+[Defaults]
+backend = LastFM
+playlist = /Audio/LastFM/Playlist
+love = /Audio/LastFM/Love
+coverart = /Audio/LastFM/CoverArt
+notification = /Notification/Notification/Prowl
+audioback = none
+state = /Audio/LastFM/State
+audiopause = /Audio/LastFM/Pause
+setvol = /System/Openwrt/SetVol
+nowplaying = /Audio/LastFM/Now_Playing
+neighbours = /Audio/LastFM/Neighbours
+audioskip = /Audio/LastFM/Skip
+coverartimg_plain = /Audio/LastFM/CoverArtImage
+ban = /Audio/LastFM/Ban
+audiostop = /Audio/LastFM/Stop
+library = /Audio/LastFM/Library
+audioplay = /Audio/LastFM/Library
+
+[Plugins]
+pluginsfolder = PlugInsFolder
+
+[LastFM]
+host = 192.168.1.1
+user = ka010
+port = 54311
+
+[avrBridge]
+lib = /PlugInsSupport/libavrBridgeC.so
+
+[jabber]
+jid = ami.lab@aminet.org
+pwd = lab
+host = ami
+groupchat = ami
+ressource = lab
+groupserver = conference.jabber.org
+port = 5222
+
+[AlarmClock]
+monday = PLEASE_DEFINE_THIS
+tuesday = PLEASE_DEFINE_THIS
+friday = PLEASE_DEFINE_THIS
+wednesday = PLEASE_DEFINE_THIS
+thursday = PLEASE_DEFINE_THIS
+sunday = PLEASE_DEFINE_THIS
+time = PLEASE_DEFINE_THIS
+active = PLEASE_DEFINE_THIS
+saturday = PLEASE_DEFINE_THIS
+

@@ -1,0 +1,120 @@
+
+
+<div id="Map">
+    <div class="toolbar">
+        <h1>Map View</h1>
+		
+        <a class="back" href="#" onClick="clearTimeout(player_timer);">Back</a>
+    </div>
+<div class="mapinfo" style="text-align: left; margin:none; padding:none">
+
+<!-- hook in some css-->
+<img style="display:none" src="_JID_/Filesystem/interfaces/images/tabs_playlist.png" onload="var oLink = document.createElement('link'); oLink.href = '_JID_/Filesystem/interfaces/css/map.css'; oLink.rel = 'stylesheet'; oLink.type = 'text/css'; document.body.appendChild(oLink);"/>
+<script type="text/javascript">
+
+function update_map() {
+
+ 
+	$.get("_JID_/Audio/LastFM/CoverArt", function(data){
+	 tmp = data.replace(/(<([^>]+)>)/ig,"").replace("Result","").replace("Back","")
+	 
+	 $("#map_skim").html("<img src='_JID_/Filesystem/interfaces/images/map.png' width='320' height='364' />");
+ //	 $("#player_skim").html("<img src='_JID_/Filesystem/interfaces/images/test.jpg' width='324' height='256' />");
+ 
+	});
+	 	
+}
+
+
+</script>
+
+	<div id="map_wrapper">
+                <div id="map_content">
+                <div id="map_skim" class="player_conts">
+					<img src='_JID_/Filesystem/interfaces/images/map.png' width='320' height='364' /></div> 
+                    
+                    <div id="player">
+                            <div id="map_controls">
+
+                                    <div id="map_control">
+
+                                            <a class="play" onclick="$.get('_JID_/PowerSwitch/Port0/ON')";></a>
+                                            <a class="backward" onclick="$.get('_JID_/PowerSwitch/Port1/ON')";></a>
+                                            <a class="forward" onclick="$.get('_JID_/PowerSwitch/Port0/OFF');"></a>
+                                            <a class="love" onclick="$.get('_JID_/PowerSwitch/Port1/OFF')";></a>
+                                    </div>
+                            </div>
+
+                    </div>
+                    <div id="playlists">
+							<div id="map_controls">
+
+                                    <div id="map_sensors">
+                                       <table width="100%" height="100%" align="center">
+                                    		<tr ">
+                                    			<td align="center"> 
+                                            <a class="generic" onclick="$.get('_JID_/Defaults/audioskip'); setTimeout('update_map()',2500)"></a>
+											<font size=1>Light: 65 <br> Temp: 21c</font>
+                                    			</td>
+                                    			<td align="center"> 
+                                    	 	<a class="generic" onclick="$.get('_JID_/Defaults/audioback')");></a>
+                                    		<font size=1>Light: 65 <br> Temp: 21c</font>
+                                    			</td>
+                                    		</tr>
+                                    		<tr  align="center">
+                                    			<td valign="middle"> 
+                                            <a class="generic" onclick="$.get('_JID_/Defaults/audioskip'); setTimeout('update_map()',2500)"></a>
+                                    		<font size=1>Light: 65 <br> Temp: 21c</font>
+                                    			</td>
+                                    			<td valign="middle"> 
+                                    	 	<a class="generic" onclick="$.get('_JID_/Defaults/audioback')");></a>
+                                    			</td>
+                                    		</tr>
+                                    		<tr valign="middle">
+                                    			<td valign="middle"> 
+                                            <a class="generic" onclick="$.get('_JID_/Defaults/audioskip'); setTimeout('update_map()',2500)"></a>
+                                    			</td>
+                                    			<td valign="middle"> 
+                                    	 	<a class="generic" onclick="$.get('_JID_/Defaults/audioback')");></a>
+                                    			</td>
+                                    		</tr>
+                         
+                                    </table>
+                                         	
+                                           
+                                    </div>
+                            </div>
+                    </div>
+                    <div id="root_audio" >
+                          <div class="audiosinks">
+                           <ul class="plastic">
+                        	  <p>Audio Sinks</p><br>
+                        	 
+                    		  <li class="arrow">DevBox<span class="toggle"><input id="state_dev"   type="checkbox" onChange="if(this.checked) $.get('ami.lab@aminet.org/Audio/Madplay/Play?string=http://192.168.1.131:8000/source');else $.get('ami.lab@aminet.org/Audio/Madplay/Stop');"/></span></li>
+                    		</ul>
+                    	</div>	
+                    </div>
+                    <div id="search">
+                    	<div id="search2" class="audiosinks">
+                           <ul class="plastic">
+                            <p><input class="searchbar" type="text" name="Search Genre" placeholder="Search for Genre" id="searchbox" onBlur="$.get('_JID_/Audio/LastFM/Genre?string='+$(this).val()); setTimeout('update_map()',3000) "/></p>
+                        	<br>
+                        	</ul>
+                        </div>
+                    </div>
+                </div>
+		<div id="tabs">
+			<a href="#" class="controls tab_bt" onclick=" $('div#search').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#player').show(500); ">Lights</a>
+                        <a href="#" class="playlists tab_bt" onclick="$('div#player').hide(); $('div#playlists').show(500);$('div#root_audio').hide(); $('div#search').hide();">Sensors</a>
+                        <a href="#" class="speakers tab_bt" onclick="$('div#player').hide(); $('div#playlists').hide();$('div#search').hide();$('div#root_audio').show(500); ">Media</a>
+                        <a href="#" class="search tab_bt " onclick="$('div#player').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#search').show(500);">Others</a>
+		</div>
+	</div>
+
+
+<!-- var oLink = document.createElement("link")
+oLink.href = "mypath/mycss.css";
+oLink.rel = "stylesheet";
+oLink.type = "text/css";
+document.body.appendChild(oLink);
+-->
