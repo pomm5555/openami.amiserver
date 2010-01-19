@@ -15,7 +15,7 @@
    $('#Map').
                     bind("pageAnimationStart", function(e, info){
                         if (info.direction == 'in'){
-                            intInterval=window.setInterval('update_map()', 10000);
+                            intInterval=window.setInterval('update_map()', 30000);
                         } else {
                             intInterval=window.clearInterval(intInterval);
                         }
@@ -79,10 +79,10 @@ update_map();
 
                                     <div id="map_control">
 
-                                            <a class="room2" onclick="$.get('_JID_/PowerSwitch/toggle?string=0')";></a>
-                                            <a class="room0" onclick="$.get('_JID_/PowerSwitch/toggle?string=1')";></a>
-                                            <a class="room3" onclick="$.get('_JID_/PowerSwitch/toggle?string=2');"></a>
-                                            <a class="room1" onclick="$.get('_JID_/PowerSwitch/toggle?string=3')";></a>
+                                            <a class="room2" onclick="$.get('_JID_/PowerSwitch/toggle?string=0'); setTimeout(update_map,500);"></a>
+                                            <a class="room0" onclick="$.get('_JID_/PowerSwitch/toggle?string=1'); setTimeout(update_map,500);"></a>
+                                            <a class="room3" onclick="$.get('_JID_/PowerSwitch/toggle?string=2'); setTimeout(update_map,500);"></a>
+                                            <a class="room1" onclick="$.get('_JID_/PowerSwitch/toggle?string=3'); setTimeout(update_map,500);"></a>
                                     </div>
                             </div>
 
