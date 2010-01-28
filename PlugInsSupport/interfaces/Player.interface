@@ -106,7 +106,13 @@ update();
 									<option value="iTunes">iTunes</option>
 								
 							</select>
-                        </li>
+                                                 </li>
+                                                 <li class="info" style="opacity: 0.7">
+                            <select id="volume" onchange="$.get('_JID_/Defaults/setvol?string='+this.value)";>
+									<option value="0">volume: 0%</option> <option value="5">volume: 5%</option> <option value="10">volume: 10%</option> <option value="15">volume: 15%</option> <option value="20">volume: 20%</option> <option value="25">volume: 25%</option> <option value="30">volume: 30%</option> <option value="35">volume: 35%</option> <option value="40">volume: 40%</option> <option value="45">volume: 45%</option> <option value="50">volume: 50%</option> <option value="55">volume: 55%</option> <option value="60">volume: 60%</option> <option value="65">volume: 65%</option> <option value="70">volume: 70%</option> <option value="75">volume: 75%</option> <option value="80">volume: 80%</option> <option value="85">volume: 85%</option> <option value="90">volume: 90%</option> <option value="95">volume: 95%</option>
+							</select>
+                                                  </li>
+                       
                     </ul>
 					</div>
 					
