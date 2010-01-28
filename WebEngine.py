@@ -9,21 +9,24 @@ class WebEngine(Thread):
     def __init__(self, root):
         Thread.__init__(self)
         self.root = root
+
         self.daemon = False
         self.start()
 
     def run(self):
         cherrypy.config.update({'server.socket_host': '0.0.0.0',
-                                'server.socket_port': 8080, })
+                                'server.socket_port': 8080})
                                 
 
         cherrypy.quickstart(WebServer(self.root))
 
 class WebServer():
 
+    _cp_config = {'tools.gzip.on': True}
+
     def __init__(self, root):
         self.root = root
-
+        
     def index(self):
         self.contentType('text/html')
 
@@ -51,9 +54,9 @@ class WebServer():
         <style type="text/css" media="screen">@import "'''+addr+'''/Filesystem/html/ami.css";</style>
         <style type="text/css" media="screen">@import "'''+addr+'''/Filesystem/interfaces/css/player.css";</style>
         <script src="'''+addr+'''/Filesystem/html/jqtouch/jquery.1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="'''+addr+'''/Filesystem/html/jqtouch/jqtouch.transitions.js" type="text/javascript" charset="utf-8"></script>
+        <!--script src="'''+addr+'''/Filesystem/html/jqtouch/jqtouch.transitions.js" type="text/javascript" charset="utf-8"></script-->
         <script src="'''+addr+'''/Filesystem/html/jqtouch/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
-        <script src="'''+addr+'''/Filesystem/html/extensions/jqt.offline.js" type="application/x-javascript" charset="utf-8"></script>
+        <!--script src="'''+addr+'''/Filesystem/html/extensions/jqt.offline.js" type="application/x-javascript" charset="utf-8"></script-->
         <script src="'''+addr+'''/Filesystem/html/extensions/jqt.floaty.js" type="application/x-javascript" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
             var jQT = new $.jQTouch({
@@ -111,7 +114,8 @@ class WebServer():
     index.exposed = True
 
     # This part of the program parses the URL which was called by a browser
-    # and calls the use method...
+    # and calls the use method..
+    
     def default(self, *args, **kwargs):
 
         jid = Config.get("server", "token")
@@ -134,9 +138,8 @@ class WebServer():
         #print '* '+addr
         addr= addr[1:]
 
-
-        if Config.get("server", "interfacerev") == 'on':
-            cachrev = Config.get("server", "caching")
+        if Config.get("server", "caching") == 'on':
+            cachrev = Config.get("server", "interfacerev")
         else:
             cachrev = time.time().__str__()
 

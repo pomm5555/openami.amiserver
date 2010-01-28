@@ -39,7 +39,7 @@ class avrContainer(ThreadContainer):
         # Hardware Initialization
         ##
 
-        if True: #try:
+        try: #try:
             lib=Config.absPath+Config.get("avrBridge", "lib")
 	    #print lib
             self.mega=cdll.LoadLibrary(lib)
@@ -61,13 +61,8 @@ class avrContainer(ThreadContainer):
                 self.addChild(tmpcont)
 
 
-#        except Exception,e:
-#            print "[PLANTMONITOR ERROR] Could not init plugin\n"+str(e)
-
-
-
-
-
+        except Exception,e:
+            print "[PLANTMONITOR ERROR] Could not init plugin\n"+str(e)
 
 
     def run(self):

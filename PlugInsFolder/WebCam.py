@@ -24,10 +24,6 @@ class WebCam(PlugIn):
     def takePic(self, var=""):
 	os.system("/Users/ka010/share/workspace/python/amiServer/PlugInsSupport/./takepic.sh")
 
-    # returns the plugin as a tree
-    def getTree(self):
-        return self.content
-
     # just a little helper function
     def getText(self, var):
         try:
@@ -50,7 +46,7 @@ class WebCamContainer(Container):
             token = self.token
 
 	
-            iframe = ""#"<iframe src='http://192.168.1.239:8081' width='300' height='240' scrolling='no'></iframe>"
+            iframe = ''#"<img src='http://192.168.178.34:8081/' />"#"<iframe src='http://192.168.1.239:8081' width='300' height='240' scrolling='no'></iframe>"
 
             toolbar = '<div class="toolbar"><h1>'+token+'</h1><a class="back" href="#">Back</a></div>'
                                      
