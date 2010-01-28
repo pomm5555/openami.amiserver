@@ -100,7 +100,11 @@ class avrContainer(ThreadContainer):
             if self.mega.getPortPin(0,0) == 0:
 	        print "Button 1"
 		self.ledOn()
-                address = Address("/Audio/LastFM/Playlist")
+                address = Address("/Audio/LastFM/State")
+                if self.root().getByAddress(address.__str__()).use() == playing:
+                    address = Address("/Audio/LastFM/Stop")
+                else:
+                    address = Address("/Audio/LastFM/Playlist")
                 EventEngine.root.getByAddress(address.__str__()).use()
                 time.sleep(.5)
 		self.ledOff()
@@ -121,7 +125,13 @@ class avrContainer(ThreadContainer):
                 time.sleep(.5)
 		self.ledOff()
 
-
+            if self.mega.getPortPin(0,3) == 0:
+	        print "Button 4"
+                self.ledOn()
+		address = Address("/Audio/LastFM/Skip")
+                EventEngine.root.getByAddress(address.__str__()).use()
+                time.sleep(.5)
+		self.ledOff()
             #if not str(int(self.lastval)).__eq__(str(int(val))):
             #    print "Default Volume"+str(val)+", "+str(int(self.lastval))+", "+str(int(val))
             #    address = Address("/Defaults/SetVol")

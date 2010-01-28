@@ -2,7 +2,7 @@
 
 <div id="audioplayer">
     <div class="toolbar">
-        <h1>LastFM</h1>
+        <h1><a onclick"">LastFM</a></h1>
 		
         <a class="back" href="#">Back</a>
 
@@ -158,7 +158,7 @@ update();
                            <ul class="edgetoedge">
                         	
                         	
-                            <li><input class="searchbar" type="text" name="Search Artist" placeholder="Search for similar Artists" id="searchbox" onBlur="$.get('_JID_/Audio/Boxee/Similar?string='+$(this).val()); setTimeout('update()',3000) ; "/></li>
+                            <li><input class="searchbar" type="text" name="Search Artist" placeholder="Search for similar Artists" id="searchbox" onBlur="$.get('_JID_/Defaults/similar?string='+$(this).val()); setTimeout('update()',3000) ; "/></li>
                             
                             <li><input class="searchbar" type="text" name="Search Genre" placeholder="Search for Tag" id="searchbox" onBlur="$.get('_JID_/Audio/Boxee/Tag?string='+$(this).val()); setTimeout('update()',3000) ;"/></li>
                         	

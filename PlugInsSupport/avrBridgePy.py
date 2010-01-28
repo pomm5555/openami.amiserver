@@ -45,7 +45,7 @@ class avrBridge():
     OFF = 0
 
     def __init__(self):
-        lib = "libavrBridgeC.so"
+        lib = "libavrBridgeC.dylib"
         self.mega = cdll.LoadLibrary(lib)
         self.mega.initUsbLib()
 
@@ -95,20 +95,22 @@ if __name__ == "__main__":
 
     # GPIO OUTPUT TEST
 #    while True:
-#        PORT = 2
+#        PORT = 0
 #        ON = int(time.time() % 2)
- #       print ON
- #       for PIN in (0, 1, 5):
+#        print ON
+#        for PIN in (0, 1, 5):
 #            mega.setPortPin(PORT, PIN, ON)
 #        time.sleep(1)
 
     # GPIO Input TEST
-#    cache = 1
-#    while True:
-#        value = (mega.getPortPin(1,0)+1)%2
-#        if not cache == value:
-#            cache = value
-#            print value
+    cache = 1
+    while True:
+        for PIN in (0,1,2,3):
+            print mega.getPortPin(0,PIN)
+        value = (mega.getPortPin(0,0)+1)%2
+        if not cache == value:
+            cache = value
+            print value
 
 
     # ADC TEST
