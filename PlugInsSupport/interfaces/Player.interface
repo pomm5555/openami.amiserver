@@ -13,17 +13,24 @@
 <img style="display:none" src="_JID_/Filesystem/interfaces/images/tabs_playlist.png" onload="var oLink = document.createElement('link'); oLink.href = '_JID_/Filesystem/interfaces/css/player.css'; oLink.rel = 'stylesheet'; oLink.type = 'text/css'; document.body.appendChild(oLink);"/>
 <script type="text/javascript">
 
-                $('#audioplayer').
-                    bind("pageAnimationStart", function(e, info){
-                        if (info.direction == 'in'){
-                            intInterval=window.setInterval('update()', 10000);
-                        } else {
-                            intInterval=window.clearInterval(intInterval);
-                        }
-                    });
+$('.love, .ban, .play, .forward, .backward').click(function() {
+    $(this).fadeOut();
+});
+
+$('.ban').click(function() {
+    $(this).fadeOut();
+});
+
+$('#audioplayer').
+    bind("pageAnimationStart", function(e, info){
+        if (info.direction == 'in'){
+            intInterval=window.setInterval('update()', 3000);
+        } else {
+            intInterval=window.clearInterval(intInterval);
+        }
+    });
 
 coverartcache = 'Not initialized'
-npcache = 'Not initialized'
 
 function update() {
 
@@ -37,43 +44,44 @@ function update() {
 
 
 	$.getJSON('_JID_/Services/multirequest?string={"np":"/Defaults/nowplaying","coverart":"/Defaults/coverart", "state":"/Defaults/state", "backend":"/Defaults/getBackend"}', function(data){
+
                 playingdata = data["np"].split(' - ')
-                //alert(data['coverart']+'/'+coverartcache)
-  			 
+                coverart = data["coverart"]
+                title = playingdata[0];
+                interpreter = playingdata[1];
+                album = playingdata[2];
+                state = data['state'];
 
-			
+
+
                 $('#backend').attr('value','test');
-				if (data['coverart'] != coverartcache && coverartcache != data['coverart']){
-                    coverartcache = data['coverart']
-                    npcache = data['np']
-                    //alert(data['state'])
-                    if (data['state'] == 'playing') {
-                            $('a.play').hide();
-                            $('a.stop').show();
-                            $("#state_dev").attr('checked',true);
-                    }
-                    else 	{
-                            $('a.stop').hide();
-                            $('a.play').show();
-                            $("#state_dev").attr('checked',false);
-                    }
 
+  			 
+                if (state == 'playing') {
+                        $('a.play').hide();
+                        $('a.stop').show();
+                        $("#state_dev").attr('checked',true);
+                } else {
+                        $('a.stop').hide();
+                          $('a.play').show();
+                        $("#state_dev").attr('checked',false);
+                }
+
+                if ($(".title").html() != title ||
+                    $(".interpreter").html() != interpreter ||
+                    coverartcache != coverart){
+                    alert(coverartcache+'/'+coverart);
+                    coverartcache = coverart;
                     var ts = new Date().getTime();
 
-				 $(".title").hide(200);
-				 $(".title").html(playingdata[1]);
-				 $(".title").show(200);
-				 $(".interpreter").hide(200);
-                 $(".interpreter").html(playingdata[0]);
-				 $(".interpreter").show(200);
-				
-				$(".coverartbg").css('background', 'url(_JID_/Defaults/coverartimg?'+ts+') no-repeat center center');
-				$(".coverartbg").fadeIn(300);
-                    //$(".title").html(playingdata[1]);
-                   // $(".interpreter").html(playingdata[0]);
-                    //$(".coverartbg").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+') no-repeat center center');
+                    $(".title, .interpreter, .coverartbg").hide(200);
+                    $(".title").html(title);
+                    $(".interpreter").html(interpreter);
+                    $(".coverartbg").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+') no-repeat center center');
+                    $(".title, .interpreter, .coverartbg").show(200);
+                    $(".playercontrol").show();
                 }
-	});
+        });
 }
 
 update();
@@ -107,12 +115,12 @@ update();
                             <div id="controls">
 
                                     <div id="player_control" class="player_conts">
-                                            <a class="backward" onclick="$.get('_JID_/Defaults/audioback')");>backward</a>
-                                            <a class="play" onclick="$.get('_JID_/Defaults/audioplay'); $('a.play').hide(); $('a.stop').show();">play</a>
-                                            <a class="stop" onclick="$.get('_JID_/Defaults/audiostop'); $('a.stop').hide(); $('a.play').show();">play</a>
-                                            <a class="forward" onclick="$.get('_JID_/Defaults/audioskip'); ">forward</a>
-                                            <a class="love" onclick="$.get('_JID_/Defaults/love'); ">love</a>
-                                            <a class="ban" onclick="$.get('_JID_/Defaults/ban'); ">ban</a>
+                                            <a class="backward playercontrol" onclick="$.get('_JID_/Defaults/audioback')");>backward</a>
+                                            <a class="play playercontrol" onclick="$.get('_JID_/Defaults/audioplay'); $('a.play').hide(); $('a.stop').show();">play</a>
+                                            <a class="stop playercontrol" onclick="$.get('_JID_/Defaults/audiostop'); $('a.stop').hide(); $('a.play').show();">play</a>
+                                            <a class="forward playercontrol" onclick="$.get('_JID_/Defaults/audioskip'); ">forward</a>
+                                            <a class="love playercontrol" onclick="$.get('_JID_/Defaults/love'); ">love</a>
+                                            <a class="ban playercontrol" onclick="$.get('_JID_/Defaults/ban'); ">ban</a>
                                     </div>
                             </div>
 
@@ -161,11 +169,3 @@ update();
                         <a href="#" class="search tab_bt " onclick="$('div#player').hide(); $('div#playlists').hide();$('div#root_audio').hide(); $('div#search').show(500); $('.controls').css('background-color','rgba(90,156,255,0.0)'); $('.speakers').css('background-color','rgba(90,156,255,0.0)'); $('.playlists').css('background-color','rgba(90,156,255,0.0)');  $('.search').css('background-color','rgba(255,255,255,0.1)'); ">search</a>
 		</div>
 	</div>
-
-
-<!-- var oLink = document.createElement("link")
-oLink.href = "mypath/mycss.css";
-oLink.rel = "stylesheet";
-oLink.type = "text/css";
-document.body.appendChild(oLink);
--->

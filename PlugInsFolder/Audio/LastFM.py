@@ -78,7 +78,7 @@ class LastFM(PlugIn):
 
     def stop(self,var):
         #print "Stop"
-        return os.popen("echo 'pause' | nc " +host + " " + port).read()
+        return os.popen("echo 'stop' | nc " +host + " " + port).read()
 
     def neighbours(self,var):
         #print "LastFm Neighbours"
