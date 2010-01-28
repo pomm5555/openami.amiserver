@@ -60,7 +60,7 @@ class Dashboard(PlugIn):
                     option = config.get(item,"option"+str(i))
                     options +=  '<option value="'+option+'">'+option+'</option>'
                     
-                info ='<div class="dashboardiconcontainer" id="'+iconid+'"><img  width="100%" height="100%" src="'+img+'"/></div><em >'+title+'</em>'
+                info ='<div class="dashboardiconcontainer" id="'+iconid+'"><img  width="100%" height="100%" src="'+img+'?Math.floor(Math.random()*10000)"/></div><em >'+title+'</em>'
                 select_open = '<select id='+title+' class="dashboardselect" onchange=$.get("'+Config.get("jabber","jid")+cmd+'?string="+this.value);>'
                 optgroup_open  = '<optgroup label="'+title+'">'
                 body   = '<option value="'+option0+'">'+option0+'</option><option value="'+option1+'">'+option1+'</option>'
@@ -174,24 +174,6 @@ update();
 
 </script>
 """
-
-
-#<<<<<<< local
-#=======
-#
-#	for item in config.sections():
-#            smalltextid = config.get(item, 'smalltext')+config.get(item, 'largetext')+'small'
-#            largetextid = config.get(item, 'smalltext')+config.get(item, 'largetext')+'large'
-#
-#            link = config.get(item,"link")
-#
-#            if config.get(item,"cam") != "":
-#                img = "<img style='-webkit-user-select: none' height="'50'" width="'60'" src="+config.get(item,"cam") + " />"
-#            else:
-#                img = "<img src="+Config.get("server","token")+"/"+config.get(item,"icon") + " class='dashboardicon'/>"
-#
-#            liElements.append('<a href="'+link+'"><div class="dashboardcamcontainer">'+img+'</div><span class="amiDash1">'+config.get(item, 'largetext')+'</span><em>'+config.get(item, 'smalltext')+'</em></a>')
-#>>>>>>> other
 
 
         list = ""

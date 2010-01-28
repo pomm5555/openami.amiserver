@@ -59,5 +59,8 @@ class Services(PlugIn):
         result = {}
         for key, request in requests.items():
             request = Address(request)
-            result[key]=self.root().getByAddress(request.__str__()).use()
+            try:
+                result[key]=self.root().getByAddress(request.__str__()).use()
+            except:
+                result[key]='error'
         return json.dumps(result)
