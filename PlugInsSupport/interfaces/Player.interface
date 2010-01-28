@@ -14,17 +14,14 @@
 <script type="text/javascript">
 
 $('.love, .ban, .play, .forward, .backward').click(function() {
-    $(this).fadeOut();
+    $(this).animate( { opacity:".3" }, 200);
 });
 
-$('.ban').click(function() {
-    $(this).fadeOut();
-});
 
 $('#audioplayer').
     bind("pageAnimationStart", function(e, info){
         if (info.direction == 'in'){
-            intInterval=window.setInterval('update()', 3000);
+            intInterval=window.setInterval('update()', 5000);
         } else {
             intInterval=window.clearInterval(intInterval);
         }
@@ -70,16 +67,18 @@ function update() {
                 if ($(".title").html() != title ||
                     $(".interpreter").html() != interpreter ||
                     coverartcache != coverart){
-                    alert(coverartcache+'/'+coverart);
+                    //alert($(".title").html()+'/'+title+'\n'+
+                    //      $(".interpreter").html()+'/'+interpreter+'/n'+
+                    //       coverartcache+'/'+coverart+'\   n');
                     coverartcache = coverart;
                     var ts = new Date().getTime();
 
-                    $(".title, .interpreter, .coverartbg").hide(200);
+                    $(".title, .interpreter").hide(200);
                     $(".title").html(title);
                     $(".interpreter").html(interpreter);
                     $(".coverartbg").css('background', 'url(_JID_/Audio/LastFM/CoverArtImage?'+ts+') no-repeat center center');
-                    $(".title, .interpreter, .coverartbg").show(200);
-                    $(".playercontrol").show();
+                    $(".title, .interpreter").show(200);
+                    $('.love, .ban, .play, .forward, .backward').animate( { opacity:"1.0" }, 200);
                 }
         });
 }
