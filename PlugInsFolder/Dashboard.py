@@ -60,7 +60,7 @@ class Dashboard(PlugIn):
                     option = config.get(item,"option"+str(i))
                     options +=  '<option value="'+option+'">'+option+'</option>'
                     
-                info ='<div class="dashboardiconcontainer" id="'+iconid+'"><img  width="100%" height="100%" src="'+img+'?Math.floor(Math.random()*10000)"/></div><em >'+title+'</em>'
+                info ='<div class="dashboardiconcontainer" id="'+iconid+'"><img  width="100%" height="100%" src="'+img+'"/></div><em >'+title+'</em>'
                 select_open = '<select id='+title+' class="dashboardselect" onchange=$.get("'+Config.get("jabber","jid")+cmd+'?string="+this.value);>'
                 optgroup_open  = '<optgroup label="'+title+'">'
                 body   = '<option value="'+option0+'">'+option0+'</option><option value="'+option1+'">'+option1+'</option>'
@@ -110,7 +110,7 @@ class Dashboard(PlugIn):
                     #json += '"'+iconid+'":"'+icon+'",'
                     #build the refreshing code
                     #$(".title").html(playingdata[1]);
-                    refresher += '$("#'+iconid+'").css("background", "url(http://home.arcor.de/ka010/labcam.jpg)");\n'
+                    refresher += '$("#'+iconid+'").css("background", "url('+icon+');\n'
                    # refresher += '$(".'+iconid+'").attr({src : "http://home.arcor.de/ka010/labcam.jpg"});\n'
                     #img=""
                 #codegeneration for largetext
