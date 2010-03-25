@@ -12,7 +12,7 @@ class PlugIns:
     def __init__(self, pluginsFolder, configFile):
 
         #absolute folder to plugins
-        absPluginsFolder = Config.absPath + "/" + Config.get("Plugins", "PlugInsFolder")
+        absPluginsFolder = os.path.join(Config.absPath, Config.get("Plugins", "PluginPath"))
 
         #creating list whrer all plugins are loaded in
         self.content = []
@@ -52,11 +52,12 @@ class PlugIns:
             # add plugin files
             if elem[-3:].__eq__(".py") and not (elem[:1].__eq__("_")):
                 print "*** loading: " + PackagePath + "." + elem
-                #print("from "+PackagePath+"."+elem[:-3]+" import "+elem[:-3])
 
-                try:
-                    exec("from " + PackagePath + "." + elem[:-3] + " import " + elem[:-3])
-                    #print("plugin = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
+                if True: #try:
+                    cmd = "from " + PackagePath + "." + elem[:-3] + " import " + elem[:-3]
+                    print cmd
+                    exec(cmd)
+                    print("plugin = "+elem[:-3]+"(\""+elem[:-3]+"\", \""+configFile+"\")")
                     exec("plugin = " + elem[:-3] + "(\"" + elem[:-3] + "\", \"" + configFile + "\")")
                     #print("result.append(plugin.getTree())")
                     #print plugin.architecture
@@ -71,9 +72,9 @@ class PlugIns:
                     elif plugin.architecture.__eq__("all") or plugin.architecture.__eq__(Config.architecture):
                         result.append(plugin.getTree())
 
-                except Exception,e:
-                    print "[PLUGIN ERROR] Counld not load Plugin", elem
-                    print e
+                #except Exception,e:
+                #    print "[PLUGIN ERROR] Counld not load Plugin", elem
+                #    print e
 
             # add folders as plugin
             if os.path.isdir(PluginsPath + "/" + elem):

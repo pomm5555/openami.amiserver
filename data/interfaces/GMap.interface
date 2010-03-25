@@ -1,0 +1,49 @@
+<div id="gmaps">
+<script src="http://www.google.com/jsapi?key=ABQIAAAA4nFwifzRL7ORfbA_eHOhJhToOHvQnVs8QH8cFySC4yoBJtkX7BTRNE_B3ijy6MxXM6RihAIKJ3vBYQ" type="text/javascript"></script> 
+
+    <script type="text/javascript">
+        google.load("maps", "2.x");
+        google.load("jquery", "1.3.1");
+
+
+        var gmapscale = 15;
+        var baseIcon;
+        var map;
+         
+        var defLat = 40.74997;
+        var defLong = -73.9933;
+         
+        function setupMap() {
+            baseIcon = new GIcon();
+            baseIcon.shadow = "http://www.google.com/mapfiles/shadow50.png";
+            baseIcon.iconSize = new GSize(20, 34);
+            baseIcon.shadowSize = new GSize(37, 34);
+            baseIcon.iconAnchor = new GPoint(9, 34);
+            baseIcon.infoWindowAnchor = new GPoint(9, 2);
+            baseIcon.infoShadowAnchor = new GPoint(18, 25);
+         
+            var xlat = defLat;
+            var xlng = defLong;
+            var start = new GLatLng(xlat,xlng);
+         
+            map = new GMap2(document.getElementById("map_canvas"));
+            map.setCenter(start, gmapscale);
+        }
+         
+        $(document).ready(setupMap);
+
+
+
+
+    </script>
+    <div class="toolbar">
+        <h1>Google Maps</h1>
+        <a class="back" href="#">Back</a>
+    </div>
+    <div class="info" style="text-align: left; ">
+
+        <div id="map_canvas" style="width: 320px; height: 320px; border: 1px solid black;"></div> 
+        <a onclick="setupMap();">setup map</a>
+
+    </div>
+</div>

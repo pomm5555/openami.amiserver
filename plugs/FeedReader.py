@@ -19,13 +19,15 @@ class FeedReader(PlugIn):
         self.content.setDo(self.process)
         self.content.setUse(self.display)
 
+        # this line should be read from config file
+        #podcasts = Config.podcasts.split(",")
         for touple in Config.getSection("FeedReader"):
             #t = touple.split(">")
             tmpcont = Container("plugin", touple[0], touple[1])
-            #tmpcont.setUse(self.display)
+            tmpcont.setUse(self.display)
             self.content.addChild(tmpcont)
 
-        self.content.addContainer("cmd", "Random", "/FeedReader/mondayjazz", self.playRandom)
+        self.content.addContainer("cmd", "Random", "/FeedReader/MondayJazz", self.playRandom)
 
         self.content.start()
 
@@ -36,6 +38,10 @@ class FeedReader(PlugIn):
     def process(self):
         time.sleep(5)
         while True:
+            #print "parsing: "+url
+            #print "COME ON!!!!! "+self.getAddress() ## should not echo NONE or something
+            #print "COME ON!!!!! "+self.root().__str__() ## should not echo NONE or something
+
 
             for tk, feed in self.content.items():
 
@@ -43,34 +49,27 @@ class FeedReader(PlugIn):
 
                     print "parsing: "+tk
 
-                    if True: #try:
-                        xml = urllib.urlopen(feed.information)
-                        handler = PodcastHandler()
-                        parser = sax.make_parser()
-                        parser.setContentHandler(handler)
-                        parser.parse(xml)
+                    xml = urllib.urlopen(feed.information)
+                    handler = PodcastHandler()
+                    parser = sax.make_parser()
+                    parser.setContentHandler(handler)
+                    parser.parse(xml)
 
+                    #get Podcast Container
+                    podcastContainer = EventEngine.root.getByAddress(feed.getAddress())
 
-                        #get Podcast Container
-                        podcastContainer = EventEngine.root.getByAddress(feed.getAddress())
+                    for k, v in handler.links.items():
 
-                        for k, v in handler.links.items():
+                        if not podcastContainer.content.has_key(k.replace(" ", "_")):
+                            k = k.encode( "utf-8" )
+                            v = v.encode( "utf-8" )
+                            print k,v
 
-                            if not podcastContainer.content.has_key(k.replace(" ", "_")):
-                                k = k.encode( "utf-8" )
-                                v = v.encode( "utf-8" )
-                                print k,v
-
-                                podcastContainer.addChild(FeedLeafContainer("cmd", k, v))
-                                # address = Address("/FeedReader/"+str(i))
-                                # print "#####" + EventEngine.root.getByAddress("/FeedReader").token
-                            else:
-                                pass
-
-                    #except:
-                    #    xml = ""
-                    #    print "[URLLIB ERROR]"
-
+                            podcastContainer.addChild(FeedLeafContainer("cmd", k, v))
+                            # address = Address("/FeedReader/"+str(i))
+                            # print "#####" + EventEngine.root.getByAddress("/FeedReader").token
+                        else:
+                            pass
 
             time.sleep(60*60) #every hour or so
 
@@ -94,8 +93,13 @@ class FeedReader(PlugIn):
     def display(self, string=""):
         return self.toHtml()
             
+    # returns the plugin as a tree
+    def getTree(self):
+        return self.content
+
     def use(self, test=""):
         return self.toHtml()
+        #return "+"+self.content.information
 
     # just a little helper function
     def getText(self, var):

@@ -29,7 +29,7 @@ class Config:
     architecture = config.get('server', 'architecture')
 
     # parsing plugins section
-    plugInsFolder = config.get('Plugins', 'PlugInsFolder')
+    plugInsFolder = config.get('Plugins', 'pluginpath')
 
     #avrLib
     avrLib = config.get('avrBridge', 'lib')

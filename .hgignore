@@ -6,5 +6,5 @@ syntax: glob
 syntax: regexp
 ^logs
 ^run
-^PlugInsSupport/sound
+^data/sound
 ^playground

@@ -38,8 +38,8 @@ class WebServer():
             <ul>
                 <li><a href='/'''+addr+'''/Dashboard' class="slideup">Dashboard</a></li>
                 <li><a href='#'''+addr.replace('@', '_').replace('.', '_')+'''' class="">Home</a></li>
-                <li><a href='/'''+addr+'''/Filesystem/interfaces/Map.interface' class="">Map</a></li>
-                <li><a href='/'''+addr+'''/Filesystem/interfaces/Player.interface' class="">Audio</a></li>
+                <li><a href='/'''+addr+'''/System/Filesystem/interfaces/Map.interface' class="">Map</a></li>
+                <li><a href='/'''+addr+'''/System/Filesystem/interfaces/Player.interface' class="">Audio</a></li>
             </ul>
         </div>
         '''
@@ -48,22 +48,22 @@ class WebServer():
 
         head = '''
         <meta charset="UTF-8" />
-
-        <style type="text/css" media="screen">@import "'''+addr+'''/Filesystem/html/jqtouch/jqtouch.css";</style>
-        <style type="text/css" media="screen">@import "'''+addr+'''/Filesystem/html/themes/jqt/theme.css";</style>
-        <style type="text/css" media="screen">@import "'''+addr+'''/Filesystem/html/ami.css";</style>
-        <style type="text/css" media="screen">@import "'''+addr+'''/Filesystem/interfaces/css/player.css";</style>
-        <script src="'''+addr+'''/Filesystem/html/jqtouch/jquery.1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
-        <!--script src="'''+addr+'''/Filesystem/html/jqtouch/jqtouch.transitions.js" type="text/javascript" charset="utf-8"></script-->
-        <script src="'''+addr+'''/Filesystem/html/jqtouch/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
-        <!--script src="'''+addr+'''/Filesystem/html/extensions/jqt.offline.js" type="application/x-javascript" charset="utf-8"></script-->
-        <script src="'''+addr+'''/Filesystem/html/extensions/jqt.floaty.js" type="application/x-javascript" charset="utf-8"></script>
+        
+        <style type="text/css" media="screen">@import "'''+addr+'''/System/Filesystem/html/jqtouch/jqtouch.css";</style>
+        <style type="text/css" media="screen">@import "'''+addr+'''/System/Filesystem/html/themes/jqt/theme.css";</style>
+        <style type="text/css" media="screen">@import "'''+addr+'''/System/Filesystem/html/ami.css";</style>
+        <style type="text/css" media="screen">@import "'''+addr+'''/System/Filesystem/interfaces/css/player.css";</style>
+        <script src="'''+addr+'''/System/Filesystem/html/jqtouch/jquery.1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+        <!--script src="'''+addr+'''/System/Filesystem/html/jqtouch/jqtouch.transitions.js" type="text/javascript" charset="utf-8"></script-->
+        <script src="'''+addr+'''/System/Filesystem/html/jqtouch/jqtouch.js" type="application/x-javascript" charset="utf-8"></script>
+        <!--script src="'''+addr+'''/System/Filesystem/html/extensions/jqt.offline.js" type="application/x-javascript" charset="utf-8"></script-->
+        <script src="'''+addr+'''/System/Filesystem/html/extensions/jqt.floaty.js" type="application/x-javascript" charset="utf-8"></script>
         <script type="text/javascript" charset="utf-8">
             var jQT = new $.jQTouch({
-                icon: '/'''+addr+'''/Filesystem/html/images/appIcon.png',
+                icon: '/'''+addr+'''/System/Filesystem/html/images/appIcon.png',
                 addGlossToIcon: true,
                 cacheGetRequests: false,
-                startupScreen: '/'''+addr+'''/Filesystem/html/images/startup.png',
+                startupScreen: '/'''+addr+'''/System/Filesystem/html/images/startup.png',
                 statusBar: 'black-translucent'
             });
 
@@ -150,35 +150,35 @@ class WebServer():
             self.contentType('text/cache-manifest')
             return '''CACHE MANIFEST
 #revision '''+cachrev+'''
-'''+jid+'''/Filesystem/html/themes/jqt/theme.css
-'''+jid+'''/Filesystem/html/ami.css
-'''+jid+'''/Filesystem/html/jqtouch/jquery.1.3.2.min.js
-'''+jid+'''/Filesystem/html/jqtouch/jqtouch.css
-'''+jid+'''/Filesystem/html/extensions/jqt.floaty.js
-'''+jid+'''/Filesystem/html/jqtouch/jqtouch.js
-'''+jid+'''/Filesystem/html/themes/jqt/img/toolbar.png
-'''+jid+'''/Filesystem/html/themes/jqt/img/button.png
-'''+jid+'''/Filesystem/html/themes/jqt/img/back_button.png
-'''+jid+'''/Filesystem/html/themes/jqt/img/chevron.png
-'''+jid+'''/Filesystem/html/themes/jqt/img/on_off.png
-'''+jid+'''/Filesystem/html/themes/jqt/img/loading.gif
-'''+jid+'''/Filesystem/html/images/appIcon.png
-'''+jid+'''/Filesystem/html/images/startup.png
-'''+jid+'''/Filesystem/interfaces/images/bg_bottom.png
-'''+jid+'''/Filesystem/interfaces/images/bg_title.png
-'''+jid+'''/Filesystem/interfaces/images/control_backward.png
-'''+jid+'''/Filesystem/interfaces/images/control_ban.png
-'''+jid+'''/Filesystem/interfaces/images/control_forward.png
-'''+jid+'''/Filesystem/interfaces/images/control_love.png
-'''+jid+'''/Filesystem/interfaces/images/control_play.png
-'''+jid+'''/Filesystem/interfaces/images/control_stop.png
-'''+jid+'''/Filesystem/interfaces/images/map.png
-'''+jid+'''/Filesystem/interfaces/images/tabs_audiosink.png
-'''+jid+'''/Filesystem/interfaces/images/tabs_magnifier.png
-'''+jid+'''/Filesystem/interfaces/images/tabs_playlist.png
-'''+jid+'''/Filesystem/interfaces/images/tabs_controls.png
-'''+jid+'''/Filesystem/interfaces/images/test.png
-'''+jid+'''/Filesystem/interfaces/css/player.css
+'''+jid+'''/System/Filesystem/html/themes/jqt/theme.css
+'''+jid+'''/System/Filesystem/html/ami.css
+'''+jid+'''/System/Filesystem/html/jqtouch/jquery.1.3.2.min.js
+'''+jid+'''/System/Filesystem/html/jqtouch/jqtouch.css
+'''+jid+'''/System/Filesystem/html/extensions/jqt.floaty.js
+'''+jid+'''/System/Filesystem/html/jqtouch/jqtouch.js
+'''+jid+'''/System/Filesystem/html/themes/jqt/img/toolbar.png
+'''+jid+'''/System/Filesystem/html/themes/jqt/img/button.png
+'''+jid+'''/System/Filesystem/html/themes/jqt/img/back_button.png
+'''+jid+'''/System/Filesystem/html/themes/jqt/img/chevron.png
+'''+jid+'''/System/Filesystem/html/themes/jqt/img/on_off.png
+'''+jid+'''/System/Filesystem/html/themes/jqt/img/loading.gif
+'''+jid+'''/System/Filesystem/html/images/appIcon.png
+'''+jid+'''/System/Filesystem/html/images/startup.png
+'''+jid+'''/System/Filesystem/interfaces/images/bg_bottom.png
+'''+jid+'''/System/Filesystem/interfaces/images/bg_title.png
+'''+jid+'''/System/Filesystem/interfaces/images/control_backward.png
+'''+jid+'''/System/Filesystem/interfaces/images/control_ban.png
+'''+jid+'''/System/Filesystem/interfaces/images/control_forward.png
+'''+jid+'''/System/Filesystem/interfaces/images/control_love.png
+'''+jid+'''/System/Filesystem/interfaces/images/control_play.png
+'''+jid+'''/System/Filesystem/interfaces/images/control_stop.png
+'''+jid+'''/System/Filesystem/interfaces/images/map.png
+'''+jid+'''/System/Filesystem/interfaces/images/tabs_audiosink.png
+'''+jid+'''/System/Filesystem/interfaces/images/tabs_magnifier.png
+'''+jid+'''/System/Filesystem/interfaces/images/tabs_playlist.png
+'''+jid+'''/System/Filesystem/interfaces/images/tabs_controls.png
+'''+jid+'''/System/Filesystem/interfaces/images/test.png
+'''+jid+'''/System/Filesystem/interfaces/css/player.css
 
 
 
@@ -188,7 +188,7 @@ NETWORK:
 '''
 
         if addr.__eq__('favicon.ico'):
-            addr = Address('/Filesystem/html/images/favicon.ico')
+            addr = Address('/System/Filesystem/html/images/favicon.ico')
             return self.root.getByAddress(addr).use()
 
 

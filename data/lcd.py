@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import time
-import PlugInsSupport.avrBridgePy as avrBridgePy
+import avrBridgePy as avrBridgePy
 
 
 class lcd:
