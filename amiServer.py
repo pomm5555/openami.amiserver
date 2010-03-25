@@ -15,10 +15,10 @@ to install...
 print os.path.abspath(".")
 abs_path = os.path.abspath(".")
 name='amiServerd'
-pid_dir=abs_path+'/run'
-stdin=abs_path+'/logs'
-stdout=abs_path+'/logs'
-stderr=abs_path+'/logs'
+pid_dir = os.path.join(abs_path,'/run')
+stdin = os.path.join(abs_path,'/logs')
+stdout = os.path.join(abs_path, '/logs')
+stderr = os.path.join(abs_path, '/logs')
 
 def run():
     daemon = Daemon(name, pid_dir, stdin, stdout, stderr)
@@ -32,7 +32,7 @@ def run():
 
     stat()
     print "removing "+pid_dir+"/"+name+".pid"
-    os.remove(pid_dir+"/"+name+".pid")
+    os.remove(os.path.join(pid_dir,name+".pid"))
     stop()
 
 

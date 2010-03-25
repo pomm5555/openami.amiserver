@@ -1,4 +1,3 @@
-from xmppEngine import *
 from plugLoder import PlugIns
 from amiConfig import Config
 from AmiTree import Container
@@ -23,13 +22,6 @@ class EventEngine:
 
         # load plugin tree into me-node
         EventEngine.root.me.addChildList(p)
-
-        # starting xmppEngine
-        if Config.get("server", "jabber").__eq__("on"):
-            print "starting xmppEngine"
-            xmpp = XMPPEngineStart(EventEngine.root)
-        else:
-            print "jabber not active"
 
         # start webEngine
         if Config.get("server", "web").__eq__("on"):
