@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>openAMI Local</title>
+</head>
+<body>
+<table width="100%">
+<tr><td width="300px" valign="top">
+<p>GET</p>
+<a href='http://localhost:8080/ami.lab@aminet.org/Filesystem/xml/Modell.xml'>get xml</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/get/state?string={"l":"0","r":"0"}'>getRoomState(0)</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/get/state?string={"l":"0","r":"0"}'>getRoomState(1)</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/get/state?string={"l":"0","r":"0"}'>getRoomState(2)</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/get/state?string={"l":"0","r":"0"}'>getRoomState(3)</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/get/energy?string={}'>getEnergy(gesamte Wohnung)</a><br/>
+<br/>
+<p>SETMULTISTATE</p>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/multiState?string={"l":[{"id":"1","r":[{"id":"0","d":[{"id":"0","s":[{"id":"0","cv":"0"}]},{"id":"1","s":[{"id":"0","cv":"0"}]}]},{"id":"1","d":[{"id":"0","s":[{"id":"0","cv":"0"}]}]}]}]}'>setMultistate 100 101 110 off</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/multiState?string={"l":[{"id":"1","r":[{"id":"0","d":[{"id":"0","s":[{"id":"0","cv":"1"}]},{"id":"1","s":[{"id":"0","cv":"1"}]}]},{"id":"1","d":[{"id":"0","s":[{"id":"0","cv":"1"}]}]}]}]}'>setMultistate 100 101 110 on</a>
+<br/>
+
+</td><td>
+<p>SET</p>
+Badezimmer
+<blockquote>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"0","d":"0","s":"0","cv":"1"}'>Licht an</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"0","d":"0","s":"0","cv":"0"}'>Licht aus</a>
+</blockquote>
+Wohnzimmer
+<blockquote>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"1","d":"0","s":"0","cv":"1"}'>Licht an</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"1","d":"0","s":"0","cv":"0"}'>Licht aus</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"1","d":"0","s":"1","cv":"20"}'>Licht auf 20%</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"1","d":"0","s":"1","cv":"100"}'>Licht auf 100%</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"1","d":"1","s":"0","cv":"15"}'>Heizung auf 15</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"1","d":"1","s":"0","cv":"27"}'>Heizung auf 27</a>
+</blockquote>
+Kueche
+<blockquote>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"2","d":"0","s":"0","cv":"1"}'>Radio an</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"2","d":"0","s":"0","cv":"0"}'>Radio aus</a>
+</blockquote>
+Schlafzimmer
+<blockquote>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"3","d":"0","s":"0","cv":"1"}'>Licht an</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"3","d":"0","s":"0","cv":"0"}'>Licht aus</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"3","d":"0","s":"1","cv":"20"}'>Licht auf 20%</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"3","d":"0","s":"1","cv":"100"}'>Licht auf 100%</a>
+</td></tr>
+
+
+
+
+</body>

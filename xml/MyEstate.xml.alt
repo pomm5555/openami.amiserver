@@ -1,0 +1,381 @@
+<?xml version="1.0" ?><!DOCTYPE residence  SYSTEM 'Residence.dtd'><residence>
+	<location>Mein Ferienschloss in Stuttgart</location> <!-- Name der Gesamtlocation -->
+	<url>http://jenskroener.homeip.net:8080/ami.lab@aminet.org/</url>	<!-- URL zum openAMI System um sich ueber Zustaende auszutauschen -->
+	<pricePerkWh>0.20</pricePerkWh>
+	<levels>
+		<level>
+			<id>0</id>
+			<name>Keller</name>
+			<length>7000</length>
+			<width>2000</width>
+			<rooms>
+				<room>
+					<id>0</id>
+					<name>Hobbyraum</name>
+					<pictureURI>/sdcard/DCIM/Camera/1276895598538.jpg</pictureURI>
+					<lengthFrom>0</lengthFrom>
+					<lengthTo>5000</lengthTo>
+					<widthFrom>0</widthFrom>
+					<widthTo>2000</widthTo>
+					<devices>
+						<device>
+							<id>0</id>
+							<type>lightswitch</type>
+							<name>Treppenlicht</name>
+							<pictureURI>lichtschalter1.jpg</pictureURI>
+							<picturePositionX>409</picturePositionX>
+							<picturePositionY>33</picturePositionY>
+							<radius>10</radius>
+							<inRoomPositionX>20</inRoomPositionX> <!-- in cm -->
+							<inRoomPositionY>20</inRoomPositionY>
+							<watt>500</watt>
+							<wattStandBy>5</wattStandBy>
+							<channel>a</channel>
+							<channelNumber>1</channelNumber>
+							<timestamp>17-06-2010 18:20:16</timestamp>
+							<states>
+								<state>
+									<id>0</id>
+									<controllable>true</controllable>
+									<dimension>activated</dimension>
+									<minValue>0</minValue>
+									<maxValue>1</maxValue>
+									<currentValue>0</currentValue>
+								</state>
+							</states>
+						</device>
+					</devices>
+				</room>
+			</rooms>
+		</level>
+		<level> <!-- Einzelne Stockwerke -->
+			<id>1</id>
+			<name>Erster Stock</name>
+			<!-- Grundflaeche des Stockwerks in Zentimeter -->
+			<length>7000</length> <!-- von oben nach unten in cm -->
+			<width>2000</width> <!-- von links nach rechts in cm  -->
+			<rooms> <!-- Einzelne Raeume auf dem Stockwerk -->
+				<room>
+					<id>0</id>
+					<name>Wohnzimmer</name>
+					<pictureURI>/sdcard/DCIM/Camera/1276942899785.jpg</pictureURI> <!-- Panoramabild des Raumes -->
+					<!-- Abmessung des Raumes auf die <basearea> bezogen -->
+					<lengthFrom>0</lengthFrom>
+					<lengthTo>2000</lengthTo>
+					<widthFrom>0</widthFrom>
+					<widthTo>1000</widthTo>
+					<devices> <!-- Einzelne Geraete fuer openAMI im Raum -->
+						<device><!-- XML fuer einen dimmbaren Lichtschalter (wird openAMI intern mit outlet umgesetzt) -->
+							<id>0</id>
+							<type>dimlightswitch</type>
+							<name>Dimmbarer Lichtschalter an der Tuere</name>
+							<pictureURI>lichtschalter1.jpg</pictureURI>
+							<picturePositionX>787</picturePositionX> <!-- in pixel -->
+							<picturePositionY>55</picturePositionY>
+							<radius>10</radius> <!-- in pixel -->
+							<inRoomPositionX>1000</inRoomPositionX> <!-- in cm -->
+							<inRoomPositionY>1520</inRoomPositionY>
+							<watt>100</watt>
+							<wattStandBy>0</wattStandBy>
+							<channel>a</channel>  <!-- Moegliche Channels: A, B, C, D (wird nur openAMI-seitig verwendet) -->
+							<channelNumber>2</channelNumber> <!-- Moegliche Channelnumbers: 1,2 or 3 (wird nur openAMI-seitig verwendet) -->
+							<timestamp>17-06-2010 18:50:04</timestamp>
+							<states> <!-- 100 Helligkeitsstufen -->
+								<state>
+									<id>0</id>
+									<controllable>true</controllable>
+									<dimension>activated</dimension>
+									<minValue>0</minValue>
+									<maxValue>1</maxValue>
+									<currentValue>0</currentValue>
+								</state>
+								<state>
+									<id>1</id>
+									<controllable>true</controllable> <!-- kann von ECOntrol aktualisiert werden -->
+									<dimension>brightness</dimension> <!-- gibt die semantische Bedeutung des Wertes an. Z.B.:	temperature, activated (nur aus/an)	-->
+									<minValue>0</minValue>
+									<maxValue>100</maxValue>
+									<currentValue>0</currentValue>
+									<unit>Level</unit> <!-- Einheit -->
+								</state>
+							</states>
+						</device>
+						<device> <!-- XML fuer eine Steckdose -->
+							<id>1</id>
+							<type>outlet</type>
+							<name>Fernseher</name>
+							<pictureURI>steckdose1.jpg</pictureURI>
+							<picturePositionX>283</picturePositionX>
+							<picturePositionY>104</picturePositionY>
+							<radius>10</radius>
+							<inRoomPositionX>1000</inRoomPositionX> <!-- in cm -->
+							<inRoomPositionY>1002</inRoomPositionY>
+							<watt>73</watt>
+							<wattStandBy>0</wattStandBy>
+							<channel>b</channel>
+							<channelNumber>1</channelNumber>
+							<timestamp>17-06-2010 14:33:02</timestamp>
+							<states> <!-- An oder Aus -->
+								<state>
+									<id>0</id>
+									<controllable>true</controllable>
+									<dimension>activated</dimension>
+									<minValue>0</minValue>
+									<maxValue>1</maxValue>
+									<currentValue>0</currentValue>
+								</state>
+							</states>
+						</device>
+						<device><!-- XML fuer eine Heizung -->
+							<id>2</id>
+							<type>heater</type>
+							<name>Heizung am Fenster</name>
+							<pictureURI>heizung1.jpg</pictureURI>
+							<picturePositionX>508</picturePositionX>
+							<picturePositionY>175</picturePositionY>
+							<radius>30</radius>
+							<inRoomPositionX>5</inRoomPositionX> <!-- in cm -->
+							<inRoomPositionY>500</inRoomPositionY>
+							<watt>0</watt>
+							<wattStandBy>0</wattStandBy>
+							<timestamp>14-06-2010 23:26:07</timestamp>
+							<states> <!-- Heizung mit Gradangabe (Heizungsregler kann nur ueber Gradangabe gesteuert werden! Keine Stufen) -->
+								<state>
+									<id>0</id>
+									<controllable>true</controllable>
+									<dimension>temperature</dimension>
+									<minValue>7</minValue> <!-- Vorgabe des Heizungsreglers -->
+									<maxValue>30</maxValue> <!-- Vorgabe des Heizungsreglers -->
+									<currentValue>16</currentValue>
+									<unit>Celsius</unit>
+								</state>
+							</states>
+						</device>
+						<device><!-- XML fuer einen PC -->
+							<id>3</id>
+							<type>computer</type>
+							<name>Powermachine</name>
+							<pictureURI>computer1.jpg</pictureURI>
+							<picturePositionX>904</picturePositionX>
+							<picturePositionY>206</picturePositionY>
+							<radius>15</radius>
+							<inRoomPositionX>531</inRoomPositionX> <!-- in cm -->
+							<inRoomPositionY>1509</inRoomPositionY>
+							<watt>200</watt>
+							<wattStandBy>15</wattStandBy>
+							<mac>00-55-bc-43-12-ff</mac>
+							<ip>192.168.001.005</ip>
+							<timestamp>14-06-2010 23:26:07</timestamp>
+							<states> <!-- PC (An oder Aus) -->
+								<state>
+									<id>0</id>
+									<controllable>true</controllable>
+									<dimension>activated</dimension>
+									<minValue>0</minValue>
+									<maxValue>1</maxValue>
+									<currentValue>0</currentValue>
+								</state>
+							</states>
+						</device>
+						<device><!-- XML fuer eine Webcam -->
+							<id>4</id>
+							<type>webcam</type>
+							<name>Logitech Cam</name>
+							<pictureURI>webcam1.jpg</pictureURI>
+							<picturePositionX>1119</picturePositionX>
+							<picturePositionY>321</picturePositionY>
+							<radius>10</radius>
+							<inRoomPositionX>154</inRoomPositionX> <!-- in cm -->
+							<inRoomPositionY>1104</inRoomPositionY>
+							<watt>10</watt>
+							<wattStandBy>0</wattStandBy>
+							<timestamp>14-06-2010 23:26:07</timestamp>
+							<states> <!-- Webcam (Schwenken, links oder rechts und An oder Aus) -->
+								<state> <!-- fuer An bzw. Aus -->
+									<id>0</id>
+									<controllable>true</controllable>
+									<dimension>activated</dimension>
+									<minValue>0</minValue>
+									<maxValue>1</maxValue>
+									<currentValue>0</currentValue>
+								</state>
+								<state> <!-- horizontal schwenken -->
+									<id>1</id>
+									<controllable>true</controllable>
+									<dimension>angle</dimension>
+									<devLocation>horizontal</devLocation>
+									<minValue>0</minValue>
+									<maxValue>359</maxValue>
+									<currentValue>0</currentValue> <!-- in degrees -->
+								</state>
+								<state> <!-- vertikal schwenken -->
+									<id>2</id>
+									<controllable>true</controllable>
+									<dimension>angle</dimension>
+									<devLocation>vertical</devLocation>
+									<minValue>0</minValue>
+									<maxValue>359</maxValue>
+									<currentValue>0</currentValue>
+								</state>
+							</states>
+						</device>
+						<device><!-- XML fuer eine Wetterstation -->
+							<id>5</id>
+							<type>weatherstation</type>
+							<name>Wetterstation</name>
+							<pictureURI>weatherstation1.jpg</pictureURI>
+							<picturePositionX>1463</picturePositionX>
+							<picturePositionY>85</picturePositionY>
+							<radius>10</radius>
+							<inRoomPositionX>500</inRoomPositionX> <!-- in cm -->
+							<inRoomPositionY>5</inRoomPositionY>
+							<watt>15</watt>
+							<wattStandBy>0</wattStandBy>
+							<timestamp>14-06-2010 23:26:07</timestamp>
+							<states>
+								<!-- Wetterstation mit Temperatur innen und aussen, sowie Luftfeuchtigkeit aussen	-->
+								<state> <!-- Aussentemperatur -->
+									<id>0</id>
+									<controllable>false</controllable>
+									<dimension>temperature</dimension>
+									<devLocation>aussen</devLocation>
+									<currentValue>25</currentValue>
+									<unit>celsius</unit>
+								</state>
+								<state> <!-- Innentemperatur -->
+									<id>1</id>
+									<controllable>false</controllable>
+									<dimension>temperature</dimension>
+									<devLocation>innen</devLocation>
+									<currentValue>20</currentValue>
+									<unit>celsius</unit>
+								</state>
+								<state> <!-- Luftfeuchtigkeit -->
+									<id>2</id>
+									<controllable>false</controllable>
+									<dimension>humidity</dimension>
+									<currentValue>25</currentValue>
+									<unit>g/m^3</unit>
+								</state>
+							</states>
+						</device>
+					</devices>
+				</room>
+				<room>
+					<id>1</id>
+					<name>Flur</name>
+					<pictureURI>/sdcard/DCIM/Camera/1276891640701.jpg</pictureURI>
+					<lengthFrom>2000</lengthFrom>
+					<lengthTo>5000</lengthTo>
+					<widthFrom>0</widthFrom>
+					<widthTo>1000</widthTo>
+					<devices>
+						<device> <!-- gewoehnliches Licht (wird openAMI-intern mit outlet umgesetzt) -->
+							<id>0</id>
+							<type>lightswitch</type>
+							<name>Licht an der Tuer zum Wohnzimmer</name>
+							<pictureURI>lichtschalter2.jpg</pictureURI>
+							<picturePositionX>871</picturePositionX>
+							<picturePositionY>115</picturePositionY>
+							<radius>10</radius>
+							<inRoomPositionX>390</inRoomPositionX> <!-- in cm -->
+							<inRoomPositionY>50</inRoomPositionY>
+							<watt>60</watt>
+							<wattStandBy>0</wattStandBy>
+							<channel>c</channel>
+							<channelNumber>1</channelNumber>
+							<timestamp>17-06-2010 14:33:02</timestamp>
+							<states>
+								<state>
+									<id>0</id>
+									<controllable>true</controllable>
+									<dimension>activated</dimension>
+									<minValue>0</minValue>
+									<maxValue>1</maxValue>
+									<currentValue>0</currentValue>
+								</state>
+							</states>
+						</device>
+						<device>
+							<id>1</id>
+							<type>lightswitch</type>
+							<name>Kleines Ganglicht</name>
+							<pictureURI>steckdose2.jpg</pictureURI>
+							<picturePositionX>412</picturePositionX>
+							<picturePositionY>260</picturePositionY>
+							<radius>10</radius>
+							<inRoomPositionX>773</inRoomPositionX> <!-- in cm -->
+							<inRoomPositionY>712</inRoomPositionY>
+							<watt>73</watt>
+							<wattStandBy>0</wattStandBy>
+							<channel>d</channel>
+							<channelNumber>1</channelNumber>
+							<timestamp>14-06-2010 23:26:07</timestamp>
+							<states>
+								<state>
+									<id>0</id>
+									<controllable>true</controllable>
+									<dimension>activated</dimension>
+									<minValue>0</minValue>
+									<maxValue>1</maxValue>
+									<currentValue>0</currentValue>
+								</state>
+							</states>
+						</device>
+						<device>
+							<id>2</id>
+							<type>outlet</type>
+							<name>Anrufbeantworter</name>
+							<pictureURI>steckdose3.jpg</pictureURI>
+							<picturePositionX>158</picturePositionX>
+							<picturePositionY>257</picturePositionY>
+							<radius>10</radius>
+							<inRoomPositionX>890</inRoomPositionX> <!-- in cm -->
+							<inRoomPositionY>2650</inRoomPositionY>
+							<watt>20</watt>
+							<wattStandBy>0</wattStandBy>
+							<channel>d</channel>
+							<channelNumber>2</channelNumber>
+							<timestamp>14-06-2010 23:26:07</timestamp>
+							<states>
+								<state>
+									<id>0</id>
+									<controllable>true</controllable>
+									<dimension>activated</dimension>
+									<minValue>0</minValue>
+									<maxValue>1</maxValue>
+									<currentValue>0</currentValue>
+								</state>
+							</states>
+						</device>
+						<device>
+							<id>3</id>
+							<type>heater</type>
+							<name>Gangheizung</name>
+							<pictureURI>heizung1.jpg</pictureURI>
+							<picturePositionX>80</picturePositionX>
+							<picturePositionY>320</picturePositionY>
+							<radius>30</radius>
+							<inRoomPositionX>468</inRoomPositionX> <!-- in cm -->
+							<inRoomPositionY>1712</inRoomPositionY>
+							<watt>0</watt>
+							<wattStandBy>0</wattStandBy>
+							<timestamp>14-06-2010 23:26:07</timestamp>
+							<states> <!-- Heizung mit Gradeinstellung -->
+								<state>
+									<id>0</id>
+									<controllable>true</controllable>
+									<dimension>temperature</dimension>
+									<minValue>7</minValue>
+									<maxValue>30</maxValue>
+									<currentValue>16</currentValue>
+									<unit>Celsius</unit>
+								</state>
+							</states>
+						</device>
+					</devices>
+				</room>
+			</rooms>
+		</level>
+	</levels>
+</residence>
