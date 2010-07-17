@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>openAMI Local</title>
+</head>
+<body>
+<p>GET</p>
+<a href='http://localhost:8080/ami.lab@aminet.org/Filesystem/xml/MyEstate.xml'>get xml</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/get/state?string={"l":"0","r":"0"}'>getRoomState</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/get/energy?string={}'>getEnergy</a><br/>
+<p>SET</p>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"0","d":"0","s":"0","cv":"0"}'>set light 000 off</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"0","r":"0","d":"0","s":"0","cv":"1"}'>set light 000 on</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"1","r":"0","d":"0","s":"1","cv":"20"}'>set dim 100 to 20</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"1","r":"0","d":"0","s":"1","cv":"100"}'>set dim 100 to 100</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"1","r":"0","d":"0","s":"0","cv":"0"}'>set dim 100 off</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"1","r":"0","d":"0","s":"0","cv":"1"}'>set dim 100 on</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"1","r":"0","d":"2","s":"0","cv":"15"}'>set heater 102 to 15</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/state?string={"l":"1","r":"0","d":"2","s":"0","cv":"23"}'>set heater 102 to 23</a>
+<br/>
+<p>SETMULTISTATE</p>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/multiState?string={"l":[{"id":"1","r":[{"id":"0","d":[{"id":"0","s":[{"id":"0","cv":"0"}]},{"id":"1","s":[{"id":"0","cv":"0"}]}]},{"id":"1","d":[{"id":"0","s":[{"id":"0","cv":"0"}]}]}]}]}'>setMultistate 100 101 110 off</a>
+<br/>
+<a href='http://localhost:8080/ami.lab@aminet.org/set/multiState?string={"l":[{"id":"1","r":[{"id":"0","d":[{"id":"0","s":[{"id":"0","cv":"1"}]},{"id":"1","s":[{"id":"0","cv":"1"}]}]},{"id":"1","d":[{"id":"0","s":[{"id":"0","cv":"1"}]}]}]}]}'>setMultistate 100 101 110 on</a>
+<br/>
+
+
+
+
+</body>
